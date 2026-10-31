@@ -20,7 +20,7 @@
 
    | 变量名              | 示例值                                                 | 说明                                                |
    | :------------------ | :----------------------------------------------------- | :-------------------------------------------------- |
-   | `DEEPSEEK_API_KEY`  | `sk-xxxxxxxxxxxxxxxxxxxxxxxx`                          | 你的 DeepSeek 真实 API 密钥                         |
+   | `DEEPSEEK_API_KEY`  | `[REDACTED]`                          | 你的 DeepSeek 真实 API 密钥                         |
    | `DEEPSEEK_BASE_URL` | `[https://api.deepseek.com](https://api.deepseek.com)` | 官方地址，有代理/网关可改                           |
    | `DEEPSEEK_MODEL`    | `deepseek-chat`                                        | 模型名，可选 `deepseek-flash` / `deepseek-reasoner` |
    | `AI_MODE`           | `deepseek`                                             | 切换为真实调用模式，默认是 `mock`                   |
