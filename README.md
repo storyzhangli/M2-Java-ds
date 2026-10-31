@@ -1,4 +1,4 @@
-# 本项目为豆包90主线领跑线
+# 本项目vibe coding DeepSeek
 
 ## D13
 
