@@ -1,0 +1,13 @@
+# D18 sensitive-pattern scan
+
+Pattern checks only. Secret values are never written to this report.
+
+working_tree_matches=0
+staged_diff_matches=0
+head_tracked_matches=1
+current_environment_key_present=True
+real_api_call_executed=false
+
+scope: M2-Java-ds, excluding .git objects; staged diff and HEAD are checked separately
+head_tracked_paths:
+HEAD:"docs/proj_docs/D13-idea\350\256\276\347\275\256\351\241\271\347\233\256\347\232\204\347\216\257\345\242\203\345\217\230\351\207\217.md"

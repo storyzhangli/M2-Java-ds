@@ -1,0 +1,52 @@
+D17 -> D18 file comparison
+
+NEW_OR_MODIFIED_IN_D18:
+
+D18_ONLY_OR_CHANGED pom.xml
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\controller\ChatController.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\D18SpringAiApplication.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\equipment\dto\EquipmentChatResponse.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\equipment\EquipmentCandidateExtractor.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\equipment\EquipmentCandidateParser.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\equipment\EquipmentChatController.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\equipment\EquipmentChatService.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\equipment\EquipmentClarificationPolicy.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\equipment\EquipmentFacts.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\equipment\EquipmentInformationExtractor.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\equipment\model\CandidateSourceType.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\equipment\model\CandidateStatus.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\equipment\model\EquipmentTicketCandidate.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\equipment\model\TicketCategory.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\prompt\dto\PromptTemplateVersionView.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\prompt\mapper\PromptTemplateVersionMapper.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\prompt\model\PromptScenes.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\prompt\MybatisPromptTemplateRepository.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\prompt\MybatisPromptTemplateVersionRepository.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\prompt\po\PromptTemplateVersionPO.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\prompt\PromptTemplateController.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\prompt\PromptTemplateRepository.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\prompt\PromptTemplateService.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\prompt\PromptTemplateVersionInitializer.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\prompt\PromptTemplateVersionRepository.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\prompt\PromptTemplateVersionService.java
+D18_ONLY_OR_CHANGED src\main\java\com\zl\d17\service\DeepSeekAiChatService.java
+D18_ONLY_OR_CHANGED src\main\resources\application.yml
+D18_ONLY_OR_CHANGED src\main\resources\db\rollback-d18-prompt-template-version.sql
+D18_ONLY_OR_CHANGED src\main\resources\db\schema-prompt-template.sql
+D18_ONLY_OR_CHANGED src\main\resources\logback-spring.xml
+D18_ONLY_OR_CHANGED src\main\resources\prompt-templates\seed-templates.json
+D18_ONLY_OR_CHANGED src\test\java\com\zl\d17\springai\ApplicationContextLoadTest.java
+D18_ONLY_OR_CHANGED src\test\java\com\zl\d17\springai\DeepSeekKeyProtectionTest.java
+D18_ONLY_OR_CHANGED src\test\java\com\zl\d17\springai\DeepSeekLiveSmokeTest.java
+D18_ONLY_OR_CHANGED src\test\java\com\zl\d17\springai\equipment\EquipmentCandidateParserTest.java
+D18_ONLY_OR_CHANGED src\test\java\com\zl\d17\springai\equipment\EquipmentChatControllerTest.java
+D18_ONLY_OR_CHANGED src\test\java\com\zl\d17\springai\equipment\EquipmentInformationAndClarificationTest.java
+D18_ONLY_OR_CHANGED src\test\java\com\zl\d17\springai\prompt\PromptTemplateServiceTest.java
+D18_ONLY_OR_CHANGED src\test\java\com\zl\d17\springai\support\AbstractPersistenceCleanupTest.java
+D18_ONLY_OR_CHANGED src\test\java\com\zl\d17\springai\web\PromptTemplateControllerWebTest.java
+
+PRESENT_IN_D17_BUT_NOT_D18:
+D17_ONLY src\main\java\com\zl\d17\D17SpringAiApplication.java
+
+d17_file_count=127
+d18_file_count=150

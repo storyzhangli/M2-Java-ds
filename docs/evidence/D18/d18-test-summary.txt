@@ -1,0 +1,8 @@
+D18 final full regression summary
+command: mvn -f .\pom.xml test
+working_directory: E:\AI\project\AI-Learning-two-lp\M2-Java-ds\D18
+result: BUILD SUCCESS
+classes=37 tests=133 failures=0 errors=0 skipped=1
+generated_at=2026-10-31T22:21:16.6881748+08:00
+skipped_item: DeepSeekLiveSmokeTest (requires separate explicit authorization)
+real_deepseek_api_call_executed=false

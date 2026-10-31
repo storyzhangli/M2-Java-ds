@@ -1,0 +1,6 @@
+EQUIPMENT TEMPLATES
+equipment_customer_service|equipment_customer_service|1|ENABLED|2026-10-31 22:11:56.0|3
+equipment_technical_engineer|equipment_technical_engineer|1|ENABLED|2026-10-31 22:11:56.0|3
+VERSION SNAPSHOTS
+equipment_customer_service|1|1|1
+equipment_technical_engineer|1|1|1
