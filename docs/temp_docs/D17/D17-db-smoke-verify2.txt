@@ -1,0 +1,3 @@
+owner_id	role	status	cnt
+ut_smoke	assistant	COMPLETED	5
+ut_smoke	user	COMPLETED	5

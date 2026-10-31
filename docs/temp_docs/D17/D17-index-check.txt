@@ -1,0 +1,12 @@
+TABLE_NAME	INDEX_NAME	SEQ_IN_INDEX	COLUMN_NAME	NON_UNIQUE
+chat_message	idx_session_status	1	session_id	1
+chat_message	idx_session_status	2	status	1
+chat_message	idx_session_status	3	sequence_no	1
+chat_message	PRIMARY	1	id	0
+chat_message	uk_session_sequence	1	session_id	0
+chat_message	uk_session_sequence	2	sequence_no	0
+chat_session	idx_owner_status	1	owner_id	1
+chat_session	idx_owner_status	2	status	1
+chat_session	idx_owner_status	3	last_message_at	1
+chat_session	PRIMARY	1	id	0
+chat_session	uk_session_id	1	session_id	0

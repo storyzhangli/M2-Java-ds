@@ -1,0 +1,13 @@
+
+Name                             Length
+----                             ------
+D17-静态首页-输出.txt                91
+D17-流式冒烟-输出.txt              1259
+D17-流式冒烟-输出.txt.exit            8
+D17-真机验证-输出.txt              5755
+D17-真机验证-输出.txt.exit            8
+D17-重启持久化验证-输出.txt        3837
+D17-重启持久化验证-输出.txt.exit      8
+D17-app-run1-console.log          26416
+D17-app-run2-console.log          18641
+

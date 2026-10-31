@@ -1,0 +1,422 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.ai.m2:D17_DHSA_MTDCA >----------------------
+[INFO] Building D17_DHSA_MTDCA 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ D17_DHSA_MTDCA ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 12 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ D17_DHSA_MTDCA ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ D17_DHSA_MTDCA ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ D17_DHSA_MTDCA ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ D17_DHSA_MTDCA ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.zl.d17.springai.history.HistoryConcurrencyTest
+17:20:54.156 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.zl.d17.springai.history.HistoryConcurrencyTest]: HistoryConcurrencyTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:20:54.320 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.history.HistoryConcurrencyTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30 17:20:54.966 INFO  [background-preinit] [requestId=] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-10-30 17:20:55.009 INFO  [main] [requestId=] c.z.d.s.h.HistoryConcurrencyTest - Starting HistoryConcurrencyTest using Java 21.0.7 with PID 28804 (started by zl in E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA)
+2026-10-30 17:20:55.010 DEBUG [main] [requestId=] c.z.d.s.h.HistoryConcurrencyTest - Running with Spring Boot v3.5.16, Spring v6.2.19
+2026-10-30 17:20:55.012 INFO  [main] [requestId=] c.z.d.s.h.HistoryConcurrencyTest - The following 1 profile is active: "test"
+2026-10-30 17:20:56.208 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-30 17:20:56.212 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-30 17:20:56.289 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 0 Redis repository interfaces.
+2026-10-30 17:20:57.407 INFO  [main] [requestId=] c.zl.d17.knowledge.KnowledgeCorpus - �豸����֪ʶ���ϼ�����ɣ��ĵ���=3��Ƭ����=8
+2026-10-30 17:20:59.226 INFO  [main] [requestId=] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-10-30 17:20:59.713 INFO  [main] [requestId=] c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.web.context.support.GenericWebApplicationContext@2f1ea80d
+2026-10-30 17:21:00.741 INFO  [main] [requestId=] c.z.d.s.h.HistoryConcurrencyTest - Started HistoryConcurrencyTest in 6.251 seconds (process running for 7.421)
+2026-10-30 17:21:00.762 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-30 17:21:00.954 INFO  [main] [requestId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@587bf2e1
+2026-10-30 17:21:00.956 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-30 17:21:01.081 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM prompt_template WHERE (template_id = ?)
+2026-10-30 17:21:01.115 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - ==> Parameters: customer_service(String)
+2026-10-30 17:21:01.157 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - <==      Total: 1
+2026-10-30 17:21:01.160 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM prompt_template WHERE (template_id = ?)
+2026-10-30 17:21:01.163 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - ==> Parameters: programming(String)
+2026-10-30 17:21:01.164 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - <==      Total: 1
+2026-10-30 17:21:01.164 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM prompt_template WHERE (template_id = ?)
+2026-10-30 17:21:01.164 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - ==> Parameters: technical_explanation(String)
+2026-10-30 17:21:01.168 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - <==      Total: 1
+2026-10-30 17:21:01.168 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM prompt_template WHERE (template_id = ?)
+2026-10-30 17:21:01.168 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - ==> Parameters: code_review(String)
+2026-10-30 17:21:01.171 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - <==      Total: 1
+2026-10-30 17:21:01.171 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM prompt_template WHERE (template_id = ?)
+2026-10-30 17:21:01.171 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - ==> Parameters: summarization(String)
+2026-10-30 17:21:01.174 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - <==      Total: 1
+2026-10-30 17:21:01.174 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM prompt_template WHERE (template_id = ?)
+2026-10-30 17:21:01.174 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - ==> Parameters: information_extraction(String)
+2026-10-30 17:21:01.177 DEBUG [main] [requestId=] c.z.d.p.m.P.selectCount - <==      Total: 1
+2026-10-30 17:21:01.178 INFO  [main] [requestId=] c.z.d17.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�6 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (D:\SoftwareInstall\Apache\repository\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-30 17:21:02.018 DEBUG [main] [requestId=] c.z.d.h.m.ChatSessionMapper.insert - ==>  Preparing: INSERT INTO chat_session ( session_id, owner_id, scene, title, template_id, template_version, status, created_at, updated_at, last_message_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-30 17:21:02.021 DEBUG [main] [requestId=] c.z.d.h.m.ChatSessionMapper.insert - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), (String), ��������(String), (String), 0(Integer), ACTIVE(String), 2026-10-30T17:21:02.012872300(LocalDateTime), 2026-10-30T17:21:02.012872300(LocalDateTime), 2026-10-30T17:21:02.012872300(LocalDateTime)
+2026-10-30 17:21:02.025 DEBUG [main] [requestId=] c.z.d.h.m.ChatSessionMapper.insert - <==    Updates: 1
+2026-10-30 17:21:02.025 DEBUG [main] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==>  Preparing: SELECT id FROM chat_session WHERE session_id = ? FOR UPDATE
+2026-10-30 17:21:02.025 DEBUG [main] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.032 DEBUG [main] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - <==      Total: 1
+2026-10-30 17:21:02.032 DEBUG [main] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==>  Preparing: SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = ?
+2026-10-30 17:21:02.032 DEBUG [main] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.032 DEBUG [main] [requestId=] c.z.d.h.m.H.selectMaxSequence - <==      Total: 1
+2026-10-30 17:21:02.046 DEBUG [main] [requestId=] c.z.d.h.m.H.insert - ==>  Preparing: INSERT INTO chat_message ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-30 17:21:02.046 DEBUG [main] [requestId=] c.z.d.h.m.H.insert - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), 1(Integer), user(String), ��������(String), PENDING(String), (String), (String), (String), 2026-10-30T17:21:02.032331200(LocalDateTime), 2026-10-30T17:21:02.032331200(LocalDateTime)
+2026-10-30 17:21:02.046 DEBUG [main] [requestId=] c.z.d.h.m.H.insert - <==    Updates: 1
+2026-10-30 17:21:02.053 DEBUG [main] [requestId=] c.z.d.h.m.C.updateById - ==>  Preparing: UPDATE chat_session SET session_id=?, owner_id=?, scene=?, title=?, template_id=?, template_version=?, status=?, created_at=?, updated_at=?, last_message_at=? WHERE id=?
+2026-10-30 17:21:02.053 DEBUG [main] [requestId=] c.z.d.h.m.C.updateById - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), (String), ��������(String), (String), 0(Integer), ACTIVE(String), 2026-10-30T17:21:02.012872300(LocalDateTime), 2026-10-30T17:21:02.046654400(LocalDateTime), 2026-10-30T17:21:02.046654400(LocalDateTime), 152(Long)
+2026-10-30 17:21:02.057 DEBUG [main] [requestId=] c.z.d.h.m.C.updateById - <==    Updates: 1
+2026-10-30 17:21:02.057 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=cd2932ba8dce4d8a81b21f3b6fe22d7c��owner=ut_conc��sequence=1
+2026-10-30 17:21:02.067 DEBUG [main] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==>  Preparing: SELECT id FROM chat_session WHERE session_id = ? FOR UPDATE
+2026-10-30 17:21:02.067 DEBUG [main] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.067 DEBUG [main] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - <==      Total: 1
+2026-10-30 17:21:02.071 DEBUG [main] [requestId=] c.z.d.h.m.H.updateById - ==>  Preparing: UPDATE chat_message SET session_id=?, owner_id=?, sequence_no=?, role=?, content=?, status=?, model_name=?, error_code=?, error_message=?, created_at=?, updated_at=? WHERE id=?
+2026-10-30 17:21:02.073 DEBUG [main] [requestId=] c.z.d.h.m.H.updateById - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), 1(Integer), user(String), ��������(String), COMPLETED(String), (String), (String), (String), 2026-10-30T17:21:02.032331200(LocalDateTime), 2026-10-30T17:21:02.067117300(LocalDateTime), 338(Long)
+2026-10-30 17:21:02.075 DEBUG [main] [requestId=] c.z.d.h.m.H.updateById - <==    Updates: 1
+2026-10-30 17:21:02.075 DEBUG [main] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==>  Preparing: SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = ?
+2026-10-30 17:21:02.075 DEBUG [main] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.075 DEBUG [main] [requestId=] c.z.d.h.m.H.selectMaxSequence - <==      Total: 1
+2026-10-30 17:21:02.075 DEBUG [main] [requestId=] c.z.d.h.m.H.insert - ==>  Preparing: INSERT INTO chat_message ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-30 17:21:02.075 DEBUG [main] [requestId=] c.z.d.h.m.H.insert - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), 2(Integer), assistant(String), ���ӻش�(String), COMPLETED(String), offline-mock(String), (String), (String), 2026-10-30T17:21:02.075579200(LocalDateTime), 2026-10-30T17:21:02.075579200(LocalDateTime)
+2026-10-30 17:21:02.080 DEBUG [main] [requestId=] c.z.d.h.m.H.insert - <==    Updates: 1
+2026-10-30 17:21:02.081 DEBUG [main] [requestId=] c.z.d.h.m.C.updateById - ==>  Preparing: UPDATE chat_session SET session_id=?, owner_id=?, scene=?, title=?, template_id=?, template_version=?, status=?, created_at=?, updated_at=?, last_message_at=? WHERE id=?
+2026-10-30 17:21:02.081 DEBUG [main] [requestId=] c.z.d.h.m.C.updateById - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), (String), ��������(String), (String), 0(Integer), ACTIVE(String), 2026-10-30T17:21:02.012872300(LocalDateTime), 2026-10-30T17:21:02.081423(LocalDateTime), 2026-10-30T17:21:02.081423(LocalDateTime), 152(Long)
+2026-10-30 17:21:02.081 DEBUG [main] [requestId=] c.z.d.h.m.C.updateById - <==    Updates: 1
+2026-10-30 17:21:02.081 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=cd2932ba8dce4d8a81b21f3b6fe22d7c���û����=1���������=2
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-8] [requestId=] c.z.d.h.m.C.selectWithCursor - ==>  Preparing: SELECT id,session_id,owner_id,scene,title,template_id,template_version,status,created_at,updated_at,last_message_at FROM chat_session WHERE (session_id = ?) LIMIT 1
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.selectWithCursor - ==>  Preparing: SELECT id,session_id,owner_id,scene,title,template_id,template_version,status,created_at,updated_at,last_message_at FROM chat_session WHERE (session_id = ?) LIMIT 1
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-4] [requestId=] c.z.d.h.m.C.selectWithCursor - ==>  Preparing: SELECT id,session_id,owner_id,scene,title,template_id,template_version,status,created_at,updated_at,last_message_at FROM chat_session WHERE (session_id = ?) LIMIT 1
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-7] [requestId=] c.z.d.h.m.C.selectWithCursor - ==>  Preparing: SELECT id,session_id,owner_id,scene,title,template_id,template_version,status,created_at,updated_at,last_message_at FROM chat_session WHERE (session_id = ?) LIMIT 1
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-2] [requestId=] c.z.d.h.m.C.selectWithCursor - ==>  Preparing: SELECT id,session_id,owner_id,scene,title,template_id,template_version,status,created_at,updated_at,last_message_at FROM chat_session WHERE (session_id = ?) LIMIT 1
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-5] [requestId=] c.z.d.h.m.C.selectWithCursor - ==>  Preparing: SELECT id,session_id,owner_id,scene,title,template_id,template_version,status,created_at,updated_at,last_message_at FROM chat_session WHERE (session_id = ?) LIMIT 1
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-3] [requestId=] c.z.d.h.m.C.selectWithCursor - ==>  Preparing: SELECT id,session_id,owner_id,scene,title,template_id,template_version,status,created_at,updated_at,last_message_at FROM chat_session WHERE (session_id = ?) LIMIT 1
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-1] [requestId=] c.z.d.h.m.C.selectWithCursor - ==>  Preparing: SELECT id,session_id,owner_id,scene,title,template_id,template_version,status,created_at,updated_at,last_message_at FROM chat_session WHERE (session_id = ?) LIMIT 1
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-8] [requestId=] c.z.d.h.m.C.selectWithCursor - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-7] [requestId=] c.z.d.h.m.C.selectWithCursor - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-4] [requestId=] c.z.d.h.m.C.selectWithCursor - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.selectWithCursor - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-3] [requestId=] c.z.d.h.m.C.selectWithCursor - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-2] [requestId=] c.z.d.h.m.C.selectWithCursor - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-5] [requestId=] c.z.d.h.m.C.selectWithCursor - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.102 DEBUG [pool-4-thread-1] [requestId=] c.z.d.h.m.C.selectWithCursor - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.109 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.selectWithCursor - <==      Total: 1
+2026-10-30 17:21:02.109 DEBUG [pool-4-thread-1] [requestId=] c.z.d.h.m.C.selectWithCursor - <==      Total: 1
+2026-10-30 17:21:02.109 DEBUG [pool-4-thread-3] [requestId=] c.z.d.h.m.C.selectWithCursor - <==      Total: 1
+2026-10-30 17:21:02.109 DEBUG [pool-4-thread-5] [requestId=] c.z.d.h.m.C.selectWithCursor - <==      Total: 1
+2026-10-30 17:21:02.109 DEBUG [pool-4-thread-2] [requestId=] c.z.d.h.m.C.selectWithCursor - <==      Total: 1
+2026-10-30 17:21:02.109 DEBUG [pool-4-thread-4] [requestId=] c.z.d.h.m.C.selectWithCursor - <==      Total: 1
+2026-10-30 17:21:02.109 DEBUG [pool-4-thread-7] [requestId=] c.z.d.h.m.C.selectWithCursor - <==      Total: 1
+2026-10-30 17:21:02.109 DEBUG [pool-4-thread-8] [requestId=] c.z.d.h.m.C.selectWithCursor - <==      Total: 1
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==>  Preparing: SELECT id FROM chat_session WHERE session_id = ? FOR UPDATE
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-5] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==>  Preparing: SELECT id FROM chat_session WHERE session_id = ? FOR UPDATE
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-2] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==>  Preparing: SELECT id FROM chat_session WHERE session_id = ? FOR UPDATE
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-3] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==>  Preparing: SELECT id FROM chat_session WHERE session_id = ? FOR UPDATE
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-7] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==>  Preparing: SELECT id FROM chat_session WHERE session_id = ? FOR UPDATE
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-4] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==>  Preparing: SELECT id FROM chat_session WHERE session_id = ? FOR UPDATE
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-8] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==>  Preparing: SELECT id FROM chat_session WHERE session_id = ? FOR UPDATE
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-1] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==>  Preparing: SELECT id FROM chat_session WHERE session_id = ? FOR UPDATE
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-2] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-7] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-3] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-5] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-1] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-8] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.115 DEBUG [pool-4-thread-4] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.117 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - <==      Total: 1
+2026-10-30 17:21:02.117 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==>  Preparing: SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = ?
+2026-10-30 17:21:02.117 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.119 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.selectMaxSequence - <==      Total: 1
+2026-10-30 17:21:02.119 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.insert - ==>  Preparing: INSERT INTO chat_message ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-30 17:21:02.122 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.insert - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), 3(Integer), user(String), ��������5(String), PENDING(String), (String), (String), (String), 2026-10-30T17:21:02.119361700(LocalDateTime), 2026-10-30T17:21:02.119361700(LocalDateTime)
+2026-10-30 17:21:02.122 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.insert - <==    Updates: 1
+2026-10-30 17:21:02.122 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.updateById - ==>  Preparing: UPDATE chat_session SET session_id=?, owner_id=?, scene=?, title=?, template_id=?, template_version=?, status=?, created_at=?, updated_at=?, last_message_at=? WHERE id=?
+2026-10-30 17:21:02.122 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.updateById - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), (String), ��������(String), (String), 0(Integer), ACTIVE(String), 2026-10-30T17:21:02(LocalDateTime), 2026-10-30T17:21:02.122851(LocalDateTime), 2026-10-30T17:21:02.122851(LocalDateTime), 152(Long)
+2026-10-30 17:21:02.128 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.updateById - <==    Updates: 1
+2026-10-30 17:21:02.129 INFO  [pool-4-thread-6] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=cd2932ba8dce4d8a81b21f3b6fe22d7c��owner=ut_conc��sequence=3
+2026-10-30 17:21:02.134 DEBUG [pool-4-thread-7] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - <==      Total: 1
+2026-10-30 17:21:02.138 DEBUG [pool-4-thread-7] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==>  Preparing: SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = ?
+2026-10-30 17:21:02.138 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==>  Preparing: SELECT id FROM chat_session WHERE session_id = ? FOR UPDATE
+2026-10-30 17:21:02.138 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.138 DEBUG [pool-4-thread-7] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.138 DEBUG [pool-4-thread-7] [requestId=] c.z.d.h.m.H.selectMaxSequence - <==      Total: 1
+2026-10-30 17:21:02.138 DEBUG [pool-4-thread-7] [requestId=] c.z.d.h.m.H.insert - ==>  Preparing: INSERT INTO chat_message ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-30 17:21:02.143 DEBUG [pool-4-thread-7] [requestId=] c.z.d.h.m.H.insert - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), 3(Integer), user(String), ��������6(String), PENDING(String), (String), (String), (String), 2026-10-30T17:21:02.138671200(LocalDateTime), 2026-10-30T17:21:02.138671200(LocalDateTime)
+2026-10-30 17:21:02.316 DEBUG [pool-4-thread-2] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - <==      Total: 1
+2026-10-30 17:21:02.316 DEBUG [pool-4-thread-2] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==>  Preparing: SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = ?
+2026-10-30 17:21:02.316 DEBUG [pool-4-thread-2] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.320 DEBUG [pool-4-thread-2] [requestId=] c.z.d.h.m.H.selectMaxSequence - <==      Total: 1
+2026-10-30 17:21:02.320 DEBUG [pool-4-thread-2] [requestId=] c.z.d.h.m.H.insert - ==>  Preparing: INSERT INTO chat_message ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-30 17:21:02.323 DEBUG [pool-4-thread-2] [requestId=] c.z.d.h.m.H.insert - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), 3(Integer), user(String), ��������1(String), PENDING(String), (String), (String), (String), 2026-10-30T17:21:02.320173600(LocalDateTime), 2026-10-30T17:21:02.320173600(LocalDateTime)
+2026-10-30 17:21:02.324 DEBUG [pool-4-thread-5] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - <==      Total: 1
+2026-10-30 17:21:02.324 DEBUG [pool-4-thread-5] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==>  Preparing: SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = ?
+2026-10-30 17:21:02.324 DEBUG [pool-4-thread-5] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.324 DEBUG [pool-4-thread-5] [requestId=] c.z.d.h.m.H.selectMaxSequence - <==      Total: 1
+2026-10-30 17:21:02.330 DEBUG [pool-4-thread-5] [requestId=] c.z.d.h.m.H.insert - ==>  Preparing: INSERT INTO chat_message ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-30 17:21:02.330 DEBUG [pool-4-thread-5] [requestId=] c.z.d.h.m.H.insert - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), 3(Integer), user(String), ��������4(String), PENDING(String), (String), (String), (String), 2026-10-30T17:21:02.324610500(LocalDateTime), 2026-10-30T17:21:02.324610500(LocalDateTime)
+2026-10-30 17:21:02.330 DEBUG [pool-4-thread-3] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - <==      Total: 1
+2026-10-30 17:21:02.330 DEBUG [pool-4-thread-3] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==>  Preparing: SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = ?
+2026-10-30 17:21:02.330 DEBUG [pool-4-thread-3] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.330 DEBUG [pool-4-thread-3] [requestId=] c.z.d.h.m.H.selectMaxSequence - <==      Total: 1
+2026-10-30 17:21:02.330 DEBUG [pool-4-thread-3] [requestId=] c.z.d.h.m.H.insert - ==>  Preparing: INSERT INTO chat_message ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-30 17:21:02.337 DEBUG [pool-4-thread-3] [requestId=] c.z.d.h.m.H.insert - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), 3(Integer), user(String), ��������2(String), PENDING(String), (String), (String), (String), 2026-10-30T17:21:02.330792(LocalDateTime), 2026-10-30T17:21:02.330792(LocalDateTime)
+2026-10-30 17:21:02.337 DEBUG [pool-4-thread-1] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - <==      Total: 1
+2026-10-30 17:21:02.337 DEBUG [pool-4-thread-1] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==>  Preparing: SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = ?
+2026-10-30 17:21:02.341 DEBUG [pool-4-thread-1] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.341 DEBUG [pool-4-thread-1] [requestId=] c.z.d.h.m.H.selectMaxSequence - <==      Total: 1
+2026-10-30 17:21:02.341 DEBUG [pool-4-thread-1] [requestId=] c.z.d.h.m.H.insert - ==>  Preparing: INSERT INTO chat_message ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-30 17:21:02.344 DEBUG [pool-4-thread-1] [requestId=] c.z.d.h.m.H.insert - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), 3(Integer), user(String), ��������0(String), PENDING(String), (String), (String), (String), 2026-10-30T17:21:02.341585300(LocalDateTime), 2026-10-30T17:21:02.341585300(LocalDateTime)
+2026-10-30 17:21:02.344 DEBUG [pool-4-thread-8] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - <==      Total: 1
+2026-10-30 17:21:02.344 DEBUG [pool-4-thread-8] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==>  Preparing: SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = ?
+2026-10-30 17:21:02.344 DEBUG [pool-4-thread-8] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.344 DEBUG [pool-4-thread-8] [requestId=] c.z.d.h.m.H.selectMaxSequence - <==      Total: 1
+2026-10-30 17:21:02.344 DEBUG [pool-4-thread-8] [requestId=] c.z.d.h.m.H.insert - ==>  Preparing: INSERT INTO chat_message ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-30 17:21:02.344 DEBUG [pool-4-thread-8] [requestId=] c.z.d.h.m.H.insert - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), 3(Integer), user(String), ��������7(String), PENDING(String), (String), (String), (String), 2026-10-30T17:21:02.344720500(LocalDateTime), 2026-10-30T17:21:02.344720500(LocalDateTime)
+2026-10-30 17:21:02.352 DEBUG [pool-4-thread-4] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - <==      Total: 1
+2026-10-30 17:21:02.352 DEBUG [pool-4-thread-4] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==>  Preparing: SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = ?
+2026-10-30 17:21:02.352 DEBUG [pool-4-thread-4] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.352 DEBUG [pool-4-thread-4] [requestId=] c.z.d.h.m.H.selectMaxSequence - <==      Total: 1
+2026-10-30 17:21:02.352 DEBUG [pool-4-thread-4] [requestId=] c.z.d.h.m.H.insert - ==>  Preparing: INSERT INTO chat_message ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-30 17:21:02.352 DEBUG [pool-4-thread-4] [requestId=] c.z.d.h.m.H.insert - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), 3(Integer), user(String), ��������3(String), PENDING(String), (String), (String), (String), 2026-10-30T17:21:02.352364800(LocalDateTime), 2026-10-30T17:21:02.352364800(LocalDateTime)
+2026-10-30 17:21:02.358 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.lockSessionForUpdate - <==      Total: 1
+2026-10-30 17:21:02.358 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.updateById - ==>  Preparing: UPDATE chat_message SET session_id=?, owner_id=?, sequence_no=?, role=?, content=?, status=?, model_name=?, error_code=?, error_message=?, created_at=?, updated_at=? WHERE id=?
+2026-10-30 17:21:02.361 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.updateById - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), 3(Integer), user(String), ��������5(String), COMPLETED(String), (String), (String), (String), 2026-10-30T17:21:02.119361700(LocalDateTime), 2026-10-30T17:21:02.358643300(LocalDateTime), 340(Long)
+2026-10-30 17:21:02.362 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.updateById - <==    Updates: 1
+2026-10-30 17:21:02.362 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==>  Preparing: SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = ?
+2026-10-30 17:21:02.362 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.selectMaxSequence - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String)
+2026-10-30 17:21:02.365 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.selectMaxSequence - <==      Total: 1
+2026-10-30 17:21:02.365 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.insert - ==>  Preparing: INSERT INTO chat_message ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2026-10-30 17:21:02.365 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.insert - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), 4(Integer), assistant(String), �����ش�5(String), COMPLETED(String), offline-mock(String), (String), (String), 2026-10-30T17:21:02.365675900(LocalDateTime), 2026-10-30T17:21:02.365675900(LocalDateTime)
+2026-10-30 17:21:02.365 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.H.insert - <==    Updates: 1
+2026-10-30 17:21:02.365 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.updateById - ==>  Preparing: UPDATE chat_session SET session_id=?, owner_id=?, scene=?, title=?, template_id=?, template_version=?, status=?, created_at=?, updated_at=?, last_message_at=? WHERE id=?
+2026-10-30 17:21:02.365 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.updateById - ==> Parameters: cd2932ba8dce4d8a81b21f3b6fe22d7c(String), ut_conc(String), (String), ��������(String), (String), 0(Integer), ACTIVE(String), 2026-10-30T17:21:02(LocalDateTime), 2026-10-30T17:21:02.365675900(LocalDateTime), 2026-10-30T17:21:02.365675900(LocalDateTime), 152(Long)
+2026-10-30 17:21:02.372 DEBUG [pool-4-thread-6] [requestId=] c.z.d.h.m.C.updateById - <==    Updates: 1
+2026-10-30 17:21:02.372 INFO  [pool-4-thread-6] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=cd2932ba8dce4d8a81b21f3b6fe22d7c���û����=3���������=4
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 9.033 s <<< FAILURE! -- in com.zl.d17.springai.history.HistoryConcurrencyTest
+[ERROR] com.zl.d17.springai.history.HistoryConcurrencyTest.concurrentTurnsOnSameSessionShouldGetUniqueGaplessSequences -- Time elapsed: 1.812 s <<< FAILURE!
+java.lang.AssertionError: 
+[�����̲߳�Ӧ�׳��쳣] 
+Expecting empty but was: [org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed),
+    org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed),
+    org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed),
+    org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed),
+    org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed),
+    org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed),
+    org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed)]
+	at com.zl.d17.springai.history.HistoryConcurrencyTest.concurrentTurnsOnSameSessionShouldGetUniqueGaplessSequences(HistoryConcurrencyTest.java:67)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   HistoryConcurrencyTest.concurrentTurnsOnSameSessionShouldGetUniqueGaplessSequences:67 [�����̲߳�Ӧ�׳��쳣] 
+Expecting empty but was: [org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed),
+    org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed),
+    org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed),
+    org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed),
+    org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed),
+    org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed),
+    org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+### The error may exist in com/zl/d17/history/mapper/HistoryMessageMapper.java (best guess)
+### The error may involve com.zl.d17.history.mapper.HistoryMessageMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+; Duplicate entry 'cd2932ba8dce4d8a81b21f3b6fe22d7c-3' for key 'chat_message.uk_session_sequence'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:254)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	...(24 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed)]
+[INFO] 
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  14.113 s
+[INFO] Finished at: 2026-10-30T17:21:03+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project D17_DHSA_MTDCA: There are test failures.
+[ERROR] 
+[ERROR] See E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA\target\surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

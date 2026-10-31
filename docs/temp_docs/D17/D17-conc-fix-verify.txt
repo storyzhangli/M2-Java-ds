@@ -1,0 +1,111 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.ai.m2:D17_DHSA_MTDCA >----------------------
+[INFO] Building D17_DHSA_MTDCA 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ D17_DHSA_MTDCA ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 12 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ D17_DHSA_MTDCA ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 75 source files with javac [debug parameters release 21] to target\classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[WARNING] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/logging/CachedBodyAccessLogFilter.java:[63,55] org.springframework.web.util.ContentCachingRequestWrapper �е� ContentCachingRequestWrapper(jakarta.servlet.http.HttpServletRequest) �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[INFO] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/conversation/ConversationMemory.java: E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA\src\main\java\com\zl\d17\conversation\ConversationMemory.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/conversation/ConversationMemory.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ D17_DHSA_MTDCA ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ D17_DHSA_MTDCA ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 36 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[INFO] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/support/AbstractPersistenceCleanupTest.java: E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA\src\test\java\com\zl\d17\springai\support\AbstractPersistenceCleanupTest.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/support/AbstractPersistenceCleanupTest.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ D17_DHSA_MTDCA ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.zl.d17.springai.history.HistoryConcurrencyTest
+17:46:49.830 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.zl.d17.springai.history.HistoryConcurrencyTest]: HistoryConcurrencyTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:46:50.033 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.history.HistoryConcurrencyTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30 17:46:50.821 INFO  [background-preinit] [requestId=] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-10-30 17:46:50.870 INFO  [main] [requestId=] c.z.d.s.h.HistoryConcurrencyTest - Starting HistoryConcurrencyTest using Java 21.0.7 with PID 29592 (started by zl in E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA)
+2026-10-30 17:46:50.870 INFO  [main] [requestId=] c.z.d.s.h.HistoryConcurrencyTest - The following 1 profile is active: "test"
+2026-10-30 17:46:52.280 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-30 17:46:52.284 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-30 17:46:52.381 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68 ms. Found 0 Redis repository interfaces.
+2026-10-30 17:46:53.684 INFO  [main] [requestId=] c.zl.d17.knowledge.KnowledgeCorpus - �豸����֪ʶ���ϼ�����ɣ��ĵ���=3��Ƭ����=8
+2026-10-30 17:46:55.827 INFO  [main] [requestId=] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-10-30 17:46:56.378 INFO  [main] [requestId=] c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.web.context.support.GenericWebApplicationContext@418c020b
+2026-10-30 17:46:57.568 INFO  [main] [requestId=] c.z.d.s.h.HistoryConcurrencyTest - Started HistoryConcurrencyTest in 7.251 seconds (process running for 8.727)
+2026-10-30 17:46:57.586 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-30 17:46:57.834 INFO  [main] [requestId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38a61c81
+2026-10-30 17:46:57.836 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-30 17:46:58.050 INFO  [main] [requestId=] c.z.d17.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�6 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (D:\SoftwareInstall\Apache\repository\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-30 17:46:58.988 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=123594ca019846829a5aa23b7c3e63fe��owner=ut_conc��sequence=1
+2026-10-30 17:46:59.011 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=123594ca019846829a5aa23b7c3e63fe���û����=1���������=2
+2026-10-30 17:46:59.060 INFO  [pool-4-thread-7] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=123594ca019846829a5aa23b7c3e63fe��owner=ut_conc��sequence=3
+2026-10-30 17:46:59.078 INFO  [pool-4-thread-8] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=123594ca019846829a5aa23b7c3e63fe��owner=ut_conc��sequence=4
+2026-10-30 17:46:59.098 INFO  [pool-4-thread-2] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=123594ca019846829a5aa23b7c3e63fe��owner=ut_conc��sequence=5
+2026-10-30 17:46:59.117 INFO  [pool-4-thread-6] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=123594ca019846829a5aa23b7c3e63fe��owner=ut_conc��sequence=6
+2026-10-30 17:46:59.134 INFO  [pool-4-thread-3] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=123594ca019846829a5aa23b7c3e63fe��owner=ut_conc��sequence=7
+2026-10-30 17:46:59.153 INFO  [pool-4-thread-4] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=123594ca019846829a5aa23b7c3e63fe��owner=ut_conc��sequence=8
+2026-10-30 17:46:59.173 INFO  [pool-4-thread-1] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=123594ca019846829a5aa23b7c3e63fe��owner=ut_conc��sequence=9
+2026-10-30 17:46:59.192 INFO  [pool-4-thread-5] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=123594ca019846829a5aa23b7c3e63fe��owner=ut_conc��sequence=10
+2026-10-30 17:46:59.210 INFO  [pool-4-thread-7] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=123594ca019846829a5aa23b7c3e63fe���û����=3���������=11
+2026-10-30 17:46:59.227 INFO  [pool-4-thread-8] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=123594ca019846829a5aa23b7c3e63fe���û����=4���������=12
+2026-10-30 17:46:59.242 INFO  [pool-4-thread-2] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=123594ca019846829a5aa23b7c3e63fe���û����=5���������=13
+2026-10-30 17:46:59.257 INFO  [pool-4-thread-6] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=123594ca019846829a5aa23b7c3e63fe���û����=6���������=14
+2026-10-30 17:46:59.272 INFO  [pool-4-thread-3] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=123594ca019846829a5aa23b7c3e63fe���û����=7���������=15
+2026-10-30 17:46:59.287 INFO  [pool-4-thread-4] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=123594ca019846829a5aa23b7c3e63fe���û����=8���������=16
+2026-10-30 17:46:59.300 INFO  [pool-4-thread-1] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=123594ca019846829a5aa23b7c3e63fe���û����=9���������=17
+2026-10-30 17:46:59.316 INFO  [pool-4-thread-5] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=123594ca019846829a5aa23b7c3e63fe���û����=10���������=18
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.39 s -- in com.zl.d17.springai.history.HistoryConcurrencyTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  31.291 s
+[INFO] Finished at: 2026-10-30T17:47:00+08:00
+[INFO] ------------------------------------------------------------------------

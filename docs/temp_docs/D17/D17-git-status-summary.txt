@@ -1,0 +1,20 @@
+TOTAL=16
+D17=16
+NON_D17=0
+ M D17/D17_DHSA_MTDCA/pom.xml
+ M D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/controller/ChatController.java
+ M D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/controller/ChatStreamController.java
+ M D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/conversation/RoleConversationService.java
+ M D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/dto/ChatReplyResponse.java
+ M D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/logging/ControllerAccessLogAspect.java
+ M D17/D17_DHSA_MTDCA/src/main/resources/application.yml
+ M D17/D17_DHSA_MTDCA/src/main/resources/static/index.html
+ M D17/D17_DHSA_MTDCA/src/main/resources/static/js/app.js
+ M D17/D17_DHSA_MTDCA/src/main/resources/static/templates.html
+?? D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/conversation/HistoryMessageConverter.java
+?? D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/history/
+?? D17/D17_DHSA_MTDCA/src/main/resources/db/schema-chat-history.sql
+?? D17/D17_DHSA_MTDCA/src/test/
+?? docs/evidence/D17/
+?? "docs/proj_docs/D17-\351\241\271\347\233\256\350\277\255\344\273\243\344\273\273\345\212\241\344\271\246Prompt-\345\257\271\350\257\235\345\216\206\345\217\262\345\255\230\345\202\250\344\270\216\345\244\232\350\275\256\345\257\271\350\257\235\344\270\212\344\270\213\346\226\207\345\205\263\350\201\224.md"
+--- NON D17 ---

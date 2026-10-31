@@ -1,0 +1,14 @@
+spring-ai-autoconfigure-model-chat-client
+spring-ai-autoconfigure-model-chat-memory
+spring-ai-autoconfigure-model-chat-observation
+spring-ai-autoconfigure-model-deepseek
+spring-ai-autoconfigure-model-tool
+spring-ai-autoconfigure-retry
+spring-ai-bom
+spring-ai-client-chat
+spring-ai-commons
+spring-ai-deepseek
+spring-ai-model
+spring-ai-retry
+spring-ai-starter-model-deepseek
+spring-ai-template-st

@@ -1,0 +1,170 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.ai.m2:D17_DHSA_MTDCA >----------------------
+[INFO] Building D17_DHSA_MTDCA 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ D17_DHSA_MTDCA ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 12 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ D17_DHSA_MTDCA ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 75 source files with javac [debug parameters release 21] to target\classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[WARNING] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/logging/CachedBodyAccessLogFilter.java:[63,55] org.springframework.web.util.ContentCachingRequestWrapper �е� ContentCachingRequestWrapper(jakarta.servlet.http.HttpServletRequest) �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[INFO] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/conversation/ConversationMemory.java: E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA\src\main\java\com\zl\d17\conversation\ConversationMemory.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/conversation/ConversationMemory.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ D17_DHSA_MTDCA ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ D17_DHSA_MTDCA ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 29 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[INFO] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/support/AbstractPersistenceCleanupTest.java: E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA\src\test\java\com\zl\d17\springai\support\AbstractPersistenceCleanupTest.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/support/AbstractPersistenceCleanupTest.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[38,88] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+  ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+  �ҵ�:    com.zl.d17.dto.ChatRequest
+  ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[49,32] �Ҳ�������
+  ����:   ���� failAndRollback(java.lang.String)
+  λ��: ����Ϊcom.zl.d17.conversation.RoleConversationService�ı��� roleConversationService
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[55,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+  ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+  �ҵ�:    com.zl.d17.dto.ChatRequest
+  ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[57,32] �Ҳ�������
+  ����:   ���� completeAssistant(java.lang.String,java.lang.String)
+  λ��: ����Ϊcom.zl.d17.conversation.RoleConversationService�ı��� roleConversationService
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[60,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+  ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+  �ҵ�:    com.zl.d17.dto.ChatRequest
+  ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[67,32] �Ҳ�������
+  ����:   ���� failAndRollback(java.lang.String)
+  λ��: ����Ϊcom.zl.d17.conversation.RoleConversationService�ı��� roleConversationService
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[68,32] �Ҳ�������
+  ����:   ���� failAndRollback(java.lang.String)
+  λ��: ����Ϊcom.zl.d17.conversation.RoleConversationService�ı��� roleConversationService
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[75,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+  ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+  �ҵ�:    com.zl.d17.dto.ChatRequest
+  ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[79,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+  ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+  �ҵ�:    com.zl.d17.dto.ChatRequest
+  ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[89,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+  ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+  �ҵ�:    com.zl.d17.dto.ChatRequest
+  ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[95,44] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+  ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+  �ҵ�:    com.zl.d17.dto.ChatRequest
+  ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[106,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+  ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+  �ҵ�:    com.zl.d17.dto.ChatRequest
+  ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[109,32] �Ҳ�������
+  ����:   ���� failAndRollback(java.lang.String)
+  λ��: ����Ϊcom.zl.d17.conversation.RoleConversationService�ı��� roleConversationService
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[111,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+  ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+  �ҵ�:    com.zl.d17.dto.ChatRequest
+  ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[116,57] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+  ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+  �ҵ�:    com.zl.d17.dto.ChatRequest
+  ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[INFO] 15 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  18.895 s
+[INFO] Finished at: 2026-10-30T16:11:21+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:testCompile (default-testCompile) on project D17_DHSA_MTDCA: Compilation failure: Compilation failure: 
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[38,88] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+[ERROR]   ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+[ERROR]   �ҵ�:    com.zl.d17.dto.ChatRequest
+[ERROR]   ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[49,32] �Ҳ�������
+[ERROR]   ����:   ���� failAndRollback(java.lang.String)
+[ERROR]   λ��: ����Ϊcom.zl.d17.conversation.RoleConversationService�ı��� roleConversationService
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[55,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+[ERROR]   ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+[ERROR]   �ҵ�:    com.zl.d17.dto.ChatRequest
+[ERROR]   ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[57,32] �Ҳ�������
+[ERROR]   ����:   ���� completeAssistant(java.lang.String,java.lang.String)
+[ERROR]   λ��: ����Ϊcom.zl.d17.conversation.RoleConversationService�ı��� roleConversationService
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[60,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+[ERROR]   ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+[ERROR]   �ҵ�:    com.zl.d17.dto.ChatRequest
+[ERROR]   ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[67,32] �Ҳ�������
+[ERROR]   ����:   ���� failAndRollback(java.lang.String)
+[ERROR]   λ��: ����Ϊcom.zl.d17.conversation.RoleConversationService�ı��� roleConversationService
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[68,32] �Ҳ�������
+[ERROR]   ����:   ���� failAndRollback(java.lang.String)
+[ERROR]   λ��: ����Ϊcom.zl.d17.conversation.RoleConversationService�ı��� roleConversationService
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[75,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+[ERROR]   ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+[ERROR]   �ҵ�:    com.zl.d17.dto.ChatRequest
+[ERROR]   ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[79,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+[ERROR]   ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+[ERROR]   �ҵ�:    com.zl.d17.dto.ChatRequest
+[ERROR]   ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[89,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+[ERROR]   ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+[ERROR]   �ҵ�:    com.zl.d17.dto.ChatRequest
+[ERROR]   ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[95,44] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+[ERROR]   ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+[ERROR]   �ҵ�:    com.zl.d17.dto.ChatRequest
+[ERROR]   ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[106,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+[ERROR]   ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+[ERROR]   �ҵ�:    com.zl.d17.dto.ChatRequest
+[ERROR]   ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[109,32] �Ҳ�������
+[ERROR]   ����:   ���� failAndRollback(java.lang.String)
+[ERROR]   λ��: ����Ϊcom.zl.d17.conversation.RoleConversationService�ı��� roleConversationService
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[111,40] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+[ERROR]   ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+[ERROR]   �ҵ�:    com.zl.d17.dto.ChatRequest
+[ERROR]   ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/conversation/RoleConversationServiceTest.java:[116,57] �޷����� com.zl.d17.conversation.RoleConversationService�еķ��� prepareӦ�õ���������;
+[ERROR]   ��Ҫ: com.zl.d17.dto.ChatRequest,java.lang.String
+[ERROR]   �ҵ�:    com.zl.d17.dto.ChatRequest
+[ERROR]   ԭ��: ʵ�ʲ����б�����ʽ�����б����Ȳ�ͬ
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

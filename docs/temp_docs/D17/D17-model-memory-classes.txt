@@ -1,0 +1,7 @@
+org/springframework/ai/chat/memory/
+org/springframework/ai/chat/memory/MessageWindowChatMemory.class
+org/springframework/ai/chat/memory/MessageWindowChatMemory$Builder.class
+org/springframework/ai/chat/memory/ChatMemoryRepository.class
+org/springframework/ai/chat/memory/InMemoryChatMemoryRepository.class
+org/springframework/ai/chat/memory/package-info.class
+org/springframework/ai/chat/memory/ChatMemory.class

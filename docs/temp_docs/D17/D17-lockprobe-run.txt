@@ -1,0 +1,5 @@
+T1 got lock at 29ms, id=151
+T1 committed, lock released
+T2 lock query returned after wait=3003ms, id=151
+RESULT t2Blocked=true waitMillis=3003
+cleanup done

@@ -1,0 +1,5 @@
+_remote.repositories  238
+spring-ai-client-chat-1.1.8.jar  143127
+spring-ai-client-chat-1.1.8.jar.sha1  40
+spring-ai-client-chat-1.1.8.pom  4585
+spring-ai-client-chat-1.1.8.pom.sha1  40

@@ -1,0 +1,24 @@
+TABLE_NAME	COLUMN_NAME	COLUMN_TYPE	IS_NULLABLE	COLUMN_DEFAULT
+chat_message	id	bigint	NO	
+chat_message	session_id	varchar(64)	NO	
+chat_message	owner_id	varchar(64)	NO	
+chat_message	sequence_no	int	NO	
+chat_message	role	varchar(16)	NO	
+chat_message	content	text	NO	
+chat_message	status	varchar(16)	NO	
+chat_message	model_name	varchar(64)	NO	
+chat_message	error_code	varchar(32)	NO	
+chat_message	error_message	varchar(500)	NO	
+chat_message	created_at	datetime	NO	
+chat_message	updated_at	datetime	NO	
+chat_session	id	bigint	NO	
+chat_session	session_id	varchar(64)	NO	
+chat_session	owner_id	varchar(64)	NO	dev-user
+chat_session	scene	varchar(64)	NO	
+chat_session	title	varchar(200)	NO	
+chat_session	template_id	varchar(64)	NO	
+chat_session	template_version	int	NO	0
+chat_session	status	varchar(16)	NO	ACTIVE
+chat_session	created_at	datetime	NO	
+chat_session	updated_at	datetime	NO	
+chat_session	last_message_at	datetime	NO	

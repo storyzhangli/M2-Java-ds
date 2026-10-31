@@ -1,0 +1,34 @@
+===== org.springframework.ai.chat.memory.ChatMemory =====
+Compiled from "ChatMemory.java"
+public interface org.springframework.ai.chat.memory.ChatMemory {
+  public static final java.lang.String CONVERSATION_ID;
+  public default void add(java.lang.String, org.springframework.ai.chat.messages.Message);
+  public abstract void add(java.lang.String, java.util.List<org.springframework.ai.chat.messages.Message>);
+  public abstract java.util.List<org.springframework.ai.chat.messages.Message> get(java.lang.String);
+  public abstract void clear(java.lang.String);
+}
+===== org.springframework.ai.chat.memory.ChatMemoryRepository =====
+Compiled from "ChatMemoryRepository.java"
+public interface org.springframework.ai.chat.memory.ChatMemoryRepository {
+  public abstract java.util.List<java.lang.String> findConversationIds();
+  public abstract java.util.List<org.springframework.ai.chat.messages.Message> findByConversationId(java.lang.String);
+  public abstract void saveAll(java.lang.String, java.util.List<org.springframework.ai.chat.messages.Message>);
+  public abstract void deleteByConversationId(java.lang.String);
+}
+===== org.springframework.ai.chat.memory.MessageWindowChatMemory =====
+Compiled from "MessageWindowChatMemory.java"
+public final class org.springframework.ai.chat.memory.MessageWindowChatMemory implements org.springframework.ai.chat.memory.ChatMemory {
+  public void add(java.lang.String, java.util.List<org.springframework.ai.chat.messages.Message>);
+  public java.util.List<org.springframework.ai.chat.messages.Message> get(java.lang.String);
+  public void clear(java.lang.String);
+  public static org.springframework.ai.chat.memory.MessageWindowChatMemory$Builder builder();
+}
+===== org.springframework.ai.chat.memory.InMemoryChatMemoryRepository =====
+Compiled from "InMemoryChatMemoryRepository.java"
+public final class org.springframework.ai.chat.memory.InMemoryChatMemoryRepository implements org.springframework.ai.chat.memory.ChatMemoryRepository {
+  public org.springframework.ai.chat.memory.InMemoryChatMemoryRepository();
+  public java.util.List<java.lang.String> findConversationIds();
+  public java.util.List<org.springframework.ai.chat.messages.Message> findByConversationId(java.lang.String);
+  public void saveAll(java.lang.String, java.util.List<org.springframework.ai.chat.messages.Message>);
+  public void deleteByConversationId(java.lang.String);
+}

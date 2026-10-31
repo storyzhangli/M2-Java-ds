@@ -1,0 +1,38 @@
+event_time	thread_id	command_type	argument
+2026-10-30 17:41:14.388466	335	Query	/* mysql-connector-j-8.0.33 (Revision: 7d6b0800528b6b25c68b52dc10d6c1c8429c100c) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2026-10-30 17:41:14.389553	335	Query	SET character_set_results = NULL
+2026-10-30 17:41:14.390187	335	Query	SET autocommit=1
+2026-10-30 17:41:14.391120	335	Query	SELECT @@session.transaction_read_only
+2026-10-30 17:41:14.569880	339	Query	/* mysql-connector-j-8.0.33 (Revision: 7d6b0800528b6b25c68b52dc10d6c1c8429c100c) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2026-10-30 17:41:14.570767	339	Query	SET character_set_results = NULL
+2026-10-30 17:41:14.571125	339	Query	SET autocommit=1
+2026-10-30 17:41:14.571539	339	Query	SELECT @@session.transaction_read_only
+2026-10-30 17:41:15.672787	335	Query	SET autocommit=0
+2026-10-30 17:41:15.672831	339	Query	SET autocommit=0
+2026-10-30 17:41:15.684958	339	Query	SELECT  id,session_id,owner_id,scene,title,template_id,template_version,status,created_at,updated_at,last_message_at  FROM chat_session      WHERE  (session_id = '57dcb02d74594a99aee939a2a1acb2d1') LIMIT 1
+2026-10-30 17:41:15.685004	335	Query	SELECT  id,session_id,owner_id,scene,title,template_id,template_version,status,created_at,updated_at,last_message_at  FROM chat_session      WHERE  (session_id = '57dcb02d74594a99aee939a2a1acb2d1') LIMIT 1
+2026-10-30 17:41:15.695299	339	Query	SELECT id FROM chat_session WHERE session_id = '57dcb02d74594a99aee939a2a1acb2d1' FOR UPDATE
+2026-10-30 17:41:15.695303	335	Query	SELECT id FROM chat_session WHERE session_id = '57dcb02d74594a99aee939a2a1acb2d1' FOR UPDATE
+2026-10-30 17:41:15.697593	339	Query	SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = '57dcb02d74594a99aee939a2a1acb2d1'
+2026-10-30 17:41:15.700658	339	Query	SELECT @@session.transaction_read_only
+2026-10-30 17:41:15.701709	339	Query	INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  '57dcb02d74594a99aee939a2a1acb2d1', 'ut_conc', 3, 'user', '��������3', 'PENDING', '', '', '', '2026-10-30 17:41:15.698355', '2026-10-30 17:41:15.698355'  )
+2026-10-30 17:41:15.705196	339	Query	SELECT @@session.transaction_read_only
+2026-10-30 17:41:15.706206	339	Query	UPDATE chat_session  SET session_id='57dcb02d74594a99aee939a2a1acb2d1', owner_id='ut_conc', scene='', title='��������', template_id='', template_version=0, status='ACTIVE', created_at='2026-10-30 17:41:16', updated_at='2026-10-30 17:41:15.702495', last_message_at='2026-10-30 17:41:15.702495'  WHERE id=157
+2026-10-30 17:41:15.707939	339	Query	commit
+2026-10-30 17:41:15.714929	339	Query	SET autocommit=1
+2026-10-30 17:41:15.715723	335	Query	SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = '57dcb02d74594a99aee939a2a1acb2d1'
+2026-10-30 17:41:15.715943	339	Query	SET autocommit=0
+2026-10-30 17:41:15.717091	339	Query	SELECT id FROM chat_session WHERE session_id = '57dcb02d74594a99aee939a2a1acb2d1' FOR UPDATE
+2026-10-30 17:41:15.718809	335	Query	SELECT @@session.transaction_read_only
+2026-10-30 17:41:15.720076	335	Query	INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  '57dcb02d74594a99aee939a2a1acb2d1', 'ut_conc', 3, 'user', '��������4', 'PENDING', '', '', '', '2026-10-30 17:41:15.716272', '2026-10-30 17:41:15.716272'  )
+2026-10-30 17:41:15.932874	335	Query	rollback
+2026-10-30 17:41:15.937828	335	Query	SET autocommit=1
+2026-10-30 17:41:15.974126	339	Query	SELECT @@session.transaction_read_only
+2026-10-30 17:41:15.975021	339	Query	UPDATE chat_message  SET session_id='57dcb02d74594a99aee939a2a1acb2d1', owner_id='ut_conc', sequence_no=3, role='user', content='��������3', status='COMPLETED', model_name='', error_code='', error_message='', created_at='2026-10-30 17:41:15.698355', updated_at='2026-10-30 17:41:15.971982'  WHERE id=367
+2026-10-30 17:41:15.976795	339	Query	SELECT COALESCE(MAX(sequence_no), 0) FROM chat_message WHERE session_id = '57dcb02d74594a99aee939a2a1acb2d1'
+2026-10-30 17:41:15.979332	339	Query	SELECT @@session.transaction_read_only
+2026-10-30 17:41:15.980357	339	Query	INSERT INTO chat_message  ( session_id, owner_id, sequence_no, role, content, status, model_name, error_code, error_message, created_at, updated_at )  VALUES (  '57dcb02d74594a99aee939a2a1acb2d1', 'ut_conc', 4, 'assistant', '�����ش�3', 'COMPLETED', 'offline-mock', '', '', '2026-10-30 17:41:15.97757', '2026-10-30 17:41:15.97757'  )
+2026-10-30 17:41:15.983184	339	Query	SELECT @@session.transaction_read_only
+2026-10-30 17:41:15.984257	339	Query	UPDATE chat_session  SET session_id='57dcb02d74594a99aee939a2a1acb2d1', owner_id='ut_conc', scene='', title='��������', template_id='', template_version=0, status='ACTIVE', created_at='2026-10-30 17:41:16', updated_at='2026-10-30 17:41:15.980383', last_message_at='2026-10-30 17:41:15.980383'  WHERE id=157
+2026-10-30 17:41:15.985672	339	Query	commit
+2026-10-30 17:41:15.993401	339	Query	SET autocommit=1

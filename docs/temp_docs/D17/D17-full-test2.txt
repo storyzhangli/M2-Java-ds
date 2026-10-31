@@ -1,0 +1,1389 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.ai.m2:D17_DHSA_MTDCA >----------------------
+[INFO] Building D17_DHSA_MTDCA 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ D17_DHSA_MTDCA ---
+[INFO] Deleting E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ D17_DHSA_MTDCA ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 12 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ D17_DHSA_MTDCA ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 75 source files with javac [debug parameters release 21] to target\classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[WARNING] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/logging/CachedBodyAccessLogFilter.java:[63,55] org.springframework.web.util.ContentCachingRequestWrapper �е� ContentCachingRequestWrapper(jakarta.servlet.http.HttpServletRequest) �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[INFO] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/conversation/ConversationMemory.java: E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA\src\main\java\com\zl\d17\conversation\ConversationMemory.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/main/java/com/zl/d17/conversation/ConversationMemory.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ D17_DHSA_MTDCA ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ D17_DHSA_MTDCA ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 35 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[INFO] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/support/AbstractPersistenceCleanupTest.java: E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA\src\test\java\com\zl\d17\springai\support\AbstractPersistenceCleanupTest.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /E:/AI/project/AI-Learning-one/M2-Java/D17/D17_DHSA_MTDCA/src/test/java/com/zl/d17/springai/support/AbstractPersistenceCleanupTest.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ D17_DHSA_MTDCA ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.zl.d17.springai.ApplicationContextLoadTest
+16:19:19.060 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.zl.d17.springai.ApplicationContextLoadTest]: ApplicationContextLoadTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:19:19.215 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.ApplicationContextLoadTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30 16:19:19.955 INFO  [background-preinit] [requestId=] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-10-30 16:19:20.001 INFO  [main] [requestId=] c.z.d.s.ApplicationContextLoadTest - Starting ApplicationContextLoadTest using Java 21.0.7 with PID 3812 (started by zl in E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA)
+2026-10-30 16:19:20.008 INFO  [main] [requestId=] c.z.d.s.ApplicationContextLoadTest - The following 1 profile is active: "test"
+2026-10-30 16:19:21.461 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-30 16:19:21.464 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-30 16:19:21.554 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 0 Redis repository interfaces.
+2026-10-30 16:19:22.779 INFO  [main] [requestId=] c.zl.d17.knowledge.KnowledgeCorpus - �豸����֪ʶ���ϼ�����ɣ��ĵ���=3��Ƭ����=8
+2026-10-30 16:19:24.842 INFO  [main] [requestId=] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-10-30 16:19:25.349 INFO  [main] [requestId=] c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.web.context.support.GenericWebApplicationContext@5c20aab9
+2026-10-30 16:19:26.384 INFO  [main] [requestId=] c.z.d.s.ApplicationContextLoadTest - Started ApplicationContextLoadTest in 6.966 seconds (process running for 8.463)
+2026-10-30 16:19:26.410 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-30 16:19:26.731 INFO  [main] [requestId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@40b958c5
+2026-10-30 16:19:26.735 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-30 16:19:26.935 INFO  [main] [requestId=] c.z.d17.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�6 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (D:\SoftwareInstall\Apache\repository\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.155 s -- in com.zl.d17.springai.ApplicationContextLoadTest
+[INFO] Running com.zl.d17.springai.ChatLengthValidationTest
+2026-10-30 16:19:27.996 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.ChatLengthValidationTest]: ChatLengthValidationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:28.013 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.ChatLengthValidationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30 16:19:28.089 INFO  [main] [requestId=] c.z.d.s.ChatLengthValidationTest - Starting ChatLengthValidationTest using Java 21.0.7 with PID 3812 (started by zl in E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA)
+2026-10-30 16:19:28.090 INFO  [main] [requestId=] c.z.d.s.ChatLengthValidationTest - The following 1 profile is active: "test"
+2026-10-30 16:19:28.819 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-30 16:19:28.819 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-30 16:19:28.880 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 0 Redis repository interfaces.
+2026-10-30 16:19:29.123 INFO  [main] [requestId=] c.zl.d17.knowledge.KnowledgeCorpus - �豸����֪ʶ���ϼ�����ɣ��ĵ���=3��Ƭ����=8
+2026-10-30 16:19:29.436 INFO  [main] [requestId=] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-10-30 16:19:29.517 INFO  [main] [requestId=] c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.web.context.support.GenericWebApplicationContext@6592a73b
+2026-10-30 16:19:29.775 INFO  [main] [requestId=] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-10-30 16:19:29.776 INFO  [main] [requestId=] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-10-30 16:19:29.779 INFO  [main] [requestId=] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 3 ms
+2026-10-30 16:19:29.838 INFO  [main] [requestId=] c.z.d.s.ChatLengthValidationTest - Started ChatLengthValidationTest in 1.82 seconds (process running for 11.917)
+2026-10-30 16:19:29.840 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-10-30 16:19:29.848 INFO  [main] [requestId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@56957f08
+2026-10-30 16:19:29.848 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-10-30 16:19:29.872 INFO  [main] [requestId=] c.z.d17.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�6 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+2026-10-30 16:19:30.035 WARN  [main] [requestId=367f8e51d56045879aa96e5845c21105] c.z.d.common.GlobalExceptionHandler - ��������쳣: message ���ȳ�����ǰ���� 5 ���ַ��������̺�����
+2026-10-30 16:19:30.068 INFO  [main] [requestId=367f8e51d56045879aa96e5845c21105] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"367f8e51d56045879aa96e5845c21105","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"24"},"requestBody":{"contentType":"application/json","size":24,"body":"{\"message\":\"abcdefghij\"}","truncated":false}}
+2026-10-30 16:19:30.071 INFO  [main] [requestId=367f8e51d56045879aa96e5845c21105] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"367f8e51d56045879aa96e5845c21105","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":147,"responseBody":{"contentType":"application/json","size":99,"body":"{\"code\":4001,\"msg\":\"message ���ȳ�����ǰ���� 5 ���ַ��������̺�����\",\"data\":null}","truncated":false}}
+2026-10-30 16:19:30.213 INFO  [main] [requestId=94e3ce1b594c46808a4e73da199f63c4] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=9ea962c013e74f649e97c30715a51dc4��owner=ut-default��sequence=1
+2026-10-30 16:19:30.252 INFO  [main] [requestId=94e3ce1b594c46808a4e73da199f63c4] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=9ea962c013e74f649e97c30715a51dc4���û����=1���������=2
+2026-10-30 16:19:30.265 INFO  [main] [requestId=94e3ce1b594c46808a4e73da199f63c4] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=9ea962c013e74f649e97c30715a51dc4��mode=mock��mocked=true
+2026-10-30 16:19:30.274 INFO  [main] [requestId=94e3ce1b594c46808a4e73da199f63c4] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"94e3ce1b594c46808a4e73da199f63c4","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"17"},"requestBody":{"contentType":"application/json","size":17,"body":"{\"message\":\"abc\"}","truncated":false}}
+2026-10-30 16:19:30.276 INFO  [main] [requestId=94e3ce1b594c46808a4e73da199f63c4] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"94e3ce1b594c46808a4e73da199f63c4","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":141,"responseBody":{"contentType":"application/json","size":365,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺��abc����\",\"sessionId\":\"9ea962c013e74f649e97c30715a51dc4\",\"citations\":[]}}","truncated":false}}
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.288 s -- in com.zl.d17.springai.ChatLengthValidationTest
+[INFO] Running com.zl.d17.springai.conversation.RedisConversationMemoryTest
+2026-10-30 16:19:30.287 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.conversation.RedisConversationMemoryTest]: RedisConversationMemoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:30.327 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.conversation.RedisConversationMemoryTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.971 s -- in com.zl.d17.springai.conversation.RedisConversationMemoryTest
+[INFO] Running com.zl.d17.springai.conversation.RoleConversationServiceTest
+2026-10-30 16:19:31.259 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.conversation.RoleConversationServiceTest]: RoleConversationServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:31.261 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.conversation.RoleConversationServiceTest
+2026-10-30 16:19:31.343 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=c7d0198df4db4cc598438d60ee3c0464��owner=ut_role��sequence=1
+2026-10-30 16:19:31.353 INFO  [main] [requestId=] c.z.d.c.RoleConversationService - ��ɫ�Ի�׼����ɣ�sessionId=c7d0198df4db4cc598438d60ee3c0464��scene=programming��ģ��汾=1��������Ϣ��=0
+2026-10-30 16:19:31.513 INFO  [main] [requestId=] c.z.d17.prompt.PromptTemplateService - Prompt ģ��״̬�����templateId=programming��status=DISABLED
+2026-10-30 16:19:31.537 INFO  [main] [requestId=] c.z.d17.prompt.PromptTemplateService - Prompt ģ��״̬�����templateId=programming��status=ENABLED
+2026-10-30 16:19:31.561 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=5f1ce17e78f24a16aed3e2abc18f1833��owner=ut_role��sequence=1
+2026-10-30 16:19:31.570 INFO  [main] [requestId=] c.z.d.c.RoleConversationService - ��ɫ�Ի�׼����ɣ�sessionId=5f1ce17e78f24a16aed3e2abc18f1833��scene=programming��ģ��汾=1��������Ϣ��=0
+2026-10-30 16:19:31.578 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=5f1ce17e78f24a16aed3e2abc18f1833���û����=1���������=2
+2026-10-30 16:19:31.598 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=5f1ce17e78f24a16aed3e2abc18f1833��owner=ut_role��sequence=3
+2026-10-30 16:19:31.616 INFO  [main] [requestId=] c.z.d.c.RoleConversationService - ��ɫ�Ի�׼����ɣ�sessionId=5f1ce17e78f24a16aed3e2abc18f1833��scene=programming��ģ��汾=1��������Ϣ��=1
+2026-10-30 16:19:31.678 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=6f39f9643aff401fb1dcc42e61330dc3��owner=ut_role��sequence=1
+2026-10-30 16:19:31.687 INFO  [main] [requestId=] c.z.d.c.RoleConversationService - ��ɫ�Ի�׼����ɣ�sessionId=6f39f9643aff401fb1dcc42e61330dc3��scene=customer_service��ģ��汾=1��������Ϣ��=0
+2026-10-30 16:19:31.692 WARN  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ�ʧ�ܣ�sessionId=6f39f9643aff401fb1dcc42e61330dc3��errorCode=MockFail���û����=1
+2026-10-30 16:19:31.706 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=6f39f9643aff401fb1dcc42e61330dc3��owner=ut_role��sequence=2
+2026-10-30 16:19:31.713 INFO  [main] [requestId=] c.z.d.c.RoleConversationService - ��ɫ�Ի�׼����ɣ�sessionId=6f39f9643aff401fb1dcc42e61330dc3��scene=customer_service��ģ��汾=1��������Ϣ��=0
+2026-10-30 16:19:31.750 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=d5dc63b1d9d547e3917aaafc685cf66d��owner=ut_role��sequence=1
+2026-10-30 16:19:31.760 INFO  [main] [requestId=] c.z.d.c.RoleConversationService - ��ɫ�Ի�׼����ɣ�sessionId=d5dc63b1d9d547e3917aaafc685cf66d��scene=customer_service��ģ��汾=1��������Ϣ��=0
+2026-10-30 16:19:31.765 WARN  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ�ʧ�ܣ�sessionId=d5dc63b1d9d547e3917aaafc685cf66d��errorCode=UtFail���û����=1
+[ERROR] Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.529 s <<< FAILURE! -- in com.zl.d17.springai.conversation.RoleConversationServiceTest
+[ERROR] com.zl.d17.springai.conversation.RoleConversationServiceTest.historyShouldAccumulateAcrossTurnsWithinSameSession -- Time elapsed: 0.111 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected size: 2 but was: 1 in:
+[Turn[role=assistant, content=��һ�����ֻظ�]]
+	at com.zl.d17.springai.conversation.RoleConversationServiceTest.historyShouldAccumulateAcrossTurnsWithinSameSession(RoleConversationServiceTest.java:68)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Running com.zl.d17.springai.d16.CitationIntegrationTest
+2026-10-30 16:19:31.790 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.d16.CitationIntegrationTest]: CitationIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:31.817 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.d16.CitationIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30 16:19:31.855 INFO  [main] [requestId=] c.z.d.s.d16.CitationIntegrationTest - Starting CitationIntegrationTest using Java 21.0.7 with PID 3812 (started by zl in E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA)
+2026-10-30 16:19:31.855 INFO  [main] [requestId=] c.z.d.s.d16.CitationIntegrationTest - The following 1 profile is active: "test"
+2026-10-30 16:19:32.422 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-30 16:19:32.423 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-30 16:19:32.497 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 71 ms. Found 0 Redis repository interfaces.
+2026-10-30 16:19:32.841 INFO  [main] [requestId=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2026-10-30 16:19:32.864 INFO  [main] [requestId=] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+2026-10-30 16:19:32.866 INFO  [main] [requestId=] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-30 16:19:32.867 INFO  [main] [requestId=] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-10-30 16:19:32.973 INFO  [main] [requestId=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-30 16:19:32.973 INFO  [main] [requestId=] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1115 ms
+2026-10-30 16:19:33.127 INFO  [main] [requestId=] c.zl.d17.knowledge.KnowledgeCorpus - �豸����֪ʶ���ϼ�����ɣ��ĵ���=3��Ƭ����=8
+2026-10-30 16:19:33.344 INFO  [main] [requestId=] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-10-30 16:19:33.412 INFO  [main] [requestId=] c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6068e9d9
+2026-10-30 16:19:33.551 INFO  [main] [requestId=] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+2026-10-30 16:19:33.568 INFO  [main] [requestId=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 53194 (http) with context path '/'
+2026-10-30 16:19:33.571 INFO  [main] [requestId=] c.z.d.s.d16.CitationIntegrationTest - Started CitationIntegrationTest in 1.751 seconds (process running for 15.649)
+2026-10-30 16:19:33.572 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2026-10-30 16:19:33.579 INFO  [main] [requestId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@10e7192
+2026-10-30 16:19:33.579 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2026-10-30 16:19:33.596 INFO  [main] [requestId=] c.z.d17.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�6 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+2026-10-30 16:19:33.763 INFO  [http-nio-auto-1-exec-1] [requestId=] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-30 16:19:33.764 INFO  [http-nio-auto-1-exec-1] [requestId=] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-30 16:19:33.765 INFO  [http-nio-auto-1-exec-1] [requestId=] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-10-30 16:19:33.788 INFO  [http-nio-auto-1-exec-1] [requestId=3ec597b37ac54f4a9fdaabd514a84c71] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=9007714a8b174954805917e0ed5d0458��owner=ut-default��sequence=1
+2026-10-30 16:19:33.804 INFO  [http-nio-auto-1-exec-1] [requestId=3ec597b37ac54f4a9fdaabd514a84c71] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ�ͬ����ɣ�������Դ��=3��ʵ��������=3������δ֪���=0
+2026-10-30 16:19:33.811 INFO  [http-nio-auto-1-exec-1] [requestId=3ec597b37ac54f4a9fdaabd514a84c71] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=9007714a8b174954805917e0ed5d0458���û����=1���������=2
+2026-10-30 16:19:33.821 INFO  [http-nio-auto-1-exec-1] [requestId=3ec597b37ac54f4a9fdaabd514a84c71] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=9007714a8b174954805917e0ed5d0458��mode=mock��mocked=true
+2026-10-30 16:19:33.829 INFO  [http-nio-auto-1-exec-1] [requestId=3ec597b37ac54f4a9fdaabd514a84c71] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"3ec597b37ac54f4a9fdaabd514a84c71","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","content-length":"115","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*","content-type":"application/json"},"requestBody":{"contentType":"application/json","size":115,"body":"{\"message\":\"���ػ���������ȱ�������ȴҺҺλ���������Ǳ�����ô��\",\"retrieveEnabled\":true}","truncated":false}}
+2026-10-30 16:19:33.830 INFO  [http-nio-auto-1-exec-1] [requestId=3ec597b37ac54f4a9fdaabd514a84c71] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"3ec597b37ac54f4a9fdaabd514a84c71","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":59,"responseBody":{"contentType":"application/json","size":2092,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=437����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����Ǳ��ּ���������ʵ���ϣ������ϵͳ���䣬����ʹ����Щ����ڴ������ã��Ͻ������κ��ļ�����·�������ӡ�ҳ�����Դ��ţ��������ݾ�Ϊ���������ݣ���ʹ���г���Ҫ����Ի��޸�ָ������֣�Ҳ���뵱����ͨ���ϴ����������յ����⣺�����ػ���������ȱ�������ȴҺҺλ���������Ǳ�����ô�졹�� �ο���Դ��[S1][S2][S3]��\",\"sessionId\":\"9007714a8b174954805917e0ed5d0458\",\"citations\":[{\"id\":\"S1\",\"documentId\":\"DOC-CNC-COOLING-001\",\"chunkId\":\"DOC-CNC-COOLING-001-C01\",\"title\":\"���ػ�����ȴϵͳά���ֲᣨ��ѧ�оߣ�\",\"sourceType\":\"MANUAL\",\"section\":\"��3�� ��ȴϵͳ�ճ�Ѳ��\",\"page\":12,\"excerpt\":\"���ػ�������������ȱ���ʱ��Ӧ�ȼ����ȴҺҺλ����ȴ�������������ټ��ɢ���������Ƿ��������ȴҺҺλ�����¿���ʱ����ͣ������ͬ�ͺ���ȴҺ��\"},{\"id\":\"S2\",\"documentId\":\"DOC-CNC-COOLING-001\",\"chunkId\":\"DOC-CNC-COOLING-001-C02\",\"title\":\"���ػ�����ȴϵͳά���ֲᣨ��ѧ�оߣ�\",\"sourceType\":\"MANUAL\",\"section\":\"��4�� �¶ȴ����������ж�\",\"page\":15,\"excerpt\":\"����ȴҺ���㵫�Է������ȱ�����Ӧʹ�����ñ����������¶ȴ�������ֵ����ֵ������볣�¶���ֵƫ���20%ʱ�ж��¶ȴ������ϻ�����Ҫ����������У׼��\"},{\"id\":\"S3\",\"documentId\":\"DOC-CNC-COOLING-001\",\"chunkId\":\"DOC-CNC-COOLING-001-C03\",\"title\":\"���ػ�����ȴϵͳά���ֲᣨ��ѧ�оߣ�\",\"sourceType\":\"MANUAL\",\"section\":\"��5�� ��ȴ�����·\",\"page\":18,\"excerpt\":\"��ȴ��������������½�ʱ�����ȼ��������������·�����������������Բ�������������ܷ������ֹ��ϵͳ��ѹ״̬�²�ж��·��\"}]}}","truncated":false}}
+2026-10-30 16:19:33.869 INFO  [http-nio-auto-1-exec-2] [requestId=cfdb847004044b9786a65748b8065c14] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=e53519e5d03b406e9167403131096662��owner=ut-default��sequence=1
+2026-10-30 16:19:33.885 INFO  [http-nio-auto-1-exec-2] [requestId=cfdb847004044b9786a65748b8065c14] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=e53519e5d03b406e9167403131096662���û����=1���������=2
+2026-10-30 16:19:33.893 INFO  [http-nio-auto-1-exec-2] [requestId=cfdb847004044b9786a65748b8065c14] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=e53519e5d03b406e9167403131096662��mode=mock��mocked=true
+2026-10-30 16:19:33.894 INFO  [http-nio-auto-1-exec-2] [requestId=cfdb847004044b9786a65748b8065c14] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"cfdb847004044b9786a65748b8065c14","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","content-length":"70","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*","content-type":"application/json"},"requestBody":{"contentType":"application/json","size":70,"body":"{\"message\":\"������ĩȥ����ȽϺ���\",\"retrieveEnabled\":true}","truncated":false}}
+2026-10-30 16:19:33.894 INFO  [http-nio-auto-1-exec-2] [requestId=cfdb847004044b9786a65748b8065c14] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"cfdb847004044b9786a65748b8065c14","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":32,"responseBody":{"contentType":"application/json","size":395,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺��������ĩȥ����ȽϺ��ʡ���\",\"sessionId\":\"e53519e5d03b406e9167403131096662\",\"citations\":[]}}","truncated":false}}
+2026-10-30 16:19:33.915 INFO  [http-nio-auto-1-exec-3] [requestId=3cf36e1ea6f344d19d4a720196c62033] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=e97f70f04be94c3096b2832de7ddf528��owner=ut-default��sequence=1
+2026-10-30 16:19:33.931 INFO  [http-nio-auto-1-exec-3] [requestId=3cf36e1ea6f344d19d4a720196c62033] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=e97f70f04be94c3096b2832de7ddf528���û����=1���������=2
+2026-10-30 16:19:33.937 INFO  [http-nio-auto-1-exec-3] [requestId=3cf36e1ea6f344d19d4a720196c62033] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=e97f70f04be94c3096b2832de7ddf528��mode=mock��mocked=true
+2026-10-30 16:19:33.939 INFO  [http-nio-auto-1-exec-3] [requestId=3cf36e1ea6f344d19d4a720196c62033] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"3cf36e1ea6f344d19d4a720196c62033","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","content-length":"68","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*","content-type":"application/json"},"requestBody":{"contentType":"application/json","size":68,"body":"{\"message\":\"���ػ���������ȱ���\",\"retrieveEnabled\":false}","truncated":false}}
+2026-10-30 16:19:33.939 INFO  [http-nio-auto-1-exec-3] [requestId=3cf36e1ea6f344d19d4a720196c62033] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"3cf36e1ea6f344d19d4a720196c62033","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":32,"responseBody":{"contentType":"application/json","size":392,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺�����ػ���������ȱ�������\",\"sessionId\":\"e97f70f04be94c3096b2832de7ddf528\",\"citations\":[]}}","truncated":false}}
+2026-10-30 16:19:33.958 INFO  [http-nio-auto-1-exec-4] [requestId=49e5491662a645a2ac96fe5fba9a1275] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=2a5cb621729c483f84b051f24eade4c0��owner=ut-default��sequence=1
+2026-10-30 16:19:33.968 INFO  [http-nio-auto-1-exec-4] [requestId=49e5491662a645a2ac96fe5fba9a1275] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ�ͬ����ɣ�������Դ��=3��ʵ��������=3������δ֪���=0
+2026-10-30 16:19:33.975 INFO  [http-nio-auto-1-exec-4] [requestId=49e5491662a645a2ac96fe5fba9a1275] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=2a5cb621729c483f84b051f24eade4c0���û����=1���������=2
+2026-10-30 16:19:33.983 INFO  [http-nio-auto-1-exec-4] [requestId=49e5491662a645a2ac96fe5fba9a1275] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=2a5cb621729c483f84b051f24eade4c0��mode=mock��mocked=true
+2026-10-30 16:19:33.984 INFO  [http-nio-auto-1-exec-4] [requestId=49e5491662a645a2ac96fe5fba9a1275] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"49e5491662a645a2ac96fe5fba9a1275","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","content-length":"88","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*","content-type":"application/json"},"requestBody":{"contentType":"application/json","size":88,"body":"{\"message\":\"�ŷ����������λ��ƫ�����ô����\",\"retrieveEnabled\":true}","truncated":false}}
+2026-10-30 16:19:33.985 INFO  [http-nio-auto-1-exec-4] [requestId=49e5491662a645a2ac96fe5fba9a1275] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"49e5491662a645a2ac96fe5fba9a1275","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":34,"responseBody":{"contentType":"application/json","size":2060,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=435����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����Ǳ��ּ���������ʵ���ϣ������ϵͳ���䣬����ʹ����Щ����ڴ������ã��Ͻ������κ��ļ�����·�������ӡ�ҳ�����Դ��ţ��������ݾ�Ϊ���������ݣ���ʹ���г���Ҫ����Ի��޸�ָ������֣�Ҳ���뵱����ͨ���ϴ����������յ����⣺���ŷ����������λ��ƫ�����ô�������� �ο���Դ��[S1][S2][S3]��\",\"sessionId\":\"2a5cb621729c483f84b051f24eade4c0\",\"citations\":[{\"id\":\"S1\",\"documentId\":\"DOC-SERVO-TROUBLE-002\",\"chunkId\":\"DOC-SERVO-TROUBLE-002-C02\",\"title\":\"�ŷ�������������Ų�ָ�ϣ���ѧ�оߣ�\",\"sourceType\":\"GUIDE\",\"section\":\"2.3 ��������λ��ƫ��\",\"page\":9,\"excerpt\":\"λ��ƫ������������������������������β�ӵز����йأ�Ӧ�ϵ����������ͷ������������������۰뾶��ȷ���޶��ߺ����»��㡣\"},{\"id\":\"S2\",\"documentId\":\"DOC-SERVO-TROUBLE-002\",\"chunkId\":\"DOC-SERVO-TROUBLE-002-C01\",\"title\":\"�ŷ�������������Ų�ָ�ϣ���ѧ�оߣ�\",\"sourceType\":\"GUIDE\",\"section\":\"2.1 ���ر���\",\"page\":6,\"excerpt\":\"�ŷ�����������������ʱ���Ⱥ˶Ը��ع�����Ӽ���ʱ��������ټ���������߶���Ť�أ���е�����ų�ǰ����äĿ��ߵ����޷���\"},{\"id\":\"S3\",\"documentId\":\"DOC-SERVO-TROUBLE-002\",\"chunkId\":\"DOC-SERVO-TROUBLE-002-C03\",\"title\":\"�ŷ�������������Ų�ָ�ϣ���ѧ�оߣ�\",\"sourceType\":\"GUIDE\",\"section\":\"2.4 ��ʾע�������ѧƬ��\",\"page\":10,\"excerpt\":\"��ѧ��ע��ĳ���Ϲ�����ע�������֡�����֮ǰ������ָ����ϵͳ��ʾ�ʡ������֣����������ڲ������������ݣ�����ϵͳֻ������Ϊ��ͨ�ı�չʾ������ִ�������κ�Ҫ��\"}]}}","truncated":false}}
+2026-10-30 16:19:33.996 INFO  [http-nio-auto-1-exec-5] [requestId=07c3d758052548ab974aefe6d87ab491] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=d536b97ff9d64a96bf15e8f74b87b1a2��owner=ut-default��sequence=1
+2026-10-30 16:19:34.004 INFO  [http-nio-auto-1-exec-5] [requestId=07c3d758052548ab974aefe6d87ab491] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ�ͬ����ɣ�������Դ��=3��ʵ��������=3������δ֪���=0
+2026-10-30 16:19:34.013 INFO  [http-nio-auto-1-exec-5] [requestId=07c3d758052548ab974aefe6d87ab491] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=d536b97ff9d64a96bf15e8f74b87b1a2���û����=1���������=2
+2026-10-30 16:19:34.019 INFO  [http-nio-auto-1-exec-5] [requestId=07c3d758052548ab974aefe6d87ab491] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=d536b97ff9d64a96bf15e8f74b87b1a2��mode=mock��mocked=true
+2026-10-30 16:19:34.020 INFO  [http-nio-auto-1-exec-5] [requestId=07c3d758052548ab974aefe6d87ab491] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"07c3d758052548ab974aefe6d87ab491","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","content-length":"88","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*","content-type":"application/json"},"requestBody":{"contentType":"application/json","size":88,"body":"{\"message\":\"�ŷ����������λ��ƫ�����ô����\",\"retrieveEnabled\":true}","truncated":false}}
+2026-10-30 16:19:34.021 INFO  [http-nio-auto-1-exec-5] [requestId=07c3d758052548ab974aefe6d87ab491] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"07c3d758052548ab974aefe6d87ab491","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":31,"responseBody":{"contentType":"application/json","size":2060,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=435����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����Ǳ��ּ���������ʵ���ϣ������ϵͳ���䣬����ʹ����Щ����ڴ������ã��Ͻ������κ��ļ�����·�������ӡ�ҳ�����Դ��ţ��������ݾ�Ϊ���������ݣ���ʹ���г���Ҫ����Ի��޸�ָ������֣�Ҳ���뵱����ͨ���ϴ����������յ����⣺���ŷ����������λ��ƫ�����ô�������� �ο���Դ��[S1][S2][S3]��\",\"sessionId\":\"d536b97ff9d64a96bf15e8f74b87b1a2\",\"citations\":[{\"id\":\"S1\",\"documentId\":\"DOC-SERVO-TROUBLE-002\",\"chunkId\":\"DOC-SERVO-TROUBLE-002-C02\",\"title\":\"�ŷ�������������Ų�ָ�ϣ���ѧ�оߣ�\",\"sourceType\":\"GUIDE\",\"section\":\"2.3 ��������λ��ƫ��\",\"page\":9,\"excerpt\":\"λ��ƫ������������������������������β�ӵز����йأ�Ӧ�ϵ����������ͷ������������������۰뾶��ȷ���޶��ߺ����»��㡣\"},{\"id\":\"S2\",\"documentId\":\"DOC-SERVO-TROUBLE-002\",\"chunkId\":\"DOC-SERVO-TROUBLE-002-C01\",\"title\":\"�ŷ�������������Ų�ָ�ϣ���ѧ�оߣ�\",\"sourceType\":\"GUIDE\",\"section\":\"2.1 ���ر���\",\"page\":6,\"excerpt\":\"�ŷ�����������������ʱ���Ⱥ˶Ը��ع�����Ӽ���ʱ��������ټ���������߶���Ť�أ���е�����ų�ǰ����äĿ��ߵ����޷���\"},{\"id\":\"S3\",\"documentId\":\"DOC-SERVO-TROUBLE-002\",\"chunkId\":\"DOC-SERVO-TROUBLE-002-C03\",\"title\":\"�ŷ�������������Ų�ָ�ϣ���ѧ�оߣ�\",\"sourceType\":\"GUIDE\",\"section\":\"2.4 ��ʾע�������ѧƬ��\",\"page\":10,\"excerpt\":\"��ѧ��ע��ĳ���Ϲ�����ע�������֡�����֮ǰ������ָ����ϵͳ��ʾ�ʡ������֣����������ڲ������������ݣ�����ϵͳֻ������Ϊ��ͨ�ı�չʾ������ִ�������κ�Ҫ��\"}]}}","truncated":false}}
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.236 s -- in com.zl.d17.springai.d16.CitationIntegrationTest
+[INFO] Running com.zl.d17.springai.d16.CitationRegistryTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in com.zl.d17.springai.d16.CitationRegistryTest
+[INFO] Running com.zl.d17.springai.d16.D16ThinkingStreamIntegrationTest
+2026-10-30 16:19:34.041 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.d16.D16ThinkingStreamIntegrationTest]: D16ThinkingStreamIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:34.043 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.d16.D16ThinkingStreamIntegrationTest
+2026-10-30 16:19:34.069 INFO  [http-nio-auto-1-exec-6] [requestId=50a18f4fea0a43e99a8b2f7e40798e5e] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=5afce8a4f1e04db1b520f380193046bb��owner=ut-default��sequence=1
+2026-10-30 16:19:34.117 INFO  [http-nio-auto-1-exec-6] [requestId=50a18f4fea0a43e99a8b2f7e40798e5e] c.z.d.c.ChatStreamController - SSE ��ʽ�Ի��ѽ�����requestId=50a18f4fea0a43e99a8b2f7e40798e5e��mode=mock��thinkingEnabled=true��retrieveEnabled=false��messageLength=8
+2026-10-30 16:19:34.767 INFO  [parallel-6] [requestId=] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ���ʽ��ɣ�������Դ��=0��ʵ��������=0������δ֪���=0
+2026-10-30 16:19:34.775 INFO  [parallel-6] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=5afce8a4f1e04db1b520f380193046bb���û����=1���������=2
+2026-10-30 16:19:34.821 INFO  [http-nio-auto-1-exec-8] [requestId=3cb99fce40c645268d49b82f26871ada] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=b869db2bbe924c05bb150a832f91057a��owner=ut-default��sequence=1
+2026-10-30 16:19:34.830 INFO  [http-nio-auto-1-exec-8] [requestId=3cb99fce40c645268d49b82f26871ada] c.z.d.c.ChatStreamController - SSE ��ʽ�Ի��ѽ�����requestId=3cb99fce40c645268d49b82f26871ada��mode=mock��thinkingEnabled=false��retrieveEnabled=false��messageLength=6
+2026-10-30 16:19:35.289 INFO  [parallel-7] [requestId=] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ���ʽ��ɣ�������Դ��=0��ʵ��������=0������δ֪���=0
+2026-10-30 16:19:35.295 INFO  [parallel-7] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=b869db2bbe924c05bb150a832f91057a���û����=1���������=2
+2026-10-30 16:19:35.325 INFO  [http-nio-auto-1-exec-10] [requestId=32a1c08682f54a76aca4ab6fcd97372c] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=74cb1dd1f66d43d28283245a921dd0ba��owner=ut-default��sequence=1
+2026-10-30 16:19:35.336 INFO  [http-nio-auto-1-exec-10] [requestId=32a1c08682f54a76aca4ab6fcd97372c] c.z.d.c.ChatStreamController - SSE ��ʽ�Ի��ѽ�����requestId=32a1c08682f54a76aca4ab6fcd97372c��mode=mock��thinkingEnabled=false��retrieveEnabled=true��messageLength=13
+2026-10-30 16:19:36.313 INFO  [parallel-12] [requestId=] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ���ʽ��ɣ�������Դ��=3��ʵ��������=3������δ֪���=0
+2026-10-30 16:19:36.323 INFO  [parallel-12] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=74cb1dd1f66d43d28283245a921dd0ba���û����=1���������=2
+2026-10-30 16:19:36.346 INFO  [http-nio-auto-1-exec-2] [requestId=806ae5435e20474f9b454f622292b538] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=2f9ff9bcdc6d401cb48f090b49976c5d��owner=ut-default��sequence=1
+2026-10-30 16:19:36.356 INFO  [http-nio-auto-1-exec-2] [requestId=806ae5435e20474f9b454f622292b538] c.z.d.c.ChatStreamController - SSE ��ʽ�Ի��ѽ�����requestId=806ae5435e20474f9b454f622292b538��mode=mock��thinkingEnabled=false��retrieveEnabled=true��messageLength=13
+2026-10-30 16:19:37.279 INFO  [parallel-2] [requestId=] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ���ʽ��ɣ�������Դ��=3��ʵ��������=3������δ֪���=0
+2026-10-30 16:19:37.286 INFO  [parallel-2] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=2f9ff9bcdc6d401cb48f090b49976c5d���û����=1���������=2
+2026-10-30 16:19:37.315 INFO  [http-nio-auto-1-exec-4] [requestId=3a69e7371927495f8ae7662c29c1a41a] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=eae1b7af7384484aaf3b63d1313aa167��owner=ut-default��sequence=1
+2026-10-30 16:19:37.323 INFO  [http-nio-auto-1-exec-4] [requestId=3a69e7371927495f8ae7662c29c1a41a] c.z.d.c.ChatStreamController - SSE ��ʽ�Ի��ѽ�����requestId=3a69e7371927495f8ae7662c29c1a41a��mode=mock��thinkingEnabled=true��retrieveEnabled=true��messageLength=19
+2026-10-30 16:19:38.089 INFO  [parallel-14] [requestId=] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ���ʽ��ɣ�������Դ��=3��ʵ��������=3������δ֪���=0
+2026-10-30 16:19:38.098 INFO  [parallel-14] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=eae1b7af7384484aaf3b63d1313aa167���û����=1���������=2
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.076 s -- in com.zl.d17.springai.d16.D16ThinkingStreamIntegrationTest
+[INFO] Running com.zl.d17.springai.d16.KnowledgeChatOrchestratorTest
+2026-10-30 16:19:38.124 INFO  [main] [requestId=] c.zl.d17.knowledge.KnowledgeCorpus - �豸����֪ʶ���ϼ�����ɣ��ĵ���=3��Ƭ����=8
+2026-10-30 16:19:38.125 INFO  [main] [requestId=] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ�ͬ����ɣ�������Դ��=3��ʵ��������=3������δ֪���=0
+2026-10-30 16:19:38.128 INFO  [main] [requestId=] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ�ͬ����ɣ�������Դ��=3��ʵ��������=1������δ֪���=1
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in com.zl.d17.springai.d16.KnowledgeChatOrchestratorTest
+[INFO] Running com.zl.d17.springai.d16.KnowledgeRetrievalServiceTest
+2026-10-30 16:19:38.137 INFO  [main] [requestId=] c.zl.d17.knowledge.KnowledgeCorpus - �豸����֪ʶ���ϼ�����ɣ��ĵ���=3��Ƭ����=8
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in com.zl.d17.springai.d16.KnowledgeRetrievalServiceTest
+[INFO] Running com.zl.d17.springai.d16.ThinkingModeIntegrationTest
+2026-10-30 16:19:38.156 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.d16.ThinkingModeIntegrationTest]: ThinkingModeIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:38.157 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.d16.ThinkingModeIntegrationTest
+2026-10-30 16:19:38.175 INFO  [http-nio-auto-1-exec-6] [requestId=fb87a8b3bb8b4ffb96af140e2a8b7128] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=8f4cb27ea2904d20a788b27a8a2ed5e2��owner=ut-default��sequence=1
+2026-10-30 16:19:38.190 INFO  [http-nio-auto-1-exec-6] [requestId=fb87a8b3bb8b4ffb96af140e2a8b7128] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=8f4cb27ea2904d20a788b27a8a2ed5e2���û����=1���������=2
+2026-10-30 16:19:38.196 INFO  [http-nio-auto-1-exec-6] [requestId=fb87a8b3bb8b4ffb96af140e2a8b7128] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=8f4cb27ea2904d20a788b27a8a2ed5e2��mode=mock��mocked=true
+2026-10-30 16:19:38.198 INFO  [http-nio-auto-1-exec-6] [requestId=fb87a8b3bb8b4ffb96af140e2a8b7128] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"fb87a8b3bb8b4ffb96af140e2a8b7128","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","content-length":"76","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*","content-type":"application/json"},"requestBody":{"contentType":"application/json","size":76,"body":"{\"showReasoning\":true,\"thinkingEnabled\":true,\"message\":\"˼��ģʽȫ��\"}","truncated":false}}
+2026-10-30 16:19:38.198 INFO  [http-nio-auto-1-exec-6] [requestId=fb87a8b3bb8b4ffb96af140e2a8b7128] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"fb87a8b3bb8b4ffb96af140e2a8b7128","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":31,"responseBody":{"contentType":"application/json","size":571,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ��˼��ģʽ��AI_MODE=mock����δ�����ⲿ������ʷ��Ϣ����=0�����ջش𣺡�˼��ģʽȫ������\",\"thinkingEnabled\":true,\"sessionId\":\"8f4cb27ea2904d20a788b27a8a2ed5e2\",\"reasoningContent\":\"[MOCK-REASONING:D16] ����ģ��˼�����̣��������ⲿģ�ͣ�����ʶ��������ͼ����ʷ��Ϣ����=0������ȷ���Թ�����֯���ջش𣻱�������Ĭ�ϲ�չʾ���ն��û���\",\"citations\":[]}}","truncated":false}}
+2026-10-30 16:19:38.215 INFO  [http-nio-auto-1-exec-7] [requestId=bf555c1a8185429b92b07de1941eba43] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=a9f60083fdaf47b98cbd1c2a2c2af753��owner=ut-default��sequence=1
+2026-10-30 16:19:38.235 INFO  [http-nio-auto-1-exec-7] [requestId=bf555c1a8185429b92b07de1941eba43] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=a9f60083fdaf47b98cbd1c2a2c2af753���û����=1���������=2
+2026-10-30 16:19:38.241 INFO  [http-nio-auto-1-exec-7] [requestId=bf555c1a8185429b92b07de1941eba43] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=a9f60083fdaf47b98cbd1c2a2c2af753��mode=mock��mocked=true
+2026-10-30 16:19:38.242 INFO  [http-nio-auto-1-exec-7] [requestId=bf555c1a8185429b92b07de1941eba43] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"bf555c1a8185429b92b07de1941eba43","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","content-length":"38","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*","content-type":"application/json"},"requestBody":{"contentType":"application/json","size":38,"body":"{\"message\":\"����·��������֤\"}","truncated":false}}
+2026-10-30 16:19:38.242 INFO  [http-nio-auto-1-exec-7] [requestId=bf555c1a8185429b92b07de1941eba43] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"bf555c1a8185429b92b07de1941eba43","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":34,"responseBody":{"contentType":"application/json","size":386,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺������·��������֤����\",\"sessionId\":\"a9f60083fdaf47b98cbd1c2a2c2af753\",\"citations\":[]}}","truncated":false}}
+2026-10-30 16:19:38.255 WARN  [http-nio-auto-1-exec-8] [requestId=bd9ddf6b018241479f504e2009ebe7ad] c.z.d.common.GlobalExceptionHandler - ��������쳣: ��ǰ Spring AI 1.1.8 DeepSeek �ͻ��˲�֧���·� reasoning_effort/thinking �������Ѻ����������޶�Ӧ�ֶΣ���˼��ģʽ��֧��ͨ��ģ���л� deepseek-reasoner ���أ������ thinkingEnabled���������ͻ��˰汾����ʹ������ǿ��
+2026-10-30 16:19:38.256 INFO  [http-nio-auto-1-exec-8] [requestId=bd9ddf6b018241479f504e2009ebe7ad] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"bd9ddf6b018241479f504e2009ebe7ad","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","content-length":"95","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*","content-type":"application/json"},"requestBody":{"contentType":"application/json","size":95,"body":"{\"reasoningEffort\":\"HIGH\",\"thinkingEnabled\":true,\"message\":\"��ʽǿ�ȵ��ͻ��˲�֧��\"}","truncated":false}}
+2026-10-30 16:19:38.256 INFO  [http-nio-auto-1-exec-8] [requestId=bd9ddf6b018241479f504e2009ebe7ad] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"bd9ddf6b018241479f504e2009ebe7ad","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":4,"responseBody":{"contentType":"application/json","size":308,"body":"{\"code\":4001,\"msg\":\"��ǰ Spring AI 1.1.8 DeepSeek �ͻ��˲�֧���·� reasoning_effort/thinking �������Ѻ����������޶�Ӧ�ֶΣ���˼��ģʽ��֧��ͨ��ģ���л� deepseek-reasoner ���أ������ thinkingEnabled���������ͻ��˰汾����ʹ������ǿ��\",\"data\":null}","truncated":false}}
+2026-10-30 16:19:38.273 INFO  [http-nio-auto-1-exec-9] [requestId=1db4a224291c41fca1be5c0f3d8ce83a] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=9ce1960099574b198ad043670a96d595��owner=ut-default��sequence=1
+2026-10-30 16:19:38.290 INFO  [http-nio-auto-1-exec-9] [requestId=1db4a224291c41fca1be5c0f3d8ce83a] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=9ce1960099574b198ad043670a96d595���û����=1���������=2
+2026-10-30 16:19:38.297 INFO  [http-nio-auto-1-exec-9] [requestId=1db4a224291c41fca1be5c0f3d8ce83a] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=9ce1960099574b198ad043670a96d595��mode=mock��mocked=true
+2026-10-30 16:19:38.298 INFO  [http-nio-auto-1-exec-9] [requestId=1db4a224291c41fca1be5c0f3d8ce83a] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"1db4a224291c41fca1be5c0f3d8ce83a","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","content-length":"64","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*","content-type":"application/json"},"requestBody":{"contentType":"application/json","size":64,"body":"{\"message\":\"ֻ��˼����չʾ����\",\"thinkingEnabled\":true}","truncated":false}}
+2026-10-30 16:19:38.299 INFO  [http-nio-auto-1-exec-9] [requestId=1db4a224291c41fca1be5c0f3d8ce83a] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"1db4a224291c41fca1be5c0f3d8ce83a","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":32,"responseBody":{"contentType":"application/json","size":349,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ��˼��ģʽ��AI_MODE=mock����δ�����ⲿ������ʷ��Ϣ����=0�����ջش𣺡�ֻ��˼����չʾ���̡���\",\"thinkingEnabled\":true,\"sessionId\":\"9ce1960099574b198ad043670a96d595\",\"citations\":[]}}","truncated":false}}
+2026-10-30 16:19:38.309 WARN  [http-nio-auto-1-exec-10] [requestId=74467e4610b34ff795cfef3b6d8c06e1] c.z.d.common.GlobalExceptionHandler - ��������쳣: reasoningEffort ȡֵ�Ƿ�����֧�� LOW / HIGH / MAX��ʵ���յ�: ultra
+2026-10-30 16:19:38.310 INFO  [http-nio-auto-1-exec-10] [requestId=74467e4610b34ff795cfef3b6d8c06e1] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"74467e4610b34ff795cfef3b6d8c06e1","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","content-length":"75","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*","content-type":"application/json"},"requestBody":{"contentType":"application/json","size":75,"body":"{\"reasoningEffort\":\"ultra\",\"thinkingEnabled\":true,\"message\":\"�Ƿ�ǿ��\"}","truncated":false}}
+2026-10-30 16:19:38.310 INFO  [http-nio-auto-1-exec-10] [requestId=74467e4610b34ff795cfef3b6d8c06e1] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"74467e4610b34ff795cfef3b6d8c06e1","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":2,"responseBody":{"contentType":"application/json","size":113,"body":"{\"code\":4001,\"msg\":\"reasoningEffort ȡֵ�Ƿ�����֧�� LOW / HIGH / MAX��ʵ���յ�: ultra\",\"data\":null}","truncated":false}}
+2026-10-30 16:19:38.327 INFO  [http-nio-auto-1-exec-1] [requestId=3630ffdf903348128e373f167db04605] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=308f74d75991454585866ae83fc7b5eb��owner=ut-default��sequence=1
+2026-10-30 16:19:38.343 INFO  [http-nio-auto-1-exec-1] [requestId=3630ffdf903348128e373f167db04605] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=308f74d75991454585866ae83fc7b5eb���û����=1���������=2
+2026-10-30 16:19:38.349 INFO  [http-nio-auto-1-exec-1] [requestId=3630ffdf903348128e373f167db04605] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=308f74d75991454585866ae83fc7b5eb��mode=mock��mocked=true
+2026-10-30 16:19:38.350 INFO  [http-nio-auto-1-exec-1] [requestId=3630ffdf903348128e373f167db04605] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"3630ffdf903348128e373f167db04605","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","content-length":"59","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*","content-type":"application/json"},"requestBody":{"contentType":"application/json","size":59,"body":"{\"message\":\"ֻ��չʾ����˼��\",\"showReasoning\":true}","truncated":false}}
+2026-10-30 16:19:38.352 INFO  [http-nio-auto-1-exec-1] [requestId=3630ffdf903348128e373f167db04605] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"3630ffdf903348128e373f167db04605","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":30,"responseBody":{"contentType":"application/json","size":386,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺��ֻ��չʾ����˼������\",\"sessionId\":\"308f74d75991454585866ae83fc7b5eb\",\"citations\":[]}}","truncated":false}}
+2026-10-30 16:19:38.362 WARN  [http-nio-auto-1-exec-2] [requestId=fd984f87417f4fb8b0cbd40237bc8c1b] c.z.d.common.GlobalExceptionHandler - ��������쳣: reasoningEffort ���� thinkingEnabled=true ʱ�������룬������ʽ����˼��ģʽ
+2026-10-30 16:19:38.363 INFO  [http-nio-auto-1-exec-2] [requestId=fd984f87417f4fb8b0cbd40237bc8c1b] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"fd984f87417f4fb8b0cbd40237bc8c1b","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","content-length":"62","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*","content-type":"application/json"},"requestBody":{"contentType":"application/json","size":62,"body":"{\"message\":\"δ��˼���ȸ�ǿ��\",\"reasoningEffort\":\"LOW\"}","truncated":false}}
+2026-10-30 16:19:38.363 INFO  [http-nio-auto-1-exec-2] [requestId=fd984f87417f4fb8b0cbd40237bc8c1b] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"fd984f87417f4fb8b0cbd40237bc8c1b","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":2,"responseBody":{"contentType":"application/json","size":126,"body":"{\"code\":4001,\"msg\":\"reasoningEffort ���� thinkingEnabled=true ʱ�������룬������ʽ����˼��ģʽ\",\"data\":null}","truncated":false}}
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.211 s -- in com.zl.d17.springai.d16.ThinkingModeIntegrationTest
+[INFO] Running com.zl.d17.springai.d16.ThinkingSettingsResolverTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in com.zl.d17.springai.d16.ThinkingSettingsResolverTest
+[INFO] Running com.zl.d17.springai.DeepSeekKeyProtectionTest
+2026-10-30 16:19:38.387 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.DeepSeekKeyProtectionTest]: DeepSeekKeyProtectionTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:38.395 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.DeepSeekKeyProtectionTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30 16:19:38.427 INFO  [main] [requestId=] c.z.d.s.DeepSeekKeyProtectionTest - Starting DeepSeekKeyProtectionTest using Java 21.0.7 with PID 3812 (started by zl in E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA)
+2026-10-30 16:19:38.428 INFO  [main] [requestId=] c.z.d.s.DeepSeekKeyProtectionTest - The following 1 profile is active: "test"
+2026-10-30 16:19:39.029 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-30 16:19:39.030 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-30 16:19:39.091 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 0 Redis repository interfaces.
+2026-10-30 16:19:40.175 INFO  [main] [requestId=] c.zl.d17.knowledge.KnowledgeCorpus - �豸����֪ʶ���ϼ�����ɣ��ĵ���=3��Ƭ����=8
+2026-10-30 16:19:40.747 INFO  [main] [requestId=] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-10-30 16:19:40.900 INFO  [main] [requestId=] c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.web.context.support.GenericWebApplicationContext@4e8fab14
+2026-10-30 16:19:41.139 INFO  [main] [requestId=] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-10-30 16:19:41.140 INFO  [main] [requestId=] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-10-30 16:19:41.143 INFO  [main] [requestId=] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2026-10-30 16:19:41.179 INFO  [main] [requestId=] c.z.d.s.DeepSeekKeyProtectionTest - Started DeepSeekKeyProtectionTest in 2.781 seconds (process running for 23.258)
+2026-10-30 16:19:41.184 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2026-10-30 16:19:41.204 INFO  [main] [requestId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@198ad9e0
+2026-10-30 16:19:41.205 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2026-10-30 16:19:41.274 INFO  [main] [requestId=] c.z.d17.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�6 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+2026-10-30 16:19:41.381 INFO  [main] [requestId=4ce15be5a99f42e6ad2d8fca48b7334d] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=f3a5bb93e0b347a5896109e8c7c6f3e2��owner=ut-default��sequence=1
+2026-10-30 16:19:41.405 WARN  [main] [requestId=4ce15be5a99f42e6ad2d8fca48b7334d] c.zl.d17.history.ChatHistoryService - �Ի��ִ�ʧ�ܣ�sessionId=f3a5bb93e0b347a5896109e8c7c6f3e2��errorCode=AiConfigurationException���û����=1
+2026-10-30 16:19:41.407 ERROR [main] [requestId=4ce15be5a99f42e6ad2d8fca48b7334d] c.z.d.common.GlobalExceptionHandler - AI ����У��ʧ��: deepseek ��ʵģʽδ������Ч��Կ��DEEPSEEK_API_KEY ȱʧ��Ϊ�հ׻���Ϊռλ��Կ������ֹ�����ⲿ����
+2026-10-30 16:19:41.416 INFO  [main] [requestId=4ce15be5a99f42e6ad2d8fca48b7334d] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"4ce15be5a99f42e6ad2d8fca48b7334d","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"50"},"requestBody":{"contentType":"application/json","size":50,"body":"{\"message\":\"��ʵģʽռλ��Կ��������\"}","truncated":false}}
+2026-10-30 16:19:41.417 INFO  [main] [requestId=4ce15be5a99f42e6ad2d8fca48b7334d] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"4ce15be5a99f42e6ad2d8fca48b7334d","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":77,"responseBody":{"contentType":"application/json","size":97,"body":"{\"code\":5001,\"msg\":\"AI �������û��Ȩ�쳣��������Կ���������\",\"data\":null}","truncated":false}}
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.104 s -- in com.zl.d17.springai.DeepSeekKeyProtectionTest
+[INFO] Running com.zl.d17.springai.DeepSeekLiveSmokeTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.001 s -- in com.zl.d17.springai.DeepSeekLiveSmokeTest
+[INFO] Running com.zl.d17.springai.history.ContextWindowTest
+2026-10-30 16:19:41.524 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.history.ContextWindowTest]: ContextWindowTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:41.578 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.history.ContextWindowTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30 16:19:41.655 INFO  [main] [requestId=] c.z.d.s.history.ContextWindowTest - Starting ContextWindowTest using Java 21.0.7 with PID 3812 (started by zl in E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA)
+2026-10-30 16:19:41.656 INFO  [main] [requestId=] c.z.d.s.history.ContextWindowTest - The following 1 profile is active: "test"
+2026-10-30 16:19:42.770 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-30 16:19:42.772 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-30 16:19:42.860 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 0 Redis repository interfaces.
+2026-10-30 16:19:43.176 INFO  [main] [requestId=] c.zl.d17.knowledge.KnowledgeCorpus - �豸����֪ʶ���ϼ�����ɣ��ĵ���=3��Ƭ����=8
+2026-10-30 16:19:43.497 INFO  [main] [requestId=] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-10-30 16:19:43.592 INFO  [main] [requestId=] c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.web.context.support.GenericWebApplicationContext@43462cef
+2026-10-30 16:19:43.793 INFO  [main] [requestId=] c.z.d.s.history.ContextWindowTest - Started ContextWindowTest in 2.208 seconds (process running for 25.872)
+2026-10-30 16:19:43.794 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2026-10-30 16:19:43.804 INFO  [main] [requestId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@595dda6d
+2026-10-30 16:19:43.805 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2026-10-30 16:19:43.829 INFO  [main] [requestId=] c.z.d17.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�6 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+2026-10-30 16:19:43.852 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=a268ac75414d4826ad4248608ebf8d51��owner=ut_window��sequence=1
+2026-10-30 16:19:43.872 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=a268ac75414d4826ad4248608ebf8d51���û����=1���������=2
+2026-10-30 16:19:43.898 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=a268ac75414d4826ad4248608ebf8d51��owner=ut_window��sequence=3
+2026-10-30 16:19:43.912 WARN  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ�ʧ�ܣ�sessionId=a268ac75414d4826ad4248608ebf8d51��errorCode=MockFail���û����=3
+2026-10-30 16:19:44.100 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=76cdb70f141244749c0377e461123d06��owner=ut_window��sequence=1
+2026-10-30 16:19:44.117 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=76cdb70f141244749c0377e461123d06���û����=1���������=2
+2026-10-30 16:19:44.136 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=76cdb70f141244749c0377e461123d06��owner=ut_window��sequence=3
+2026-10-30 16:19:44.153 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=76cdb70f141244749c0377e461123d06���û����=3���������=4
+2026-10-30 16:19:44.173 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=76cdb70f141244749c0377e461123d06��owner=ut_window��sequence=5
+2026-10-30 16:19:44.191 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=76cdb70f141244749c0377e461123d06���û����=5���������=6
+[ERROR] Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 2.717 s <<< FAILURE! -- in com.zl.d17.springai.history.ContextWindowTest
+[ERROR] com.zl.d17.springai.history.ContextWindowTest.failedAndPendingMessagesShouldNotEnterWindow -- Time elapsed: 0.235 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected size: 2 but was: 1 in:
+[com.zl.d17.history.model.HistoryMessage@60b65a4a]
+	at com.zl.d17.springai.history.ContextWindowTest.failedAndPendingMessagesShouldNotEnterWindow(ContextWindowTest.java:57)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] com.zl.d17.springai.history.ContextWindowTest.windowShouldContainOnlyLatestFourCompletedMessages -- Time elapsed: 0.146 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected size: 4 but was: 3 in:
+[com.zl.d17.history.model.HistoryMessage@14cc127b,
+    com.zl.d17.history.model.HistoryMessage@10da7696,
+    com.zl.d17.history.model.HistoryMessage@43072e3a]
+	at com.zl.d17.springai.history.ContextWindowTest.windowShouldContainOnlyLatestFourCompletedMessages(ContextWindowTest.java:41)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Running com.zl.d17.springai.history.HistoryConcurrencyTest
+2026-10-30 16:19:44.242 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.history.HistoryConcurrencyTest]: HistoryConcurrencyTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:44.246 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.history.HistoryConcurrencyTest
+2026-10-30 16:19:44.265 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=d179abeba5064ccbbb025e838fff4ff8��owner=ut_conc��sequence=1
+2026-10-30 16:19:44.281 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=d179abeba5064ccbbb025e838fff4ff8���û����=1���������=2
+2026-10-30 16:19:44.318 INFO  [pool-6-thread-2] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=d179abeba5064ccbbb025e838fff4ff8��owner=ut_conc��sequence=3
+2026-10-30 16:19:44.336 INFO  [pool-6-thread-2] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=d179abeba5064ccbbb025e838fff4ff8���û����=3���������=4
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.459 s <<< FAILURE! -- in com.zl.d17.springai.history.HistoryConcurrencyTest
+[ERROR] com.zl.d17.springai.history.HistoryConcurrencyTest.concurrentTurnsOnSameSessionShouldGetUniqueGaplessSequences -- Time elapsed: 0.443 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected size: 18 but was: 4 in:
+[1, 2, 3, 4]
+	at com.zl.d17.springai.history.HistoryConcurrencyTest.concurrentTurnsOnSameSessionShouldGetUniqueGaplessSequences(HistoryConcurrencyTest.java:66)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Running com.zl.d17.springai.history.HistoryFailureTest
+2026-10-30 16:19:44.702 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.history.HistoryFailureTest]: HistoryFailureTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:44.704 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.history.HistoryFailureTest
+2026-10-30 16:19:44.721 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=73023290820541e7b6298932a55e63ac��owner=ut_fail��sequence=1
+2026-10-30 16:19:44.733 WARN  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ�ʧ�ܣ�sessionId=73023290820541e7b6298932a55e63ac��errorCode=MockFail���û����=1
+2026-10-30 16:19:44.789 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=7041f6d344ee451ab0513e2529646dae��owner=ut_fail��sequence=1
+2026-10-30 16:19:44.810 WARN  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ��жϣ�sessionId=7041f6d344ee451ab0513e2529646dae���������ֲ�������=true
+[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.151 s <<< FAILURE! -- in com.zl.d17.springai.history.HistoryFailureTest
+[ERROR] com.zl.d17.springai.history.HistoryFailureTest.failedTurnShouldMarkUserFailedAndNotCreateAssistantMessage -- Time elapsed: 0.066 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: 1
+ but was: 0
+	at com.zl.d17.springai.history.HistoryFailureTest.failedTurnShouldMarkUserFailedAndNotCreateAssistantMessage(HistoryFailureTest.java:38)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] com.zl.d17.springai.history.HistoryFailureTest.interruptedTurnShouldKeepPartialAssistantContent -- Time elapsed: 0.073 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+Expecting actual:
+  ["PENDING", "INTERRUPTED"]
+to contain exactly (and in same order):
+  ["INTERRUPTED", "INTERRUPTED"]
+but some elements were not found:
+  ["INTERRUPTED"]
+and others were not expected:
+  ["PENDING"]
+
+	at com.zl.d17.springai.history.HistoryFailureTest.interruptedTurnShouldKeepPartialAssistantContent(HistoryFailureTest.java:55)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Running com.zl.d17.springai.history.HistoryPersistenceTest
+2026-10-30 16:19:44.856 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.history.HistoryPersistenceTest]: HistoryPersistenceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:44.858 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.history.HistoryPersistenceTest
+2026-10-30 16:19:44.878 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=0716a6cd07f0463692a000fa000d3059��owner=ut_persist��sequence=1
+2026-10-30 16:19:44.899 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=0716a6cd07f0463692a000fa000d3059���û����=1���������=2
+2026-10-30 16:19:44.974 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=4caac248b5834b5a912e4fe411a81d77��owner=ut_persist��sequence=1
+2026-10-30 16:19:45.003 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=4caac248b5834b5a912e4fe411a81d77���û����=1���������=2
+2026-10-30 16:19:45.079 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=7e65b507a2e440ddbfed8f88bbf813e7��owner=ut_persist��sequence=1
+2026-10-30 16:19:45.095 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=7e65b507a2e440ddbfed8f88bbf813e7���û����=1���������=2
+2026-10-30 16:19:45.113 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=7e65b507a2e440ddbfed8f88bbf813e7��owner=ut_persist��sequence=3
+2026-10-30 16:19:45.131 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=7e65b507a2e440ddbfed8f88bbf813e7���û����=3���������=4
+2026-10-30 16:19:45.149 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=7e65b507a2e440ddbfed8f88bbf813e7��owner=ut_persist��sequence=5
+2026-10-30 16:19:45.166 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=7e65b507a2e440ddbfed8f88bbf813e7���û����=5���������=6
+[ERROR] Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.352 s <<< FAILURE! -- in com.zl.d17.springai.history.HistoryPersistenceTest
+[ERROR] com.zl.d17.springai.history.HistoryPersistenceTest.startTurnShouldPersistPendingUserAndCompleteTurnShouldKeepBothCompleted -- Time elapsed: 0.077 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected size: 2 but was: 1 in:
+[com.zl.d17.history.model.HistoryMessage@3ea4cfe0]
+	at com.zl.d17.springai.history.HistoryPersistenceTest.startTurnShouldPersistPendingUserAndCompleteTurnShouldKeepBothCompleted(HistoryPersistenceTest.java:41)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] com.zl.d17.springai.history.HistoryPersistenceTest.historyShouldBeQueryableViaFreshReadSimulatingRestart -- Time elapsed: 0.106 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected size: 2 but was: 1 in:
+[com.zl.d17.history.model.HistoryMessage@38b9a64b]
+	at com.zl.d17.springai.history.HistoryPersistenceTest.historyShouldBeQueryableViaFreshReadSimulatingRestart(HistoryPersistenceTest.java:89)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] com.zl.d17.springai.history.HistoryPersistenceTest.multipleTurnsShouldGetGaplessSequenceAndOrderedMessages -- Time elapsed: 0.142 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected size: 6 but was: 3 in:
+[com.zl.d17.history.model.HistoryMessage@4d6f0460,
+    com.zl.d17.history.model.HistoryMessage@5def348b,
+    com.zl.d17.history.model.HistoryMessage@1ed7e040]
+	at com.zl.d17.springai.history.HistoryPersistenceTest.multipleTurnsShouldGetGaplessSequenceAndOrderedMessages(HistoryPersistenceTest.java:63)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Running com.zl.d17.springai.history.SessionIsolationTest
+2026-10-30 16:19:45.209 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.history.SessionIsolationTest]: SessionIsolationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:45.212 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.history.SessionIsolationTest
+2026-10-30 16:19:45.230 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=ce0651b2f0d84f6487e9643a32343bb5��owner=ut_iso_a��sequence=1
+2026-10-30 16:19:45.245 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=ce0651b2f0d84f6487e9643a32343bb5���û����=1���������=2
+2026-10-30 16:19:45.262 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=7d59e9d733934cd9a150239f7b6095d9��owner=ut_iso_b��sequence=1
+2026-10-30 16:19:45.282 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=7d59e9d733934cd9a150239f7b6095d9���û����=1���������=2
+2026-10-30 16:19:45.338 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=24ec0e9f894a4fe68d87894b40dd351d��owner=ut_iso_a��sequence=1
+2026-10-30 16:19:45.354 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=24ec0e9f894a4fe68d87894b40dd351d���û����=1���������=2
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.185 s <<< FAILURE! -- in com.zl.d17.springai.history.SessionIsolationTest
+[ERROR] com.zl.d17.springai.history.SessionIsolationTest.differentSessionsShouldNotShareContext -- Time elapsed: 0.108 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected size: 2 but was: 1 in:
+[com.zl.d17.history.model.HistoryMessage@2e7d71d9]
+	at com.zl.d17.springai.history.SessionIsolationTest.differentSessionsShouldNotShareContext(SessionIsolationTest.java:36)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Running com.zl.d17.springai.logging.AccessLogIntegrationTest
+2026-10-30 16:19:45.402 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.logging.AccessLogIntegrationTest]: AccessLogIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:45.441 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.logging.AccessLogIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30 16:19:45.489 INFO  [main] [requestId=] c.z.d.s.l.AccessLogIntegrationTest - Starting AccessLogIntegrationTest using Java 21.0.7 with PID 3812 (started by zl in E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA)
+2026-10-30 16:19:45.490 INFO  [main] [requestId=] c.z.d.s.l.AccessLogIntegrationTest - The following 1 profile is active: "test"
+2026-10-30 16:19:46.213 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-30 16:19:46.213 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-30 16:19:46.288 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 0 Redis repository interfaces.
+2026-10-30 16:19:46.512 INFO  [main] [requestId=] c.zl.d17.knowledge.KnowledgeCorpus - �豸����֪ʶ���ϼ�����ɣ��ĵ���=3��Ƭ����=8
+2026-10-30 16:19:46.767 INFO  [main] [requestId=] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-10-30 16:19:46.834 INFO  [main] [requestId=] c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.web.context.support.GenericWebApplicationContext@4a8cddf5
+2026-10-30 16:19:46.968 INFO  [main] [requestId=] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-10-30 16:19:46.968 INFO  [main] [requestId=] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-10-30 16:19:46.969 INFO  [main] [requestId=] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-10-30 16:19:46.980 INFO  [main] [requestId=] c.z.d.s.l.AccessLogIntegrationTest - Started AccessLogIntegrationTest in 1.535 seconds (process running for 29.059)
+2026-10-30 16:19:46.982 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2026-10-30 16:19:46.990 INFO  [main] [requestId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@492565e3
+2026-10-30 16:19:46.990 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2026-10-30 16:19:47.048 INFO  [main] [requestId=] c.z.d17.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�6 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+2026-10-30 16:19:47.072 INFO  [main] [requestId=48ebe146739a48ebb2b460281ea4677e] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=60faad190cb44c6bad5302f8e71f8fda��owner=ut-default��sequence=1
+2026-10-30 16:19:47.087 INFO  [main] [requestId=48ebe146739a48ebb2b460281ea4677e] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=60faad190cb44c6bad5302f8e71f8fda���û����=1���������=2
+2026-10-30 16:19:47.098 INFO  [main] [requestId=48ebe146739a48ebb2b460281ea4677e] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=60faad190cb44c6bad5302f8e71f8fda��mode=mock��mocked=true
+2026-10-30 16:19:47.112 INFO  [main] [requestId=48ebe146739a48ebb2b460281ea4677e] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"48ebe146739a48ebb2b460281ea4677e","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Authorization":"*****","Content-Length":"38"},"requestBody":{"contentType":"application/json","size":38,"body":"{\"message\":\"������־��������\"}","truncated":false}}
+2026-10-30 16:19:47.113 INFO  [main] [requestId=48ebe146739a48ebb2b460281ea4677e] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"48ebe146739a48ebb2b460281ea4677e","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":51,"responseBody":{"contentType":"application/json","size":386,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺��������־�������ԡ���\",\"sessionId\":\"60faad190cb44c6bad5302f8e71f8fda\",\"citations\":[]}}","truncated":false}}
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/ai/chat
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Authorization:"Bearer must-be-masked", Content-Length:"38"]
+             Body = {"message":"������־��������"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.zl.d17.controller.ChatController
+           Method = com.zl.d17.controller.ChatController#chat(ChatRequest, HttpServletRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [X-Request-Id:"48ebe146739a48ebb2b460281ea4677e", Content-Type:"application/json", Content-Length:"386"]
+     Content type = application/json
+             Body = {"code":200,"msg":"success","data":{"mode":"mock","model":"offline-mock","mocked":true,"content":"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺��������־�������ԡ���","sessionId":"60faad190cb44c6bad5302f8e71f8fda","citations":[]}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-10-30 16:19:47.137 WARN  [main] [requestId=0e46a6af27f94a6088b75b71b8f92d60] c.z.d.common.GlobalExceptionHandler - ��������쳣: ������ȱʧ���ʽ�Ƿ�����Ҫ JSON �����Ұ��� message �ֶ�
+2026-10-30 16:19:47.140 INFO  [main] [requestId=0e46a6af27f94a6088b75b71b8f92d60] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"0e46a6af27f94a6088b75b71b8f92d60","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"13"},"requestBody":{"contentType":"application/json","size":13,"body":"<unparseable body, length=13>","truncated":false}}
+2026-10-30 16:19:47.141 INFO  [main] [requestId=0e46a6af27f94a6088b75b71b8f92d60] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"0e46a6af27f94a6088b75b71b8f92d60","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":4,"responseBody":{"contentType":"application/json","size":109,"body":"{\"code\":4001,\"msg\":\"������ȱʧ���ʽ�Ƿ�����Ҫ JSON �����Ұ��� message �ֶ�\",\"data\":null}","truncated":false}}
+2026-10-30 16:19:47.157 INFO  [main] [requestId=b1a4c4ea1fe744e68cef5b3f2799cc6d] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=5a32563cb74343c580866c4bc4e7dea4��owner=ut-default��sequence=1
+2026-10-30 16:19:47.172 INFO  [main] [requestId=b1a4c4ea1fe744e68cef5b3f2799cc6d] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=5a32563cb74343c580866c4bc4e7dea4���û����=1���������=2
+2026-10-30 16:19:47.179 INFO  [main] [requestId=b1a4c4ea1fe744e68cef5b3f2799cc6d] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=5a32563cb74343c580866c4bc4e7dea4��mode=mock��mocked=true
+2026-10-30 16:19:47.181 INFO  [main] [requestId=b1a4c4ea1fe744e68cef5b3f2799cc6d] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"b1a4c4ea1fe744e68cef5b3f2799cc6d","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"23"},"requestBody":{"contentType":"application/json","size":23,"body":"{\"message\":\"��һ��\"}","truncated":false}}
+2026-10-30 16:19:47.181 INFO  [main] [requestId=b1a4c4ea1fe744e68cef5b3f2799cc6d] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"b1a4c4ea1fe744e68cef5b3f2799cc6d","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":30,"responseBody":{"contentType":"application/json","size":371,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺����һ�Ρ���\",\"sessionId\":\"5a32563cb74343c580866c4bc4e7dea4\",\"citations\":[]}}","truncated":false}}
+2026-10-30 16:19:47.190 INFO  [main] [requestId=27979c51c0914c7ba584b6acd3f0b410] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=2834ac8c8ad74176bf891d39045e6a1c��owner=ut-default��sequence=1
+2026-10-30 16:19:47.206 INFO  [main] [requestId=27979c51c0914c7ba584b6acd3f0b410] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=2834ac8c8ad74176bf891d39045e6a1c���û����=1���������=2
+2026-10-30 16:19:47.214 INFO  [main] [requestId=27979c51c0914c7ba584b6acd3f0b410] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=2834ac8c8ad74176bf891d39045e6a1c��mode=mock��mocked=true
+2026-10-30 16:19:47.215 INFO  [main] [requestId=27979c51c0914c7ba584b6acd3f0b410] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"27979c51c0914c7ba584b6acd3f0b410","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"23"},"requestBody":{"contentType":"application/json","size":23,"body":"{\"message\":\"��һ��\"}","truncated":false}}
+2026-10-30 16:19:47.216 INFO  [main] [requestId=27979c51c0914c7ba584b6acd3f0b410] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"27979c51c0914c7ba584b6acd3f0b410","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":30,"responseBody":{"contentType":"application/json","size":371,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺����һ�Ρ���\",\"sessionId\":\"2834ac8c8ad74176bf891d39045e6a1c\",\"citations\":[]}}","truncated":false}}
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.820 s <<< FAILURE! -- in com.zl.d17.springai.logging.AccessLogIntegrationTest
+[ERROR] com.zl.d17.springai.logging.AccessLogIntegrationTest.normalRequestShouldCorrelateAllEventsBySameRequestIdAndKeepResponseIntact -- Time elapsed: 0.077 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting ListN:
+  ["HTTP_REQUEST", "HTTP_RESPONSE"]
+to contain:
+  ["HTTP_REQUEST", "HTTP_RESPONSE", "CONTROLLER_ACCESS"]
+but could not find the following element(s):
+  ["CONTROLLER_ACCESS"]
+
+	at com.zl.d17.springai.logging.AccessLogIntegrationTest.normalRequestShouldCorrelateAllEventsBySameRequestIdAndKeepResponseIntact(AccessLogIntegrationTest.java:75)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Running com.zl.d17.springai.logging.AccessLogMaskingTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s -- in com.zl.d17.springai.logging.AccessLogMaskingTest
+[INFO] Running com.zl.d17.springai.logging.AccessLogRealContainerTest
+2026-10-30 16:19:47.249 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.logging.AccessLogRealContainerTest]: AccessLogRealContainerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:47.250 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.logging.AccessLogRealContainerTest
+2026-10-30 16:19:47.276 ERROR [http-nio-auto-1-exec-3] [requestId=982531fae4ec4eaa9efc6699ea1b5543] c.z.d.common.GlobalExceptionHandler - δԤ�ڵ�ϵͳ�쳣
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource no-such-endpoint-real.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at com.zl.d17.logging.CachedBodyAccessLogFilter.doFilterInternal(CachedBodyAccessLogFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at com.zl.d17.logging.TraceIdFilter.doFilterInternal(TraceIdFilter.java:57)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1797)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-10-30 16:19:47.280 INFO  [http-nio-auto-1-exec-3] [requestId=982531fae4ec4eaa9efc6699ea1b5543] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"982531fae4ec4eaa9efc6699ea1b5543","method":"GET","uri":"/no-such-endpoint-real","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*"},"requestBody":{"contentType":null,"size":0,"body":null,"skipReason":"empty body or input stream never read by framework"}}
+2026-10-30 16:19:47.281 INFO  [http-nio-auto-1-exec-3] [requestId=982531fae4ec4eaa9efc6699ea1b5543] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"982531fae4ec4eaa9efc6699ea1b5543","method":"GET","uri":"/no-such-endpoint-real","httpStatus":200,"elapsedMs":19,"responseBody":{"contentType":"application/json","size":64,"body":"{\"code\":5000,\"msg\":\"ϵͳ��æ�����Ժ�����\",\"data\":null}","truncated":false}}
+2026-10-30 16:19:47.306 INFO  [http-nio-auto-1-exec-4] [requestId=c99dd8c774d447c0b4c7218113856d00] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=5bb3d08b3c12449399be9e8c92132a13��owner=ut-default��sequence=1
+2026-10-30 16:19:47.320 INFO  [http-nio-auto-1-exec-4] [requestId=c99dd8c774d447c0b4c7218113856d00] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=5bb3d08b3c12449399be9e8c92132a13���û����=1���������=2
+2026-10-30 16:19:47.326 INFO  [http-nio-auto-1-exec-4] [requestId=c99dd8c774d447c0b4c7218113856d00] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=5bb3d08b3c12449399be9e8c92132a13��mode=mock��mocked=true
+2026-10-30 16:19:47.327 INFO  [http-nio-auto-1-exec-4] [requestId=c99dd8c774d447c0b4c7218113856d00] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"c99dd8c774d447c0b4c7218113856d00","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","content-length":"44","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"text/plain, application/json, application/yaml, application/*+json, */*","authorization":"*****","content-type":"application/json"},"requestBody":{"contentType":"application/json","size":44,"body":"{\"message\":\"��ʵ������Ӧд�ز���\"}","truncated":false}}
+2026-10-30 16:19:47.329 INFO  [http-nio-auto-1-exec-4] [requestId=c99dd8c774d447c0b4c7218113856d00] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"c99dd8c774d447c0b4c7218113856d00","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":30,"responseBody":{"contentType":"application/json","size":392,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺����ʵ������Ӧд�ز��ԡ���\",\"sessionId\":\"5bb3d08b3c12449399be9e8c92132a13\",\"citations\":[]}}","truncated":false}}
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.086 s <<< FAILURE! -- in com.zl.d17.springai.logging.AccessLogRealContainerTest
+[ERROR] com.zl.d17.springai.logging.AccessLogRealContainerTest.normalChatOverRealSocketShouldReturnFullBodyProvingResponseCopyBack -- Time elapsed: 0.042 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting ListN:
+  ["HTTP_REQUEST", "HTTP_RESPONSE"]
+to contain:
+  ["HTTP_REQUEST", "HTTP_RESPONSE", "CONTROLLER_ACCESS"]
+but could not find the following element(s):
+  ["CONTROLLER_ACCESS"]
+
+	at com.zl.d17.springai.logging.AccessLogRealContainerTest.normalChatOverRealSocketShouldReturnFullBodyProvingResponseCopyBack(AccessLogRealContainerTest.java:108)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Running com.zl.d17.springai.MockChatControllerTest
+2026-10-30 16:19:47.335 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.MockChatControllerTest]: MockChatControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:47.339 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.MockChatControllerTest
+2026-10-30 16:19:47.357 WARN  [main] [requestId=5362251f36ec46c0a34f1b1edaad8724] c.z.d.common.GlobalExceptionHandler - ����У��ʧ��: message ����Ϊ�ջ򴿿հ�
+2026-10-30 16:19:47.359 INFO  [main] [requestId=5362251f36ec46c0a34f1b1edaad8724] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"5362251f36ec46c0a34f1b1edaad8724","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"14"},"requestBody":{"contentType":"application/json","size":14,"body":"{\"message\":\"\"}","truncated":false}}
+2026-10-30 16:19:47.359 INFO  [main] [requestId=5362251f36ec46c0a34f1b1edaad8724] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"5362251f36ec46c0a34f1b1edaad8724","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":13,"responseBody":{"contentType":"application/json","size":66,"body":"{\"code\":4001,\"msg\":\"message ����Ϊ�ջ򴿿հ�\",\"data\":null}","truncated":false}}
+2026-10-30 16:19:47.373 INFO  [main] [requestId=e4e01f32937d4b8d8236e9f426d15880] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=b4e479de60824ae8baa7ff9dc2a0a687��owner=ut-default��sequence=1
+2026-10-30 16:19:47.387 INFO  [main] [requestId=e4e01f32937d4b8d8236e9f426d15880] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=b4e479de60824ae8baa7ff9dc2a0a687���û����=1���������=2
+2026-10-30 16:19:47.393 INFO  [main] [requestId=e4e01f32937d4b8d8236e9f426d15880] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=b4e479de60824ae8baa7ff9dc2a0a687��mode=mock��mocked=true
+2026-10-30 16:19:47.394 INFO  [main] [requestId=e4e01f32937d4b8d8236e9f426d15880] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"e4e01f32937d4b8d8236e9f426d15880","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"41"},"requestBody":{"contentType":"application/json","size":41,"body":"{\"message\":\"�ظ�����һ���Բ���\"}","truncated":false}}
+2026-10-30 16:19:47.394 INFO  [main] [requestId=e4e01f32937d4b8d8236e9f426d15880] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"e4e01f32937d4b8d8236e9f426d15880","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":26,"responseBody":{"contentType":"application/json","size":389,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺���ظ�����һ���Բ��ԡ���\",\"sessionId\":\"b4e479de60824ae8baa7ff9dc2a0a687\",\"citations\":[]}}","truncated":false}}
+2026-10-30 16:19:47.400 INFO  [main] [requestId=7f4c1cf9710a43cdb18ed78c7d83e881] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=ad7a003f060548d0a37a5ef1ed096f49��owner=ut-default��sequence=1
+2026-10-30 16:19:47.413 INFO  [main] [requestId=7f4c1cf9710a43cdb18ed78c7d83e881] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=ad7a003f060548d0a37a5ef1ed096f49���û����=1���������=2
+2026-10-30 16:19:47.420 INFO  [main] [requestId=7f4c1cf9710a43cdb18ed78c7d83e881] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=ad7a003f060548d0a37a5ef1ed096f49��mode=mock��mocked=true
+2026-10-30 16:19:47.421 INFO  [main] [requestId=7f4c1cf9710a43cdb18ed78c7d83e881] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"7f4c1cf9710a43cdb18ed78c7d83e881","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"41"},"requestBody":{"contentType":"application/json","size":41,"body":"{\"message\":\"�ظ�����һ���Բ���\"}","truncated":false}}
+2026-10-30 16:19:47.422 INFO  [main] [requestId=7f4c1cf9710a43cdb18ed78c7d83e881] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"7f4c1cf9710a43cdb18ed78c7d83e881","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":25,"responseBody":{"contentType":"application/json","size":389,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺���ظ�����һ���Բ��ԡ���\",\"sessionId\":\"ad7a003f060548d0a37a5ef1ed096f49\",\"citations\":[]}}","truncated":false}}
+2026-10-30 16:19:47.433 INFO  [main] [requestId=7bd95f6cfc504078b7b1078df451a5a8] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=9b49de92b55a4551bf024f6e363e1d80��owner=ut-default��sequence=1
+2026-10-30 16:19:47.445 INFO  [main] [requestId=7bd95f6cfc504078b7b1078df451a5a8] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=9b49de92b55a4551bf024f6e363e1d80���û����=1���������=2
+2026-10-30 16:19:47.452 INFO  [main] [requestId=7bd95f6cfc504078b7b1078df451a5a8] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=9b49de92b55a4551bf024f6e363e1d80��mode=mock��mocked=true
+2026-10-30 16:19:47.453 INFO  [main] [requestId=7bd95f6cfc504078b7b1078df451a5a8] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"7bd95f6cfc504078b7b1078df451a5a8","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"71"},"requestBody":{"contentType":"application/json","size":71,"body":"{\"message\":\"�豸�����г����쳣�񶯣�Ӧ������Ų飿\"}","truncated":false}}
+2026-10-30 16:19:47.453 INFO  [main] [requestId=7bd95f6cfc504078b7b1078df451a5a8] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"7bd95f6cfc504078b7b1078df451a5a8","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":24,"responseBody":{"contentType":"application/json","size":419,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺���豸�����г����쳣�񶯣�Ӧ������Ų飿����\",\"sessionId\":\"9b49de92b55a4551bf024f6e363e1d80\",\"citations\":[]}}","truncated":false}}
+2026-10-30 16:19:47.461 WARN  [main] [requestId=46cf8273f8804d7f91f962bf1100d757] c.z.d.common.GlobalExceptionHandler - ����У��ʧ��: message ����Ϊ�ջ򴿿հ�
+2026-10-30 16:19:47.462 INFO  [main] [requestId=46cf8273f8804d7f91f962bf1100d757] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"46cf8273f8804d7f91f962bf1100d757","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"2"},"requestBody":{"contentType":"application/json","size":2,"body":"{}","truncated":false}}
+2026-10-30 16:19:47.462 INFO  [main] [requestId=46cf8273f8804d7f91f962bf1100d757] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"46cf8273f8804d7f91f962bf1100d757","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":2,"responseBody":{"contentType":"application/json","size":66,"body":"{\"code\":4001,\"msg\":\"message ����Ϊ�ջ򴿿հ�\",\"data\":null}","truncated":false}}
+2026-10-30 16:19:47.470 WARN  [main] [requestId=5efafd95858041a2a8192c345d8e2e3c] c.z.d.common.GlobalExceptionHandler - ��������쳣: ������ȱʧ���ʽ�Ƿ�����Ҫ JSON �����Ұ��� message �ֶ�
+2026-10-30 16:19:47.472 INFO  [main] [requestId=5efafd95858041a2a8192c345d8e2e3c] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"5efafd95858041a2a8192c345d8e2e3c","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"18"},"requestBody":{"contentType":"application/json","size":18,"body":"<unparseable body, length=18>","truncated":false}}
+2026-10-30 16:19:47.472 INFO  [main] [requestId=5efafd95858041a2a8192c345d8e2e3c] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"5efafd95858041a2a8192c345d8e2e3c","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":1,"responseBody":{"contentType":"application/json","size":109,"body":"{\"code\":4001,\"msg\":\"������ȱʧ���ʽ�Ƿ�����Ҫ JSON �����Ұ��� message �ֶ�\",\"data\":null}","truncated":false}}
+2026-10-30 16:19:47.480 WARN  [main] [requestId=c33a7b7d0acd4eb4968fb400ec87bedc] c.z.d.common.GlobalExceptionHandler - ����У��ʧ��: message ����Ϊ�ջ򴿿հ�
+2026-10-30 16:19:47.482 INFO  [main] [requestId=c33a7b7d0acd4eb4968fb400ec87bedc] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"c33a7b7d0acd4eb4968fb400ec87bedc","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"17"},"requestBody":{"contentType":"application/json","size":17,"body":"{\"message\":\"   \"}","truncated":false}}
+2026-10-30 16:19:47.482 INFO  [main] [requestId=c33a7b7d0acd4eb4968fb400ec87bedc] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"c33a7b7d0acd4eb4968fb400ec87bedc","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":2,"responseBody":{"contentType":"application/json","size":66,"body":"{\"code\":4001,\"msg\":\"message ����Ϊ�ջ򴿿հ�\",\"data\":null}","truncated":false}}
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.149 s -- in com.zl.d17.springai.MockChatControllerTest
+[INFO] Running com.zl.d17.springai.MockNoExternalApiTest
+2026-10-30 16:19:47.487 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.MockNoExternalApiTest]: MockNoExternalApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:47.490 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.MockNoExternalApiTest
+2026-10-30 16:19:47.508 INFO  [main] [requestId=450560f57c374a98a2b8e3f04e475a0b] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=7a79be32b16049bc9b4ab94a8ec38b5d��owner=ut-default��sequence=1
+2026-10-30 16:19:47.521 INFO  [main] [requestId=450560f57c374a98a2b8e3f04e475a0b] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=7a79be32b16049bc9b4ab94a8ec38b5d���û����=1���������=2
+2026-10-30 16:19:47.527 INFO  [main] [requestId=450560f57c374a98a2b8e3f04e475a0b] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=7a79be32b16049bc9b4ab94a8ec38b5d��mode=mock��mocked=true
+2026-10-30 16:19:47.529 INFO  [main] [requestId=450560f57c374a98a2b8e3f04e475a0b] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"450560f57c374a98a2b8e3f04e475a0b","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"18"},"requestBody":{"contentType":"application/json","size":18,"body":"{\"message\":\"ping\"}","truncated":false}}
+2026-10-30 16:19:47.529 INFO  [main] [requestId=450560f57c374a98a2b8e3f04e475a0b] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"450560f57c374a98a2b8e3f04e475a0b","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":28,"responseBody":{"contentType":"application/json","size":366,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺��ping����\",\"sessionId\":\"7a79be32b16049bc9b4ab94a8ec38b5d\",\"citations\":[]}}","truncated":false}}
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s -- in com.zl.d17.springai.MockNoExternalApiTest
+[INFO] Running com.zl.d17.springai.prompt.PersistenceCacheIntegrationTest
+2026-10-30 16:19:47.539 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.prompt.PersistenceCacheIntegrationTest]: PersistenceCacheIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:47.558 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.prompt.PersistenceCacheIntegrationTest
+2026-10-30 16:19:47.616 INFO  [main] [requestId=] c.z.d17.prompt.PromptTemplateService - Prompt ģ���Ѵ�����templateId=ut_cache_tpl��scene=summarization��������=1
+2026-10-30 16:19:47.641 INFO  [main] [requestId=] c.z.d17.prompt.PromptTemplateService - Prompt ģ���Ѹ��£�templateId=ut_cache_tpl���°汾 version=2
+2026-10-30 16:19:47.670 INFO  [main] [requestId=] c.z.d17.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�6 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+2026-10-30 16:19:47.682 INFO  [main] [requestId=] c.z.d17.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�6 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+2026-10-30 16:19:47.701 INFO  [main] [requestId=] c.z.d17.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�6 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.174 s -- in com.zl.d17.springai.prompt.PersistenceCacheIntegrationTest
+[INFO] Running com.zl.d17.springai.prompt.PromptTemplateServiceTest
+2026-10-30 16:19:47.715 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.prompt.PromptTemplateServiceTest]: PromptTemplateServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:47.717 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.prompt.PromptTemplateServiceTest
+2026-10-30 16:19:47.759 INFO  [main] [requestId=] c.z.d17.prompt.PromptTemplateService - Prompt ģ���Ѵ�����templateId=ut_lifecycle_tpl��scene=summarization��������=1
+2026-10-30 16:19:47.780 INFO  [main] [requestId=] c.z.d17.prompt.PromptTemplateService - Prompt ģ���Ѹ��£�templateId=ut_lifecycle_tpl���°汾 version=2
+2026-10-30 16:19:47.806 INFO  [main] [requestId=] c.z.d17.prompt.PromptTemplateService - Prompt ģ�����߼�ɾ����templateId=ut_lifecycle_tpl
+2026-10-30 16:19:47.950 INFO  [main] [requestId=] c.z.d17.prompt.PromptTemplateService - Prompt ģ���Ѵ�����templateId=ut_escaped_brace��scene=code_review��������=0
+2026-10-30 16:19:48.060 INFO  [main] [requestId=] c.z.d17.prompt.PromptTemplateService - Prompt ģ��״̬�����templateId=customer_service��status=DISABLED
+2026-10-30 16:19:48.084 INFO  [main] [requestId=] c.z.d17.prompt.PromptTemplateService - Prompt ģ��״̬�����templateId=customer_service��status=ENABLED
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.375 s -- in com.zl.d17.springai.prompt.PromptTemplateServiceTest
+[INFO] Running com.zl.d17.springai.service.MockAiChatServiceStreamTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.424 s -- in com.zl.d17.springai.service.MockAiChatServiceStreamTest
+[INFO] Running com.zl.d17.springai.stream.ChatStreamErrorEventTest
+2026-10-30 16:19:48.516 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.stream.ChatStreamErrorEventTest]: ChatStreamErrorEventTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:48.535 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.stream.ChatStreamErrorEventTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30 16:19:48.565 INFO  [main] [requestId=] c.z.d.s.s.ChatStreamErrorEventTest - Starting ChatStreamErrorEventTest using Java 21.0.7 with PID 3812 (started by zl in E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA)
+2026-10-30 16:19:48.565 INFO  [main] [requestId=] c.z.d.s.s.ChatStreamErrorEventTest - The following 1 profile is active: "test"
+2026-10-30 16:19:49.083 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-30 16:19:49.084 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-30 16:19:49.144 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 0 Redis repository interfaces.
+2026-10-30 16:19:49.366 INFO  [main] [requestId=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2026-10-30 16:19:49.370 INFO  [main] [requestId=] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-2"]
+2026-10-30 16:19:49.370 INFO  [main] [requestId=] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-30 16:19:49.371 INFO  [main] [requestId=] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-10-30 16:19:49.441 INFO  [main] [requestId=] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-30 16:19:49.441 INFO  [main] [requestId=] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 875 ms
+2026-10-30 16:19:49.534 INFO  [main] [requestId=] c.zl.d17.knowledge.KnowledgeCorpus - �豸����֪ʶ���ϼ�����ɣ��ĵ���=3��Ƭ����=8
+2026-10-30 16:19:49.689 INFO  [main] [requestId=] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-10-30 16:19:49.734 INFO  [main] [requestId=] c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@35c3bf1c
+2026-10-30 16:19:49.836 INFO  [main] [requestId=] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-2"]
+2026-10-30 16:19:49.843 INFO  [main] [requestId=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 58191 (http) with context path '/'
+2026-10-30 16:19:49.845 INFO  [main] [requestId=] c.z.d.s.s.ChatStreamErrorEventTest - Started ChatStreamErrorEventTest in 1.306 seconds (process running for 31.924)
+2026-10-30 16:19:49.846 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2026-10-30 16:19:49.852 INFO  [main] [requestId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b673f3a
+2026-10-30 16:19:49.852 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2026-10-30 16:19:49.866 INFO  [main] [requestId=] c.z.d17.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�6 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+2026-10-30 16:19:49.903 INFO  [http-nio-auto-2-exec-1] [requestId=] o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-30 16:19:49.903 INFO  [http-nio-auto-2-exec-1] [requestId=] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-30 16:19:49.905 INFO  [http-nio-auto-2-exec-1] [requestId=] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-10-30 16:19:49.921 INFO  [http-nio-auto-2-exec-1] [requestId=9f26aecbfc5e45cd9b552dc52ebec981] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=25648ed2c5ed4a5c85602d6a111dda3d��owner=ut-default��sequence=1
+2026-10-30 16:19:49.940 WARN  [http-nio-auto-2-exec-1] [requestId=9f26aecbfc5e45cd9b552dc52ebec981] c.zl.d17.history.ChatHistoryService - �Ի��ִ�ʧ�ܣ�sessionId=25648ed2c5ed4a5c85602d6a111dda3d��errorCode=RuntimeException���û����=1
+2026-10-30 16:19:49.941 ERROR [http-nio-auto-2-exec-1] [requestId=9f26aecbfc5e45cd9b552dc52ebec981] c.z.d.c.ChatStreamController - SSE ���쳣������requestId=9f26aecbfc5e45cd9b552dc52ebec981��code=5000���쳣����=RuntimeException
+2026-10-30 16:19:49.942 INFO  [http-nio-auto-2-exec-1] [requestId=9f26aecbfc5e45cd9b552dc52ebec981] c.z.d.c.ChatStreamController - SSE ��ʽ�Ի��ѽ�����requestId=9f26aecbfc5e45cd9b552dc52ebec981��mode=mock��thinkingEnabled=false��retrieveEnabled=false��messageLength=5
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.438 s -- in com.zl.d17.springai.stream.ChatStreamErrorEventTest
+[INFO] Running com.zl.d17.springai.stream.ChatStreamIntegrationTest
+2026-10-30 16:19:49.955 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.stream.ChatStreamIntegrationTest]: ChatStreamIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:49.956 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.stream.ChatStreamIntegrationTest
+2026-10-30 16:19:49.983 INFO  [http-nio-auto-1-exec-5] [requestId=35a7a1edd19f40878f7e54af1dfdea3f] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"35a7a1edd19f40878f7e54af1dfdea3f","method":"GET","uri":"/","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"application/octet-stream, application/json, application/yaml, application/*+json, */*"},"requestBody":{"contentType":null,"size":0,"body":null,"skipReason":"empty body or input stream never read by framework"}}
+2026-10-30 16:19:49.983 INFO  [http-nio-auto-1-exec-5] [requestId=35a7a1edd19f40878f7e54af1dfdea3f] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"35a7a1edd19f40878f7e54af1dfdea3f","method":"GET","uri":"/","httpStatus":200,"elapsedMs":18,"responseBody":{"contentType":"text/html","size":2905,"body":"<unparseable body, length=2462>","truncated":false}}
+2026-10-30 16:19:49.999 INFO  [http-nio-auto-1-exec-6] [requestId=b9e72a2cd1e54bd1b6d69cc7ddbe166f] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=0736c7f3ac0a42dfa6303e745100a2cc��owner=ut-default��sequence=1
+2026-10-30 16:19:50.010 INFO  [http-nio-auto-1-exec-6] [requestId=b9e72a2cd1e54bd1b6d69cc7ddbe166f] c.z.d.c.ChatStreamController - SSE ��ʽ�Ի��ѽ�����requestId=b9e72a2cd1e54bd1b6d69cc7ddbe166f��mode=mock��thinkingEnabled=false��retrieveEnabled=false��messageLength=9
+2026-10-30 16:19:50.460 INFO  [parallel-6] [requestId=] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ���ʽ��ɣ�������Դ��=0��ʵ��������=0������δ֪���=0
+2026-10-30 16:19:50.466 INFO  [parallel-6] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=0736c7f3ac0a42dfa6303e745100a2cc���û����=1���������=2
+2026-10-30 16:19:50.489 WARN  [http-nio-auto-1-exec-8] [requestId=c193dca5eb0642ab9ac98f2b4f935321] c.z.d.common.GlobalExceptionHandler - ����У��ʧ��: message ����Ϊ�ջ򴿿հ�
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.540 s <<< FAILURE! -- in com.zl.d17.springai.stream.ChatStreamIntegrationTest
+[ERROR] com.zl.d17.springai.stream.ChatStreamIntegrationTest.indexPageShouldBeServedAsStaticResource -- Time elapsed: 0.028 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting actual:
+  "<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D17 �Ի���ʷ����������Ĺ�����ʾ</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main class="chat-shell">
+    <header class="chat-header">
+        <div>
+            <h1>D17 �Ի���ʷ�洢��Chat History������������ģ�Context Window��</h1>
+            <p class="sub">��ʷ�����־û��ɿ�������ѯ �� ͬ�Ự���ڹ��� �� �Ự/��ɫ���� �� ���ı���ȫ��Ⱦ</p>
+        </div>
+        <div class="header-actions">
+            <a class="nav-link" href="/templates.html">ģ�����</a>
+            <span id="modeBadge" class="badge">ģʽ����С�</span>
+            <button id="newChatBtn" type="button" class="btn btn-ghost" title="��յ�ǰҳ�沢���ûỰ">�¶Ի�</button>
+        </div>
+    </header>
+
+    <div class="role-bar">
+        <label for="roleSelect">�Ի���ɫ��</label>
+        <select id="roleSelect" title="��ɫ�ɷ����ģ��У�飬�л���ɫ�����ûỰ">
+            <option value="">ͨ��ģʽ��������ɫ������·��</option>
+        </select>
+        <span id="sessionTip" class="tip-line">��δ�����Ự</span>
+    </div>
+
+    <div class="toggle-bar">
+        <label class="toggle-item">
+            <input type="checkbox" id="thinkingToggle">
+            <span>˼��ģʽ��thinkingEnabled��</span>
+        </label>
+        <label class="toggle-item">
+            <input type="checkbox" id="showReasoningToggle" disabled>
+            <span>չʾԭʼ�������̣�showReasoning��</span>
+        </label>
+        <label class="toggle-item">
+            <input type="checkbox" id="retrieveToggle">
+            <span>֪ʶ�����ã�retrieveEnabled��</span>
+        </label>
+    </div>
+
+    <section id="messageList" class="message-list" aria-live="polite">
+        <div class="empty-tip" id="emptyTip">��û�жԻ������·�ѡ���ɫ������������������͡���</div>
+    </section>
+
+    <footer class="chat-input-bar">
+        <div id="statusLine" class="status-line" role="status" aria-live="polite">����</div>
+        <div class="input-row">
+            <textarea id="messageInput" rows="2" maxlength="2000"
+                      placeholder="�������⣬Enter ���ͣ�Shift+Enter ����"></textarea>
+            <div class="btn-column">
+                <button id="sendBtn" type="button" class="btn btn-primary">����</button>
+                <button id="stopBtn" type="button" class="btn btn-danger" disabled>ֹͣ</button>
+            </div>
+        </div>
+    </footer>
+</main>
+<!-- SSE ��֡�������������������� LF/CR/CRLF����������ҵ��ű����� -->
+<script src="/js/sse-parser.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
+"
+to contain:
+  "D16 ˼��������������Դ��ʾ" 
+	at com.zl.d17.springai.stream.ChatStreamIntegrationTest.indexPageShouldBeServedAsStaticResource(ChatStreamIntegrationTest.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Running com.zl.d17.springai.stream.ChatStreamTimeoutTest
+2026-10-30 16:19:50.496 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.stream.ChatStreamTimeoutTest]: ChatStreamTimeoutTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:50.498 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.stream.ChatStreamTimeoutTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-10-30 16:19:50.526 INFO  [main] [requestId=] c.z.d.s.stream.ChatStreamTimeoutTest - Starting ChatStreamTimeoutTest using Java 21.0.7 with PID 3812 (started by zl in E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA)
+2026-10-30 16:19:50.527 INFO  [main] [requestId=] c.z.d.s.stream.ChatStreamTimeoutTest - The following 1 profile is active: "test"
+2026-10-30 16:19:51.001 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-30 16:19:51.001 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-30 16:19:51.083 INFO  [main] [requestId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 0 Redis repository interfaces.
+2026-10-30 16:19:51.231 INFO  [main] [requestId=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2026-10-30 16:19:51.232 INFO  [main] [requestId=] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-3"]
+2026-10-30 16:19:51.233 INFO  [main] [requestId=] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-30 16:19:51.233 INFO  [main] [requestId=] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-10-30 16:19:51.285 INFO  [main] [requestId=] o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-30 16:19:51.285 INFO  [main] [requestId=] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 756 ms
+2026-10-30 16:19:51.373 INFO  [main] [requestId=] c.zl.d17.knowledge.KnowledgeCorpus - �豸����֪ʶ���ϼ�����ɣ��ĵ���=3��Ƭ����=8
+2026-10-30 16:19:51.529 INFO  [main] [requestId=] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-10-30 16:19:51.575 INFO  [main] [requestId=] c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4afdb7da
+2026-10-30 16:19:51.699 INFO  [main] [requestId=] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-3"]
+2026-10-30 16:19:51.707 INFO  [main] [requestId=] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 58203 (http) with context path '/'
+2026-10-30 16:19:51.709 INFO  [main] [requestId=] c.z.d.s.stream.ChatStreamTimeoutTest - Started ChatStreamTimeoutTest in 1.209 seconds (process running for 33.787)
+2026-10-30 16:19:51.709 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+2026-10-30 16:19:51.714 INFO  [main] [requestId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3771cad9
+2026-10-30 16:19:51.714 INFO  [main] [requestId=] com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+2026-10-30 16:19:51.726 INFO  [main] [requestId=] c.z.d17.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�6 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+2026-10-30 16:19:51.745 INFO  [http-nio-auto-3-exec-1] [requestId=] o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-30 16:19:51.745 INFO  [http-nio-auto-3-exec-1] [requestId=] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-30 16:19:51.746 INFO  [http-nio-auto-3-exec-1] [requestId=] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-10-30 16:19:51.760 INFO  [http-nio-auto-3-exec-1] [requestId=37446a6fae45447fb2c9eff65fcb5a50] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=7c69e5e18d834605b17806dc42a9b82f��owner=ut-default��sequence=1
+2026-10-30 16:19:51.771 INFO  [http-nio-auto-3-exec-1] [requestId=37446a6fae45447fb2c9eff65fcb5a50] c.z.d.c.ChatStreamController - SSE ��ʽ�Ի��ѽ�����requestId=37446a6fae45447fb2c9eff65fcb5a50��mode=mock��thinkingEnabled=false��retrieveEnabled=false��messageLength=6
+2026-10-30 16:19:51.938 WARN  [parallel-8] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ�ʧ�ܣ�sessionId=7c69e5e18d834605b17806dc42a9b82f��errorCode=StreamTimeout���û����=1
+2026-10-30 16:19:51.939 WARN  [parallel-8] [requestId=] c.z.d.c.ChatStreamController - SSE ��Ӧ�ò㳬ʱ������requestId=37446a6fae45447fb2c9eff65fcb5a50��code=5000����ʱ��ֵ=150ms
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.451 s -- in com.zl.d17.springai.stream.ChatStreamTimeoutTest
+[INFO] Running com.zl.d17.springai.stream.RoleChatStreamIntegrationTest
+2026-10-30 16:19:51.949 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.stream.RoleChatStreamIntegrationTest]: RoleChatStreamIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:51.952 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.stream.RoleChatStreamIntegrationTest
+2026-10-30 16:19:51.959 WARN  [http-nio-auto-1-exec-9] [requestId=fa5ed6d6eed14202b7f6d5860c21cd31] c.z.d.common.GlobalExceptionHandler - ��������쳣: scene ���ǵ�ǰ���ŵĶԻ���ɫ: ghost_role������ֵ: [customer_service, programming]
+2026-10-30 16:19:52.048 INFO  [http-nio-auto-1-exec-10] [requestId=05ffd16795884d4499c085107a81c4bb] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=8dd3922a8a6246baa4adfda30e884337��owner=ut-default��sequence=1
+2026-10-30 16:19:52.057 INFO  [http-nio-auto-1-exec-10] [requestId=05ffd16795884d4499c085107a81c4bb] c.z.d.c.RoleConversationService - ��ɫ�Ի�׼����ɣ�sessionId=8dd3922a8a6246baa4adfda30e884337��scene=customer_service��ģ��汾=1��������Ϣ��=0
+2026-10-30 16:19:52.058 INFO  [http-nio-auto-1-exec-10] [requestId=05ffd16795884d4499c085107a81c4bb] c.z.d.c.ChatStreamController - SSE ��ʽ�Ի��ѽ�����requestId=05ffd16795884d4499c085107a81c4bb��mode=mock��thinkingEnabled=false��retrieveEnabled=false��messageLength=13
+2026-10-30 16:19:52.605 INFO  [parallel-2] [requestId=] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ���ʽ��ɣ�������Դ��=0��ʵ��������=0������δ֪���=0
+2026-10-30 16:19:52.609 INFO  [parallel-2] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=8dd3922a8a6246baa4adfda30e884337���û����=1���������=2
+2026-10-30 16:19:52.636 INFO  [http-nio-auto-1-exec-2] [requestId=44f4e31fdb1d4577b0ab37729ba46ceb] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"44f4e31fdb1d4577b0ab37729ba46ceb","method":"GET","uri":"/templates.html","query":null,"clientIp":"127.0.0.1","headers":{"connection":"Upgrade, HTTP2-Settings","host":"localhost:53194","http2-settings":"AAEAAEAAAAIAAAAAAAMAAAAAAAQBAAAAAAUAAEAAAAYABgAA","upgrade":"h2c","user-agent":"Java-http-client/21.0.7","accept":"application/octet-stream, application/json, application/yaml, application/*+json, */*"},"requestBody":{"contentType":null,"size":0,"body":null,"skipReason":"empty body or input stream never read by framework"}}
+2026-10-30 16:19:52.636 INFO  [http-nio-auto-1-exec-2] [requestId=44f4e31fdb1d4577b0ab37729ba46ceb] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"44f4e31fdb1d4577b0ab37729ba46ceb","method":"GET","uri":"/templates.html","httpStatus":200,"elapsedMs":2,"responseBody":{"contentType":"text/html","size":4610,"body":"<unparseable body, length=4244>","truncated":false}}
+2026-10-30 16:19:52.657 INFO  [http-nio-auto-1-exec-3] [requestId=e17d39eb61cd48c09f890dcf310bb265] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=c0305a631eca4e98b266223b66a2c57b��owner=ut-default��sequence=1
+2026-10-30 16:19:52.665 INFO  [http-nio-auto-1-exec-3] [requestId=e17d39eb61cd48c09f890dcf310bb265] c.z.d.c.RoleConversationService - ��ɫ�Ի�׼����ɣ�sessionId=c0305a631eca4e98b266223b66a2c57b��scene=programming��ģ��汾=1��������Ϣ��=0
+2026-10-30 16:19:52.666 INFO  [http-nio-auto-1-exec-3] [requestId=e17d39eb61cd48c09f890dcf310bb265] c.z.d.c.ChatStreamController - SSE ��ʽ�Ի��ѽ�����requestId=e17d39eb61cd48c09f890dcf310bb265��mode=mock��thinkingEnabled=false��retrieveEnabled=false��messageLength=5
+2026-10-30 16:19:53.335 INFO  [parallel-3] [requestId=] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ���ʽ��ɣ�������Դ��=0��ʵ��������=0������δ֪���=0
+2026-10-30 16:19:53.341 INFO  [parallel-3] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=c0305a631eca4e98b266223b66a2c57b���û����=1���������=2
+2026-10-30 16:19:53.362 INFO  [http-nio-auto-1-exec-5] [requestId=0169ecb5eb01422b87b53a8e7417848f] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=c0305a631eca4e98b266223b66a2c57b��owner=ut-default��sequence=3
+2026-10-30 16:19:53.372 INFO  [http-nio-auto-1-exec-5] [requestId=0169ecb5eb01422b87b53a8e7417848f] c.z.d.c.RoleConversationService - ��ɫ�Ի�׼����ɣ�sessionId=c0305a631eca4e98b266223b66a2c57b��scene=programming��ģ��汾=1��������Ϣ��=1
+2026-10-30 16:19:53.372 INFO  [http-nio-auto-1-exec-5] [requestId=0169ecb5eb01422b87b53a8e7417848f] c.z.d.c.ChatStreamController - SSE ��ʽ�Ի��ѽ�����requestId=0169ecb5eb01422b87b53a8e7417848f��mode=mock��thinkingEnabled=false��retrieveEnabled=false��messageLength=5
+2026-10-30 16:19:53.989 INFO  [parallel-4] [requestId=] c.z.d.k.KnowledgeChatOrchestrator - ֪ʶ�ʴ���ʽ��ɣ�������Դ��=0��ʵ��������=0������δ֪���=0
+2026-10-30 16:19:53.995 INFO  [parallel-4] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=c0305a631eca4e98b266223b66a2c57b���û����=3���������=4
+[ERROR] Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.061 s <<< FAILURE! -- in com.zl.d17.springai.stream.RoleChatStreamIntegrationTest
+[ERROR] com.zl.d17.springai.stream.RoleChatStreamIntegrationTest.secondRoleStreamTurnWithSessionShouldSeeHistory -- Time elapsed: 1.365 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting actual:
+  "[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=538����ʷ��Ϣ����=1��ϵͳ��ʾ������=����һ��������������ʦ����Ҫ���� Java ����� Spring AI �������⣬���������¹��򣺣����յ����⣺���ڶ�����ʽ����"
+to contain:
+  "��ʷ��Ϣ����=2" 
+	at com.zl.d17.springai.stream.RoleChatStreamIntegrationTest.secondRoleStreamTurnWithSessionShouldSeeHistory(RoleChatStreamIntegrationTest.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] Running com.zl.d17.springai.web.HistoryControllerWebTest
+2026-10-30 16:19:54.017 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.web.HistoryControllerWebTest]: HistoryControllerWebTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:54.038 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.web.HistoryControllerWebTest
+2026-10-30 16:19:54.047 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=2bc9a7451c5d4378a38261dcfad26e86��owner=ut_web_hist��sequence=1
+2026-10-30 16:19:54.063 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=2bc9a7451c5d4378a38261dcfad26e86���û����=1���������=2
+2026-10-30 16:19:54.233 INFO  [main] [requestId=fa187cbc6b774896b3bbc191c491ce02] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"fa187cbc6b774896b3bbc191c491ce02","method":"GET","uri":"/api/v1/ai/sessions/2bc9a7451c5d4378a38261dcfad26e86/messages","query":null,"clientIp":"127.0.0.1","headers":{"X-Dev-User":"ut_web_hist"},"requestBody":{"contentType":null,"size":0,"body":null,"skipReason":"empty body or input stream never read by framework"}}
+2026-10-30 16:19:54.233 INFO  [main] [requestId=fa187cbc6b774896b3bbc191c491ce02] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"fa187cbc6b774896b3bbc191c491ce02","method":"GET","uri":"/api/v1/ai/sessions/2bc9a7451c5d4378a38261dcfad26e86/messages","httpStatus":200,"elapsedMs":161,"responseBody":{"contentType":"application/json","size":479,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"records\":[{\"sequenceNo\":1,\"role\":\"user\",\"content\":\"˳������\",\"status\":\"PENDING\",\"modelName\":\"\",\"errorCode\":\"\",\"errorMessage\":\"\",\"createdAt\":\"2026-10-30T16:19:54\",\"updatedAt\":\"2026-10-30T16:19:54\"},{\"sequenceNo\":2,\"role\":\"assistant\",\"content\":\"˳��ش�\",\"status\":\"COMPLETED\",\"modelName\":\"offline-mock\",\"errorCode\":\"\",\"errorMessage\":\"\",\"createdAt\":\"2026-10-30T16:19:54\",\"updatedAt\":\"2026-10-30T16:19:54\"}],\"total\":2,\"page\":1,\"size\":20}}","truncated":false}}
+2026-10-30 16:19:54.341 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=c001987762304a4e820a1cf9cdcfb69e��owner=ut_web_hist��sequence=1
+2026-10-30 16:19:54.352 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=c001987762304a4e820a1cf9cdcfb69e���û����=1���������=2
+2026-10-30 16:19:54.375 INFO  [main] [requestId=7f70457214f548bd8462a7a177728de1] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"7f70457214f548bd8462a7a177728de1","method":"GET","uri":"/api/v1/ai/sessions","query":null,"clientIp":"127.0.0.1","headers":{"X-Dev-User":"ut_web_hist"},"requestBody":{"contentType":null,"size":0,"body":null,"skipReason":"empty body or input stream never read by framework"}}
+2026-10-30 16:19:54.376 INFO  [main] [requestId=7f70457214f548bd8462a7a177728de1] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"7f70457214f548bd8462a7a177728de1","method":"GET","uri":"/api/v1/ai/sessions","httpStatus":200,"elapsedMs":16,"responseBody":{"contentType":"application/json","size":324,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"records\":[{\"sessionId\":\"c001987762304a4e820a1cf9cdcfb69e\",\"scene\":\"\",\"title\":\"Web ��ʷ����\",\"templateId\":\"\",\"templateVersion\":0,\"status\":\"ACTIVE\",\"createdAt\":\"2026-10-30T16:19:54\",\"updatedAt\":\"2026-10-30T16:19:54\",\"lastMessageAt\":\"2026-10-30T16:19:54\"}],\"total\":1,\"page\":1,\"size\":5}}","truncated":false}}
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/ai/sessions
+       Parameters = {page=[1], size=[5]}
+          Headers = [X-Dev-User:"ut_web_hist"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.zl.d17.history.HistoryController
+           Method = com.zl.d17.history.HistoryController#listSessions(HttpServletRequest, int, int)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [X-Request-Id:"7f70457214f548bd8462a7a177728de1", Content-Type:"application/json", Content-Length:"324"]
+     Content type = application/json
+             Body = {"code":200,"msg":"success","data":{"records":[{"sessionId":"c001987762304a4e820a1cf9cdcfb69e","scene":"","title":"Web ��ʷ����","templateId":"","templateVersion":0,"status":"ACTIVE","createdAt":"2026-10-30T16:19:54","updatedAt":"2026-10-30T16:19:54","lastMessageAt":"2026-10-30T16:19:54"}],"total":1,"page":1,"size":5}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-10-30 16:19:54.420 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=bb179ca4a11b4353a7220099cd0a9c0c��owner=ut_web_hist��sequence=1
+2026-10-30 16:19:54.429 INFO  [main] [requestId=] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=bb179ca4a11b4353a7220099cd0a9c0c���û����=1���������=2
+2026-10-30 16:19:54.440 WARN  [main] [requestId=a1c83b53eee5432eb93504c31d8bd53c] c.z.d.common.GlobalExceptionHandler - ��������쳣: �Ự�����ڻ���Ȩ����
+2026-10-30 16:19:54.440 INFO  [main] [requestId=a1c83b53eee5432eb93504c31d8bd53c] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"a1c83b53eee5432eb93504c31d8bd53c","method":"GET","uri":"/api/v1/ai/sessions/bb179ca4a11b4353a7220099cd0a9c0c/messages","query":null,"clientIp":"127.0.0.1","headers":{"X-Dev-User":"ut_somebody_else"},"requestBody":{"contentType":null,"size":0,"body":null,"skipReason":"empty body or input stream never read by framework"}}
+2026-10-30 16:19:54.440 INFO  [main] [requestId=a1c83b53eee5432eb93504c31d8bd53c] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"a1c83b53eee5432eb93504c31d8bd53c","method":"GET","uri":"/api/v1/ai/sessions/bb179ca4a11b4353a7220099cd0a9c0c/messages","httpStatus":200,"elapsedMs":3,"responseBody":{"contentType":"application/json","size":64,"body":"{\"code\":4001,\"msg\":\"�Ự�����ڻ���Ȩ����\",\"data\":null}","truncated":false}}
+2026-10-30 16:19:54.443 WARN  [main] [requestId=f1c4136a6dbd45a2b9ed7d7d2108034c] c.z.d.common.GlobalExceptionHandler - ��������쳣: �Ự�����ڻ���Ȩ����
+2026-10-30 16:19:54.443 INFO  [main] [requestId=f1c4136a6dbd45a2b9ed7d7d2108034c] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"f1c4136a6dbd45a2b9ed7d7d2108034c","method":"GET","uri":"/api/v1/ai/sessions/non-existent-session-id/messages","query":null,"clientIp":"127.0.0.1","headers":{"X-Dev-User":"ut_web_hist"},"requestBody":{"contentType":null,"size":0,"body":null,"skipReason":"empty body or input stream never read by framework"}}
+2026-10-30 16:19:54.444 INFO  [main] [requestId=f1c4136a6dbd45a2b9ed7d7d2108034c] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"f1c4136a6dbd45a2b9ed7d7d2108034c","method":"GET","uri":"/api/v1/ai/sessions/non-existent-session-id/messages","httpStatus":200,"elapsedMs":2,"responseBody":{"contentType":"application/json","size":64,"body":"{\"code\":4001,\"msg\":\"�Ự�����ڻ���Ȩ����\",\"data\":null}","truncated":false}}
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.446 s <<< FAILURE! -- in com.zl.d17.springai.web.HistoryControllerWebTest
+[ERROR] com.zl.d17.springai.web.HistoryControllerWebTest.sessionsEndpointShouldReturnOwnedSessionWithPagination -- Time elapsed: 0.079 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.data.pageSize"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:351)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.zl.d17.springai.web.HistoryControllerWebTest.sessionsEndpointShouldReturnOwnedSessionWithPagination(HistoryControllerWebTest.java:44)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['data']['pageSize']
+
+[INFO] Running com.zl.d17.springai.web.PromptTemplateControllerWebTest
+2026-10-30 16:19:54.466 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.web.PromptTemplateControllerWebTest]: PromptTemplateControllerWebTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:54.468 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.web.PromptTemplateControllerWebTest
+2026-10-30 16:19:54.530 INFO  [main] [requestId=b2be2866d91a4650bc073109dedb599f] c.z.d.p.PromptTemplateController - �յ�ģ�崴������templateId=ut_web_lifecycle
+2026-10-30 16:19:54.543 INFO  [main] [requestId=b2be2866d91a4650bc073109dedb599f] c.z.d17.prompt.PromptTemplateService - Prompt ģ���Ѵ�����templateId=ut_web_lifecycle��scene=technical_explanation��������=1
+2026-10-30 16:19:54.547 INFO  [main] [requestId=b2be2866d91a4650bc073109dedb599f] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"b2be2866d91a4650bc073109dedb599f","method":"POST","uri":"/api/v1/ai/prompts","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"234"},"requestBody":{"contentType":"application/json","size":234,"body":"{\"templateId\":\"ut_web_lifecycle\",\"content\":\"���� {audience} ����\",\"name\":\"Web��������ģ��\",\"scene\":\"technical_explanation\",\"variables\":[{\"defaultValue\":\"��ѧ��\",\"required\":false,\"description\":\"����\",\"name\":\"audience\"}]}","truncated":false}}
+2026-10-30 16:19:54.547 INFO  [main] [requestId=b2be2866d91a4650bc073109dedb599f] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"b2be2866d91a4650bc073109dedb599f","method":"POST","uri":"/api/v1/ai/prompts","httpStatus":200,"elapsedMs":73,"responseBody":{"contentType":"application/json","size":402,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"templateId\":\"ut_web_lifecycle\",\"name\":\"Web��������ģ��\",\"scene\":\"technical_explanation\",\"description\":null,\"content\":\"���� {audience} ����\",\"variables\":[{\"name\":\"audience\",\"required\":false,\"description\":\"����\",\"defaultValue\":\"��ѧ��\"}],\"version\":1,\"status\":\"ENABLED\",\"createdAt\":\"2026-10-30T16:19:54.532848\",\"updatedAt\":\"2026-10-30T16:19:54.532848\"}}","truncated":false}}
+2026-10-30 16:19:54.550 INFO  [main] [requestId=12497c5a12694fc2ba117c1145762113] c.z.d.p.PromptTemplateController - �յ�ģ���������templateId=ut_web_lifecycle
+2026-10-30 16:19:54.568 INFO  [main] [requestId=12497c5a12694fc2ba117c1145762113] c.z.d17.prompt.PromptTemplateService - Prompt ģ���Ѹ��£�templateId=ut_web_lifecycle���°汾 version=2
+2026-10-30 16:19:54.570 INFO  [main] [requestId=12497c5a12694fc2ba117c1145762113] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"12497c5a12694fc2ba117c1145762113","method":"PUT","uri":"/api/v1/ai/prompts/ut_web_lifecycle","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"245"},"requestBody":{"contentType":"application/json","size":245,"body":"{\"templateId\":\"ut_web_lifecycle\",\"content\":\"���º����� {audience} ����\",\"name\":\"Web��������ģ��v2\",\"scene\":\"technical_explanation\",\"variables\":[{\"defaultValue\":\"��ѧ��\",\"required\":false,\"description\":\"����\",\"name\":\"audience\"}]}","truncated":false}}
+2026-10-30 16:19:54.570 INFO  [main] [requestId=12497c5a12694fc2ba117c1145762113] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"12497c5a12694fc2ba117c1145762113","method":"PUT","uri":"/api/v1/ai/prompts/ut_web_lifecycle","httpStatus":200,"elapsedMs":20,"responseBody":{"contentType":"application/json","size":409,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"templateId\":\"ut_web_lifecycle\",\"name\":\"Web��������ģ��v2\",\"scene\":\"technical_explanation\",\"description\":null,\"content\":\"���º����� {audience} ����\",\"variables\":[{\"name\":\"audience\",\"required\":false,\"description\":\"����\",\"defaultValue\":\"��ѧ��\"}],\"version\":2,\"status\":\"ENABLED\",\"createdAt\":\"2026-10-30T16:19:55\",\"updatedAt\":\"2026-10-30T16:19:54.559198800\"}}","truncated":false}}
+2026-10-30 16:19:54.591 INFO  [main] [requestId=5ee3acc6d5c349bc9db49b5e81e13d14] c.z.d17.prompt.PromptTemplateService - Prompt ģ��״̬�����templateId=ut_web_lifecycle��status=DISABLED
+2026-10-30 16:19:54.592 INFO  [main] [requestId=5ee3acc6d5c349bc9db49b5e81e13d14] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"5ee3acc6d5c349bc9db49b5e81e13d14","method":"PATCH","uri":"/api/v1/ai/prompts/ut_web_lifecycle/status","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"21"},"requestBody":{"contentType":"application/json","size":21,"body":"{\"status\":\"DISABLED\"}","truncated":false}}
+2026-10-30 16:19:54.592 INFO  [main] [requestId=5ee3acc6d5c349bc9db49b5e81e13d14] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"5ee3acc6d5c349bc9db49b5e81e13d14","method":"PATCH","uri":"/api/v1/ai/prompts/ut_web_lifecycle/status","httpStatus":200,"elapsedMs":19,"responseBody":{"contentType":"application/json","size":408,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"templateId\":\"ut_web_lifecycle\",\"name\":\"Web��������ģ��v2\",\"scene\":\"technical_explanation\",\"description\":\"\",\"content\":\"���º����� {audience} ����\",\"variables\":[{\"name\":\"audience\",\"required\":false,\"description\":\"����\",\"defaultValue\":\"��ѧ��\"}],\"version\":2,\"status\":\"DISABLED\",\"createdAt\":\"2026-10-30T16:19:55\",\"updatedAt\":\"2026-10-30T16:19:54.580982500\"}}","truncated":false}}
+2026-10-30 16:19:54.608 INFO  [main] [requestId=bad2b587f2134076956518f60905a8c2] c.z.d17.prompt.PromptTemplateService - Prompt ģ��״̬�����templateId=ut_web_lifecycle��status=ENABLED
+2026-10-30 16:19:54.608 INFO  [main] [requestId=bad2b587f2134076956518f60905a8c2] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"bad2b587f2134076956518f60905a8c2","method":"PATCH","uri":"/api/v1/ai/prompts/ut_web_lifecycle/status","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"20"},"requestBody":{"contentType":"application/json","size":20,"body":"{\"status\":\"ENABLED\"}","truncated":false}}
+2026-10-30 16:19:54.609 INFO  [main] [requestId=bad2b587f2134076956518f60905a8c2] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"bad2b587f2134076956518f60905a8c2","method":"PATCH","uri":"/api/v1/ai/prompts/ut_web_lifecycle/status","httpStatus":200,"elapsedMs":15,"responseBody":{"contentType":"application/json","size":407,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"templateId\":\"ut_web_lifecycle\",\"name\":\"Web��������ģ��v2\",\"scene\":\"technical_explanation\",\"description\":\"\",\"content\":\"���º����� {audience} ����\",\"variables\":[{\"name\":\"audience\",\"required\":false,\"description\":\"����\",\"defaultValue\":\"��ѧ��\"}],\"version\":2,\"status\":\"ENABLED\",\"createdAt\":\"2026-10-30T16:19:55\",\"updatedAt\":\"2026-10-30T16:19:54.599139400\"}}","truncated":false}}
+2026-10-30 16:19:54.625 INFO  [main] [requestId=578e4b2a08d04c388516d9a3cc83512b] c.z.d17.prompt.PromptTemplateService - Prompt ģ�����߼�ɾ����templateId=ut_web_lifecycle
+2026-10-30 16:19:54.626 INFO  [main] [requestId=578e4b2a08d04c388516d9a3cc83512b] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"578e4b2a08d04c388516d9a3cc83512b","method":"DELETE","uri":"/api/v1/ai/prompts/ut_web_lifecycle","query":null,"clientIp":"127.0.0.1","headers":{},"requestBody":{"contentType":null,"size":0,"body":null,"skipReason":"empty body or input stream never read by framework"}}
+2026-10-30 16:19:54.627 INFO  [main] [requestId=578e4b2a08d04c388516d9a3cc83512b] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"578e4b2a08d04c388516d9a3cc83512b","method":"DELETE","uri":"/api/v1/ai/prompts/ut_web_lifecycle","httpStatus":200,"elapsedMs":17,"responseBody":{"contentType":"application/json","size":86,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"deleted\":\"true\",\"templateId\":\"ut_web_lifecycle\"}}","truncated":false}}
+2026-10-30 16:19:54.632 WARN  [main] [requestId=1c6c9e8b6ac248aa9018d80b950ca2ae] c.z.d.common.GlobalExceptionHandler - ��������쳣: ģ�岻���ڻ���ɾ��: ut_web_lifecycle
+2026-10-30 16:19:54.634 INFO  [main] [requestId=1c6c9e8b6ac248aa9018d80b950ca2ae] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"1c6c9e8b6ac248aa9018d80b950ca2ae","method":"GET","uri":"/api/v1/ai/prompts/ut_web_lifecycle","query":null,"clientIp":"127.0.0.1","headers":{},"requestBody":{"contentType":null,"size":0,"body":null,"skipReason":"empty body or input stream never read by framework"}}
+2026-10-30 16:19:54.634 INFO  [main] [requestId=1c6c9e8b6ac248aa9018d80b950ca2ae] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"1c6c9e8b6ac248aa9018d80b950ca2ae","method":"GET","uri":"/api/v1/ai/prompts/ut_web_lifecycle","httpStatus":200,"elapsedMs":5,"responseBody":{"contentType":"application/json","size":79,"body":"{\"code\":4001,\"msg\":\"ģ�岻���ڻ���ɾ��: ut_web_lifecycle\",\"data\":null}","truncated":false}}
+2026-10-30 16:19:54.652 INFO  [main] [requestId=52648bc4aa73466fa7d2eea192fe7236] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"52648bc4aa73466fa7d2eea192fe7236","method":"GET","uri":"/api/v1/ai/roles","query":null,"clientIp":"127.0.0.1","headers":{},"requestBody":{"contentType":null,"size":0,"body":null,"skipReason":"empty body or input stream never read by framework"}}
+2026-10-30 16:19:54.653 INFO  [main] [requestId=52648bc4aa73466fa7d2eea192fe7236] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"52648bc4aa73466fa7d2eea192fe7236","method":"GET","uri":"/api/v1/ai/roles","httpStatus":200,"elapsedMs":4,"responseBody":{"contentType":"application/json","size":636,"body":"{\"code\":200,\"msg\":\"success\",\"data\":[{\"templateId\":\"customer_service\",\"name\":\"�ͷ��Ի�����\",\"scene\":\"customer_service\",\"description\":\"��ò���۽�����Ŀͻ������ɫ�������û��ṩ����Ϣ���𣬲��鹹���������߽����\",\"version\":1,\"status\":\"ENABLED\",\"variableCount\":1,\"updatedAt\":\"2026-10-30T16:19:48\"},{\"templateId\":\"programming\",\"name\":\"��̼�������\",\"scene\":\"programming\",\"description\":\"���� Java ����� Spring AI �����ı�̹��ʣ�ǿ��������ʵ������汾�����飬���鹹 API��\",\"version\":1,\"status\":\"ENABLED\",\"variableCount\":1,\"updatedAt\":\"2026-10-30T16:19:32\"}]}","truncated":false}}
+2026-10-30 16:19:54.666 INFO  [main] [requestId=4b131a5c87ff4387ab872911215c0c6c] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"4b131a5c87ff4387ab872911215c0c6c","method":"GET","uri":"/api/v1/ai/prompts","query":null,"clientIp":"127.0.0.1","headers":{},"requestBody":{"contentType":null,"size":0,"body":null,"skipReason":"empty body or input stream never read by framework"}}
+2026-10-30 16:19:54.667 INFO  [main] [requestId=4b131a5c87ff4387ab872911215c0c6c] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"4b131a5c87ff4387ab872911215c0c6c","method":"GET","uri":"/api/v1/ai/prompts","httpStatus":200,"elapsedMs":2,"responseBody":{"contentType":"application/json","size":300,"body":"{\"code\":200,\"msg\":\"success\",\"data\":[{\"templateId\":\"code_review\",\"name\":\"�������\",\"scene\":\"code_review\",\"description\":\"��ȱ�ݡ����ա��Ż�����������������ۣ������ṹ�� JSON ժҪ��\",\"version\":1,\"status\":\"ENABLED\",\"variableCount\":1,\"updatedAt\":\"2026-10-28T22:55:01\"}]}","truncated":false}}
+2026-10-30 16:19:54.679 INFO  [main] [requestId=7b67067d703445d0bd8371683b176388] c.z.d.p.PromptTemplateController - �յ�ģ�崴������templateId=ut_web_bad
+2026-10-30 16:19:54.679 WARN  [main] [requestId=7b67067d703445d0bd8371683b176388] c.z.d.common.GlobalExceptionHandler - ��������쳣: ģ������ʹ����δ�����ı��� {ghost}�������� variables �еǼǻ������
+2026-10-30 16:19:54.680 INFO  [main] [requestId=7b67067d703445d0bd8371683b176388] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"7b67067d703445d0bd8371683b176388","method":"POST","uri":"/api/v1/ai/prompts","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"130"},"requestBody":{"contentType":"application/json","size":130,"body":"{\"templateId\":\"ut_web_bad\",\"content\":\"��δ����ռλ�� {ghost}\",\"name\":\"Web��ģ��\",\"scene\":\"summarization\",\"variables\":[]}","truncated":false}}
+2026-10-30 16:19:54.681 INFO  [main] [requestId=7b67067d703445d0bd8371683b176388] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"7b67067d703445d0bd8371683b176388","method":"POST","uri":"/api/v1/ai/prompts","httpStatus":200,"elapsedMs":2,"responseBody":{"contentType":"application/json","size":125,"body":"{\"code\":4001,\"msg\":\"ģ������ʹ����δ�����ı��� {ghost}�������� variables �еǼǻ������\",\"data\":null}","truncated":false}}
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.222 s -- in com.zl.d17.springai.web.PromptTemplateControllerWebTest
+[INFO] Running com.zl.d17.springai.web.RoleChatControllerTest
+2026-10-30 16:19:54.690 INFO  [main] [requestId=] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zl.d17.springai.web.RoleChatControllerTest]: RoleChatControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-30 16:19:54.692 INFO  [main] [requestId=] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zl.d17.springai.D17TestBootstrap for test class com.zl.d17.springai.web.RoleChatControllerTest
+2026-10-30 16:19:54.706 INFO  [main] [requestId=70ec7dfb7ede4dd086856f3290b0d594] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=4046d16f8b934074b6041e51631077f4��owner=ut-default��sequence=1
+2026-10-30 16:19:54.716 INFO  [main] [requestId=70ec7dfb7ede4dd086856f3290b0d594] c.z.d.c.RoleConversationService - ��ɫ�Ի�׼����ɣ�sessionId=4046d16f8b934074b6041e51631077f4��scene=customer_service��ģ��汾=1��������Ϣ��=0
+2026-10-30 16:19:54.721 INFO  [main] [requestId=70ec7dfb7ede4dd086856f3290b0d594] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=4046d16f8b934074b6041e51631077f4���û����=1���������=2
+2026-10-30 16:19:54.730 INFO  [main] [requestId=70ec7dfb7ede4dd086856f3290b0d594] c.zl.d17.controller.ChatController - ��ɫ�Ի���ɣ�sessionId=4046d16f8b934074b6041e51631077f4��templateId=customer_service��version=1
+2026-10-30 16:19:54.732 INFO  [main] [requestId=70ec7dfb7ede4dd086856f3290b0d594] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"70ec7dfb7ede4dd086856f3290b0d594","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"119"},"requestBody":{"contentType":"application/json","size":119,"body":"{\"variables\":{\"business_context\":\"�ۺ󴰿�����\"},\"scene\":\"customer_service\",\"message\":\"������ѯ�˿����\"}","truncated":false}}
+2026-10-30 16:19:54.733 INFO  [main] [requestId=70ec7dfb7ede4dd086856f3290b0d594] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"70ec7dfb7ede4dd086856f3290b0d594","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":34,"responseBody":{"contentType":"application/json","size":545,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"sessionId\":\"4046d16f8b934074b6041e51631077f4\",\"scene\":\"customer_service\",\"templateId\":\"customer_service\",\"templateVersion\":1,\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=487����ʷ��Ϣ����=0��ϵͳ��ʾ������=����һ��רҵ�����߿ͷ����������ϸ��������·�����򣺣����յ����⣺��������ѯ�˿���ȡ���\",\"citations\":[]}}","truncated":false}}
+2026-10-30 16:19:54.750 INFO  [main] [requestId=8259403db79744c1acc340ab7b2e0645] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=331738eccf1c41d7ba0d5a3d388de712��owner=ut-default��sequence=1
+2026-10-30 16:19:54.759 INFO  [main] [requestId=8259403db79744c1acc340ab7b2e0645] c.z.d.c.RoleConversationService - ��ɫ�Ի�׼����ɣ�sessionId=331738eccf1c41d7ba0d5a3d388de712��scene=programming��ģ��汾=1��������Ϣ��=0
+2026-10-30 16:19:54.763 INFO  [main] [requestId=8259403db79744c1acc340ab7b2e0645] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=331738eccf1c41d7ba0d5a3d388de712���û����=1���������=2
+2026-10-30 16:19:54.770 INFO  [main] [requestId=8259403db79744c1acc340ab7b2e0645] c.zl.d17.controller.ChatController - ��ɫ�Ի���ɣ�sessionId=331738eccf1c41d7ba0d5a3d388de712��templateId=programming��version=1
+2026-10-30 16:19:54.771 INFO  [main] [requestId=8259403db79744c1acc340ab7b2e0645] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"8259403db79744c1acc340ab7b2e0645","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"69"},"requestBody":{"contentType":"application/json","size":69,"body":"{\"scene\":\"programming\",\"message\":\"��һ�֣������߳���ʲô\"}","truncated":false}}
+2026-10-30 16:19:54.772 INFO  [main] [requestId=8259403db79744c1acc340ab7b2e0645] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"8259403db79744c1acc340ab7b2e0645","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":28,"responseBody":{"contentType":"application/json","size":579,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"sessionId\":\"331738eccf1c41d7ba0d5a3d388de712\",\"scene\":\"programming\",\"templateId\":\"programming\",\"templateVersion\":1,\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=538����ʷ��Ϣ����=0��ϵͳ��ʾ������=����һ��������������ʦ����Ҫ���� Java ����� Spring AI �������⣬���������¹��򣺣����յ����⣺����һ�֣������߳���ʲô����\",\"citations\":[]}}","truncated":false}}
+2026-10-30 16:19:54.780 INFO  [main] [requestId=2f6ad35e385749bea8128fa37ec24a33] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=331738eccf1c41d7ba0d5a3d388de712��owner=ut-default��sequence=3
+2026-10-30 16:19:54.790 INFO  [main] [requestId=2f6ad35e385749bea8128fa37ec24a33] c.z.d.c.RoleConversationService - ��ɫ�Ի�׼����ɣ�sessionId=331738eccf1c41d7ba0d5a3d388de712��scene=programming��ģ��汾=1��������Ϣ��=1
+2026-10-30 16:19:54.794 INFO  [main] [requestId=2f6ad35e385749bea8128fa37ec24a33] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=331738eccf1c41d7ba0d5a3d388de712���û����=3���������=4
+2026-10-30 16:19:54.800 INFO  [main] [requestId=2f6ad35e385749bea8128fa37ec24a33] c.zl.d17.controller.ChatController - ��ɫ�Ի���ɣ�sessionId=331738eccf1c41d7ba0d5a3d388de712��templateId=programming��version=1
+2026-10-30 16:19:54.801 INFO  [main] [requestId=2f6ad35e385749bea8128fa37ec24a33] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"2f6ad35e385749bea8128fa37ec24a33","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"119"},"requestBody":{"contentType":"application/json","size":119,"body":"{\"scene\":\"programming\",\"sessionId\":\"331738eccf1c41d7ba0d5a3d388de712\",\"message\":\"�ڶ��֣�����ƽ̨�߳�����\"}","truncated":false}}
+2026-10-30 16:19:54.801 INFO  [main] [requestId=2f6ad35e385749bea8128fa37ec24a33] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"2f6ad35e385749bea8128fa37ec24a33","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":27,"responseBody":{"contentType":"application/json","size":582,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"sessionId\":\"331738eccf1c41d7ba0d5a3d388de712\",\"scene\":\"programming\",\"templateId\":\"programming\",\"templateVersion\":1,\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=538����ʷ��Ϣ����=1��ϵͳ��ʾ������=����һ��������������ʦ����Ҫ���� Java ����� Spring AI �������⣬���������¹��򣺣����յ����⣺���ڶ��֣�����ƽ̨�߳����𡹡�\",\"citations\":[]}}","truncated":false}}
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/ai/chat
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"69"]
+             Body = {"scene":"programming","message":"��һ�֣������߳���ʲô"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.zl.d17.controller.ChatController
+           Method = com.zl.d17.controller.ChatController#chat(ChatRequest, HttpServletRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [X-Request-Id:"8259403db79744c1acc340ab7b2e0645", Content-Type:"application/json", Content-Length:"579"]
+     Content type = application/json
+             Body = {"code":200,"msg":"success","data":{"sessionId":"331738eccf1c41d7ba0d5a3d388de712","scene":"programming","templateId":"programming","templateVersion":1,"mode":"mock","model":"offline-mock","mocked":true,"content":"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=538����ʷ��Ϣ����=0��ϵͳ��ʾ������=����һ��������������ʦ����Ҫ���� Java ����� Spring AI �������⣬���������¹��򣺣����յ����⣺����һ�֣������߳���ʲô����","citations":[]}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/ai/chat
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"119"]
+             Body = {"scene":"programming","sessionId":"331738eccf1c41d7ba0d5a3d388de712","message":"�ڶ��֣�����ƽ̨�߳�����"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.zl.d17.controller.ChatController
+           Method = com.zl.d17.controller.ChatController#chat(ChatRequest, HttpServletRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [X-Request-Id:"2f6ad35e385749bea8128fa37ec24a33", Content-Type:"application/json", Content-Length:"582"]
+     Content type = application/json
+             Body = {"code":200,"msg":"success","data":{"sessionId":"331738eccf1c41d7ba0d5a3d388de712","scene":"programming","templateId":"programming","templateVersion":1,"mode":"mock","model":"offline-mock","mocked":true,"content":"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=538����ʷ��Ϣ����=1��ϵͳ��ʾ������=����һ��������������ʦ����Ҫ���� Java ����� Spring AI �������⣬���������¹��򣺣����յ����⣺���ڶ��֣�����ƽ̨�߳����𡹡�","citations":[]}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2026-10-30 16:19:54.810 WARN  [main] [requestId=0b1562c051ca44a0a6ff3f103b92f693] c.z.d.common.GlobalExceptionHandler - ��������쳣: scene ���ǵ�ǰ���ŵĶԻ���ɫ: not_a_role������ֵ: [customer_service, programming]
+2026-10-30 16:19:54.811 INFO  [main] [requestId=0b1562c051ca44a0a6ff3f103b92f693] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"0b1562c051ca44a0a6ff3f103b92f693","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"47"},"requestBody":{"contentType":"application/json","size":47,"body":"{\"scene\":\"not_a_role\",\"message\":\"�Ƿ���ɫ\"}","truncated":false}}
+2026-10-30 16:19:54.811 INFO  [main] [requestId=0b1562c051ca44a0a6ff3f103b92f693] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"0b1562c051ca44a0a6ff3f103b92f693","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":1,"responseBody":{"contentType":"application/json","size":130,"body":"{\"code\":4001,\"msg\":\"scene ���ǵ�ǰ���ŵĶԻ���ɫ: not_a_role������ֵ: [customer_service, programming]\",\"data\":null}","truncated":false}}
+2026-10-30 16:19:54.816 WARN  [main] [requestId=8b4b06961e1f4be1a3efd193ded13d92] c.z.d.common.GlobalExceptionHandler - ��������쳣: ������ģ��δ�����ı���: hack_key
+2026-10-30 16:19:54.816 INFO  [main] [requestId=8b4b06961e1f4be1a3efd193ded13d92] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"8b4b06961e1f4be1a3efd193ded13d92","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"82"},"requestBody":{"contentType":"application/json","size":82,"body":"{\"variables\":{\"hack_key\":\"v\"},\"scene\":\"customer_service\",\"message\":\"�Ƿ�����\"}","truncated":false}}
+2026-10-30 16:19:54.818 INFO  [main] [requestId=8b4b06961e1f4be1a3efd193ded13d92] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"8b4b06961e1f4be1a3efd193ded13d92","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":3,"responseBody":{"contentType":"application/json","size":77,"body":"{\"code\":4001,\"msg\":\"������ģ��δ�����ı���: hack_key\",\"data\":null}","truncated":false}}
+2026-10-30 16:19:54.829 INFO  [main] [requestId=5dabf24ababf4dadb1f8e118fecd279b] c.zl.d17.history.ChatHistoryService - �Ի��ִο�ʼ��sessionId=ea289d754aa545cab7f483960697352e��owner=ut-default��sequence=1
+2026-10-30 16:19:54.844 INFO  [main] [requestId=5dabf24ababf4dadb1f8e118fecd279b] c.zl.d17.history.ChatHistoryService - �Ի��ִ���ɣ�sessionId=ea289d754aa545cab7f483960697352e���û����=1���������=2
+2026-10-30 16:19:54.849 INFO  [main] [requestId=5dabf24ababf4dadb1f8e118fecd279b] c.zl.d17.controller.ChatController - ��ͨ�Ի���ɣ�sessionId=ea289d754aa545cab7f483960697352e��mode=mock��mocked=true
+2026-10-30 16:19:54.851 INFO  [main] [requestId=5dabf24ababf4dadb1f8e118fecd279b] ACCESS_LOG - {"event":"HTTP_REQUEST","requestId":"5dabf24ababf4dadb1f8e118fecd279b","method":"POST","uri":"/api/v1/ai/chat","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"29"},"requestBody":{"contentType":"application/json","size":29,"body":"{\"message\":\"����·�ع�\"}","truncated":false}}
+2026-10-30 16:19:54.851 INFO  [main] [requestId=5dabf24ababf4dadb1f8e118fecd279b] ACCESS_LOG - {"event":"HTTP_RESPONSE","requestId":"5dabf24ababf4dadb1f8e118fecd279b","method":"POST","uri":"/api/v1/ai/chat","httpStatus":200,"elapsedMs":26,"responseBody":{"contentType":"application/json","size":377,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"mode\":\"mock\",\"model\":\"offline-mock\",\"mocked\":true,\"content\":\"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺������·�ع项��\",\"sessionId\":\"ea289d754aa545cab7f483960697352e\",\"citations\":[]}}","truncated":false}}
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/ai/chat
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"29"]
+             Body = {"message":"����·�ع�"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.zl.d17.controller.ChatController
+           Method = com.zl.d17.controller.ChatController#chat(ChatRequest, HttpServletRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [X-Request-Id:"5dabf24ababf4dadb1f8e118fecd279b", Content-Type:"application/json", Content-Length:"377"]
+     Content type = application/json
+             Body = {"code":200,"msg":"success","data":{"mode":"mock","model":"offline-mock","mocked":true,"content":"[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=0����ʷ��Ϣ����=0��ϵͳ��ʾ������=�����յ����⣺������·�ع项��","sessionId":"ea289d754aa545cab7f483960697352e","citations":[]}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+[ERROR] Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.168 s <<< FAILURE! -- in com.zl.d17.springai.web.RoleChatControllerTest
+[ERROR] com.zl.d17.springai.web.RoleChatControllerTest.secondTurnWithSameSessionShouldCarryHistoryAndKeepRoleIsolation -- Time elapsed: 0.066 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting actual:
+  "[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=538����ʷ��Ϣ����=1��ϵͳ��ʾ������=����һ��������������ʦ����Ҫ���� Java ����� Spring AI �������⣬���������¹��򣺣����յ����⣺���ڶ��֣�����ƽ̨�߳����𡹡�"
+to contain:
+  "��ʷ��Ϣ����=2" 
+	at com.zl.d17.springai.web.RoleChatControllerTest.secondTurnWithSameSessionShouldCarryHistoryAndKeepRoleIsolation(RoleChatControllerTest.java:75)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] com.zl.d17.springai.web.RoleChatControllerTest.legacyPathWithoutSceneShouldKeepOldResponseShape -- Time elapsed: 0.033 s <<< FAILURE!
+java.lang.AssertionError: Expected no value at JSON path "$.data.sessionId" but found: 'ea289d754aa545cab7f483960697352e'
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:39)
+	at org.springframework.test.util.AssertionErrors.assertTrue(AssertionErrors.java:73)
+	at org.springframework.test.util.JsonPathExpectationsHelper.doesNotExist(JsonPathExpectationsHelper.java:263)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$doesNotExist$4(JsonPathResultMatchers.java:135)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.zl.d17.springai.web.RoleChatControllerTest.legacyPathWithoutSceneShouldKeepOldResponseShape(RoleChatControllerTest.java:112)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   RoleConversationServiceTest.historyShouldAccumulateAcrossTurnsWithinSameSession:68 
+Expected size: 2 but was: 1 in:
+[Turn[role=assistant, content=��һ�����ֻظ�]]
+[ERROR]   ContextWindowTest.failedAndPendingMessagesShouldNotEnterWindow:57 
+Expected size: 2 but was: 1 in:
+[com.zl.d17.history.model.HistoryMessage@60b65a4a]
+[ERROR]   ContextWindowTest.windowShouldContainOnlyLatestFourCompletedMessages:41 
+Expected size: 4 but was: 3 in:
+[com.zl.d17.history.model.HistoryMessage@14cc127b,
+    com.zl.d17.history.model.HistoryMessage@10da7696,
+    com.zl.d17.history.model.HistoryMessage@43072e3a]
+[ERROR]   HistoryConcurrencyTest.concurrentTurnsOnSameSessionShouldGetUniqueGaplessSequences:66 
+Expected size: 18 but was: 4 in:
+[1, 2, 3, 4]
+[ERROR]   HistoryFailureTest.failedTurnShouldMarkUserFailedAndNotCreateAssistantMessage:38 
+expected: 1
+ but was: 0
+[ERROR]   HistoryFailureTest.interruptedTurnShouldKeepPartialAssistantContent:55 
+Expecting actual:
+  ["PENDING", "INTERRUPTED"]
+to contain exactly (and in same order):
+  ["INTERRUPTED", "INTERRUPTED"]
+but some elements were not found:
+  ["INTERRUPTED"]
+and others were not expected:
+  ["PENDING"]
+
+[ERROR]   HistoryPersistenceTest.historyShouldBeQueryableViaFreshReadSimulatingRestart:89 
+Expected size: 2 but was: 1 in:
+[com.zl.d17.history.model.HistoryMessage@38b9a64b]
+[ERROR]   HistoryPersistenceTest.multipleTurnsShouldGetGaplessSequenceAndOrderedMessages:63 
+Expected size: 6 but was: 3 in:
+[com.zl.d17.history.model.HistoryMessage@4d6f0460,
+    com.zl.d17.history.model.HistoryMessage@5def348b,
+    com.zl.d17.history.model.HistoryMessage@1ed7e040]
+[ERROR]   HistoryPersistenceTest.startTurnShouldPersistPendingUserAndCompleteTurnShouldKeepBothCompleted:41 
+Expected size: 2 but was: 1 in:
+[com.zl.d17.history.model.HistoryMessage@3ea4cfe0]
+[ERROR]   SessionIsolationTest.differentSessionsShouldNotShareContext:36 
+Expected size: 2 but was: 1 in:
+[com.zl.d17.history.model.HistoryMessage@2e7d71d9]
+[ERROR]   AccessLogIntegrationTest.normalRequestShouldCorrelateAllEventsBySameRequestIdAndKeepResponseIntact:75 
+Expecting ListN:
+  ["HTTP_REQUEST", "HTTP_RESPONSE"]
+to contain:
+  ["HTTP_REQUEST", "HTTP_RESPONSE", "CONTROLLER_ACCESS"]
+but could not find the following element(s):
+  ["CONTROLLER_ACCESS"]
+
+[ERROR]   AccessLogRealContainerTest.normalChatOverRealSocketShouldReturnFullBodyProvingResponseCopyBack:108 
+Expecting ListN:
+  ["HTTP_REQUEST", "HTTP_RESPONSE"]
+to contain:
+  ["HTTP_REQUEST", "HTTP_RESPONSE", "CONTROLLER_ACCESS"]
+but could not find the following element(s):
+  ["CONTROLLER_ACCESS"]
+
+[ERROR]   ChatStreamIntegrationTest.indexPageShouldBeServedAsStaticResource:104 
+Expecting actual:
+  "<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D17 �Ի���ʷ����������Ĺ�����ʾ</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main class="chat-shell">
+    <header class="chat-header">
+        <div>
+            <h1>D17 �Ի���ʷ�洢��Chat History������������ģ�Context Window��</h1>
+            <p class="sub">��ʷ�����־û��ɿ�������ѯ �� ͬ�Ự���ڹ��� �� �Ự/��ɫ���� �� ���ı���ȫ��Ⱦ</p>
+        </div>
+        <div class="header-actions">
+            <a class="nav-link" href="/templates.html">ģ�����</a>
+            <span id="modeBadge" class="badge">ģʽ����С�</span>
+            <button id="newChatBtn" type="button" class="btn btn-ghost" title="��յ�ǰҳ�沢���ûỰ">�¶Ի�</button>
+        </div>
+    </header>
+
+    <div class="role-bar">
+        <label for="roleSelect">�Ի���ɫ��</label>
+        <select id="roleSelect" title="��ɫ�ɷ����ģ��У�飬�л���ɫ�����ûỰ">
+            <option value="">ͨ��ģʽ��������ɫ������·��</option>
+        </select>
+        <span id="sessionTip" class="tip-line">��δ�����Ự</span>
+    </div>
+
+    <div class="toggle-bar">
+        <label class="toggle-item">
+            <input type="checkbox" id="thinkingToggle">
+            <span>˼��ģʽ��thinkingEnabled��</span>
+        </label>
+        <label class="toggle-item">
+            <input type="checkbox" id="showReasoningToggle" disabled>
+            <span>չʾԭʼ�������̣�showReasoning��</span>
+        </label>
+        <label class="toggle-item">
+            <input type="checkbox" id="retrieveToggle">
+            <span>֪ʶ�����ã�retrieveEnabled��</span>
+        </label>
+    </div>
+
+    <section id="messageList" class="message-list" aria-live="polite">
+        <div class="empty-tip" id="emptyTip">��û�жԻ������·�ѡ���ɫ������������������͡���</div>
+    </section>
+
+    <footer class="chat-input-bar">
+        <div id="statusLine" class="status-line" role="status" aria-live="polite">����</div>
+        <div class="input-row">
+            <textarea id="messageInput" rows="2" maxlength="2000"
+                      placeholder="�������⣬Enter ���ͣ�Shift+Enter ����"></textarea>
+            <div class="btn-column">
+                <button id="sendBtn" type="button" class="btn btn-primary">����</button>
+                <button id="stopBtn" type="button" class="btn btn-danger" disabled>ֹͣ</button>
+            </div>
+        </div>
+    </footer>
+</main>
+<!-- SSE ��֡�������������������� LF/CR/CRLF����������ҵ��ű����� -->
+<script src="/js/sse-parser.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
+"
+to contain:
+  "D16 ˼��������������Դ��ʾ" 
+[ERROR]   RoleChatStreamIntegrationTest.secondRoleStreamTurnWithSessionShouldSeeHistory:80 
+Expecting actual:
+  "[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=538����ʷ��Ϣ����=1��ϵͳ��ʾ������=����һ��������������ʦ����Ҫ���� Java ����� Spring AI �������⣬���������¹��򣺣����յ����⣺���ڶ�����ʽ����"
+to contain:
+  "��ʷ��Ϣ����=2" 
+[ERROR]   HistoryControllerWebTest.sessionsEndpointShouldReturnOwnedSessionWithPagination:44 No value at JSON path "$.data.pageSize"
+[ERROR]   RoleChatControllerTest.legacyPathWithoutSceneShouldKeepOldResponseShape:112 Expected no value at JSON path "$.data.sessionId" but found: 'ea289d754aa545cab7f483960697352e'
+[ERROR]   RoleChatControllerTest.secondTurnWithSameSessionShouldCarryHistoryAndKeepRoleIsolation:75 
+Expecting actual:
+  "[MOCK:D01] ��ǰΪ����ģ���ɫ�Ի���AI_MODE=mock����δ�����κ��ⲿ����ϵͳ��ʾ���ַ���=538����ʷ��Ϣ����=1��ϵͳ��ʾ������=����һ��������������ʦ����Ҫ���� Java ����� Spring AI �������⣬���������¹��򣺣����յ����⣺���ڶ��֣�����ƽ̨�߳����𡹡�"
+to contain:
+  "��ʷ��Ϣ����=2" 
+[INFO] 
+[ERROR] Tests run: 120, Failures: 17, Errors: 0, Skipped: 1
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  58.749 s
+[INFO] Finished at: 2026-10-30T16:19:55+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project D17_DHSA_MTDCA: There are test failures.
+[ERROR] 
+[ERROR] See E:\AI\project\AI-Learning-one\M2-Java\D17\D17_DHSA_MTDCA\target\surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

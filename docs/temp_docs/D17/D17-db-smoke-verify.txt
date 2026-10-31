@@ -1,0 +1,2 @@
+owner_id	status	cnt
+ut_smoke	ACTIVE	2

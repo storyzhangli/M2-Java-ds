@@ -1,0 +1,2 @@
+global_isolation	session_isolation
+REPEATABLE-READ	REPEATABLE-READ

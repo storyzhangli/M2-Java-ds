@@ -1,0 +1,25 @@
+===== org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor =====
+Compiled from "MessageChatMemoryAdvisor.java"
+public final class org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor implements org.springframework.ai.chat.client.advisor.api.BaseChatMemoryAdvisor {
+  public int getOrder();
+  public reactor.core.scheduler.Scheduler getScheduler();
+  public org.springframework.ai.chat.client.ChatClientRequest before(org.springframework.ai.chat.client.ChatClientRequest, org.springframework.ai.chat.client.advisor.api.AdvisorChain);
+  public org.springframework.ai.chat.client.ChatClientResponse after(org.springframework.ai.chat.client.ChatClientResponse, org.springframework.ai.chat.client.advisor.api.AdvisorChain);
+  public reactor.core.publisher.Flux<org.springframework.ai.chat.client.ChatClientResponse> adviseStream(org.springframework.ai.chat.client.ChatClientRequest, org.springframework.ai.chat.client.advisor.api.StreamAdvisorChain);
+  public static org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor$Builder builder(org.springframework.ai.chat.memory.ChatMemory);
+}
+===== org.springframework.ai.chat.client.advisor.api.BaseChatMemoryAdvisor =====
+Compiled from "BaseChatMemoryAdvisor.java"
+public interface org.springframework.ai.chat.client.advisor.api.BaseChatMemoryAdvisor extends org.springframework.ai.chat.client.advisor.api.BaseAdvisor {
+  public default java.lang.String getConversationId(java.util.Map<java.lang.String, java.lang.Object>);
+}
+===== org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor =====
+Compiled from "PromptChatMemoryAdvisor.java"
+public final class org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor implements org.springframework.ai.chat.client.advisor.api.BaseChatMemoryAdvisor {
+  public static org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor$Builder builder(org.springframework.ai.chat.memory.ChatMemory);
+  public int getOrder();
+  public reactor.core.scheduler.Scheduler getScheduler();
+  public org.springframework.ai.chat.client.ChatClientRequest before(org.springframework.ai.chat.client.ChatClientRequest, org.springframework.ai.chat.client.advisor.api.AdvisorChain);
+  public org.springframework.ai.chat.client.ChatClientResponse after(org.springframework.ai.chat.client.ChatClientResponse, org.springframework.ai.chat.client.advisor.api.AdvisorChain);
+  public reactor.core.publisher.Flux<org.springframework.ai.chat.client.ChatClientResponse> adviseStream(org.springframework.ai.chat.client.ChatClientRequest, org.springframework.ai.chat.client.advisor.api.StreamAdvisorChain);
+}

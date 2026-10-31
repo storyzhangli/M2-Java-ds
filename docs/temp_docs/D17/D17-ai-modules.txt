@@ -1,0 +1,4 @@
+spring-ai-autoconfigure-model-chat-client
+spring-ai-autoconfigure-model-chat-memory
+spring-ai-autoconfigure-model-chat-observation
+spring-ai-client-chat
