@@ -42,12 +42,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * AI 流式对话控制器（SSE，Server-Sent Events，服务器发送事件，D17 版）。
+ * AI 流式对话控制器（SSE，Server-Sent Events，服务器发送事件，D19 版）。
  *
  * <p>运行在 Servlet/Tomcat + Spring MVC 栈上，使用 MVC 原生 {@link SseEmitter} 作为异步响应载体，
  * 把知识编排器返回的 Reactor {@code Flux<StreamChunk>} 桥接为命名 SSE 事件。</p>
  *
- * <p>D17 持久化规则：流开始前 PENDING 用户消息落库；流过程中助手内容仅内存累积，
+ * <p>持久化规则：流开始前 PENDING 用户消息落库；流过程中助手内容仅内存累积，
  * 不逐 chunk 写库；正常 complete 时助手全文 COMPLETED 落库；异常/超时走 FAILED；
  * 客户端断开且已有部分内容时保留 INTERRUPTED 助手消息。独立的 persisted 标志保证
  * 终态只落库一次，防止 Reactor 回调与容器回调重复写入。</p>
@@ -121,7 +121,7 @@ public class ChatStreamController {
                             historyService.getContextWindow(turn.session().getSessionId())));
         }
         final RoleConversationService.PreparedConversation finalRoleContext = roleContext;
-        final StringBuilder assistantBuffer = new StringBuilder();
+        final StringBuffer assistantBuffer = new StringBuffer();
         final AtomicBoolean persisted = new AtomicBoolean(false);
 
         long streamTimeoutMs = aiProperties.getStreamTimeoutMs();
@@ -138,15 +138,20 @@ public class ChatStreamController {
         AtomicInteger totalChars = new AtomicInteger();
         AtomicReference<Disposable> subscriptionRef = new AtomicReference<>();
 
-        KnowledgeChatOrchestrator.StreamOutcome outcome =
-                orchestrator.stream(invocation, settings, retrieveEnabled);
+        final KnowledgeChatOrchestrator.StreamOutcome outcome;
+        try {
+            outcome = orchestrator.stream(invocation, settings, retrieveEnabled);
+        } catch (RuntimeException ex) {
+            historyService.failTurn(turn, ex.getClass().getSimpleName(), "流式响应准备失败");
+            throw ex;
+        }
         final CitationRegistry registry = outcome.registry();
 
         Disposable subscription = outcome.chunks()
                 .timeout(Duration.ofMillis(streamTimeoutMs))
                 .doOnSubscribe(s -> {
                     Boolean thinkingFlag = settings.enabled() ? Boolean.TRUE : null;
-                    // D17：普通链路也已建立会话，start 事件回传 sessionId 供前端后续轮次沿用
+                    // 普通链路也建立会话，start 事件回传 sessionId 供前端后续轮次沿用
                     SsePayloads.Start start = finalRoleContext == null
                             ? new SsePayloads.Start(requestId, mode, model,
                                     turn.session().getSessionId(), null, null, null, thinkingFlag)
@@ -159,11 +164,12 @@ public class ChatStreamController {
                     boolean sent = safeSend(emitter, finished, "start", start);
                     if (!sent) {
                         s.cancel();
+                        handleClientDisconnect(emitter, finished, persisted, turn, assistantBuffer, model);
                     }
                 })
                 .subscribe(
                         chunk -> onChunk(emitter, finished, subscriptionRef, deltaSeq, thinkingSeq,
-                                totalChars, assistantBuffer, settings, chunk),
+                                totalChars, assistantBuffer, settings, chunk, persisted, turn, model),
                         error -> {
                             Disposable current = subscriptionRef.get();
                             if (current != null) {
@@ -179,9 +185,22 @@ public class ChatStreamController {
                             }
                             if (persisted.compareAndSet(false, true)) {
                                 // 仅最终答案落库，推理内容不持久化
-                                historyService.completeTurn(turn, assistantBuffer.toString(), model);
+                                try {
+                                    historyService.completeTurn(turn, assistantBuffer.toString(), model);
+                                } catch (RuntimeException persistenceError) {
+                                    historyService.failTurn(turn, "StreamPersistenceError",
+                                            "流式回答终态落库失败");
+                                    onStreamError(emitter, finished, requestId, persistenceError);
+                                    return;
+                                }
                             }
-                            onComplete(emitter, finished, mode, model, deltaSeq, totalChars, settings);
+                            boolean completeSent = safeSend(emitter, finished, "complete",
+                                    new SsePayloads.Complete(deltaSeq.get(), mode, model,
+                                            AiConstants.MODE_MOCK.equals(mode), totalChars.get(),
+                                            settings.enabled() ? Boolean.TRUE : null));
+                            if (completeSent) {
+                                finishQuietly(emitter, finished);
+                            }
                         }
                 );
         subscriptionRef.set(subscription);
@@ -224,9 +243,12 @@ public class ChatStreamController {
                          AtomicInteger deltaSeq,
                          AtomicInteger thinkingSeq,
                          AtomicInteger totalChars,
-                         StringBuilder assistantBuffer,
+                         StringBuffer assistantBuffer,
                          ThinkingSettings settings,
-                         StreamChunk chunk) {
+                         StreamChunk chunk,
+                         AtomicBoolean persisted,
+                         ChatHistoryService.TurnStart turn,
+                         String model) {
         if (chunk instanceof StreamChunk.ReasoningChunk reasoning) {
             if (!settings.showReasoning()) {
                 return;
@@ -234,7 +256,8 @@ public class ChatStreamController {
             boolean sent = safeSend(emitter, finished, "thinking",
                     new SsePayloads.Thinking(thinkingSeq.getAndIncrement(), reasoning.text()));
             if (!sent) {
-                cancelQuietly(subscriptionRef);
+                handleClientDisconnectFromChunk(emitter, finished, persisted, turn, assistantBuffer, model,
+                        subscriptionRef);
             }
             return;
         }
@@ -244,11 +267,51 @@ public class ChatStreamController {
         boolean sent = safeSend(emitter, finished, "delta",
                 new SsePayloads.Delta(currentSeq, content.text()));
         if (!sent) {
-            cancelQuietly(subscriptionRef);
+            handleClientDisconnectFromChunk(emitter, finished, persisted, turn, assistantBuffer, model,
+                    subscriptionRef);
             return;
         }
         totalChars.addAndGet(content.text().length());
         assistantBuffer.append(content.text());
+    }
+
+    /**
+     * SSE 写出失败后不再依赖容器一定回调 onError：主动取消上游并收口持久化状态。
+     * 有部分答案时保留 INTERRUPTED，没有答案时标记 FAILED，避免半截回答被写成完整成功。
+     */
+    private void handleClientDisconnectFromChunk(SseEmitter emitter,
+                                                  AtomicBoolean finished,
+                                                  AtomicBoolean persisted,
+                                                  ChatHistoryService.TurnStart turn,
+                                                  StringBuffer assistantBuffer,
+                                                  String model,
+                                                  AtomicReference<Disposable> subscriptionRef) {
+        cancelQuietly(subscriptionRef);
+        handleClientDisconnect(emitter, finished, persisted, turn, assistantBuffer, model);
+    }
+
+    private void handleClientDisconnect(SseEmitter emitter,
+                                        AtomicBoolean finished,
+                                        AtomicBoolean persisted,
+                                        ChatHistoryService.TurnStart turn,
+                                        StringBuffer assistantBuffer,
+                                        String model) {
+        finished.set(true);
+        if (!persisted.compareAndSet(false, true)) {
+            return;
+        }
+        String partial = assistantBuffer.toString();
+        if (StringUtils.hasText(partial)) {
+            historyService.interruptTurn(turn, partial, model,
+                    "ClientDisconnect", "客户端断开连接，流式输出中断");
+        } else {
+            historyService.failTurn(turn, "ClientDisconnect", "客户端断开连接，无助手内容");
+        }
+        try {
+            emitter.complete();
+        } catch (IllegalStateException ignored) {
+            // 连接已由容器关闭时幂等收尾
+        }
     }
 
     private void cancelQuietly(AtomicReference<Disposable> subscriptionRef) {
@@ -291,23 +354,6 @@ public class ChatStreamController {
         safeSend(emitter, finished, "error",
                 new SsePayloads.Error(resultCode.getCode(), clientMessage));
         finishQuietly(emitter, finished);
-    }
-
-    private void onComplete(SseEmitter emitter,
-                            AtomicBoolean finished,
-                            String mode,
-                            String model,
-                            AtomicInteger seq,
-                            AtomicInteger totalChars,
-                            ThinkingSettings settings) {
-        boolean mocked = AiConstants.MODE_MOCK.equals(mode);
-        Boolean thinkingFlag = settings.enabled() ? Boolean.TRUE : null;
-        boolean sent = safeSend(emitter, finished, "complete",
-                new SsePayloads.Complete(seq.get(), mode, model, mocked, totalChars.get(),
-                        thinkingFlag));
-        if (sent) {
-            finishQuietly(emitter, finished);
-        }
     }
 
     private ResultCode resolveResultCode(Throwable error) {

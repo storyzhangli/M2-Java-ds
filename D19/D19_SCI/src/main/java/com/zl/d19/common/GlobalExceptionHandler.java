@@ -1,6 +1,7 @@
 package com.zl.d19.common;
 
 import jakarta.validation.ConstraintViolationException;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.retry.NonTransientAiException;
 import org.springframework.ai.retry.TransientAiException;
@@ -10,6 +11,8 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.io.IOException;
 
 /**
  * 全局异常处理器。
@@ -93,6 +96,16 @@ public class GlobalExceptionHandler {
     public Result<Void> handleTransient(TransientAiException ex) {
         log.error("AI 服务端临时异常且重试耗尽，异常类型: {}", ex.getClass().getSimpleName());
         return Result.fail(ResultCode.AI_UNAVAILABLE);
+    }
+
+    /**
+     * SSE 客户端断开后，Servlet 输出流写失败会以 IOException 进入异常分发。
+     * 响应已提交时不能再次序列化统一 JSON；静默收尾避免把正常断流误报为系统异常。
+     */
+    @ExceptionHandler(IOException.class)
+    public Object handleServletIo(IOException ex, HttpServletResponse response) {
+        log.info("Servlet 响应流已关闭，停止写出，异常类型={}", ex.getClass().getSimpleName());
+        return response.isCommitted() ? null : Result.fail(ResultCode.SYSTEM_ERROR);
     }
 
     /**

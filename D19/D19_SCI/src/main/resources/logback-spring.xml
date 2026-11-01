@@ -2,7 +2,7 @@
 <!--
   日志配置（Spring Boot 3.5.x / Logback）
   - pattern 通过 %X{requestId} 输出 TraceIdFilter 写入 MDC 的请求标识，同一请求的过滤器/切面/业务日志可关联；
-  - 日志目录由系统属性或环境变量 APP_LOG_HOME 覆盖，默认指向当前 D18 项目的 M2-Java-ds/logs；
+  - 日志目录由系统属性或环境变量 APP_LOG_HOME 覆盖，默认指向当前 D19 项目的 M2-Java-ds/logs；
   - 访问日志统一使用名为 ACCESS_LOG 的 Logger，输出为单行 JSON，便于检索与采集。
 -->
 <configuration>

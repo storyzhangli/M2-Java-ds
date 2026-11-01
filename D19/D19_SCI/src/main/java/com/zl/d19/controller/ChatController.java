@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * AI 对话控制器（D17 版）：同步聊天入口与健康检查。
+ * AI 对话控制器（D19 版）：保持同步聊天入口与健康检查契约。
  *
  * <p>D17 起所有链路（普通/角色）统一经过 {@link ChatHistoryService}：
  * 轮次开始先落 PENDING 用户消息，成功后用户与助手消息置 COMPLETED，
@@ -156,7 +156,7 @@ public class ChatController {
     @GetMapping("/health")
     public Result<Map<String, Object>> health() {
         Map<String, Object> info = new LinkedHashMap<>();
-        info.put("application", "D18_CbProjD15D16D17");
+        info.put("application", "D19_SCI");
         info.put("mode", aiProperties.getMode());
         info.put("contextWindowMessages", historyProperties.getContextWindowMessages());
         info.put("devIdentity", "X-Dev-User 开发身份，非生产鉴权");

@@ -4,6 +4,7 @@ import com.zl.d19.common.AiConfigurationException;
 import com.zl.d19.config.AiConstants;
 import com.zl.d19.dto.ChatReplyResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.messages.AssistantMessage;
 import org.springframework.ai.chat.messages.Message;
 import org.springframework.ai.chat.messages.SystemMessage;
@@ -43,6 +44,12 @@ public class DeepSeekAiChatService implements AiChatService {
 
     private final ChatModel chatModel;
 
+    /**
+     * Spring AI 1.1.8 流式客户端入口。同步路径继续使用 ChatModel.call()，
+     * 流式路径统一使用 ChatClient.stream()。
+     */
+    private final ChatClient chatClient;
+
     private final String apiKey;
 
     private final String model;
@@ -60,6 +67,7 @@ public class DeepSeekAiChatService implements AiChatService {
             @Value("${spring.ai.deepseek.chat.options.model:deepseek-flash}") String model,
             @Value("${app.ai.thinking.reasoner-model:deepseek-reasoner}") String reasonerModel) {
         this.chatModel = chatModel;
+        this.chatClient = ChatClient.builder(chatModel).build();
         this.apiKey = apiKey;
         this.model = model;
         this.reasonerModel = reasonerModel;
@@ -90,18 +98,14 @@ public class DeepSeekAiChatService implements AiChatService {
         // 与同步调用相同的前置校验：占位/空白密钥绝不允许触发真实外部请求
         validateCredential();
 
-        Prompt prompt = new Prompt(new UserMessage(message));
         log.info("开始流式调用 DeepSeek，model={}", this.model);
 
-        // ChatModel.stream 返回逐块 ChatResponse；这里只抽取文本增量并过滤空块，
-        // 不假设每块对应一个 token/单词/整句，异常原样向上传播交由 Controller 转 SSE error 事件。
-        return this.chatModel.stream(prompt)
-                .map(chunk -> {
-                    if (chunk == null || chunk.getResult() == null || chunk.getResult().getOutput() == null) {
-                        return null;
-                    }
-                    return chunk.getResult().getOutput().getText();
-                })
+        // ChatClient.stream().content() 返回 Flux<String>，直到 Web 层订阅时才执行。
+        // 不假设每块对应一个 token/单词/整句，异常原样传播并由 SSE 层转换成 error 事件。
+        return this.chatClient.prompt()
+                .user(message)
+                .stream()
+                .content()
                 .filter(StringUtils::hasText)
                 .doOnComplete(() -> log.info("流式调用正常结束，model={}", this.model))
                 .doOnError(ex -> log.error("流式调用异常，异常类型: {}", ex.getClass().getSimpleName()));
@@ -130,16 +134,12 @@ public class DeepSeekAiChatService implements AiChatService {
     public Flux<String> streamChat(ChatInvocation invocation) {
         validateCredential();
 
-        Prompt prompt = new Prompt(buildMessages(invocation));
         log.info("角色对话流式调用，model={}，历史消息数={}", this.model, invocation.history().size());
 
-        return this.chatModel.stream(prompt)
-                .map(chunk -> {
-                    if (chunk == null || chunk.getResult() == null || chunk.getResult().getOutput() == null) {
-                        return null;
-                    }
-                    return chunk.getResult().getOutput().getText();
-                })
+        return this.chatClient.prompt()
+                .messages(buildMessages(invocation))
+                .stream()
+                .content()
                 .filter(StringUtils::hasText)
                 .doOnComplete(() -> log.info("角色对话流式调用正常结束，model={}", this.model))
                 .doOnError(ex -> log.error("角色对话流式调用异常，异常类型: {}", ex.getClass().getSimpleName()));
@@ -200,44 +200,53 @@ public class DeepSeekAiChatService implements AiChatService {
                                                                ThinkingSettings settings) {
         validateCredential();
         String effectiveModel = effectiveModel(settings);
-        Prompt prompt = new Prompt(buildMessages(invocation), buildModelOptions(effectiveModel));
         log.info("D16 角色对话流式调用，thinkingEnabled={}，model={}，历史消息数={}",
                 settings.enabled(), effectiveModel, invocation.history().size());
-        return toTypedStream(prompt, effectiveModel);
+        return this.chatClient.prompt()
+                .messages(buildMessages(invocation))
+                .options(buildModelOptions(effectiveModel))
+                .stream()
+                .chatResponse()
+                .concatMap(this::toTypedChunks)
+                .doOnComplete(() -> log.info("D16 角色对话流式调用正常结束，model={}", effectiveModel))
+                .doOnError(ex -> log.error("D16 角色对话流式调用异常，异常类型: {}",
+                        ex.getClass().getSimpleName()));
     }
 
     @Override
     public Flux<StreamChunk> streamChat(String message, ThinkingSettings settings) {
         validateCredential();
         String effectiveModel = effectiveModel(settings);
-        Prompt prompt = new Prompt(List.of(new UserMessage(message)), buildModelOptions(effectiveModel));
         log.info("D16 流式调用，thinkingEnabled={}，model={}", settings.enabled(), effectiveModel);
-        return toTypedStream(prompt, effectiveModel);
+        return this.chatClient.prompt()
+                .user(message)
+                .options(buildModelOptions(effectiveModel))
+                .stream()
+                .chatResponse()
+                .concatMap(this::toTypedChunks)
+                .doOnComplete(() -> log.info("D16 流式调用正常结束，model={}", effectiveModel))
+                .doOnError(ex -> log.error("D16 流式调用异常，异常类型: {}",
+                        ex.getClass().getSimpleName()));
     }
 
     /**
      * 把模型原生 ChatResponse 流拆成推理/答案两类分片；空块与空白文本均过滤。
      */
-    private Flux<StreamChunk> toTypedStream(Prompt prompt, String effectiveModel) {
-        return this.chatModel.stream(prompt)
-                .concatMap(chunk -> {
-                    List<StreamChunk> pieces = new ArrayList<>(2);
-                    if (chunk == null || chunk.getResult() == null
-                            || chunk.getResult().getOutput() == null) {
-                        return Flux.<StreamChunk>empty();
-                    }
-                    AssistantMessage output = chunk.getResult().getOutput();
-                    String reasoning = extractReasoning(output);
-                    if (StringUtils.hasText(reasoning)) {
-                        pieces.add(new StreamChunk.ReasoningChunk(reasoning));
-                    }
-                    if (StringUtils.hasText(output.getText())) {
-                        pieces.add(new StreamChunk.ContentChunk(output.getText()));
-                    }
-                    return Flux.fromIterable(pieces);
-                })
-                .doOnComplete(() -> log.info("D16 流式调用正常结束，model={}", effectiveModel))
-                .doOnError(ex -> log.error("D16 流式调用异常，异常类型: {}", ex.getClass().getSimpleName()));
+    private Flux<StreamChunk> toTypedChunks(ChatResponse chunk) {
+        List<StreamChunk> pieces = new ArrayList<>(2);
+        if (chunk == null || chunk.getResult() == null
+                || chunk.getResult().getOutput() == null) {
+            return Flux.empty();
+        }
+        AssistantMessage output = chunk.getResult().getOutput();
+        String reasoning = extractReasoning(output);
+        if (StringUtils.hasText(reasoning)) {
+            pieces.add(new StreamChunk.ReasoningChunk(reasoning));
+        }
+        if (StringUtils.hasText(output.getText())) {
+            pieces.add(new StreamChunk.ContentChunk(output.getText()));
+        }
+        return Flux.fromIterable(pieces);
     }
 
     /**

@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 /**
- * D01 Spring AI 初始化模块启动类。
+ * D19 流式聊天与 MVC 兼容迭代启动类。
  *
  * <p>默认以 mock 模式启动，无需真实 API Key、无需外网即可完成上下文装配与接口验证；
  * 切换为 deepseek 真实模式仅需通过环境变量注入 {@code AI_MODE=deepseek} 与真实
