@@ -1,0 +1,57 @@
+Compiled from "ChatClient.java"
+public interface org.springframework.ai.chat.client.ChatClient {
+  public static org.springframework.ai.chat.client.ChatClient create(org.springframework.ai.chat.model.ChatModel);
+  public static org.springframework.ai.chat.client.ChatClient create(org.springframework.ai.chat.model.ChatModel, io.micrometer.observation.ObservationRegistry);
+  public static org.springframework.ai.chat.client.ChatClient create(org.springframework.ai.chat.model.ChatModel, io.micrometer.observation.ObservationRegistry, org.springframework.ai.chat.client.observation.ChatClientObservationConvention, org.springframework.ai.chat.client.advisor.observation.AdvisorObservationConvention);
+  public static org.springframework.ai.chat.client.ChatClient$Builder builder(org.springframework.ai.chat.model.ChatModel);
+  public static org.springframework.ai.chat.client.ChatClient$Builder builder(org.springframework.ai.chat.model.ChatModel, io.micrometer.observation.ObservationRegistry, org.springframework.ai.chat.client.observation.ChatClientObservationConvention, org.springframework.ai.chat.client.advisor.observation.AdvisorObservationConvention);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec prompt();
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec prompt(java.lang.String);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec prompt(org.springframework.ai.chat.prompt.Prompt);
+  public abstract org.springframework.ai.chat.client.ChatClient$Builder mutate();
+}
+Compiled from "ChatClient.java"
+public interface org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec {
+  public abstract org.springframework.ai.chat.client.ChatClient$Builder mutate();
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec advisors(java.util.function.Consumer<org.springframework.ai.chat.client.ChatClient$AdvisorSpec>);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec advisors(org.springframework.ai.chat.client.advisor.api.Advisor...);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec advisors(java.util.List<org.springframework.ai.chat.client.advisor.api.Advisor>);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec messages(org.springframework.ai.chat.messages.Message...);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec messages(java.util.List<org.springframework.ai.chat.messages.Message>);
+  public abstract <T extends org.springframework.ai.chat.prompt.ChatOptions> org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec options(T);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec toolNames(java.lang.String...);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec tools(java.lang.Object...);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec toolCallbacks(org.springframework.ai.tool.ToolCallback...);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec toolCallbacks(java.util.List<org.springframework.ai.tool.ToolCallback>);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec toolCallbacks(org.springframework.ai.tool.ToolCallbackProvider...);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec toolContext(java.util.Map<java.lang.String, java.lang.Object>);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec system(java.lang.String);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec system(org.springframework.core.io.Resource, java.nio.charset.Charset);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec system(org.springframework.core.io.Resource);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec system(java.util.function.Consumer<org.springframework.ai.chat.client.ChatClient$PromptSystemSpec>);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec user(java.lang.String);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec user(org.springframework.core.io.Resource, java.nio.charset.Charset);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec user(org.springframework.core.io.Resource);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec user(java.util.function.Consumer<org.springframework.ai.chat.client.ChatClient$PromptUserSpec>);
+  public abstract org.springframework.ai.chat.client.ChatClient$ChatClientRequestSpec templateRenderer(org.springframework.ai.template.TemplateRenderer);
+  public abstract org.springframework.ai.chat.client.ChatClient$CallResponseSpec call();
+  public abstract org.springframework.ai.chat.client.ChatClient$StreamResponseSpec stream();
+}
+Compiled from "ChatClient.java"
+public interface org.springframework.ai.chat.client.ChatClient$CallResponseSpec {
+  public abstract <T> T entity(org.springframework.core.ParameterizedTypeReference<T>);
+  public abstract <T> T entity(org.springframework.ai.converter.StructuredOutputConverter<T>);
+  public abstract <T> T entity(java.lang.Class<T>);
+  public abstract org.springframework.ai.chat.client.ChatClientResponse chatClientResponse();
+  public abstract org.springframework.ai.chat.model.ChatResponse chatResponse();
+  public abstract java.lang.String content();
+  public abstract <T> org.springframework.ai.chat.client.ResponseEntity<org.springframework.ai.chat.model.ChatResponse, T> responseEntity(java.lang.Class<T>);
+  public abstract <T> org.springframework.ai.chat.client.ResponseEntity<org.springframework.ai.chat.model.ChatResponse, T> responseEntity(org.springframework.core.ParameterizedTypeReference<T>);
+  public abstract <T> org.springframework.ai.chat.client.ResponseEntity<org.springframework.ai.chat.model.ChatResponse, T> responseEntity(org.springframework.ai.converter.StructuredOutputConverter<T>);
+}
+Compiled from "ChatClient.java"
+public interface org.springframework.ai.chat.client.ChatClient$StreamResponseSpec {
+  public abstract reactor.core.publisher.Flux<org.springframework.ai.chat.client.ChatClientResponse> chatClientResponse();
+  public abstract reactor.core.publisher.Flux<org.springframework.ai.chat.model.ChatResponse> chatResponse();
+  public abstract reactor.core.publisher.Flux<java.lang.String> content();
+}

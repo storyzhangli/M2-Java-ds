@@ -1,0 +1,8 @@
+# D19 sensitive-pattern scan
+
+working_tree_matches=0
+staged_diff_matches=0
+head_tracked_matches=0
+real_api_call_executed=false
+
+No secret values are included in this report.

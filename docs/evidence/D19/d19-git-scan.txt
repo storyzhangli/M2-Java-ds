@@ -1,0 +1,24 @@
+captured_at=2026-11-01T22:07:31.7780861+08:00
+git_status:
+ M D19/D19_SCI/src/main/java/com/zl/d19/D19SpringAiApplication.java
+ M D19/D19_SCI/src/main/java/com/zl/d19/common/GlobalExceptionHandler.java
+ M D19/D19_SCI/src/main/java/com/zl/d19/controller/ChatController.java
+ M D19/D19_SCI/src/main/java/com/zl/d19/controller/ChatStreamController.java
+ M D19/D19_SCI/src/main/java/com/zl/d19/logging/ControllerAccessLogAspect.java
+ M D19/D19_SCI/src/main/java/com/zl/d19/service/DeepSeekAiChatService.java
+ M D19/D19_SCI/src/main/resources/application.yml
+ M D19/D19_SCI/src/main/resources/logback-spring.xml
+ M D19/D19_SCI/src/main/resources/static/index.html
+ M D19/D19_SCI/src/main/resources/static/js/app.js
+ M D19/D19_SCI/src/main/resources/static/templates.html
+?? D19/D19_SCI/src/test/
+?? docs/evidence/D19/
+?? "docs/proj_docs/D19-MVC\344\270\216WebFlux\346\265\201\345\274\217\350\201\212\345\244\251\346\212\200\346\234\257\350\257\264\346\230\216\345\217\212\345\256\236\350\267\265\346\214\207\345\215\227.md"
+?? "docs/proj_docs/D19-\351\241\271\347\233\256\345\214\205\350\277\201\347\247\273\346\263\250\346\204\217\344\272\213\351\241\271.md"
+?? "docs/proj_docs/D19-\351\241\271\347\233\256\350\277\255\344\273\243\345\205\250\351\207\217\344\277\241\346\201\257\344\270\216\346\223\215\344\275\234.md"
+git_log:
+797f841 (HEAD -> master, origin/master) D19项目基础骨架
+fd73c87 D19 项目迭代任务书 prompt指令
+00f5481 归档日志
+2a5961f D19 费曼口述
+f772619 D19 知识笔记

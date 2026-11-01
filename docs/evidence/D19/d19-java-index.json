@@ -1,0 +1,1485 @@
+[
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\common\\AiConfigurationException.java",
+    "sha256": "1CD57041D689F974EE6D22A72DD089CA2BEC875E0508252DB454EA49E4FF2158",
+    "package": "com.zl.d19.common",
+    "types": [
+      "class AiConfigurationException"
+    ],
+    "imports": []
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\common\\GlobalExceptionHandler.java",
+    "sha256": "D4EB408EEA001E5EDD750F1D3C8EA21E52681C732EFEB54304F9373516580109",
+    "package": "com.zl.d19.common",
+    "types": [
+      "class GlobalExceptionHandler"
+    ],
+    "imports": [
+      "jakarta.validation.ConstraintViolationException",
+      "jakarta.servlet.http.HttpServletResponse",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.ai.retry.NonTransientAiException",
+      "org.springframework.ai.retry.TransientAiException",
+      "org.springframework.dao.DataIntegrityViolationException",
+      "org.springframework.http.converter.HttpMessageNotReadableException",
+      "org.springframework.validation.FieldError",
+      "org.springframework.web.bind.MethodArgumentNotValidException",
+      "org.springframework.web.bind.annotation.ExceptionHandler",
+      "org.springframework.web.bind.annotation.RestControllerAdvice",
+      "java.io.IOException"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\common\\Result.java",
+    "sha256": "19FD49757333735924A4CAF61F7134CD6F7A0FD12C93AA3538F2458CDDFDCDD2",
+    "package": "com.zl.d19.common",
+    "types": [
+      "class Result"
+    ],
+    "imports": [
+      "lombok.Data",
+      "java.io.Serializable"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\common\\ResultCode.java",
+    "sha256": "5404421017F0D729711832231E5D4251934CED4661BB9A4721496AA18963FDAF",
+    "package": "com.zl.d19.common",
+    "types": [
+      "enum ResultCode"
+    ],
+    "imports": [
+      "lombok.Getter"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\config\\AiConstants.java",
+    "sha256": "720BC731FEF9C30D0F5652995062A597326DC9A231255D5C36F8ABBA051245EB",
+    "package": "com.zl.d19.config",
+    "types": [
+      "class AiConstants"
+    ],
+    "imports": []
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\config\\AiProperties.java",
+    "sha256": "8DE1495ABE6DCBDB04D1B2E93F70FF7A239CC158284746CFCC69EA8C8AE7ABAC",
+    "package": "com.zl.d19.config",
+    "types": [
+      "class AiProperties"
+    ],
+    "imports": [
+      "lombok.Data",
+      "org.springframework.boot.context.properties.ConfigurationProperties",
+      "org.springframework.stereotype.Component"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\config\\ConversationRedisProperties.java",
+    "sha256": "83F415E11279A306CB3C4C11940FD020F20D6FDABBCEC459E56BDA0FD3EE4F3C",
+    "package": "com.zl.d19.config",
+    "types": [
+      "class ConversationRedisProperties"
+    ],
+    "imports": [
+      "lombok.Data",
+      "org.springframework.boot.context.properties.ConfigurationProperties"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\config\\PromptCacheProperties.java",
+    "sha256": "091617CAB71EA9430DB4D85B084D7D8D84C54D92F60066BA68D25F0B305F1CF8",
+    "package": "com.zl.d19.config",
+    "types": [
+      "class PromptCacheProperties"
+    ],
+    "imports": [
+      "lombok.Data",
+      "org.springframework.boot.context.properties.ConfigurationProperties"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\controller\\ChatController.java",
+    "sha256": "47C6AD7E7426043F6422CC0655C14372C6FDD6B2EF06BDAD91C121601459093B",
+    "package": "com.zl.d19.controller",
+    "types": [
+      "class ChatController"
+    ],
+    "imports": [
+      "com.zl.d19.common.Result",
+      "com.zl.d19.config.AiProperties",
+      "com.zl.d19.conversation.HistoryMessageConverter",
+      "com.zl.d19.conversation.RoleConversationService",
+      "com.zl.d19.dto.ChatReplyResponse",
+      "com.zl.d19.dto.ChatRequest",
+      "com.zl.d19.dto.CitationDto",
+      "com.zl.d19.dto.RoleChatReplyResponse",
+      "com.zl.d19.history.ChatHistoryService",
+      "com.zl.d19.history.config.HistoryProperties",
+      "com.zl.d19.knowledge.KnowledgeChatOrchestrator",
+      "com.zl.d19.service.AiChatResult",
+      "com.zl.d19.service.ChatInvocation",
+      "com.zl.d19.service.ThinkingSettings",
+      "com.zl.d19.service.ThinkingSettingsResolver",
+      "jakarta.servlet.http.HttpServletRequest",
+      "jakarta.validation.Valid",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.util.StringUtils",
+      "org.springframework.web.bind.annotation.*",
+      "java.util.LinkedHashMap",
+      "java.util.List",
+      "java.util.Map"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\controller\\ChatStreamController.java",
+    "sha256": "225340C91BB526ED476F4D5CF0DF0BB77BE99818072B124D19987197D72D51AB",
+    "package": "com.zl.d19.controller",
+    "types": [
+      "class ChatStreamController"
+    ],
+    "imports": [
+      "com.zl.d19.common.AiConfigurationException",
+      "com.zl.d19.common.ResultCode",
+      "com.zl.d19.config.AiConstants",
+      "com.zl.d19.config.AiProperties",
+      "com.zl.d19.conversation.HistoryMessageConverter",
+      "com.zl.d19.conversation.RoleConversationService",
+      "com.zl.d19.dto.ChatRequest",
+      "com.zl.d19.dto.SsePayloads",
+      "com.zl.d19.history.ChatHistoryService",
+      "com.zl.d19.history.config.HistoryProperties",
+      "com.zl.d19.knowledge.CitationRegistry",
+      "com.zl.d19.knowledge.KnowledgeChatOrchestrator",
+      "com.zl.d19.logging.TraceIdFilter",
+      "com.zl.d19.service.ChatInvocation",
+      "com.zl.d19.service.StreamChunk",
+      "com.zl.d19.service.ThinkingSettings",
+      "com.zl.d19.service.ThinkingSettingsResolver",
+      "jakarta.servlet.http.HttpServletRequest",
+      "jakarta.servlet.http.HttpServletResponse",
+      "jakarta.validation.Valid",
+      "lombok.extern.slf4j.Slf4j",
+      "org.slf4j.MDC",
+      "org.springframework.ai.retry.NonTransientAiException",
+      "org.springframework.ai.retry.TransientAiException",
+      "org.springframework.beans.factory.annotation.Value",
+      "org.springframework.http.MediaType",
+      "org.springframework.util.StringUtils",
+      "org.springframework.web.bind.annotation.PostMapping",
+      "org.springframework.web.bind.annotation.RequestBody",
+      "org.springframework.web.bind.annotation.RequestMapping",
+      "org.springframework.web.bind.annotation.RestController",
+      "org.springframework.web.servlet.mvc.method.annotation.SseEmitter",
+      "reactor.core.Disposable",
+      "java.io.IOException",
+      "java.time.Duration",
+      "java.util.concurrent.TimeoutException",
+      "java.util.concurrent.atomic.AtomicBoolean",
+      "java.util.concurrent.atomic.AtomicInteger",
+      "java.util.concurrent.atomic.AtomicReference"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\conversation\\ConversationMemory.java",
+    "sha256": "3E010DA0F3E53B0998D94AA7FCEED4A23D03E22D371E78E5CB9A96652CADBD30",
+    "package": "com.zl.d19.conversation",
+    "types": [
+      "class ConversationMemory"
+    ],
+    "imports": [
+      "com.fasterxml.jackson.databind.ObjectMapper",
+      "com.zl.d19.config.ConversationRedisProperties",
+      "com.zl.d19.conversation.model.ConversationMessage",
+      "com.zl.d19.conversation.model.ConversationSession",
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.data.redis.core.Cursor",
+      "org.springframework.data.redis.core.ScanOptions",
+      "org.springframework.data.redis.core.StringRedisTemplate",
+      "org.springframework.stereotype.Component",
+      "java.time.Duration",
+      "java.time.LocalDateTime",
+      "java.util.ArrayList",
+      "java.util.List",
+      "java.util.UUID"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\conversation\\HistoryMessageConverter.java",
+    "sha256": "284C0DF93F1BD23426D284C8ACA5E7FF82D3E54E37781FEB603048071896BE7D",
+    "package": "com.zl.d19.conversation",
+    "types": [
+      "class HistoryMessageConverter"
+    ],
+    "imports": [
+      "com.zl.d19.history.ChatHistoryService",
+      "com.zl.d19.history.model.HistoryMessage",
+      "com.zl.d19.service.ChatInvocation",
+      "java.util.ArrayList",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\conversation\\model\\ConversationMessage.java",
+    "sha256": "640FF7C861DEFF22C5E2B3D76F8559098F1FEFBBEFBB1F4C9AD2A8FDBAB1F0F8",
+    "package": "com.zl.d19.conversation.model",
+    "types": [
+      "record ConversationMessage"
+    ],
+    "imports": [
+      "java.io.Serializable",
+      "java.time.LocalDateTime"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\conversation\\model\\ConversationSession.java",
+    "sha256": "C8CE5B5FBFE962FC8578D2D1BB12FCB94C3E9D1366A929251E91AFB55D5D8A09",
+    "package": "com.zl.d19.conversation.model",
+    "types": [
+      "class ConversationSession"
+    ],
+    "imports": [
+      "java.time.LocalDateTime",
+      "java.util.ArrayList",
+      "java.util.Collections",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\conversation\\RedisSessionPayload.java",
+    "sha256": "FDA983A5D0637ADCF4B9540DC7A432251AF1674F020F1221D8775A2C7DFE71F0",
+    "package": "com.zl.d19.conversation",
+    "types": [
+      "record RedisSessionPayload"
+    ],
+    "imports": [
+      "com.zl.d19.conversation.model.ConversationMessage",
+      "com.zl.d19.conversation.model.ConversationSession",
+      "java.time.LocalDateTime",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\conversation\\RoleConversationService.java",
+    "sha256": "55D34DFA1222C50A36E9E0A2739C7F836DA2212B2432BF9E98FF1E4C3B4237A7",
+    "package": "com.zl.d19.conversation",
+    "types": [
+      "class RoleConversationService"
+    ],
+    "imports": [
+      "com.zl.d19.dto.ChatRequest",
+      "com.zl.d19.history.ChatHistoryService",
+      "com.zl.d19.history.model.ChatSession",
+      "com.zl.d19.history.model.HistoryMessage",
+      "com.zl.d19.prompt.PromptTemplateService",
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "com.zl.d19.service.ChatInvocation",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.stereotype.Service",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\D19SpringAiApplication.java",
+    "sha256": "7911BB0C970F3B86EC7E8F39EB2BFFE64DE43591FF9B681091DF53774425F3E8",
+    "package": "com.zl.d19",
+    "types": [
+      "class D19SpringAiApplication"
+    ],
+    "imports": [
+      "org.springframework.boot.SpringApplication",
+      "org.springframework.boot.autoconfigure.SpringBootApplication",
+      "org.springframework.boot.context.properties.ConfigurationPropertiesScan"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\dto\\ChatReplyResponse.java",
+    "sha256": "45D0608D8F8340BFEC890B6F158A747C74A8C8C3BB5B6C52713D86F1EC2B4174",
+    "package": "com.zl.d19.dto",
+    "types": [
+      "class ChatReplyResponse"
+    ],
+    "imports": [
+      "com.fasterxml.jackson.annotation.JsonInclude",
+      "lombok.Data",
+      "lombok.NoArgsConstructor",
+      "java.io.Serializable",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\dto\\ChatRequest.java",
+    "sha256": "AD36609B90006717566D778FB8067F6B4E1092F66B1F400FC80758761DFAED1A",
+    "package": "com.zl.d19.dto",
+    "types": [
+      "class ChatRequest"
+    ],
+    "imports": [
+      "jakarta.validation.constraints.NotBlank",
+      "jakarta.validation.constraints.Size",
+      "lombok.Data",
+      "java.io.Serializable",
+      "java.util.Map"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\dto\\CitationDto.java",
+    "sha256": "6C8CAE12D6DBCED76B252A35135A82069F9084C1260FE8E530C8E2DEFE7758C7",
+    "package": "com.zl.d19.dto",
+    "types": [
+      "record CitationDto"
+    ],
+    "imports": [
+      "com.fasterxml.jackson.annotation.JsonInclude"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\dto\\RoleChatReplyResponse.java",
+    "sha256": "7F3E23EA457EFCB4C97668BF018C7494904514600E92CAE24AC263F349A9E3EC",
+    "package": "com.zl.d19.dto",
+    "types": [
+      "record RoleChatReplyResponse"
+    ],
+    "imports": [
+      "com.fasterxml.jackson.annotation.JsonInclude",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\dto\\SsePayloads.java",
+    "sha256": "733CEDFF671E2F2B5172F4247D6FCCB7A8CA23A11130E397E76CA6AFCD444F9C",
+    "package": "com.zl.d19.dto",
+    "types": [
+      "class SsePayloads"
+    ],
+    "imports": [
+      "com.fasterxml.jackson.annotation.JsonInclude",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\equipment\\dto\\EquipmentChatResponse.java",
+    "sha256": "97C6EEEDAF3978E4E3665DD13157ADDA6CD3604A30D49844C59DF0E15E7641EA",
+    "package": "com.zl.d19.equipment.dto",
+    "types": [
+      "record EquipmentChatResponse"
+    ],
+    "imports": [
+      "com.zl.d19.dto.CitationDto",
+      "com.zl.d19.equipment.model.EquipmentTicketCandidate",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\equipment\\EquipmentCandidateExtractor.java",
+    "sha256": "B1EDCC0548965AB95FA10276CDD87E7623600E2B9B5EC57C4593D9210BA2B79B",
+    "package": "com.zl.d19.equipment",
+    "types": [
+      "class EquipmentCandidateExtractor"
+    ],
+    "imports": [
+      "com.zl.d19.equipment.model.CandidateSourceType",
+      "com.zl.d19.equipment.model.CandidateStatus",
+      "com.zl.d19.equipment.model.EquipmentTicketCandidate",
+      "com.zl.d19.equipment.model.TicketCategory",
+      "org.springframework.stereotype.Component",
+      "java.util.List",
+      "java.util.Locale"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\equipment\\EquipmentCandidateParser.java",
+    "sha256": "A5EB670136375E9C4F18B297DA6463D650259A6B8E0043B332B78EC0E7951731",
+    "package": "com.zl.d19.equipment",
+    "types": [
+      "class EquipmentCandidateParser"
+    ],
+    "imports": [
+      "com.fasterxml.jackson.databind.JsonNode",
+      "com.fasterxml.jackson.databind.ObjectMapper",
+      "com.zl.d19.equipment.model.CandidateSourceType",
+      "com.zl.d19.equipment.model.CandidateStatus",
+      "com.zl.d19.equipment.model.EquipmentTicketCandidate",
+      "com.zl.d19.equipment.model.TicketCategory",
+      "org.springframework.stereotype.Component",
+      "org.springframework.util.StringUtils",
+      "java.util.ArrayList",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\equipment\\EquipmentChatController.java",
+    "sha256": "152C16CD6562501FD00D0B4B1072453421E35B6DAA0C420208012DC8B7FAF6E2",
+    "package": "com.zl.d19.equipment",
+    "types": [
+      "class EquipmentChatController"
+    ],
+    "imports": [
+      "com.zl.d19.common.Result",
+      "com.zl.d19.dto.ChatRequest",
+      "com.zl.d19.equipment.dto.EquipmentChatResponse",
+      "com.zl.d19.history.ChatHistoryService",
+      "com.zl.d19.history.config.HistoryProperties",
+      "jakarta.servlet.http.HttpServletRequest",
+      "jakarta.validation.Valid",
+      "org.springframework.web.bind.annotation.PostMapping",
+      "org.springframework.web.bind.annotation.RequestBody",
+      "org.springframework.web.bind.annotation.RequestMapping",
+      "org.springframework.web.bind.annotation.RestController"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\equipment\\EquipmentChatService.java",
+    "sha256": "A59D7FF0448EBDEC79B8D012656ECD3DC5D8B0D6E4500542F5D02071A3B394F9",
+    "package": "com.zl.d19.equipment",
+    "types": [
+      "class EquipmentChatService"
+    ],
+    "imports": [
+      "com.zl.d19.conversation.RoleConversationService",
+      "com.zl.d19.dto.ChatRequest",
+      "com.zl.d19.dto.CitationDto",
+      "com.zl.d19.equipment.dto.EquipmentChatResponse",
+      "com.zl.d19.equipment.model.EquipmentTicketCandidate",
+      "com.zl.d19.history.ChatHistoryService",
+      "com.zl.d19.history.model.ChatSession",
+      "com.zl.d19.history.model.HistoryMessage",
+      "com.zl.d19.knowledge.KnowledgeChatOrchestrator",
+      "com.zl.d19.prompt.PromptTemplateService",
+      "com.zl.d19.prompt.model.PromptScenes",
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "com.zl.d19.prompt.model.TemplateVariable",
+      "com.zl.d19.service.ThinkingSettings",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.stereotype.Service",
+      "org.springframework.util.StringUtils",
+      "java.util.*",
+      "java.util.concurrent.locks.ReentrantLock"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\equipment\\EquipmentClarificationPolicy.java",
+    "sha256": "9F75A6D7DA78802AC8D868CB923A4B8829872F98069992CD2360EEF6214C17E5",
+    "package": "com.zl.d19.equipment",
+    "types": [
+      "class EquipmentClarificationPolicy"
+    ],
+    "imports": [
+      "org.springframework.stereotype.Component",
+      "java.util.ArrayList",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\equipment\\EquipmentFacts.java",
+    "sha256": "289C17B063CD0220EC0CF3739F166AD3E701B6BAF313DB0C94BBCC469A5585FB",
+    "package": "com.zl.d19.equipment",
+    "types": [
+      "record EquipmentFacts"
+    ],
+    "imports": [
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\equipment\\EquipmentInformationExtractor.java",
+    "sha256": "CCCC19043E1401A8125F884BE1E7FCEA60CD441158CE184C21D07F30ADF44069",
+    "package": "com.zl.d19.equipment",
+    "types": [
+      "class EquipmentInformationExtractor"
+    ],
+    "imports": [
+      "org.springframework.stereotype.Component",
+      "org.springframework.util.StringUtils",
+      "java.util.*",
+      "java.util.regex.Matcher",
+      "java.util.regex.Pattern"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\equipment\\model\\CandidateSourceType.java",
+    "sha256": "EA9E58B12EBF8BAF4CDF0DFE1C625AA654C5D7F15A584FF1C30A125BF781DBA0",
+    "package": "com.zl.d19.equipment.model",
+    "types": [
+      "enum CandidateSourceType"
+    ],
+    "imports": []
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\equipment\\model\\CandidateStatus.java",
+    "sha256": "6F56B8A1774278D3611274C598D5D5BC4E3D46C747467CB2073FDF9D2F97743A",
+    "package": "com.zl.d19.equipment.model",
+    "types": [
+      "enum CandidateStatus"
+    ],
+    "imports": []
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\equipment\\model\\EquipmentTicketCandidate.java",
+    "sha256": "F01910DB41815A62BE79793FE6755DFC9ECE0D3E42B67AF1C7AA652433CEEC5D",
+    "package": "com.zl.d19.equipment.model",
+    "types": [
+      "record EquipmentTicketCandidate"
+    ],
+    "imports": [
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\equipment\\model\\TicketCategory.java",
+    "sha256": "C6D2BC06E97AB4A29DE7DABA15C874ECC40FB944B570EB1EF1A99B50AA4D4212",
+    "package": "com.zl.d19.equipment.model",
+    "types": [
+      "enum TicketCategory"
+    ],
+    "imports": []
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\ChatHistoryService.java",
+    "sha256": "E6580294053B288B9F191D9E8516F40517DE1B228714390CCF0ED7E8CD8AE399",
+    "package": "com.zl.d19.history",
+    "types": [
+      "class ChatHistoryService"
+    ],
+    "imports": [
+      "com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper",
+      "com.baomidou.mybatisplus.extension.plugins.pagination.Page",
+      "com.zl.d19.history.config.HistoryProperties",
+      "com.zl.d19.history.mapper.ChatSessionMapper",
+      "com.zl.d19.history.mapper.HistoryMessageMapper",
+      "com.zl.d19.history.model.ChatSession",
+      "com.zl.d19.history.model.HistoryMessage",
+      "com.zl.d19.history.model.MessageStatus",
+      "com.zl.d19.history.model.SessionStatus",
+      "com.zl.d19.history.po.ChatSessionPO",
+      "com.zl.d19.history.po.HistoryMessagePO",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.stereotype.Service",
+      "org.springframework.transaction.annotation.Transactional",
+      "org.springframework.util.StringUtils",
+      "java.time.LocalDateTime",
+      "java.util.ArrayList",
+      "java.util.Collections",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\config\\HistoryProperties.java",
+    "sha256": "5684D5E9EAD5176DC2C38FCD70583C4C2B1C6823D9F8EA08173FA6FBE74DD83B",
+    "package": "com.zl.d19.history.config",
+    "types": [
+      "class HistoryProperties"
+    ],
+    "imports": [
+      "lombok.Data",
+      "org.springframework.boot.context.properties.ConfigurationProperties"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\config\\MybatisPlusConfig.java",
+    "sha256": "136A154492B106E8E0B27CB928EE812DE6401ACE59D6C299DC933F3FF3F9A8A9",
+    "package": "com.zl.d19.history.config",
+    "types": [
+      "class MybatisPlusConfig"
+    ],
+    "imports": [
+      "com.baomidou.mybatisplus.annotation.DbType",
+      "com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor",
+      "com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor",
+      "org.springframework.context.annotation.Bean",
+      "org.springframework.context.annotation.Configuration"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\dto\\MessageView.java",
+    "sha256": "BB65F1C2D87FE5AC828790C13E3B36D6740EF5A4A0C6E0C5448CE0437C4C8720",
+    "package": "com.zl.d19.history.dto",
+    "types": [
+      "record MessageView"
+    ],
+    "imports": [
+      "java.time.LocalDateTime"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\dto\\PageView.java",
+    "sha256": "07B5E11204557D1B83C806A60D89D3B4873927D8E1F7C4AB854ED6766AF48FB2",
+    "package": "com.zl.d19.history.dto",
+    "types": [
+      "record PageView"
+    ],
+    "imports": [
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\dto\\SessionView.java",
+    "sha256": "41DA4F295B8033E20183237336FE8168295758EF27035EFD0335A63054F7E588",
+    "package": "com.zl.d19.history.dto",
+    "types": [
+      "record SessionView"
+    ],
+    "imports": [
+      "java.time.LocalDateTime"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\HistoryController.java",
+    "sha256": "E11F55EC58726E6199C8CE63345B5740395625CF4A8CF6EC7C7B4A6B0406E951",
+    "package": "com.zl.d19.history",
+    "types": [
+      "class HistoryController"
+    ],
+    "imports": [
+      "com.zl.d19.common.Result",
+      "com.zl.d19.history.config.HistoryProperties",
+      "com.zl.d19.history.dto.MessageView",
+      "com.zl.d19.history.dto.PageView",
+      "com.zl.d19.history.dto.SessionView",
+      "com.zl.d19.history.model.ChatSession",
+      "com.zl.d19.history.model.HistoryMessage",
+      "jakarta.servlet.http.HttpServletRequest",
+      "org.springframework.web.bind.annotation.*"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\mapper\\ChatSessionMapper.java",
+    "sha256": "6B4397EB39E76FC615F913FFBB0B9D95206BE8D3800827048C0EE4B405A70BB8",
+    "package": "com.zl.d19.history.mapper",
+    "types": [
+      "interface ChatSessionMapper"
+    ],
+    "imports": [
+      "com.baomidou.mybatisplus.core.mapper.BaseMapper",
+      "com.zl.d19.history.po.ChatSessionPO",
+      "org.apache.ibatis.annotations.Mapper",
+      "org.apache.ibatis.annotations.Param",
+      "org.apache.ibatis.annotations.Select"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\mapper\\HistoryMessageMapper.java",
+    "sha256": "571E3E46330DA605E02E112C1A91990D406D120FBE778EEEF137FA45EC2E2F1C",
+    "package": "com.zl.d19.history.mapper",
+    "types": [
+      "interface HistoryMessageMapper"
+    ],
+    "imports": [
+      "com.baomidou.mybatisplus.core.mapper.BaseMapper",
+      "com.zl.d19.history.po.HistoryMessagePO",
+      "org.apache.ibatis.annotations.Mapper",
+      "org.apache.ibatis.annotations.Param",
+      "org.apache.ibatis.annotations.Select"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\model\\ChatSession.java",
+    "sha256": "55E69DCC4FE026C907265EC14C841CE132BC94E6C142D4C0164DBCF8232FC134",
+    "package": "com.zl.d19.history.model",
+    "types": [
+      "class ChatSession"
+    ],
+    "imports": [
+      "java.time.LocalDateTime"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\model\\HistoryMessage.java",
+    "sha256": "A06F9F2384DF549F2FEC909E8093F6F41E57B151439B5F1A5B5F68929FAC72B3",
+    "package": "com.zl.d19.history.model",
+    "types": [
+      "class HistoryMessage"
+    ],
+    "imports": [
+      "java.time.LocalDateTime"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\model\\MessageStatus.java",
+    "sha256": "432A11D207EDD87B7051611BC236B0046550CEF32CF18CF078C90905EACA35D1",
+    "package": "com.zl.d19.history.model",
+    "types": [
+      "enum MessageStatus"
+    ],
+    "imports": []
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\model\\SessionStatus.java",
+    "sha256": "27C5FC22713E2447FF8F9FE78DF083DBEE5EF26C927B8C5706FB1FECE96EF1DF",
+    "package": "com.zl.d19.history.model",
+    "types": [
+      "enum SessionStatus"
+    ],
+    "imports": []
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\po\\ChatSessionPO.java",
+    "sha256": "9639E98D44849E2E6CB19B1EF828D91E2202A93B4F48C9BAA4D633A21F56815E",
+    "package": "com.zl.d19.history.po",
+    "types": [
+      "class ChatSessionPO"
+    ],
+    "imports": [
+      "com.baomidou.mybatisplus.annotation.IdType",
+      "com.baomidou.mybatisplus.annotation.TableId",
+      "com.baomidou.mybatisplus.annotation.TableName",
+      "lombok.Data",
+      "lombok.NoArgsConstructor",
+      "java.time.LocalDateTime"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\history\\po\\HistoryMessagePO.java",
+    "sha256": "4525916ECAFDFFDA3FD49B0BF4627250F290A21B621E05ECFCB2D3360AD79C71",
+    "package": "com.zl.d19.history.po",
+    "types": [
+      "class HistoryMessagePO"
+    ],
+    "imports": [
+      "com.baomidou.mybatisplus.annotation.IdType",
+      "com.baomidou.mybatisplus.annotation.TableId",
+      "com.baomidou.mybatisplus.annotation.TableName",
+      "lombok.Data",
+      "lombok.NoArgsConstructor",
+      "java.time.LocalDateTime"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\knowledge\\CitationRegistry.java",
+    "sha256": "3BF6A20E0DC5A0CDF1971DD71465A7C85E5908FFE34ABF9B0750CA30D9519B6D",
+    "package": "com.zl.d19.knowledge",
+    "types": [
+      "class CitationRegistry"
+    ],
+    "imports": [
+      "com.zl.d19.dto.CitationDto",
+      "java.util.ArrayList",
+      "java.util.LinkedHashMap",
+      "java.util.List",
+      "java.util.Map",
+      "java.util.regex.Matcher",
+      "java.util.regex.Pattern"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\knowledge\\KnowledgeChatOrchestrator.java",
+    "sha256": "8B2A16B4AC7504BEF2F1B8CE85969AC16BF99CEE09D8BF3B660539911F5C894B",
+    "package": "com.zl.d19.knowledge",
+    "types": [
+      "class KnowledgeChatOrchestrator"
+    ],
+    "imports": [
+      "com.zl.d19.dto.CitationDto",
+      "com.zl.d19.service.*",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.beans.factory.annotation.Value",
+      "org.springframework.stereotype.Component",
+      "org.springframework.util.StringUtils",
+      "reactor.core.publisher.Flux",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\knowledge\\KnowledgeChunk.java",
+    "sha256": "835809BCBF5FC3916C530417BDB93592923AE54B63E1203B38979122737C959E",
+    "package": "com.zl.d19.knowledge",
+    "types": [
+      "record KnowledgeChunk"
+    ],
+    "imports": []
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\knowledge\\KnowledgeCorpus.java",
+    "sha256": "1C54E3E9A01FF971FDBC2AF929A4AE12269068179E365E2B8B4C467F0F55D8AC",
+    "package": "com.zl.d19.knowledge",
+    "types": [
+      "class KnowledgeCorpus"
+    ],
+    "imports": [
+      "com.fasterxml.jackson.databind.ObjectMapper",
+      "jakarta.annotation.PostConstruct",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.core.io.ClassPathResource",
+      "org.springframework.stereotype.Component",
+      "org.springframework.util.StringUtils",
+      "java.io.InputStream",
+      "java.util.ArrayList",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\knowledge\\KnowledgeProperties.java",
+    "sha256": "CAAD27879E47B55C2CB2126924D58A71EB7F2969CC8997E95D803E07ACF5F361",
+    "package": "com.zl.d19.knowledge",
+    "types": [
+      "class KnowledgeProperties"
+    ],
+    "imports": [
+      "lombok.Data",
+      "org.springframework.boot.context.properties.ConfigurationProperties"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\knowledge\\KnowledgeRetrievalService.java",
+    "sha256": "C6BF74861F34A0157FC693F694E136B82AC469B99F7C0261AFD0CBFAF03A94EE",
+    "package": "com.zl.d19.knowledge",
+    "types": [
+      "class KnowledgeRetrievalService"
+    ],
+    "imports": [
+      "org.springframework.stereotype.Service",
+      "org.springframework.util.StringUtils",
+      "java.util.*"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\logging\\AccessLogAutoConfiguration.java",
+    "sha256": "5ADE54B12B1CB530E53BA4A617C9C33524E628EDADEA30DD51914ADCFB51DDF8",
+    "package": "com.zl.d19.logging",
+    "types": [
+      "class AccessLogAutoConfiguration"
+    ],
+    "imports": [
+      "org.springframework.boot.autoconfigure.condition.ConditionalOnProperty",
+      "org.springframework.boot.context.properties.EnableConfigurationProperties",
+      "org.springframework.boot.web.servlet.FilterRegistrationBean",
+      "org.springframework.context.annotation.Bean",
+      "org.springframework.context.annotation.Configuration",
+      "org.springframework.core.Ordered"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\logging\\AccessLogProperties.java",
+    "sha256": "2CFF08AA90FAAB725B3478C6430A501E9DB523FF4F8F86C8423A1A65643B5AA1",
+    "package": "com.zl.d19.logging",
+    "types": [
+      "class AccessLogProperties"
+    ],
+    "imports": [
+      "lombok.Data",
+      "org.springframework.boot.context.properties.ConfigurationProperties",
+      "java.util.ArrayList",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\logging\\CachedBodyAccessLogFilter.java",
+    "sha256": "FE440603C1322B500C699131390DD430E170C29852066E73CCAF43B381F9B447",
+    "package": "com.zl.d19.logging",
+    "types": [
+      "class CachedBodyAccessLogFilter"
+    ],
+    "imports": [
+      "jakarta.servlet.FilterChain",
+      "jakarta.servlet.ServletException",
+      "jakarta.servlet.http.HttpServletRequest",
+      "jakarta.servlet.http.HttpServletResponse",
+      "org.slf4j.Logger",
+      "org.slf4j.LoggerFactory",
+      "org.slf4j.MDC",
+      "org.springframework.util.AntPathMatcher",
+      "org.springframework.web.filter.OncePerRequestFilter",
+      "org.springframework.web.util.ContentCachingRequestWrapper",
+      "org.springframework.web.util.ContentCachingResponseWrapper",
+      "java.io.IOException",
+      "java.nio.charset.Charset",
+      "java.nio.charset.StandardCharsets",
+      "java.util.Collections",
+      "java.util.LinkedHashMap",
+      "java.util.Map"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\logging\\ControllerAccessLogAspect.java",
+    "sha256": "718101EEAF1E8AB27C82515BC2777DAF35AF0E8C3807683DE5D3AF522BC4E4F8",
+    "package": "com.zl.d19.logging",
+    "types": [
+      "class ControllerAccessLogAspect"
+    ],
+    "imports": [
+      "lombok.extern.slf4j.Slf4j",
+      "org.aspectj.lang.ProceedingJoinPoint",
+      "org.aspectj.lang.annotation.Around",
+      "org.aspectj.lang.annotation.Aspect",
+      "org.aspectj.lang.reflect.MethodSignature",
+      "org.slf4j.LoggerFactory",
+      "org.springframework.boot.autoconfigure.condition.ConditionalOnProperty",
+      "org.springframework.stereotype.Component",
+      "java.util.LinkedHashMap",
+      "java.util.Map"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\logging\\LogMaskingUtils.java",
+    "sha256": "6D265F9551E5C4AB845BC5BB438B5AB4BD3A9A80C113CACC9DC0CC2A75E56BF7",
+    "package": "com.zl.d19.logging",
+    "types": [
+      "class LogMaskingUtils"
+    ],
+    "imports": [
+      "com.fasterxml.jackson.databind.JsonNode",
+      "com.fasterxml.jackson.databind.ObjectMapper",
+      "com.fasterxml.jackson.databind.SerializationFeature",
+      "com.fasterxml.jackson.databind.node.ObjectNode",
+      "jakarta.servlet.http.HttpServletRequest",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.http.MediaType",
+      "org.springframework.util.StringUtils",
+      "java.net.URLDecoder",
+      "java.nio.charset.StandardCharsets",
+      "java.util.ArrayList",
+      "java.util.LinkedHashMap",
+      "java.util.List",
+      "java.util.Map"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\logging\\TraceIdFilter.java",
+    "sha256": "77F30FF372B4944A04489C03098DDCF0D3D575E6C9B8FF69F66320A8BD03CAF3",
+    "package": "com.zl.d19.logging",
+    "types": [
+      "class TraceIdFilter"
+    ],
+    "imports": [
+      "jakarta.servlet.FilterChain",
+      "jakarta.servlet.ServletException",
+      "jakarta.servlet.http.HttpServletRequest",
+      "jakarta.servlet.http.HttpServletResponse",
+      "org.slf4j.MDC",
+      "org.springframework.util.StringUtils",
+      "org.springframework.web.filter.OncePerRequestFilter",
+      "java.io.IOException",
+      "java.util.UUID"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\dto\\PromptTemplateSummary.java",
+    "sha256": "60B0723B65E4561B3CEF4F246EA0CA0AD7B9918F03310169085CC24CAA06FE9F",
+    "package": "com.zl.d19.prompt.dto",
+    "types": [
+      "record PromptTemplateSummary"
+    ],
+    "imports": [
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "java.io.Serializable"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\dto\\PromptTemplateUpsertRequest.java",
+    "sha256": "B21C9466F9647813B143ED2F2297AE91A79A6FA8F905139B00CF0D405C76E7BF",
+    "package": "com.zl.d19.prompt.dto",
+    "types": [
+      "class PromptTemplateUpsertRequest"
+    ],
+    "imports": [
+      "com.zl.d19.prompt.model.TemplateVariable",
+      "jakarta.validation.Valid",
+      "jakarta.validation.constraints.NotBlank",
+      "jakarta.validation.constraints.Pattern",
+      "jakarta.validation.constraints.Size",
+      "lombok.Data",
+      "java.io.Serializable",
+      "java.util.ArrayList",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\dto\\PromptTemplateVersionView.java",
+    "sha256": "284E9DD5CAFC6A3DB5EC6B8E2861376D4D5AAE1F04D533DB29F9A0DBFABE4ABF",
+    "package": "com.zl.d19.prompt.dto",
+    "types": [
+      "record PromptTemplateVersionView"
+    ],
+    "imports": [
+      "com.zl.d19.prompt.model.TemplateVariable",
+      "java.time.LocalDateTime",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\dto\\PromptTemplateView.java",
+    "sha256": "7FF3A060E0CF77E45882885C782DD4545F5B08B025BD7E14D4DF87D766A72A93",
+    "package": "com.zl.d19.prompt.dto",
+    "types": [
+      "record PromptTemplateView"
+    ],
+    "imports": [
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "com.zl.d19.prompt.model.TemplateVariable",
+      "java.io.Serializable",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\dto\\TemplateStatusUpdateRequest.java",
+    "sha256": "79503B3DC7F18B93D4502346A32A1A2BFCF3561F66AFC8FE8F008B312C54AB21",
+    "package": "com.zl.d19.prompt.dto",
+    "types": [
+      "class TemplateStatusUpdateRequest"
+    ],
+    "imports": [
+      "jakarta.validation.constraints.NotBlank",
+      "lombok.Data",
+      "java.io.Serializable"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\InMemoryPromptTemplateRepository.java",
+    "sha256": "6848B2CADB8A7FDFAB26759E6083032EAEB8DA082FC24FD696D282AD5A4D8DC3",
+    "package": "com.zl.d19.prompt",
+    "types": [
+      "class InMemoryPromptTemplateRepository"
+    ],
+    "imports": [
+      "com.fasterxml.jackson.core.type.TypeReference",
+      "com.fasterxml.jackson.databind.ObjectMapper",
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "com.zl.d19.prompt.model.TemplateStatus",
+      "jakarta.annotation.PostConstruct",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.core.io.ClassPathResource",
+      "java.io.InputStream",
+      "java.time.LocalDateTime",
+      "java.util.ArrayList",
+      "java.util.Comparator",
+      "java.util.List",
+      "java.util.Optional",
+      "java.util.concurrent.ConcurrentHashMap"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\mapper\\PromptTemplateMapper.java",
+    "sha256": "5FE248740D427782F19E2AB2DA6058F3225E0C2C1E1242854B8CD3175F3938E7",
+    "package": "com.zl.d19.prompt.mapper",
+    "types": [
+      "interface PromptTemplateMapper"
+    ],
+    "imports": [
+      "com.baomidou.mybatisplus.core.mapper.BaseMapper",
+      "com.zl.d19.prompt.po.PromptTemplatePO",
+      "org.apache.ibatis.annotations.Mapper"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\mapper\\PromptTemplateVersionMapper.java",
+    "sha256": "CA8682DD3061B913DB9FBA698961F94FC47AAA7ABC581A606DD6F3BE89EA49E4",
+    "package": "com.zl.d19.prompt.mapper",
+    "types": [
+      "interface PromptTemplateVersionMapper"
+    ],
+    "imports": [
+      "com.baomidou.mybatisplus.core.mapper.BaseMapper",
+      "com.zl.d19.prompt.po.PromptTemplateVersionPO",
+      "org.apache.ibatis.annotations.Mapper"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\model\\PromptScenes.java",
+    "sha256": "FCA92BFDCD3B143A537037AF264940F52A33C0C6300D07AA2BB88DC250A643FC",
+    "package": "com.zl.d19.prompt.model",
+    "types": [
+      "class PromptScenes"
+    ],
+    "imports": [
+      "java.util.Set"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\model\\PromptTemplateEntity.java",
+    "sha256": "40C0DCC8A23AC1265252B46BE27F18F710C8189B678D896E47FE99B1D6C9EF86",
+    "package": "com.zl.d19.prompt.model",
+    "types": [
+      "class PromptTemplateEntity"
+    ],
+    "imports": [
+      "lombok.Data",
+      "lombok.NoArgsConstructor",
+      "java.io.Serializable",
+      "java.time.LocalDateTime",
+      "java.util.ArrayList",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\model\\TemplateStatus.java",
+    "sha256": "F9D1858D55BC5E167E6F0811AC72BDBC301DFF9A6D8D90EAD9E4F369AEE334B4",
+    "package": "com.zl.d19.prompt.model",
+    "types": [
+      "enum TemplateStatus"
+    ],
+    "imports": []
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\model\\TemplateVariable.java",
+    "sha256": "DF4F3DB754FBD895F2DB46A15D64A93A16DAE2378534CE8082DAD331774270A5",
+    "package": "com.zl.d19.prompt.model",
+    "types": [
+      "record TemplateVariable"
+    ],
+    "imports": [
+      "jakarta.validation.constraints.NotBlank",
+      "jakarta.validation.constraints.Pattern",
+      "jakarta.validation.constraints.Size",
+      "java.io.Serializable"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\MybatisPromptTemplateRepository.java",
+    "sha256": "42AF19B27BC9C16DDEDAF37BA5C0894546C8F9B08DB6C3386B4D9D5639D435D4",
+    "package": "com.zl.d19.prompt",
+    "types": [
+      "class MybatisPromptTemplateRepository"
+    ],
+    "imports": [
+      "com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper",
+      "com.fasterxml.jackson.databind.ObjectMapper",
+      "com.zl.d19.config.PromptCacheProperties",
+      "com.zl.d19.prompt.mapper.PromptTemplateMapper",
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "com.zl.d19.prompt.model.TemplateStatus",
+      "com.zl.d19.prompt.po.PromptTemplatePO",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.data.redis.core.StringRedisTemplate",
+      "org.springframework.stereotype.Repository",
+      "java.time.Duration",
+      "java.util.ArrayList",
+      "java.util.List",
+      "java.util.Optional"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\MybatisPromptTemplateVersionRepository.java",
+    "sha256": "331FFA4C52FE5B96A2B550FDB028789AA91BC4E38848C5B0AF4E055568022074",
+    "package": "com.zl.d19.prompt",
+    "types": [
+      "class MybatisPromptTemplateVersionRepository"
+    ],
+    "imports": [
+      "com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper",
+      "com.zl.d19.prompt.dto.PromptTemplateVersionView",
+      "com.zl.d19.prompt.mapper.PromptTemplateVersionMapper",
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "com.zl.d19.prompt.po.PromptTemplateVersionPO",
+      "org.springframework.dao.DuplicateKeyException",
+      "org.springframework.stereotype.Repository",
+      "java.time.LocalDateTime",
+      "java.util.ArrayList",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\po\\PromptTemplatePO.java",
+    "sha256": "7F17631338F36F59BB0118EEFC345F5531FEBF3F6C9135E69540993C3521F19C",
+    "package": "com.zl.d19.prompt.po",
+    "types": [
+      "class PromptTemplatePO"
+    ],
+    "imports": [
+      "com.baomidou.mybatisplus.annotation.IdType",
+      "com.baomidou.mybatisplus.annotation.TableField",
+      "com.baomidou.mybatisplus.annotation.TableId",
+      "com.baomidou.mybatisplus.annotation.TableName",
+      "com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler",
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "com.zl.d19.prompt.model.TemplateVariable",
+      "lombok.Data",
+      "lombok.NoArgsConstructor",
+      "java.time.LocalDateTime",
+      "java.util.ArrayList",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\po\\PromptTemplateVersionPO.java",
+    "sha256": "581A40B7376685C74FA71F2527D575665502EA9DF5831B408C1DA50186CB2416",
+    "package": "com.zl.d19.prompt.po",
+    "types": [
+      "class PromptTemplateVersionPO"
+    ],
+    "imports": [
+      "com.baomidou.mybatisplus.annotation.IdType",
+      "com.baomidou.mybatisplus.annotation.TableField",
+      "com.baomidou.mybatisplus.annotation.TableId",
+      "com.baomidou.mybatisplus.annotation.TableName",
+      "com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler",
+      "com.zl.d19.prompt.model.TemplateVariable",
+      "lombok.Data",
+      "lombok.NoArgsConstructor",
+      "java.time.LocalDateTime",
+      "java.util.ArrayList",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\PromptSeedInitializer.java",
+    "sha256": "432E7F4301CF3F61BC2ABE2598440435DE4CDECF1AF5ABD296C905450E56FECA",
+    "package": "com.zl.d19.prompt",
+    "types": [
+      "class PromptSeedInitializer"
+    ],
+    "imports": [
+      "com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper",
+      "com.fasterxml.jackson.core.type.TypeReference",
+      "com.fasterxml.jackson.databind.ObjectMapper",
+      "com.zl.d19.prompt.mapper.PromptTemplateMapper",
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "com.zl.d19.prompt.model.TemplateStatus",
+      "com.zl.d19.prompt.po.PromptTemplatePO",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.boot.ApplicationArguments",
+      "org.springframework.boot.ApplicationRunner",
+      "org.springframework.core.io.ClassPathResource",
+      "org.springframework.stereotype.Component",
+      "org.springframework.transaction.annotation.Transactional",
+      "java.io.InputStream",
+      "java.time.LocalDateTime",
+      "java.util.ArrayList",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\PromptTemplateController.java",
+    "sha256": "8615E5ECE99002A0A8167C4718768107E6D8954C525470BE95F00B7A1B3C11E7",
+    "package": "com.zl.d19.prompt",
+    "types": [
+      "class PromptTemplateController"
+    ],
+    "imports": [
+      "com.zl.d19.common.Result",
+      "com.zl.d19.prompt.dto.*",
+      "jakarta.validation.Valid",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.web.bind.annotation.*",
+      "java.util.List",
+      "java.util.Map"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\PromptTemplateRepository.java",
+    "sha256": "83250AE5B0B8063912350F15E7F2801C0C44E8574507E842AFA20E644458F8E6",
+    "package": "com.zl.d19.prompt",
+    "types": [
+      "interface PromptTemplateRepository"
+    ],
+    "imports": [
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "java.util.List",
+      "java.util.Optional"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\PromptTemplateService.java",
+    "sha256": "50DB73479B86A13D53741B40EB1BB243F0B527A0CCDCEFEC010E6BB516AE0735",
+    "package": "com.zl.d19.prompt",
+    "types": [
+      "class PromptTemplateService"
+    ],
+    "imports": [
+      "com.zl.d19.prompt.dto.PromptTemplateSummary",
+      "com.zl.d19.prompt.dto.PromptTemplateUpsertRequest",
+      "com.zl.d19.prompt.dto.PromptTemplateView",
+      "com.zl.d19.prompt.model.PromptScenes",
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "com.zl.d19.prompt.model.TemplateStatus",
+      "com.zl.d19.prompt.model.TemplateVariable",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.ai.chat.prompt.PromptTemplate",
+      "org.springframework.stereotype.Service",
+      "org.springframework.transaction.annotation.Transactional",
+      "org.springframework.util.StringUtils",
+      "java.time.LocalDateTime",
+      "java.util.HashMap",
+      "java.util.List",
+      "java.util.Map",
+      "java.util.Set"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\PromptTemplateValidator.java",
+    "sha256": "1828BBDB5702EFCC214709169A65259D70EDF15F92A02B982FCCB2F850111C2A",
+    "package": "com.zl.d19.prompt",
+    "types": [
+      "class PromptTemplateValidator"
+    ],
+    "imports": [
+      "com.zl.d19.prompt.dto.PromptTemplateUpsertRequest",
+      "com.zl.d19.prompt.model.PromptScenes",
+      "com.zl.d19.prompt.model.TemplateVariable",
+      "org.springframework.ai.chat.prompt.PromptTemplate",
+      "org.springframework.stereotype.Component",
+      "org.springframework.util.StringUtils",
+      "java.util.*",
+      "java.util.regex.Matcher",
+      "java.util.regex.Pattern"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\PromptTemplateVersionInitializer.java",
+    "sha256": "5EC046414CD60B578824CDD2B13E068BD4D5FC22B277FF1B858D45672089C9D0",
+    "package": "com.zl.d19.prompt",
+    "types": [
+      "class PromptTemplateVersionInitializer"
+    ],
+    "imports": [
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.boot.ApplicationArguments",
+      "org.springframework.boot.ApplicationRunner",
+      "org.springframework.core.Ordered",
+      "org.springframework.core.annotation.Order",
+      "org.springframework.stereotype.Component"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\PromptTemplateVersionRepository.java",
+    "sha256": "02D58B2A0E14F1D77C16F33D36F5D504FDCBE4A365CA8FFE13D5EEFDF601A522",
+    "package": "com.zl.d19.prompt",
+    "types": [
+      "interface PromptTemplateVersionRepository"
+    ],
+    "imports": [
+      "com.zl.d19.prompt.dto.PromptTemplateVersionView",
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\prompt\\PromptTemplateVersionService.java",
+    "sha256": "403E220AE04E53777651A53FBD4FFEDC34D0A683E2AF5079056F5421A0007FA8",
+    "package": "com.zl.d19.prompt",
+    "types": [
+      "class PromptTemplateVersionService"
+    ],
+    "imports": [
+      "com.zl.d19.prompt.dto.PromptTemplateVersionView",
+      "com.zl.d19.prompt.model.PromptTemplateEntity",
+      "org.springframework.stereotype.Service",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\service\\AiChatResult.java",
+    "sha256": "6C9AD2712279048CD314211D5E70EE74ECE099FF4997387B1E066BDC29112F5A",
+    "package": "com.zl.d19.service",
+    "types": [
+      "record AiChatResult"
+    ],
+    "imports": []
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\service\\AiChatService.java",
+    "sha256": "056DC5856BAE6AF2C49FC7C4996AA2BE8F2BE438B194F45FFE50E5A2679153D8",
+    "package": "com.zl.d19.service",
+    "types": [
+      "interface AiChatService"
+    ],
+    "imports": [
+      "com.zl.d19.dto.ChatReplyResponse",
+      "reactor.core.publisher.Flux",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\service\\ChatInvocation.java",
+    "sha256": "4D2EF804A99B82EB089613464006ECFC046D436E0B648E8631422A0CCCDD7A6A",
+    "package": "com.zl.d19.service",
+    "types": [
+      "record ChatInvocation"
+    ],
+    "imports": [
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\service\\DeepSeekAiChatService.java",
+    "sha256": "E9EBB5BE8A0BCB5E275A0E30E2F86D6D129A8BDDD0E5176E34EABEFE4F57328C",
+    "package": "com.zl.d19.service",
+    "types": [
+      "class DeepSeekAiChatService"
+    ],
+    "imports": [
+      "com.zl.d19.common.AiConfigurationException",
+      "com.zl.d19.config.AiConstants",
+      "com.zl.d19.dto.ChatReplyResponse",
+      "lombok.extern.slf4j.Slf4j",
+      "org.springframework.ai.chat.client.ChatClient",
+      "org.springframework.ai.chat.messages.AssistantMessage",
+      "org.springframework.ai.chat.messages.Message",
+      "org.springframework.ai.chat.messages.SystemMessage",
+      "org.springframework.ai.chat.messages.UserMessage",
+      "org.springframework.ai.chat.model.ChatModel",
+      "org.springframework.ai.chat.model.ChatResponse",
+      "org.springframework.ai.chat.prompt.Prompt",
+      "org.springframework.ai.deepseek.DeepSeekAssistantMessage",
+      "org.springframework.ai.deepseek.DeepSeekChatOptions",
+      "org.springframework.beans.factory.annotation.Value",
+      "org.springframework.boot.autoconfigure.condition.ConditionalOnProperty",
+      "org.springframework.stereotype.Service",
+      "org.springframework.util.StringUtils",
+      "reactor.core.publisher.Flux",
+      "java.util.ArrayList",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\service\\MockAiChatService.java",
+    "sha256": "FD67119CC89A5E4CB5991505EA2C6B46EEF7F654A2D744F7276C403D9C0E356A",
+    "package": "com.zl.d19.service",
+    "types": [
+      "class MockAiChatService"
+    ],
+    "imports": [
+      "com.zl.d19.config.AiConstants",
+      "com.zl.d19.dto.ChatReplyResponse",
+      "org.springframework.boot.autoconfigure.condition.ConditionalOnProperty",
+      "org.springframework.stereotype.Service",
+      "reactor.core.publisher.Flux",
+      "java.time.Duration",
+      "java.util.ArrayList",
+      "java.util.List"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\service\\ReasoningEffort.java",
+    "sha256": "CB060ACAB23A12B08526B74A2EC95BAADDFCF8B3FB175706865A46A5B82191AE",
+    "package": "com.zl.d19.service",
+    "types": [
+      "enum ReasoningEffort"
+    ],
+    "imports": [
+      "java.util.Arrays"
+    ]
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\service\\StreamChunk.java",
+    "sha256": "D363D304EB60C07FD37DF068EA78CE5AFBA4CE92BC9F18FBF9B0EAF6DDD4B3EF",
+    "package": "com.zl.d19.service",
+    "types": [
+      "interface StreamChunk"
+    ],
+    "imports": []
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\service\\ThinkingSettings.java",
+    "sha256": "9075DBA9B97755B809116E432D0A52DF4D665C2AAE91AF3664169AFCFE8A3A99",
+    "package": "com.zl.d19.service",
+    "types": [
+      "record ThinkingSettings"
+    ],
+    "imports": []
+  },
+  {
+    "path": "D19_SCI\\src\\main\\java\\com\\zl\\d19\\service\\ThinkingSettingsResolver.java",
+    "sha256": "3663234CCE16DA0D5D3B016B387ED8E9DCFC94AE5719B3DBAD2F336666E22BA2",
+    "package": "com.zl.d19.service",
+    "types": [
+      "class ThinkingSettingsResolver"
+    ],
+    "imports": [
+      "com.zl.d19.dto.ChatRequest",
+      "org.springframework.stereotype.Component",
+      "org.springframework.util.StringUtils"
+    ]
+  }
+]

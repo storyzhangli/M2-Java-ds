@@ -1,0 +1,12 @@
+ .../java/com/zl/d19/D19SpringAiApplication.java    |   2 +-
+ .../com/zl/d19/common/GlobalExceptionHandler.java  |  13 +++
+ .../java/com/zl/d19/controller/ChatController.java |   4 +-
+ .../zl/d19/controller/ChatStreamController.java    | 106 +++++++++++++++------
+ .../zl/d19/logging/ControllerAccessLogAspect.java  |   6 +-
+ .../com/zl/d19/service/DeepSeekAiChatService.java  |  93 ++++++++++--------
+ D19/D19_SCI/src/main/resources/application.yml     |   2 +-
+ D19/D19_SCI/src/main/resources/logback-spring.xml  |   2 +-
+ D19/D19_SCI/src/main/resources/static/index.html   |   6 +-
+ D19/D19_SCI/src/main/resources/static/js/app.js    |   2 +-
+ .../src/main/resources/static/templates.html       |   2 +-
+ 11 files changed, 153 insertions(+), 85 deletions(-)

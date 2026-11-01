@@ -1,0 +1,6 @@
+D19_SCI\src\main\resources\application-local.yml.example | #        DEEPSEEK_API_KEY=<REDACTED>
+D19_SCI\src\main\resources\application-local.yml.example | #        $env:DEEPSEEK_API_KEY=<REDACTED>
+D19_SCI\src\main\resources\application-local.yml.example |       api-key: <REDACTED>
+D19_SCI\src\main\resources\application.yml |     password: <REDACTED>
+D19_SCI\src\main\resources\application.yml |       password: <REDACTED>
+D19_SCI\src\main\resources\application.yml |       api-key: <REDACTED>
