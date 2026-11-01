@@ -39,3 +39,6 @@ Thumbs.db
 .env.*
 # 自己测试用,不上传仓库管理
 /D01/D01_SpringAI_init/src/test/java/com/zl/d01/springai/self/
+# 临时文件目录,不上传
+/docs/temp_docs/
+/docs/proj_docs/D13-01 实施任务书：Spring AI 1.1.x 引入与 DeepSeek API 接入-GPT-项目迭代基石.md
