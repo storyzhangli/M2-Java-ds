@@ -16,6 +16,8 @@ import reactor.core.publisher.Flux;
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 /**
  * 知识问答编排器纯单元测试：用桩 AiChatService 模拟模型输出，
  * 重点证明模型自造的未知引用编号会被删除，且无检索时绝不伪造来源。

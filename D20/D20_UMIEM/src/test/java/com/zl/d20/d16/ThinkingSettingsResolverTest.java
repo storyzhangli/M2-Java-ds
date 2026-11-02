@@ -6,6 +6,7 @@ import com.zl.d20.service.ThinkingSettings;
 import com.zl.d20.service.ThinkingSettingsResolver;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /**
