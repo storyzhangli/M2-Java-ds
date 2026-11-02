@@ -1,0 +1,19 @@
+ M D20/D20_UMIEM/pom.xml
+ M D20/D20_UMIEM/src/main/java/com/zl/d20/common/GlobalExceptionHandler.java
+ M D20/D20_UMIEM/src/main/java/com/zl/d20/controller/ChatStreamController.java
+ M D20/D20_UMIEM/src/main/resources/application.yml
+ M D20/D20_UMIEM/src/main/resources/static/index.html
+ M D20/D20_UMIEM/src/main/resources/static/js/app.js
+ M D20/D20_UMIEM/src/main/resources/static/templates.html
+ M D20/D20_UMIEM/src/test/java/com/zl/d20/ApplicationContextLoadTest.java
+ M D20/D20_UMIEM/src/test/java/com/zl/d20/D20TestBootstrap.java
+ M D20/D20_UMIEM/src/test/java/com/zl/d20/stream/ChatStreamErrorEventTest.java
+ M D20/D20_UMIEM/src/test/java/com/zl/d20/stream/ChatStreamIntegrationTest.java
+?? D20/D20_UMIEM/src/main/java/com/zl/d20/config/ModelCallConfiguration.java
+?? D20/D20_UMIEM/src/main/java/com/zl/d20/config/ModelCallProperties.java
+?? D20/D20_UMIEM/src/main/java/com/zl/d20/model/
+?? D20/D20_UMIEM/src/test/java/com/zl/d20/model/
+?? D20/D20_UMIEM/src/test/java/com/zl/d20/stream/ChatStreamTotalDeadlineTest.java
+?? docs/evidence/D20/
+?? "docs/proj_docs/D20-\346\250\241\345\236\213\345\274\202\345\270\270\350\266\205\346\227\266\344\270\216\346\234\211\351\231\220\351\207\215\350\257\225\346\212\200\346\234\257\350\257\264\346\230\216\345\217\212\345\256\236\350\267\265\346\214\207\345\215\227.md"
+?? "docs/proj_docs/D20-\351\241\271\347\233\256\350\277\255\344\273\243\345\205\250\351\207\217\344\277\241\346\201\257\344\270\216\346\223\215\344\275\234.md"

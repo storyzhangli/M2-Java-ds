@@ -1,0 +1,112 @@
+Compiled from "DeepSeekChatAutoConfiguration.java"
+public class org.springframework.ai.model.deepseek.autoconfigure.DeepSeekChatAutoConfiguration {
+  public org.springframework.ai.model.deepseek.autoconfigure.DeepSeekChatAutoConfiguration();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public org.springframework.ai.deepseek.DeepSeekChatModel deepSeekChatModel(org.springframework.ai.model.deepseek.autoconfigure.DeepSeekConnectionProperties, org.springframework.ai.model.deepseek.autoconfigure.DeepSeekChatProperties, org.springframework.beans.factory.ObjectProvider<org.springframework.web.client.RestClient$Builder>, org.springframework.beans.factory.ObjectProvider<org.springframework.web.reactive.function.client.WebClient$Builder>, org.springframework.ai.model.tool.ToolCallingManager, org.springframework.retry.support.RetryTemplate, org.springframework.web.client.ResponseErrorHandler, org.springframework.beans.factory.ObjectProvider<io.micrometer.observation.ObservationRegistry>, org.springframework.beans.factory.ObjectProvider<org.springframework.ai.chat.observation.ChatModelObservationConvention>, org.springframework.beans.factory.ObjectProvider<org.springframework.ai.model.tool.ToolExecutionEligibilityPredicate>);
+    Code:
+       0: aload_0
+       1: aload_2
+       2: aload_1
+       3: aload_3
+       4: invokedynamic #7,  0              // InvokeDynamic #0:get:()Ljava/util/function/Supplier;
+       9: invokeinterface #11,  2           // InterfaceMethod org/springframework/beans/factory/ObjectProvider.getIfAvailable:(Ljava/util/function/Supplier;)Ljava/lang/Object;
+      14: checkcast     #17                 // class org/springframework/web/client/RestClient$Builder
+      17: aload         4
+      19: invokedynamic #19,  0             // InvokeDynamic #1:get:()Ljava/util/function/Supplier;
+      24: invokeinterface #11,  2           // InterfaceMethod org/springframework/beans/factory/ObjectProvider.getIfAvailable:(Ljava/util/function/Supplier;)Ljava/lang/Object;
+      29: checkcast     #20                 // class org/springframework/web/reactive/function/client/WebClient$Builder
+      32: aload         7
+      34: invokevirtual #22                 // Method deepSeekApi:(Lorg/springframework/ai/model/deepseek/autoconfigure/DeepSeekChatProperties;Lorg/springframework/ai/model/deepseek/autoconfigure/DeepSeekConnectionProperties;Lorg/springframework/web/client/RestClient$Builder;Lorg/springframework/web/reactive/function/client/WebClient$Builder;Lorg/springframework/web/client/ResponseErrorHandler;)Lorg/springframework/ai/deepseek/api/DeepSeekApi;
+      37: astore        11
+      39: invokestatic  #28                 // Method org/springframework/ai/deepseek/DeepSeekChatModel.builder:()Lorg/springframework/ai/deepseek/DeepSeekChatModel$Builder;
+      42: aload         11
+      44: invokevirtual #34                 // Method org/springframework/ai/deepseek/DeepSeekChatModel$Builder.deepSeekApi:(Lorg/springframework/ai/deepseek/api/DeepSeekApi;)Lorg/springframework/ai/deepseek/DeepSeekChatModel$Builder;
+      47: aload_2
+      48: invokevirtual #39                 // Method org/springframework/ai/model/deepseek/autoconfigure/DeepSeekChatProperties.getOptions:()Lorg/springframework/ai/deepseek/DeepSeekChatOptions;
+      51: invokevirtual #45                 // Method org/springframework/ai/deepseek/DeepSeekChatModel$Builder.defaultOptions:(Lorg/springframework/ai/deepseek/DeepSeekChatOptions;)Lorg/springframework/ai/deepseek/DeepSeekChatModel$Builder;
+      54: aload         5
+      56: invokevirtual #49                 // Method org/springframework/ai/deepseek/DeepSeekChatModel$Builder.toolCallingManager:(Lorg/springframework/ai/model/tool/ToolCallingManager;)Lorg/springframework/ai/deepseek/DeepSeekChatModel$Builder;
+      59: aload         10
+      61: invokedynamic #53,  0             // InvokeDynamic #2:get:()Ljava/util/function/Supplier;
+      66: invokeinterface #54,  2           // InterfaceMethod org/springframework/beans/factory/ObjectProvider.getIfUnique:(Ljava/util/function/Supplier;)Ljava/lang/Object;
+      71: checkcast     #57                 // class org/springframework/ai/model/tool/ToolExecutionEligibilityPredicate
+      74: invokevirtual #59                 // Method org/springframework/ai/deepseek/DeepSeekChatModel$Builder.toolExecutionEligibilityPredicate:(Lorg/springframework/ai/model/tool/ToolExecutionEligibilityPredicate;)Lorg/springframework/ai/deepseek/DeepSeekChatModel$Builder;
+      77: aload         6
+      79: invokevirtual #63                 // Method org/springframework/ai/deepseek/DeepSeekChatModel$Builder.retryTemplate:(Lorg/springframework/retry/support/RetryTemplate;)Lorg/springframework/ai/deepseek/DeepSeekChatModel$Builder;
+      82: aload         8
+      84: invokedynamic #67,  0             // InvokeDynamic #3:get:()Ljava/util/function/Supplier;
+      89: invokeinterface #54,  2           // InterfaceMethod org/springframework/beans/factory/ObjectProvider.getIfUnique:(Ljava/util/function/Supplier;)Ljava/lang/Object;
+      94: checkcast     #68                 // class io/micrometer/observation/ObservationRegistry
+      97: invokevirtual #70                 // Method org/springframework/ai/deepseek/DeepSeekChatModel$Builder.observationRegistry:(Lio/micrometer/observation/ObservationRegistry;)Lorg/springframework/ai/deepseek/DeepSeekChatModel$Builder;
+     100: invokevirtual #74                 // Method org/springframework/ai/deepseek/DeepSeekChatModel$Builder.build:()Lorg/springframework/ai/deepseek/DeepSeekChatModel;
+     103: astore        12
+     105: aload         9
+     107: aload         12
+     109: dup
+     110: invokestatic  #78                 // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+     113: pop
+     114: invokedynamic #84,  0             // InvokeDynamic #4:accept:(Lorg/springframework/ai/deepseek/DeepSeekChatModel;)Ljava/util/function/Consumer;
+     119: invokeinterface #88,  2           // InterfaceMethod org/springframework/beans/factory/ObjectProvider.ifAvailable:(Ljava/util/function/Consumer;)V
+     124: aload         12
+     126: areturn
+
+  private org.springframework.ai.deepseek.api.DeepSeekApi deepSeekApi(org.springframework.ai.model.deepseek.autoconfigure.DeepSeekChatProperties, org.springframework.ai.model.deepseek.autoconfigure.DeepSeekConnectionProperties, org.springframework.web.client.RestClient$Builder, org.springframework.web.reactive.function.client.WebClient$Builder, org.springframework.web.client.ResponseErrorHandler);
+    Code:
+       0: aload_1
+       1: invokevirtual #92                 // Method org/springframework/ai/model/deepseek/autoconfigure/DeepSeekChatProperties.getBaseUrl:()Ljava/lang/String;
+       4: invokestatic  #96                 // Method org/springframework/util/StringUtils.hasText:(Ljava/lang/String;)Z
+       7: ifeq          17
+      10: aload_1
+      11: invokevirtual #92                 // Method org/springframework/ai/model/deepseek/autoconfigure/DeepSeekChatProperties.getBaseUrl:()Ljava/lang/String;
+      14: goto          21
+      17: aload_2
+      18: invokevirtual #102                // Method org/springframework/ai/model/deepseek/autoconfigure/DeepSeekConnectionProperties.getBaseUrl:()Ljava/lang/String;
+      21: astore        6
+      23: aload         6
+      25: ldc           #105                // String DeepSeek base URL must be set
+      27: invokestatic  #107                // Method org/springframework/util/Assert.hasText:(Ljava/lang/String;Ljava/lang/String;)V
+      30: aload_1
+      31: invokevirtual #112                // Method org/springframework/ai/model/deepseek/autoconfigure/DeepSeekChatProperties.getApiKey:()Ljava/lang/String;
+      34: invokestatic  #96                 // Method org/springframework/util/StringUtils.hasText:(Ljava/lang/String;)Z
+      37: ifeq          47
+      40: aload_1
+      41: invokevirtual #112                // Method org/springframework/ai/model/deepseek/autoconfigure/DeepSeekChatProperties.getApiKey:()Ljava/lang/String;
+      44: goto          51
+      47: aload_2
+      48: invokevirtual #115                // Method org/springframework/ai/model/deepseek/autoconfigure/DeepSeekConnectionProperties.getApiKey:()Ljava/lang/String;
+      51: astore        7
+      53: aload         7
+      55: ldc           #116                // String DeepSeek API key must be set
+      57: invokestatic  #107                // Method org/springframework/util/Assert.hasText:(Ljava/lang/String;Ljava/lang/String;)V
+      60: invokestatic  #118                // Method org/springframework/ai/deepseek/api/DeepSeekApi.builder:()Lorg/springframework/ai/deepseek/api/DeepSeekApi$Builder;
+      63: aload         6
+      65: invokevirtual #123                // Method org/springframework/ai/deepseek/api/DeepSeekApi$Builder.baseUrl:(Ljava/lang/String;)Lorg/springframework/ai/deepseek/api/DeepSeekApi$Builder;
+      68: new           #129                // class org/springframework/ai/model/SimpleApiKey
+      71: dup
+      72: aload         7
+      74: invokespecial #131                // Method org/springframework/ai/model/SimpleApiKey."<init>":(Ljava/lang/String;)V
+      77: invokevirtual #134                // Method org/springframework/ai/deepseek/api/DeepSeekApi$Builder.apiKey:(Lorg/springframework/ai/model/ApiKey;)Lorg/springframework/ai/deepseek/api/DeepSeekApi$Builder;
+      80: aload_1
+      81: invokevirtual #138                // Method org/springframework/ai/model/deepseek/autoconfigure/DeepSeekChatProperties.getCompletionsPath:()Ljava/lang/String;
+      84: invokevirtual #141                // Method org/springframework/ai/deepseek/api/DeepSeekApi$Builder.completionsPath:(Ljava/lang/String;)Lorg/springframework/ai/deepseek/api/DeepSeekApi$Builder;
+      87: aload_1
+      88: invokevirtual #144                // Method org/springframework/ai/model/deepseek/autoconfigure/DeepSeekChatProperties.getBetaPrefixPath:()Ljava/lang/String;
+      91: invokevirtual #147                // Method org/springframework/ai/deepseek/api/DeepSeekApi$Builder.betaPrefixPath:(Ljava/lang/String;)Lorg/springframework/ai/deepseek/api/DeepSeekApi$Builder;
+      94: aload_3
+      95: invokevirtual #150                // Method org/springframework/ai/deepseek/api/DeepSeekApi$Builder.restClientBuilder:(Lorg/springframework/web/client/RestClient$Builder;)Lorg/springframework/ai/deepseek/api/DeepSeekApi$Builder;
+      98: aload         4
+     100: invokevirtual #154                // Method org/springframework/ai/deepseek/api/DeepSeekApi$Builder.webClientBuilder:(Lorg/springframework/web/reactive/function/client/WebClient$Builder;)Lorg/springframework/ai/deepseek/api/DeepSeekApi$Builder;
+     103: aload         5
+     105: invokevirtual #158                // Method org/springframework/ai/deepseek/api/DeepSeekApi$Builder.responseErrorHandler:(Lorg/springframework/web/client/ResponseErrorHandler;)Lorg/springframework/ai/deepseek/api/DeepSeekApi$Builder;
+     108: invokevirtual #162                // Method org/springframework/ai/deepseek/api/DeepSeekApi$Builder.build:()Lorg/springframework/ai/deepseek/api/DeepSeekApi;
+     111: areturn
+
+  private static io.micrometer.observation.ObservationRegistry lambda$deepSeekChatModel$0();
+    Code:
+       0: getstatic     #165                // Field io/micrometer/observation/ObservationRegistry.NOOP:Lio/micrometer/observation/ObservationRegistry;
+       3: areturn
+}

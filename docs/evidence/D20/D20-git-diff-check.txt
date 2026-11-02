@@ -1,0 +1,11 @@
+warning: in the working copy of 'D20/D20_UMIEM/pom.xml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D20/D20_UMIEM/src/main/java/com/zl/d20/common/GlobalExceptionHandler.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D20/D20_UMIEM/src/main/java/com/zl/d20/controller/ChatStreamController.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D20/D20_UMIEM/src/main/resources/application.yml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D20/D20_UMIEM/src/main/resources/static/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D20/D20_UMIEM/src/main/resources/static/js/app.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D20/D20_UMIEM/src/main/resources/static/templates.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D20/D20_UMIEM/src/test/java/com/zl/d20/ApplicationContextLoadTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D20/D20_UMIEM/src/test/java/com/zl/d20/D20TestBootstrap.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D20/D20_UMIEM/src/test/java/com/zl/d20/stream/ChatStreamErrorEventTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D20/D20_UMIEM/src/test/java/com/zl/d20/stream/ChatStreamIntegrationTest.java', LF will be replaced by CRLF the next time Git touches it
