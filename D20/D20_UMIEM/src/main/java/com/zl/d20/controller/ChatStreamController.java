@@ -1,9 +1,9 @@
 package com.zl.d20.controller;
 
-import com.zl.d20.common.AiConfigurationException;
 import com.zl.d20.common.ResultCode;
 import com.zl.d20.config.AiConstants;
 import com.zl.d20.config.AiProperties;
+import com.zl.d20.config.ModelCallProperties;
 import com.zl.d20.conversation.HistoryMessageConverter;
 import com.zl.d20.conversation.RoleConversationService;
 import com.zl.d20.dto.ChatRequest;
@@ -13,6 +13,8 @@ import com.zl.d20.history.config.HistoryProperties;
 import com.zl.d20.knowledge.CitationRegistry;
 import com.zl.d20.knowledge.KnowledgeChatOrchestrator;
 import com.zl.d20.logging.TraceIdFilter;
+import com.zl.d20.model.ModelFailure;
+import com.zl.d20.model.ModelFailureClassifier;
 import com.zl.d20.service.ChatInvocation;
 import com.zl.d20.service.StreamChunk;
 import com.zl.d20.service.ThinkingSettings;
@@ -22,8 +24,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
-import org.springframework.ai.retry.NonTransientAiException;
-import org.springframework.ai.retry.TransientAiException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.util.StringUtils;
@@ -33,6 +33,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 import reactor.core.Disposable;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -65,6 +67,8 @@ public class ChatStreamController {
     private final ThinkingSettingsResolver thinkingSettingsResolver;
     private final ChatHistoryService historyService;
     private final HistoryProperties historyProperties;
+    private final ModelCallProperties modelCallProperties;
+    private final ModelFailureClassifier failureClassifier;
 
     @Value("${spring.ai.deepseek.chat.options.model:deepseek-flash}")
     private String deepseekModel;
@@ -77,13 +81,17 @@ public class ChatStreamController {
                                 RoleConversationService roleConversationService,
                                 ThinkingSettingsResolver thinkingSettingsResolver,
                                 ChatHistoryService historyService,
-                                HistoryProperties historyProperties) {
+                                HistoryProperties historyProperties,
+                                ModelCallProperties modelCallProperties,
+                                ModelFailureClassifier failureClassifier) {
         this.orchestrator = orchestrator;
         this.aiProperties = aiProperties;
         this.roleConversationService = roleConversationService;
         this.thinkingSettingsResolver = thinkingSettingsResolver;
         this.historyService = historyService;
         this.historyProperties = historyProperties;
+        this.modelCallProperties = modelCallProperties;
+        this.failureClassifier = failureClassifier;
     }
 
     @PostMapping(value = "/chat/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE + ";charset=UTF-8")
@@ -125,7 +133,9 @@ public class ChatStreamController {
         final AtomicBoolean persisted = new AtomicBoolean(false);
 
         long streamTimeoutMs = aiProperties.getStreamTimeoutMs();
-        SseEmitter emitter = new SseEmitter(streamTimeoutMs + CONTAINER_TIMEOUT_GRACE_MS);
+        long streamTotalTimeoutMs = modelCallProperties.getStreamTotalTimeout().toMillis();
+        SseEmitter emitter = new SseEmitter(
+                Math.max(streamTimeoutMs, streamTotalTimeoutMs) + CONTAINER_TIMEOUT_GRACE_MS);
         String requestId = MDC.get(TraceIdFilter.MDC_REQUEST_ID);
         String mode = aiProperties.getMode();
         final String model = AiConstants.MODE_MOCK.equals(mode)
@@ -147,8 +157,15 @@ public class ChatStreamController {
         }
         final CitationRegistry registry = outcome.registry();
 
-        Disposable subscription = outcome.chunks()
+        Flux<StreamChunk> boundedChunks = outcome.chunks()
+                // 相邻 chunk 的首包/空闲上限。
                 .timeout(Duration.ofMillis(streamTimeoutMs))
+                // 整个流式响应的绝对上限，避免持续小 chunk 永远不触发空闲超时。
+                .takeUntilOther(Mono.delay(Duration.ofMillis(streamTotalTimeoutMs))
+                        .flatMap(ignored -> Mono.error(
+                                new TimeoutException("stream total deadline exceeded"))));
+
+        Disposable subscription = boundedChunks
                 .doOnSubscribe(s -> {
                     Boolean thinkingFlag = settings.enabled() ? Boolean.TRUE : null;
                     // 普通链路也建立会话，start 事件回传 sessionId 供前端后续轮次沿用
@@ -340,30 +357,23 @@ public class ChatStreamController {
                                AtomicBoolean finished,
                                String requestId,
                                Throwable error) {
-        ResultCode resultCode = resolveResultCode(error);
-        boolean timeout = error instanceof TimeoutException;
+        ModelFailure failure = failureClassifier.classify(error);
+        ResultCode resultCode = failureClassifier.resultCode(error);
+        boolean timeout = failure.category() == com.zl.d20.model.ModelFailureCategory.DEADLINE_EXCEEDED
+                || failure.category() == com.zl.d20.model.ModelFailureCategory.READ_TIMEOUT;
         String clientMessage = timeout ? "流式响应超时，连接已关闭" : resultCode.getMsg();
         if (timeout) {
-            log.warn("SSE 流应用层超时结束，requestId={}，code={}，超时阈值={}ms",
-                    requestId, resultCode.getCode(), aiProperties.getStreamTimeoutMs());
+            log.warn("SSE 流应用层超时结束，requestId={}，code={}，category={}，空闲阈值={}ms，总时限={}ms",
+                    requestId, resultCode.getCode(), failure.category(),
+                    aiProperties.getStreamTimeoutMs(), modelCallProperties.getStreamTotalTimeout().toMillis());
         } else {
-            log.error("SSE 流异常结束，requestId={}，code={}，异常类型={}",
-                    requestId, resultCode.getCode(), error.getClass().getSimpleName());
+            log.error("SSE 流异常结束，requestId={}，code={}，category={}，status={}",
+                    requestId, resultCode.getCode(), failure.category(), failure.httpStatus());
         }
 
         safeSend(emitter, finished, "error",
                 new SsePayloads.Error(resultCode.getCode(), clientMessage));
         finishQuietly(emitter, finished);
-    }
-
-    private ResultCode resolveResultCode(Throwable error) {
-        if (error instanceof AiConfigurationException || error instanceof NonTransientAiException) {
-            return ResultCode.AI_CONFIG_ERROR;
-        }
-        if (error instanceof TransientAiException) {
-            return ResultCode.AI_UNAVAILABLE;
-        }
-        return ResultCode.SYSTEM_ERROR;
     }
 
     private boolean safeSend(SseEmitter emitter, AtomicBoolean finished, String eventName, Object payload) {

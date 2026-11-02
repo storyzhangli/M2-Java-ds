@@ -1,5 +1,7 @@
 package com.zl.d20.common;
 
+import com.zl.d20.model.ModelFailure;
+import com.zl.d20.model.ModelFailureClassifier;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +13,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.client.ResourceAccessException;
 
 import java.io.IOException;
 
@@ -24,6 +27,12 @@ import java.io.IOException;
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+
+    private final ModelFailureClassifier failureClassifier;
+
+    public GlobalExceptionHandler(ModelFailureClassifier failureClassifier) {
+        this.failureClassifier = failureClassifier;
+    }
 
     /**
      * Bean Validation 注解校验失败（@NotBlank / @Size 等）。
@@ -74,9 +83,9 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(AiConfigurationException.class)
     public Result<Void> handleAiConfiguration(AiConfigurationException ex) {
-        // 该消息为系统自定义安全文案，不含密钥，可入日志；对外仍返回稳定的统一提示
-        log.error("AI 配置校验失败: {}", ex.getMessage());
-        return Result.fail(ResultCode.AI_CONFIG_ERROR);
+        ModelFailure failure = failureClassifier.classify(ex);
+        log.error("AI 配置校验失败，category={}", failure.category());
+        return Result.fail(failureClassifier.resultCode(ex));
     }
 
     /**
@@ -85,8 +94,10 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(NonTransientAiException.class)
     public Result<Void> handleNonTransient(NonTransientAiException ex) {
-        log.error("AI 客户端/鉴权异常，异常类型: {}", ex.getClass().getSimpleName());
-        return Result.fail(ResultCode.AI_CONFIG_ERROR);
+        ModelFailure failure = failureClassifier.classify(ex);
+        log.error("AI 客户端/鉴权异常，category={}，status={}",
+                failure.category(), failure.httpStatus());
+        return Result.fail(failureClassifier.resultCode(ex));
     }
 
     /**
@@ -94,8 +105,20 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(TransientAiException.class)
     public Result<Void> handleTransient(TransientAiException ex) {
-        log.error("AI 服务端临时异常且重试耗尽，异常类型: {}", ex.getClass().getSimpleName());
-        return Result.fail(ResultCode.AI_UNAVAILABLE);
+        ModelFailure failure = failureClassifier.classify(ex);
+        log.error("AI 服务端临时异常且重试结束，category={}，status={}",
+                failure.category(), failure.httpStatus());
+        return Result.fail(failureClassifier.resultCode(ex));
+    }
+
+    /**
+     * RestClient 网络层异常由统一分类器判断是建连、安全读取超时还是其他 I/O。
+     */
+    @ExceptionHandler(ResourceAccessException.class)
+    public Result<Void> handleResourceAccess(ResourceAccessException ex) {
+        ModelFailure failure = failureClassifier.classify(ex);
+        log.error("AI HTTP 调用异常，category={}", failure.category());
+        return Result.fail(failureClassifier.resultCode(ex));
     }
 
     /**
@@ -113,7 +136,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(Exception.class)
     public Result<Void> handleUnexpected(Exception ex) {
-        log.error("未预期的系统异常", ex);
-        return Result.fail(ResultCode.SYSTEM_ERROR);
+        ModelFailure failure = failureClassifier.classify(ex);
+        log.error("未预期的系统异常，category={}", failure.category(), ex);
+        return Result.fail(failureClassifier.resultCode(ex));
     }
 }

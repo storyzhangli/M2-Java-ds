@@ -3,6 +3,7 @@ package com.zl.d20.stream;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zl.d20.service.AiChatService;
 import com.zl.d20.service.ChatInvocation;
+import com.zl.d20.service.StreamChunk;
 import com.zl.d20.service.ThinkingSettings;
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.retry.TransientAiException;
@@ -20,6 +21,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 /**
  * 流开始后发生异常的路径测试：用 Mockito Bean 替换真实服务，令其流式方法直接发布错误，
@@ -65,6 +68,8 @@ class ChatStreamErrorEventTest {
         assertThat(body).doesNotContain("event:complete");
         // 原始异常细节不得外泄到客户端
         assertThat(body).doesNotContain("simulated upstream failure");
+        verify(aiChatService, times(1))
+                .streamChat(any(ChatInvocation.class), any(ThinkingSettings.class));
     }
 
     @Test
@@ -86,5 +91,33 @@ class ChatStreamErrorEventTest {
         assertThat(body).contains("\"code\":5002");
         assertThat(body).doesNotContain("event:complete");
         assertThat(body).doesNotContain("simulated rate limit");
+        verify(aiChatService, times(1))
+                .streamChat(any(ChatInvocation.class), any(ThinkingSettings.class));
+    }
+
+    @Test
+    void failureAfterFirstDeltaShouldNotReplayFromBeginning() throws Exception {
+        when(aiChatService.streamChat(any(ChatInvocation.class), any(ThinkingSettings.class)))
+                .thenReturn(Flux.concat(
+                        Flux.just(new StreamChunk.ContentChunk("首段")),
+                        Flux.error(new TransientAiException("stream interrupted"))));
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        ResponseEntity<byte[]> response = restTemplate.exchange(
+                STREAM_URL, HttpMethod.POST,
+                new HttpEntity<>(objectMapper.writeValueAsString(
+                        Map.of("message", "首段后失败测试")), headers),
+                byte[].class);
+        String body = new String(response.getBody(), StandardCharsets.UTF_8);
+
+        assertThat(body).contains("event:delta");
+        assertThat(body).contains("\"content\":\"首段\"");
+        assertThat(body).contains("event:error");
+        assertThat(body).doesNotContain("event:complete");
+        assertThat(body).doesNotContain("stream interrupted");
+        // 已产生客户端可见内容后，不允许从头再次调用模型并拼接重复片段。
+        verify(aiChatService, times(1))
+                .streamChat(any(ChatInvocation.class), any(ThinkingSettings.class));
     }
 }

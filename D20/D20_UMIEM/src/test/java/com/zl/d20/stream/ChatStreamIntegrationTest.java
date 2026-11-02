@@ -100,7 +100,7 @@ class ChatStreamIntegrationTest {
         ResponseEntity<byte[]> response = restTemplate.getForEntity("/", byte[].class);
         assertThat(response.getStatusCode().value()).isEqualTo(200);
         String html = new String(response.getBody(), StandardCharsets.UTF_8);
-        assertThat(html).contains("D20 同步聊天与 SSE 流式接口演示")
+        assertThat(html).contains("D20 模型调用异常、超时与有限重试演示")
                 .contains("/js/app.js").contains("/css/app.css");
     }
 

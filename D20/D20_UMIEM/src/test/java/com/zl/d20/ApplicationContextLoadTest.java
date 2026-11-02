@@ -1,6 +1,8 @@
 package com.zl.d20;
 
 import com.zl.d20.config.AiConstants;
+import com.zl.d20.config.ModelCallProperties;
+import com.zl.d20.model.ClassifiedResponseErrorHandler;
 import com.zl.d20.service.AiChatService;
 import com.zl.d20.service.DeepSeekAiChatService;
 import com.zl.d20.service.MockAiChatService;
@@ -11,6 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.env.Environment;
+import org.springframework.retry.support.RetryTemplate;
+import org.springframework.web.client.ResponseErrorHandler;
+
+import java.time.Duration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -32,6 +38,15 @@ class ApplicationContextLoadTest {
 
     @Autowired
     private Environment environment;
+
+    @Autowired
+    private RetryTemplate retryTemplate;
+
+    @Autowired
+    private ResponseErrorHandler responseErrorHandler;
+
+    @Autowired
+    private ModelCallProperties modelCallProperties;
 
     @Test
     void contextShouldLoad() {
@@ -62,5 +77,21 @@ class ApplicationContextLoadTest {
         // Surefire 固定测试属性为显式无效占位串；测试不得读取或输出宿主真实凭据
         assertThat(environment.getProperty("spring.ai.deepseek.api-key"))
                 .isEqualTo(AiConstants.PLACEHOLDER_API_KEY);
+        assertThat(environment.getProperty("spring.ai.retry.max-attempts"))
+                .isEqualTo("1");
+        assertThat(modelCallProperties.getMaxAttempts()).isEqualTo(2);
+        assertThat(modelCallProperties.getConnectTimeout()).isEqualTo(Duration.ofSeconds(5));
+        assertThat(modelCallProperties.getResponseTimeout()).isEqualTo(Duration.ofSeconds(30));
+        assertThat(modelCallProperties.getTotalDeadline()).isEqualTo(Duration.ofSeconds(90));
+        assertThat(modelCallProperties.getStreamTotalTimeout()).isEqualTo(Duration.ofSeconds(180));
+        assertThat(responseErrorHandler).isInstanceOf(ClassifiedResponseErrorHandler.class);
+    }
+
+    @Test
+    void deepSeekChatModelShouldUseTheSingleD20RetryTemplate() {
+        assertThat(chatModel).isInstanceOf(DeepSeekChatModel.class);
+        DeepSeekChatModel deepSeekChatModel = (DeepSeekChatModel) chatModel;
+        assertThat(deepSeekChatModel.retryTemplate).isSameAs(retryTemplate);
+        assertThat(applicationContext.getBeanNamesForType(RetryTemplate.class)).hasSize(1);
     }
 }

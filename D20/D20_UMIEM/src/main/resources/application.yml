@@ -43,6 +43,21 @@ spring:
           model: ${DEEPSEEK_MODEL:deepseek-flash}
           # 采样温度，取值域 [0,2]。
           temperature: 0.7
+    # D20 安全 fallback：应用提供唯一 RetryTemplate Bean；若该 Bean 因装配异常缺失，
+    # Spring AI 自动配置也只会执行 1 次，不会回退到默认 10 次。
+    retry:
+      max-attempts: 1
+      on-client-errors: false
+      on-http-codes: []
+      exclude-on-http-codes:
+        - 400
+        - 401
+        - 402
+        - 403
+        - 404
+        - 408
+        - 409
+        - 422
 
 # --------------------------------------------------------------------------
 # MyBatis-Plus 3.5.x 配置（D15_PLUS 新增）
@@ -65,8 +80,18 @@ app:
     mode: ${AI_MODE:mock}
     # 入参消息可调整长度上限，可用环境变量 AI_CHAT_MAX_LENGTH 覆盖。
     max-message-length: ${AI_CHAT_MAX_LENGTH:2000}
-    # D14 新增：SSE 流式连接服务端超时（毫秒），超时取消上游订阅并关闭连接，可用 AI_STREAM_TIMEOUT_MS 覆盖。
+    # SSE 首个/相邻 chunk 的空闲超时（毫秒），不是整个流的总时长。
     stream-timeout-ms: ${AI_STREAM_TIMEOUT_MS:60000}
+    # D20 模型 HTTP 超时与唯一同步重试策略。默认最坏预算 80s，小于 90s 总 Deadline。
+    model-call:
+      connect-timeout: ${AI_MODEL_CONNECT_TIMEOUT:5s}
+      response-timeout: ${AI_MODEL_RESPONSE_TIMEOUT:30s}
+      total-deadline: ${AI_MODEL_TOTAL_DEADLINE:90s}
+      stream-total-timeout: ${AI_MODEL_STREAM_TOTAL_TIMEOUT:180s}
+      max-attempts: ${AI_MODEL_MAX_ATTEMPTS:2}
+      initial-backoff: ${AI_MODEL_INITIAL_BACKOFF:500ms}
+      max-backoff: ${AI_MODEL_MAX_BACKOFF:10s}
+      jitter-factor: ${AI_MODEL_BACKOFF_JITTER:0.2}
     # D15_PLUS 新增：Prompt 模板 Redis 缓存（cache-aside，MySQL 始终为权威存储）。
     prompt:
       cache:
