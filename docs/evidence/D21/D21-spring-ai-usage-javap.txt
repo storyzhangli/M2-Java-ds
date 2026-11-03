@@ -1,0 +1,48 @@
+Compiled from "Usage.java"
+public interface org.springframework.ai.chat.metadata.Usage {
+  public abstract java.lang.Integer getPromptTokens();
+  public abstract java.lang.Integer getCompletionTokens();
+  public default java.lang.Integer getTotalTokens();
+  public abstract java.lang.Object getNativeUsage();
+}
+Compiled from "ChatResponseMetadata.java"
+public class org.springframework.ai.chat.metadata.ChatResponseMetadata extends org.springframework.ai.model.AbstractResponseMetadata implements org.springframework.ai.model.ResponseMetadata {
+  private static final org.slf4j.Logger logger;
+  private java.lang.String id;
+  private java.lang.String model;
+  private org.springframework.ai.chat.metadata.RateLimit rateLimit;
+  private org.springframework.ai.chat.metadata.Usage usage;
+  private org.springframework.ai.chat.metadata.PromptMetadata promptMetadata;
+  public org.springframework.ai.chat.metadata.ChatResponseMetadata();
+  public static org.springframework.ai.chat.metadata.ChatResponseMetadata$Builder builder();
+  public java.lang.String getId();
+  public java.lang.String getModel();
+  public org.springframework.ai.chat.metadata.RateLimit getRateLimit();
+  public org.springframework.ai.chat.metadata.Usage getUsage();
+  public org.springframework.ai.chat.metadata.PromptMetadata getPromptMetadata();
+  public boolean equals(java.lang.Object);
+  public int hashCode();
+  public java.lang.String toString();
+  static java.util.Map access$000(org.springframework.ai.chat.metadata.ChatResponseMetadata);
+  static java.util.Map access$100(org.springframework.ai.chat.metadata.ChatResponseMetadata);
+  static {};
+}
+Compiled from "DefaultUsage.java"
+public class org.springframework.ai.chat.metadata.DefaultUsage implements org.springframework.ai.chat.metadata.Usage {
+  private final java.lang.Integer promptTokens;
+  private final java.lang.Integer completionTokens;
+  private final int totalTokens;
+  private final java.lang.Object nativeUsage;
+  public org.springframework.ai.chat.metadata.DefaultUsage(java.lang.Integer, java.lang.Integer, java.lang.Integer, java.lang.Object);
+  public org.springframework.ai.chat.metadata.DefaultUsage(java.lang.Integer, java.lang.Integer);
+  public org.springframework.ai.chat.metadata.DefaultUsage(java.lang.Integer, java.lang.Integer, java.lang.Integer);
+  public static org.springframework.ai.chat.metadata.DefaultUsage fromJson(java.lang.Integer, java.lang.Integer, java.lang.Integer, java.lang.Object);
+  public java.lang.Integer getPromptTokens();
+  public java.lang.Integer getCompletionTokens();
+  public java.lang.Integer getTotalTokens();
+  public java.lang.Object getNativeUsage();
+  private java.lang.Integer calculateTotalTokens(java.lang.Integer, java.lang.Integer);
+  public boolean equals(java.lang.Object);
+  public int hashCode();
+  public java.lang.String toString();
+}

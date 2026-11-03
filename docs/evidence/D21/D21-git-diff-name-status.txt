@@ -1,0 +1,28 @@
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/AccessLogAutoConfiguration.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/AccessLogProperties.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/CachedBodyAccessLogFilter.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/ControllerAccessLogAspect.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/LogMaskingUtils.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/TraceIdFilter.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/service/DeepSeekAiChatService.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/service/MockAiChatService.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/main/resources/application.yml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/main/resources/logback-spring.xml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/logging/AccessLogIntegrationTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/logging/AccessLogMaskingTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/stream/ChatStreamIntegrationTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/stream/StreamClientDisconnectIntegrationTest.java', LF will be replaced by CRLF the next time Git touches it
+M	D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/AccessLogAutoConfiguration.java
+M	D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/AccessLogProperties.java
+M	D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/CachedBodyAccessLogFilter.java
+M	D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/ControllerAccessLogAspect.java
+M	D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/LogMaskingUtils.java
+M	D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/TraceIdFilter.java
+M	D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/service/DeepSeekAiChatService.java
+M	D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/service/MockAiChatService.java
+M	D21/D21_TOKEN_ID_LOGS/src/main/resources/application.yml
+M	D21/D21_TOKEN_ID_LOGS/src/main/resources/logback-spring.xml
+M	D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/logging/AccessLogIntegrationTest.java
+M	D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/logging/AccessLogMaskingTest.java
+M	D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/stream/ChatStreamIntegrationTest.java
+M	D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/stream/StreamClientDisconnectIntegrationTest.java

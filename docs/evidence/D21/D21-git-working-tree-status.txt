@@ -1,0 +1,20 @@
+ M D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/AccessLogAutoConfiguration.java
+ M D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/AccessLogProperties.java
+ M D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/CachedBodyAccessLogFilter.java
+ M D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/ControllerAccessLogAspect.java
+ M D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/LogMaskingUtils.java
+ M D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/logging/TraceIdFilter.java
+ M D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/service/DeepSeekAiChatService.java
+ M D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/service/MockAiChatService.java
+ M D21/D21_TOKEN_ID_LOGS/src/main/resources/application.yml
+ M D21/D21_TOKEN_ID_LOGS/src/main/resources/logback-spring.xml
+ M D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/logging/AccessLogIntegrationTest.java
+ M D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/logging/AccessLogMaskingTest.java
+ M D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/stream/ChatStreamIntegrationTest.java
+ M D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/stream/StreamClientDisconnectIntegrationTest.java
+?? D21/D21_TOKEN_ID_LOGS/src/main/java/com/zl/d21/observability/
+?? D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/logging/TraceIdWithoutAccessLogTest.java
+?? D21/D21_TOKEN_ID_LOGS/src/test/java/com/zl/d21/observability/
+?? docs/evidence/D21/
+?? "docs/proj_docs/D21-\350\201\212\345\244\251\350\260\203\347\224\250\345\217\257\350\247\202\346\265\213\346\200\247\346\212\200\346\234\257\350\257\264\346\230\216\344\270\216\345\256\236\350\267\265\346\214\207\345\215\227.md"
+?? "docs/proj_docs/D21-\351\241\271\347\233\256\350\277\255\344\273\243\345\205\250\351\207\217\344\277\241\346\201\257\344\270\216\346\223\215\344\275\234.md"
