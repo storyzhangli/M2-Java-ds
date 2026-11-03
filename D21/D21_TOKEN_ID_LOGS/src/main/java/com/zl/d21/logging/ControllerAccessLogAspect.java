@@ -99,7 +99,9 @@ public class ControllerAccessLogAspect {
         try {
             Map<String, Object> event = new LinkedHashMap<>();
             event.put("event", "CONTROLLER_ACCESS");
-            event.put("requestId", org.slf4j.MDC.get(TraceIdFilter.MDC_REQUEST_ID));
+            String traceId = TraceIdFilter.currentTraceId();
+            event.put("traceId", traceId);
+            event.put("requestId", traceId);
             event.put("controllerMethod", target);
             event.put("elapsedMs", elapsedMs);
             event.put("args", args);
@@ -123,13 +125,14 @@ public class ControllerAccessLogAspect {
         try {
             Map<String, Object> event = new LinkedHashMap<>();
             event.put("event", "CONTROLLER_ERROR");
-            event.put("requestId", org.slf4j.MDC.get(TraceIdFilter.MDC_REQUEST_ID));
+            String traceId = TraceIdFilter.currentTraceId();
+            event.put("traceId", traceId);
+            event.put("requestId", traceId);
             event.put("controllerMethod", target);
             event.put("elapsedMs", elapsedMs);
             event.put("args", args);
-            // 只记录异常类型与消息，完整堆栈仍由 GlobalExceptionHandler 打印，避免重复刷堆栈
+            // 异常 message 可能包含模型/业务敏感内容，D21 只记录异常类型
             event.put("exception", ex.getClass().getName());
-            event.put("errorMessage", ex.getMessage());
             LoggerFactory.getLogger(CachedBodyAccessLogFilter.ACCESS_LOGGER_NAME)
                     .warn(maskingUtils.toJsonLine(event));
         } catch (Exception loggingFailure) {

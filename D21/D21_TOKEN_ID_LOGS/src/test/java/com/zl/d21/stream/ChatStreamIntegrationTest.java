@@ -2,7 +2,14 @@ package com.zl.d21.stream;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.spi.ILoggingEvent;
+import ch.qos.logback.core.read.ListAppender;
+import com.zl.d21.observability.ModelCallRecorder;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -29,10 +36,28 @@ class ChatStreamIntegrationTest {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
+    private ListAppender<ILoggingEvent> modelCallAppender;
+
+    private Logger modelCallLogger;
+
+    @BeforeEach
+    void attachModelCallAppender() {
+        modelCallLogger = (Logger) LoggerFactory.getLogger(ModelCallRecorder.LOGGER_NAME);
+        modelCallAppender = new ListAppender<>();
+        modelCallAppender.start();
+        modelCallLogger.addAppender(modelCallAppender);
+    }
+
+    @AfterEach
+    void detachModelCallAppender() {
+        modelCallLogger.detachAppender(modelCallAppender);
+    }
+
     @Test
     void streamShouldReturnOrderedSseFramesWithUtf8ContentAndCompleteEvent() throws Exception {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.set("X-Request-Id", "stream-trace-001");
         HttpEntity<String> entity = new HttpEntity<>(
                 objectMapper.writeValueAsString(Map.of("message", "SSE流式联调测试")), headers);
 
@@ -44,6 +69,8 @@ class ChatStreamIntegrationTest {
         assertThat(response.getHeaders().getContentType().toString()).contains("text/event-stream");
         assertThat(response.getHeaders().getFirst("Cache-Control")).contains("no-cache");
         assertThat(response.getHeaders().getFirst("X-Accel-Buffering")).isEqualTo("no");
+        assertThat(response.getHeaders().getFirst("X-Request-Id")).isEqualTo("stream-trace-001");
+        assertThat(response.getHeaders().getFirst("X-Trace-Id")).isEqualTo("stream-trace-001");
 
         String body = new String(response.getBody(), StandardCharsets.UTF_8);
         List<SseFrame> frames = parseFrames(body);
@@ -56,6 +83,7 @@ class ChatStreamIntegrationTest {
         JsonNode start = frames.stream().filter(f -> "start".equals(f.name))
                 .findFirst().orElseThrow().data;
         assertThat(start.path("requestId").asText()).isNotBlank();
+        assertThat(start.path("requestId").asText()).isEqualTo("stream-trace-001");
         assertThat(start.path("sessionId").asText()).hasSize(32);
 
         // delta 的 seq 必须从 0 连续递增，保证前端可按序追加
@@ -77,6 +105,18 @@ class ChatStreamIntegrationTest {
         JsonNode complete = frames.stream().filter(f -> "complete".equals(f.name)).findFirst().orElseThrow().data;
         assertThat(complete.path("totalChars").asInt()).isEqualTo(joinedDelta.length());
         assertThat(complete.path("mocked").asBoolean()).isTrue();
+
+        JsonNode modelCall = modelCallAppender.list.stream()
+                .map(ILoggingEvent::getFormattedMessage)
+                .map(this::parseQuietly)
+                .filter(node -> node != null && "MODEL_CALL".equals(node.path("event").asText()))
+                .filter(node -> "stream-trace-001".equals(node.path("traceId").asText()))
+                .findFirst()
+                .orElseThrow();
+        assertThat(modelCall.path("callMode").asText()).isEqualTo("STREAM");
+        assertThat(modelCall.path("status").asText()).isEqualTo("SUCCESS");
+        assertThat(modelCall.path("usageStatus").asText()).isEqualTo("NOT_SUPPORTED");
+        assertThat(modelCall.has("promptTokens")).isFalse();
     }
 
     @Test
@@ -127,6 +167,14 @@ class ChatStreamIntegrationTest {
             }
         }
         return frames;
+    }
+
+    private JsonNode parseQuietly(String line) {
+        try {
+            return objectMapper.readTree(line);
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     private record SseFrame(String name, JsonNode data) {

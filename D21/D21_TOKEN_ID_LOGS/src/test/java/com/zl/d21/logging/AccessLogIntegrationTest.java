@@ -5,6 +5,7 @@ import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.read.ListAppender;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zl.d21.observability.ModelCallRecorder;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -41,6 +42,8 @@ class AccessLogIntegrationTest {
 
     private ListAppender<ILoggingEvent> appender;
     private Logger accessLogger;
+    private ListAppender<ILoggingEvent> modelCallAppender;
+    private Logger modelCallLogger;
 
     @BeforeEach
     void attachAppender() {
@@ -48,11 +51,17 @@ class AccessLogIntegrationTest {
         appender = new ListAppender<>();
         appender.start();
         accessLogger.addAppender(appender);
+
+        modelCallLogger = (Logger) LoggerFactory.getLogger(ModelCallRecorder.LOGGER_NAME);
+        modelCallAppender = new ListAppender<>();
+        modelCallAppender.start();
+        modelCallLogger.addAppender(modelCallAppender);
     }
 
     @AfterEach
     void detachAppender() {
         accessLogger.detachAppender(appender);
+        modelCallLogger.detachAppender(modelCallAppender);
     }
 
     @Test
@@ -61,14 +70,20 @@ class AccessLogIntegrationTest {
 
         MvcResult result = mockMvc.perform(post(CHAT_URL)
                         .contentType(MediaType.APPLICATION_JSON)
+                        .header("X-Request-Id", "sync-trace-001")
                         .header("Authorization", "Bearer must-be-masked")
+                        .header("Cookie", "session=must-be-masked-cookie")
                         .content(body))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.code").value(200))
+                .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers
+                        .header().string("X-Request-Id", "sync-trace-001"))
+                .andExpect(org.springframework.test.web.servlet.result.MockMvcResultMatchers
+                        .header().string("X-Trace-Id", "sync-trace-001"))
                 .andReturn();
 
         String requestId = result.getResponse().getHeader("X-Request-Id");
-        assertThat(requestId).isNotBlank();
+        assertThat(requestId).isEqualTo("sync-trace-001");
 
         List<JsonNode> events = eventsFor(requestId);
         assertThat(eventTypes(events)).contains("HTTP_REQUEST", "HTTP_RESPONSE", "CONTROLLER_ACCESS");
@@ -82,8 +97,19 @@ class AccessLogIntegrationTest {
         // 同一 requestId 贯穿，且敏感头被脱敏、原文不落日志
         String allLogs = appender.list.stream().map(ILoggingEvent::getFormattedMessage).reduce("", String::concat);
         assertThat(allLogs).contains(requestId);
-        assertThat(allLogs).doesNotContain("must-be-masked");
+        assertThat(allLogs).doesNotContain("must-be-masked", "must-be-masked-cookie", "访问日志关联测试");
         assertThat(allLogs).contains("*****");
+
+        JsonNode modelCall = modelCallAppender.list.stream()
+                .map(ILoggingEvent::getFormattedMessage)
+                .map(this::parseQuietly)
+                .filter(node -> node != null && "MODEL_CALL".equals(node.path("event").asText()))
+                .filter(node -> requestId.equals(node.path("traceId").asText()))
+                .findFirst()
+                .orElseThrow();
+        assertThat(modelCall.path("callMode").asText()).isEqualTo("SYNC");
+        assertThat(modelCall.path("status").asText()).isEqualTo("SUCCESS");
+        assertThat(modelCall.path("usageStatus").asText()).isEqualTo("NOT_SUPPORTED");
     }
 
     @Test
@@ -97,6 +123,23 @@ class AccessLogIntegrationTest {
         assertThat(id1).isNotBlank();
         assertThat(id2).isNotBlank();
         assertThat(id1).isNotEqualTo(id2);
+    }
+
+    @Test
+    void maliciousTraceHeaderShouldBeRegeneratedAndNotInjectLogLines() throws Exception {
+        String body = objectMapper.writeValueAsString(Map.of("message", "恶意Header测试"));
+
+        MvcResult result = mockMvc.perform(post(CHAT_URL)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .header("X-Request-Id", "bad\nforged\u0000value")
+                        .content(body))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        String requestId = result.getResponse().getHeader("X-Request-Id");
+        assertThat(requestId).hasSize(32).doesNotContain("\n", "\r", "\u0000")
+                .isNotEqualTo("badforgedvalue");
+        assertThat(result.getResponse().getHeader("X-Trace-Id")).isEqualTo(requestId);
     }
 
     @Test

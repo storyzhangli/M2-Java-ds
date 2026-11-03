@@ -3,6 +3,8 @@ package com.zl.d21.service;
 import com.zl.d21.common.AiConfigurationException;
 import com.zl.d21.config.AiConstants;
 import com.zl.d21.dto.ChatReplyResponse;
+import com.zl.d21.logging.TraceIdFilter;
+import com.zl.d21.observability.ModelCallRecorder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.messages.AssistantMessage;
@@ -22,6 +24,7 @@ import reactor.core.publisher.Flux;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 /**
  * DeepSeek 真实聊天服务。
@@ -41,6 +44,8 @@ import java.util.List;
         havingValue = AiConstants.MODE_DEEPSEEK
 )
 public class DeepSeekAiChatService implements AiChatService {
+
+    private static final String PROVIDER = "deepseek";
 
     private final ChatModel chatModel;
 
@@ -78,19 +83,27 @@ public class DeepSeekAiChatService implements AiChatService {
         // 调用前置校验：占位/空白密钥绝不允许触发真实外部请求
         validateCredential();
 
+        ModelCallRecorder.Call modelCall = ModelCallRecorder.start(
+                PROVIDER, this.model, ModelCallRecorder.CallMode.SYNC);
         Prompt prompt = new Prompt(new UserMessage(message));
         log.info("开始同步调用 DeepSeek，model={}", this.model);
-        ChatResponse response = this.chatModel.call(prompt);
-        String content = response.getResult().getOutput().getText();
-        log.info("同步调用完成，model={}，answerLength={}",
-                this.model, content == null ? 0 : content.length());
-
-        return new ChatReplyResponse(
-                AiConstants.MODE_DEEPSEEK,
-                this.model,
-                Boolean.FALSE,
-                content
-        );
+        try {
+            ChatResponse response = this.chatModel.call(prompt);
+            modelCall.observe(response);
+            String content = response.getResult().getOutput().getText();
+            log.info("同步调用完成，model={}，answerLength={}",
+                    this.model, content == null ? 0 : content.length());
+            modelCall.success();
+            return new ChatReplyResponse(
+                    AiConstants.MODE_DEEPSEEK,
+                    this.model,
+                    Boolean.FALSE,
+                    content
+            );
+        } catch (RuntimeException ex) {
+            modelCall.failure(ex);
+            throw ex;
+        }
     }
 
     @Override
@@ -102,11 +115,10 @@ public class DeepSeekAiChatService implements AiChatService {
 
         // ChatClient.stream().content() 返回 Flux<String>，直到 Web 层订阅时才执行。
         // 不假设每块对应一个 token/单词/整句，异常原样传播并由 SSE 层转换成 error 事件。
-        return this.chatClient.prompt()
+        return observedStringStream(this.model, () -> this.chatClient.prompt()
                 .user(message)
                 .stream()
-                .content()
-                .filter(StringUtils::hasText)
+                .chatResponse())
                 .doOnComplete(() -> log.info("流式调用正常结束，model={}", this.model))
                 .doOnError(ex -> log.error("流式调用异常，异常类型: {}", ex.getClass().getSimpleName()));
     }
@@ -119,12 +131,20 @@ public class DeepSeekAiChatService implements AiChatService {
     public ChatReplyResponse chat(ChatInvocation invocation) {
         validateCredential();
 
+        ModelCallRecorder.Call modelCall = ModelCallRecorder.start(
+                PROVIDER, this.model, ModelCallRecorder.CallMode.SYNC);
         Prompt prompt = new Prompt(buildMessages(invocation));
         log.info("角色对话同步调用，model={}，历史消息数={}", this.model, invocation.history().size());
-        ChatResponse response = this.chatModel.call(prompt);
-        String content = response.getResult().getOutput().getText();
-
-        return new ChatReplyResponse(AiConstants.MODE_DEEPSEEK, this.model, Boolean.FALSE, content);
+        try {
+            ChatResponse response = this.chatModel.call(prompt);
+            modelCall.observe(response);
+            String content = response.getResult().getOutput().getText();
+            modelCall.success();
+            return new ChatReplyResponse(AiConstants.MODE_DEEPSEEK, this.model, Boolean.FALSE, content);
+        } catch (RuntimeException ex) {
+            modelCall.failure(ex);
+            throw ex;
+        }
     }
 
     /**
@@ -136,11 +156,10 @@ public class DeepSeekAiChatService implements AiChatService {
 
         log.info("角色对话流式调用，model={}，历史消息数={}", this.model, invocation.history().size());
 
-        return this.chatClient.prompt()
+        return observedStringStream(this.model, () -> this.chatClient.prompt()
                 .messages(buildMessages(invocation))
                 .stream()
-                .content()
-                .filter(StringUtils::hasText)
+                .chatResponse())
                 .doOnComplete(() -> log.info("角色对话流式调用正常结束，model={}", this.model))
                 .doOnError(ex -> log.error("角色对话流式调用异常，异常类型: {}", ex.getClass().getSimpleName()));
     }
@@ -161,34 +180,52 @@ public class DeepSeekAiChatService implements AiChatService {
     public AiChatResult chat(ChatInvocation invocation, ThinkingSettings settings) {
         validateCredential();
         String effectiveModel = effectiveModel(settings);
+        ModelCallRecorder.Call modelCall = ModelCallRecorder.start(
+                PROVIDER, effectiveModel, ModelCallRecorder.CallMode.SYNC);
         Prompt prompt = new Prompt(buildMessages(invocation), buildModelOptions(effectiveModel));
         log.info("D16 角色对话同步调用，thinkingEnabled={}，model={}，历史消息数={}",
                 settings.enabled(), effectiveModel, invocation.history().size());
 
-        ChatResponse response = this.chatModel.call(prompt);
-        AssistantMessage output = response.getResult().getOutput();
-        String content = output.getText();
-        String reasoning = extractReasoning(output);
-        // 推理全文不入日志，仅记录长度，避免内部思维链泄漏到业务审计日志
-        log.info("D16 同步调用完成，model={}，answerLength={}，reasoningLength={}",
-                effectiveModel, content == null ? 0 : content.length(),
-                reasoning == null ? 0 : reasoning.length());
-        return new AiChatResult(AiConstants.MODE_DEEPSEEK, effectiveModel, false,
-                settings.enabled(), content, reasoning);
+        try {
+            ChatResponse response = this.chatModel.call(prompt);
+            modelCall.observe(response);
+            AssistantMessage output = response.getResult().getOutput();
+            String content = output.getText();
+            String reasoning = extractReasoning(output);
+            // 推理全文不入日志，仅记录长度，避免内部思维链泄漏到业务审计日志
+            log.info("D16 同步调用完成，model={}，answerLength={}，reasoningLength={}",
+                    effectiveModel, content == null ? 0 : content.length(),
+                    reasoning == null ? 0 : reasoning.length());
+            modelCall.success();
+            return new AiChatResult(AiConstants.MODE_DEEPSEEK, effectiveModel, false,
+                    settings.enabled(), content, reasoning);
+        } catch (RuntimeException ex) {
+            modelCall.failure(ex);
+            throw ex;
+        }
     }
 
     @Override
     public AiChatResult chat(String message, ThinkingSettings settings) {
         validateCredential();
         String effectiveModel = effectiveModel(settings);
+        ModelCallRecorder.Call modelCall = ModelCallRecorder.start(
+                PROVIDER, effectiveModel, ModelCallRecorder.CallMode.SYNC);
         Prompt prompt = new Prompt(List.of(new UserMessage(message)), buildModelOptions(effectiveModel));
         log.info("D16 同步调用，thinkingEnabled={}，model={}", settings.enabled(), effectiveModel);
 
-        ChatResponse response = this.chatModel.call(prompt);
-        AssistantMessage output = response.getResult().getOutput();
-        String reasoning = extractReasoning(output);
-        return new AiChatResult(AiConstants.MODE_DEEPSEEK, effectiveModel, false,
-                settings.enabled(), output.getText(), reasoning);
+        try {
+            ChatResponse response = this.chatModel.call(prompt);
+            modelCall.observe(response);
+            AssistantMessage output = response.getResult().getOutput();
+            String reasoning = extractReasoning(output);
+            modelCall.success();
+            return new AiChatResult(AiConstants.MODE_DEEPSEEK, effectiveModel, false,
+                    settings.enabled(), output.getText(), reasoning);
+        } catch (RuntimeException ex) {
+            modelCall.failure(ex);
+            throw ex;
+        }
     }
 
     /**
@@ -202,12 +239,11 @@ public class DeepSeekAiChatService implements AiChatService {
         String effectiveModel = effectiveModel(settings);
         log.info("D16 角色对话流式调用，thinkingEnabled={}，model={}，历史消息数={}",
                 settings.enabled(), effectiveModel, invocation.history().size());
-        return this.chatClient.prompt()
+        return observedTypedStream(effectiveModel, () -> this.chatClient.prompt()
                 .messages(buildMessages(invocation))
                 .options(buildModelOptions(effectiveModel))
                 .stream()
-                .chatResponse()
-                .concatMap(this::toTypedChunks)
+                .chatResponse())
                 .doOnComplete(() -> log.info("D16 角色对话流式调用正常结束，model={}", effectiveModel))
                 .doOnError(ex -> log.error("D16 角色对话流式调用异常，异常类型: {}",
                         ex.getClass().getSimpleName()));
@@ -218,15 +254,77 @@ public class DeepSeekAiChatService implements AiChatService {
         validateCredential();
         String effectiveModel = effectiveModel(settings);
         log.info("D16 流式调用，thinkingEnabled={}，model={}", settings.enabled(), effectiveModel);
-        return this.chatClient.prompt()
+        return observedTypedStream(effectiveModel, () -> this.chatClient.prompt()
                 .user(message)
                 .options(buildModelOptions(effectiveModel))
                 .stream()
-                .chatResponse()
-                .concatMap(this::toTypedChunks)
+                .chatResponse())
                 .doOnComplete(() -> log.info("D16 流式调用正常结束，model={}", effectiveModel))
                 .doOnError(ex -> log.error("D16 流式调用异常，异常类型: {}",
                         ex.getClass().getSimpleName()));
+    }
+
+    private Flux<StreamChunk> observedTypedStream(
+            String effectiveModel, Supplier<Flux<ChatResponse>> responseSupplier) {
+        String traceId = TraceIdFilter.currentTraceId();
+        return observedResponses(traceId, effectiveModel, responseSupplier)
+                .concatMap(this::toTypedChunks);
+    }
+
+    private Flux<String> observedStringStream(
+            String effectiveModel, Supplier<Flux<ChatResponse>> responseSupplier) {
+        String traceId = TraceIdFilter.currentTraceId();
+        return observedResponses(traceId, effectiveModel, responseSupplier)
+                .map(this::extractContent)
+                .filter(StringUtils::hasText);
+    }
+
+    private Flux<ChatResponse> observedResponses(
+            String traceId,
+            String effectiveModel,
+            Supplier<Flux<ChatResponse>> responseSupplier) {
+        return Flux.defer(() -> {
+            ModelCallRecorder.Call modelCall = ModelCallRecorder.start(
+                    traceId, PROVIDER, effectiveModel, ModelCallRecorder.CallMode.STREAM);
+            Flux<ChatResponse> responses;
+            try {
+                responses = responseSupplier.get();
+                if (responses == null) {
+                    throw new IllegalStateException("ChatClient returned null stream");
+                }
+            } catch (RuntimeException ex) {
+                modelCall.failure(ex);
+                return Flux.error(ex);
+            }
+            return responses
+                    .doOnNext(response -> {
+                        modelCall.observe(response);
+                        if (hasOutput(response)) {
+                            modelCall.markFirstChunk();
+                        }
+                    })
+                    .doOnComplete(modelCall::success)
+                    .doOnError(modelCall::failure)
+                    .doFinally(modelCall::finishForSignal);
+        });
+    }
+
+    private boolean hasOutput(ChatResponse response) {
+        if (response == null || response.getResult() == null
+                || response.getResult().getOutput() == null) {
+            return false;
+        }
+        AssistantMessage output = response.getResult().getOutput();
+        return StringUtils.hasText(output.getText())
+                || StringUtils.hasText(extractReasoning(output));
+    }
+
+    private String extractContent(ChatResponse response) {
+        if (response == null || response.getResult() == null
+                || response.getResult().getOutput() == null) {
+            return null;
+        }
+        return response.getResult().getOutput().getText();
     }
 
     /**

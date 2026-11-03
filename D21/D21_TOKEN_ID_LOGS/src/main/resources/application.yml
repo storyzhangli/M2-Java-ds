@@ -140,12 +140,24 @@ app:
       corpus-location: knowledge/equipment-fault-corpus.json
   # D13 新增：AOP 请求/响应访问日志。敏感字段/头脱敏关键字默认值在 AccessLogProperties 中维护。
   access-log:
-    # 总开关，可用环境变量 ACCESS_LOG_ENABLED=false 一键关闭（关闭后过滤器与切面均不装配）。
+    # 正文日志开关，可用 ACCESS_LOG_ENABLED=false 关闭缓存过滤器与切面；TraceId 始终保留。
     enabled: ${ACCESS_LOG_ENABLED:true}
     # 承载 requestId 的请求/响应头名称。
     request-id-header: X-Request-Id
+    # D21 响应头别名；与 requestId 同值，明确表示当前本地关联 ID 语义。
+    trace-id-header: X-Trace-Id
+    # 只复用 1-64 位、字母/数字开头且仅含字母数字下划线中划线的外部 ID；其余重新生成。
+    request-id-max-length: ${REQUEST_ID_MAX_LENGTH:64}
     # 单段正文最大字符数，超限截断并在日志中标注 truncated=true。
     max-payload-length: 2048
+    # D21：聊天 Prompt/Completion/推理内容按精确字段名整体脱敏，避免误伤 contentType。
+    sensitive-exact-fields:
+      - message
+      - prompt
+      - completion
+      - content
+      - reasoningcontent
+      - reasoning_content
     # 不打印访问日志的路径（Ant 风格），requestId 仍正常透传。
     exclude-paths:
       - /error

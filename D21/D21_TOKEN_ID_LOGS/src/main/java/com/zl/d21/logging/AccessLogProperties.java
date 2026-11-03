@@ -2,7 +2,11 @@ package com.zl.d21.logging;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.validation.annotation.Validated;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,14 +17,25 @@ import java.util.List;
  * 代码内给出安全默认值，做到“开箱即脱敏、超限即截断”。</p>
  */
 @Data
+@Validated
 @ConfigurationProperties(prefix = "app.access-log")
 public class AccessLogProperties {
 
-    /** 总开关：关闭后切面与过滤器整体不装配（请求标识透传也一并关闭）。 */
+    /** 访问正文日志开关：关闭后 HTTP 缓存过滤器与 Controller 切面不装配，TraceId 仍保留。 */
     private boolean enabled = true;
 
     /** 请求/响应中承载 requestId 的请求头名称，同时回写到响应头便于调用方关联。 */
+    @NotBlank
     private String requestIdHeader = "X-Request-Id";
+
+    /** D21 响应中回写的 TraceId 别名；值与 requestId 完全相同，不创建第二个关联维度。 */
+    @NotBlank
+    private String traceIdHeader = "X-Trace-Id";
+
+    /** 外部 request/correlation ID 的最大长度；非法或超长值将重新生成。 */
+    @Min(8)
+    @Max(128)
+    private int requestIdMaxLength = 64;
 
     /** 单段正文（请求体/响应体/方法入参/返回对象）允许打印的最大字符数，超限截断并标记 truncated=true。 */
     private int maxPayloadLength = 2048;
@@ -50,6 +65,14 @@ public class AccessLogProperties {
             "password", "passwd", "pwd", "token", "secret", "credential",
             "apikey", "api-key", "authorization", "cookie",
             "idcard", "id-card", "bankcard", "bank-card", "cardno"));
+
+    /**
+     * D21 精确字段脱敏：聊天 Prompt/Completion/推理内容不能进入通用访问日志。
+     * 使用精确名而非包含匹配，避免误伤 contentType 等安全元数据。
+     */
+    private List<String> sensitiveExactFields = new ArrayList<>(List.of(
+            "message", "prompt", "completion", "content",
+            "reasoningcontent", "reasoning_content"));
 
     /** 脱敏占位符。 */
     private String maskText = "*****";

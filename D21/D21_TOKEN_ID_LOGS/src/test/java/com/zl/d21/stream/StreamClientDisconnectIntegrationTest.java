@@ -2,8 +2,15 @@ package com.zl.d21.stream;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.spi.ILoggingEvent;
+import ch.qos.logback.core.read.ListAppender;
+import com.zl.d21.observability.ModelCallRecorder;
 import com.zl.d21.support.AbstractPersistenceCleanupTest;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 
@@ -36,6 +43,23 @@ class StreamClientDisconnectIntegrationTest extends AbstractPersistenceCleanupTe
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
+    private ListAppender<ILoggingEvent> modelCallAppender;
+
+    private Logger modelCallLogger;
+
+    @BeforeEach
+    void attachModelCallAppender() {
+        modelCallLogger = (Logger) LoggerFactory.getLogger(ModelCallRecorder.LOGGER_NAME);
+        modelCallAppender = new ListAppender<>();
+        modelCallAppender.start();
+        modelCallLogger.addAppender(modelCallAppender);
+    }
+
+    @AfterEach
+    void detachModelCallAppender() {
+        modelCallLogger.detachAppender(modelCallAppender);
+    }
+
     @Test
     void clientCloseShouldCancelStreamAndNeverPersistCompletedTurn() throws Exception {
         HttpClient client = HttpClient.newBuilder()
@@ -46,6 +70,7 @@ class StreamClientDisconnectIntegrationTest extends AbstractPersistenceCleanupTe
                 .timeout(Duration.ofSeconds(5))
                 .header("Content-Type", "application/json")
                 .header("X-Dev-User", OWNER)
+                .header("X-Request-Id", "disconnect-trace-001")
                 .POST(HttpRequest.BodyPublishers.ofString(
                         objectMapper.writeValueAsString(Map.of("message", "客户端断流取消测试"))))
                 .build();
@@ -76,6 +101,15 @@ class StreamClientDisconnectIntegrationTest extends AbstractPersistenceCleanupTe
                     WHERE session_id = ? AND role = 'assistant' AND status = 'COMPLETED'
                     """, Integer.class, sessionId);
             assertThat(completedAssistant).isZero();
+
+            JsonNode modelCall = modelCallAppender.list.stream()
+                    .map(ILoggingEvent::getFormattedMessage)
+                    .map(this::parseQuietly)
+                    .filter(node -> node != null && "MODEL_CALL".equals(node.path("event").asText()))
+                    .filter(node -> "disconnect-trace-001".equals(node.path("traceId").asText()))
+                    .findFirst()
+                    .orElseThrow();
+            assertThat(modelCall.path("status").asText()).isEqualTo("CANCELLED");
         });
     }
 
@@ -98,5 +132,13 @@ class StreamClientDisconnectIntegrationTest extends AbstractPersistenceCleanupTe
             }
         }
         throw new AssertionError("连接在首个 delta 前结束");
+    }
+
+    private JsonNode parseQuietly(String line) {
+        try {
+            return objectMapper.readTree(line);
+        } catch (Exception ex) {
+            return null;
+        }
     }
 }

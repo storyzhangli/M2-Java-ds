@@ -23,15 +23,17 @@ class AccessLogMaskingTest {
     }
 
     @Test
-    void sensitiveJsonFieldsShouldBeMaskedIncludingNestedAndArray() {
-        String raw = "{\"message\":\"hi\",\"password\":\"p-123\",\"user\":{\"apiKey\":\"sk-abc\"},\"items\":[{\"token\":\"t-9\"}]}";
+    void sensitiveJsonFieldsShouldBeMaskedIncludingPromptCompletionAndNestedArray() {
+        String raw = "{\"message\":\"hi\",\"content\":\"model-answer\",\"password\":\"p-123\","
+                + "\"user\":{\"apiKey\":\"sk-abc\"},\"items\":[{\"token\":\"t-9\"}],"
+                + "\"contentType\":\"application/json\"}";
 
         LogMaskingUtils.MaskedText masked = utils.prepareJsonBody(raw);
 
-        assertThat(masked.text()).doesNotContain("p-123", "sk-abc", "t-9");
+        assertThat(masked.text()).doesNotContain("hi", "model-answer", "p-123", "sk-abc", "t-9");
         assertThat(masked.text()).contains(properties.getMaskText());
-        // 非敏感字段保留
-        assertThat(masked.text()).contains("hi");
+        // 精确脱敏 content 时不能误伤 content type 元数据
+        assertThat(masked.text()).contains("contentType").contains("application/json");
         assertThat(masked.truncated()).isFalse();
     }
 
@@ -51,7 +53,7 @@ class AccessLogMaskingTest {
     @Test
     void overlongBodyShouldBeTruncatedAndMarked() {
         properties.setMaxPayloadLength(20);
-        String longJson = "{\"message\":\"" + "x".repeat(200) + "\"}";
+        String longJson = "{\"detail\":\"" + "x".repeat(200) + "\"}";
         LogMaskingUtils.MaskedText masked = utils.prepareJsonBody(longJson);
         assertThat(masked.truncated()).isTrue();
         assertThat(masked.text()).contains("truncated");
@@ -74,8 +76,11 @@ class AccessLogMaskingTest {
     }
 
     @Test
-    void inboundRequestIdShouldStripForgingCharacters() {
-        assertThat(utils.sanitizeInboundRequestId("abc-123\n\r\nfake-line")).isEqualTo("abc-123fake-line");
+    void inboundRequestIdShouldRejectForgingAndOverlongValues() {
+        assertThat(utils.sanitizeInboundRequestId("abc-123\n\r\nfake-line")).isNull();
+        assertThat(utils.sanitizeInboundRequestId("-leading-dash")).isNull();
+        assertThat(utils.sanitizeInboundRequestId("a".repeat(65))).isNull();
+        assertThat(utils.sanitizeInboundRequestId("valid_trace-123")).isEqualTo("valid_trace-123");
         assertThat(utils.sanitizeInboundRequestId("   ")).isNull();
     }
 

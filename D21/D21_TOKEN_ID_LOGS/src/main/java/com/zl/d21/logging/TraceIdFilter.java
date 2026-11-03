@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 /**
- * 请求标识（requestId / traceId）过滤器。
+ * 请求标识（requestId / 本地关联 TraceId）过滤器。
  *
  * <p>职责边界：只负责“生成或接收请求标识 → 写入 MDC → 回写响应头 → 请求结束清理”，
  * 不做任何正文缓存与打印。优先级最高，保证后续过滤器、AOP 切面、业务日志都能从 MDC 取到同一 ID。</p>
@@ -22,6 +22,9 @@ import java.util.UUID;
  *     <li>缺失或含非法字符时生成 32 位无横线 UUID；</li>
  *     <li>在 finally 中清理 MDC，避免 Tomcat 工作线程复用导致“串号”。</li>
  * </ul>
+ *
+ * <p>本项目当前未启用 Micrometer Tracing，因此该值是可跨请求/模型日志关联的本地
+ * request/correlation ID，不应被描述为 W3C 分布式 Trace。</p>
  */
 public class TraceIdFilter extends OncePerRequestFilter {
 
@@ -43,8 +46,12 @@ public class TraceIdFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
-        String requestId = maskingUtils.sanitizeInboundRequestId(
-                request.getHeader(properties.getRequestIdHeader()));
+        String inbound = request.getHeader(properties.getRequestIdHeader());
+        if (!StringUtils.hasText(inbound)
+                && !properties.getTraceIdHeader().equalsIgnoreCase(properties.getRequestIdHeader())) {
+            inbound = request.getHeader(properties.getTraceIdHeader());
+        }
+        String requestId = maskingUtils.sanitizeInboundRequestId(inbound);
         if (!StringUtils.hasText(requestId)) {
             requestId = UUID.randomUUID().toString().replace("-", "");
         }
@@ -54,10 +61,18 @@ public class TraceIdFilter extends OncePerRequestFilter {
             request.setAttribute(REQUEST_ATTRIBUTE, requestId);
             // 回写响应头，调用方/网关可直接拿到并与服务端日志关联
             response.setHeader(properties.getRequestIdHeader(), requestId);
+            if (!properties.getTraceIdHeader().equalsIgnoreCase(properties.getRequestIdHeader())) {
+                response.setHeader(properties.getTraceIdHeader(), requestId);
+            }
             filterChain.doFilter(request, response);
         } finally {
             // 工作线程会被复用，必须清理，避免下一个请求沿用上个 requestId
             MDC.remove(MDC_REQUEST_ID);
         }
+    }
+
+    /** 当前线程所属请求的本地关联 TraceId；异步流必须在请求线程捕获后继续使用。 */
+    public static String currentTraceId() {
+        return MDC.get(MDC_REQUEST_ID);
     }
 }

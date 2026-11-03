@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 /**
  * 访问日志脱敏、截断与结构化输出工具。
@@ -29,6 +30,8 @@ import java.util.Map;
  */
 @Slf4j
 public class LogMaskingUtils {
+
+    private static final Pattern SAFE_REQUEST_ID = Pattern.compile("[A-Za-z0-9][A-Za-z0-9_-]*");
 
     /** 专用于日志的 Mapper：不开启 default typing，避免多态反序列化风险；空 Bean 不致失败。 */
     private final ObjectMapper logMapper = new ObjectMapper()
@@ -103,7 +106,7 @@ public class LogMaskingUtils {
             int idx = pair.indexOf('=');
             String key = idx >= 0 ? pair.substring(0, idx) : pair;
             String value = idx >= 0 ? pair.substring(idx + 1) : "";
-            if (isSensitive(key, properties.getSensitiveFields())) {
+            if (isSensitiveField(key)) {
                 pairs.add(key + "=" + properties.getMaskText());
             } else {
                 pairs.add(pair);
@@ -113,15 +116,20 @@ public class LogMaskingUtils {
     }
 
     /**
-     * 规整外部传入的 requestId：仅保留字母、数字、中划线与下划线，剔除换行等字符防日志注入；
-     * 非法/空白返回 null，由调用方生成新 ID。
+     * 校验外部传入的 requestId：只接受字母/数字开头且仅含字母、数字、中划线与下划线的值。
+     * 非法、含换行等日志注入字符或超长值返回 null，由调用方重新生成。
      */
     public String sanitizeInboundRequestId(String inbound) {
         if (!StringUtils.hasText(inbound)) {
             return null;
         }
-        String cleaned = inbound.trim().replaceAll("[^A-Za-z0-9_-]", "");
-        return cleaned.isEmpty() ? null : cleaned;
+        String trimmed = inbound.trim();
+        if (trimmed.isEmpty()
+                || trimmed.length() > properties.getRequestIdMaxLength()
+                || !SAFE_REQUEST_ID.matcher(trimmed).matches()) {
+            return null;
+        }
+        return trimmed;
     }
 
     /** 判断 Content-Type 是否属于不应缓存/打印正文的二进制、文件或流式类型。 */
@@ -170,7 +178,7 @@ public class LogMaskingUtils {
             objectNode.fieldNames().forEachRemaining(fieldNames::add);
             for (String name : fieldNames) {
                 JsonNode child = objectNode.get(name);
-                if (isSensitive(name, properties.getSensitiveFields())) {
+                if (isSensitiveField(name)) {
                     objectNode.put(name, properties.getMaskText());
                 } else {
                     maskTree(child);
@@ -188,6 +196,17 @@ public class LogMaskingUtils {
         }
         String lower = name.toLowerCase();
         return keywords.stream().anyMatch(lower::contains);
+    }
+
+    private boolean isSensitiveField(String name) {
+        if (name == null) {
+            return false;
+        }
+        String lower = name.toLowerCase();
+        return properties.getSensitiveExactFields().stream()
+                .map(String::toLowerCase)
+                .anyMatch(lower::equals)
+                || isSensitive(name, properties.getSensitiveFields());
     }
 
     /** 按配置上限截断，并标注 truncated 与原始长度。 */

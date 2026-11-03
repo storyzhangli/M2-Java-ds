@@ -2,6 +2,8 @@ package com.zl.d21.service;
 
 import com.zl.d21.config.AiConstants;
 import com.zl.d21.dto.ChatReplyResponse;
+import com.zl.d21.logging.TraceIdFilter;
+import com.zl.d21.observability.ModelCallRecorder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -32,6 +34,9 @@ public class MockAiChatService implements AiChatService {
 
     @Override
     public ChatReplyResponse chat(String message) {
+        ModelCallRecorder.Call modelCall = startSyncCall();
+        modelCall.observeUnsupportedUsage();
+        modelCall.success();
         return new ChatReplyResponse(
                 AiConstants.MODE_MOCK,
                 "offline-mock",
@@ -43,7 +48,7 @@ public class MockAiChatService implements AiChatService {
     @Override
     public Flux<String> streamChat(String message) {
         List<String> chunks = splitToChunks(buildMockContent(message), 6);
-        return Flux.fromIterable(chunks).delayElements(Duration.ofMillis(15));
+        return observedStream(Flux.fromIterable(chunks).delayElements(Duration.ofMillis(15)));
     }
 
     /**
@@ -52,6 +57,9 @@ public class MockAiChatService implements AiChatService {
      */
     @Override
     public ChatReplyResponse chat(ChatInvocation invocation) {
+        ModelCallRecorder.Call modelCall = startSyncCall();
+        modelCall.observeUnsupportedUsage();
+        modelCall.success();
         return new ChatReplyResponse(
                 AiConstants.MODE_MOCK,
                 "offline-mock",
@@ -66,7 +74,7 @@ public class MockAiChatService implements AiChatService {
     @Override
     public Flux<String> streamChat(ChatInvocation invocation) {
         List<String> chunks = splitToChunks(buildRoleMockContent(invocation), 6);
-        return Flux.fromIterable(chunks).delayElements(Duration.ofMillis(15));
+        return observedStream(Flux.fromIterable(chunks).delayElements(Duration.ofMillis(15)));
     }
 
     private String buildRoleMockContent(ChatInvocation invocation) {
@@ -97,10 +105,13 @@ public class MockAiChatService implements AiChatService {
      */
     @Override
     public AiChatResult chat(ChatInvocation invocation, ThinkingSettings settings) {
+        ModelCallRecorder.Call modelCall = startSyncCall();
+        modelCall.observeUnsupportedUsage();
         String content = settings.enabled()
                 ? buildThinkingMockContent(invocation)
                 : buildRoleMockContent(invocation);
         String reasoning = settings.enabled() ? buildMockReasoning(invocation) : null;
+        modelCall.success();
         return new AiChatResult(AiConstants.MODE_MOCK, "offline-mock", true,
                 settings.enabled(), content, reasoning);
     }
@@ -110,10 +121,13 @@ public class MockAiChatService implements AiChatService {
      */
     @Override
     public AiChatResult chat(String message, ThinkingSettings settings) {
+        ModelCallRecorder.Call modelCall = startSyncCall();
+        modelCall.observeUnsupportedUsage();
         String content = settings.enabled()
                 ? buildThinkingPlainContent(message)
                 : buildMockContent(message);
         String reasoning = settings.enabled() ? buildMockReasoning(message) : null;
+        modelCall.success();
         return new AiChatResult(AiConstants.MODE_MOCK, "offline-mock", true,
                 settings.enabled(), content, reasoning);
     }
@@ -133,7 +147,7 @@ public class MockAiChatService implements AiChatService {
                     .forEach(c -> chunks.add(new StreamChunk.ReasoningChunk(c)));
         }
         splitToChunks(content, 6).forEach(c -> chunks.add(new StreamChunk.ContentChunk(c)));
-        return Flux.fromIterable(chunks).delayElements(Duration.ofMillis(15));
+        return observedStream(Flux.fromIterable(chunks).delayElements(Duration.ofMillis(15)));
     }
 
     /**
@@ -150,7 +164,26 @@ public class MockAiChatService implements AiChatService {
                     .forEach(c -> chunks.add(new StreamChunk.ReasoningChunk(c)));
         }
         splitToChunks(content, 6).forEach(c -> chunks.add(new StreamChunk.ContentChunk(c)));
-        return Flux.fromIterable(chunks).delayElements(Duration.ofMillis(15));
+        return observedStream(Flux.fromIterable(chunks).delayElements(Duration.ofMillis(15)));
+    }
+
+    private ModelCallRecorder.Call startSyncCall() {
+        return ModelCallRecorder.start(
+                "offline-mock", "offline-mock", ModelCallRecorder.CallMode.SYNC);
+    }
+
+    private <T> Flux<T> observedStream(Flux<T> source) {
+        String traceId = TraceIdFilter.currentTraceId();
+        return Flux.defer(() -> {
+            ModelCallRecorder.Call modelCall = ModelCallRecorder.start(
+                    traceId, "offline-mock", "offline-mock", ModelCallRecorder.CallMode.STREAM);
+            modelCall.observeUnsupportedUsage();
+            return source
+                    .doOnNext(ignored -> modelCall.markFirstChunk())
+                    .doOnComplete(modelCall::success)
+                    .doOnError(modelCall::failure)
+                    .doFinally(modelCall::finishForSignal);
+        });
     }
 
     /**

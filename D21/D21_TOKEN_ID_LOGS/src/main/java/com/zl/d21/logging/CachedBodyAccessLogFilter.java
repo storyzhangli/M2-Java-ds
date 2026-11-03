@@ -6,7 +6,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.MDC;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.ContentCachingRequestWrapper;
@@ -88,7 +87,9 @@ public class CachedBodyAccessLogFilter extends OncePerRequestFilter {
     private void logRequest(ContentCachingRequestWrapper request) {
         Map<String, Object> event = new LinkedHashMap<>();
         event.put("event", "HTTP_REQUEST");
-        event.put("requestId", MDC.get(TraceIdFilter.MDC_REQUEST_ID));
+        String traceId = TraceIdFilter.currentTraceId();
+        event.put("traceId", traceId);
+        event.put("requestId", traceId);
         event.put("method", request.getMethod());
         event.put("uri", request.getRequestURI());
         event.put("query", maskingUtils.sanitizeQuery(request.getQueryString()));
@@ -110,7 +111,9 @@ public class CachedBodyAccessLogFilter extends OncePerRequestFilter {
                              Throwable thrown) {
         Map<String, Object> event = new LinkedHashMap<>();
         event.put("event", "HTTP_RESPONSE");
-        event.put("requestId", MDC.get(TraceIdFilter.MDC_REQUEST_ID));
+        String traceId = TraceIdFilter.currentTraceId();
+        event.put("traceId", traceId);
+        event.put("requestId", traceId);
         event.put("method", request.getMethod());
         event.put("uri", request.getRequestURI());
         event.put("httpStatus", response.getStatus());

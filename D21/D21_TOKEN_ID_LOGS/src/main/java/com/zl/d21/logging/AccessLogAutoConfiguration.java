@@ -10,8 +10,8 @@ import org.springframework.core.Ordered;
 /**
  * 访问日志自动装配。
  *
- * <p>{@code app.access-log.enabled=false}（缺省视为 true）时本配置整体不生效，
- * 两个过滤器与切面都不注册，做到可一键关闭。过滤器顺序固定：</p>
+ * <p>{@code app.access-log.enabled=false}（缺省视为 true）时只关闭正文访问日志；
+ * TraceId 过滤器始终保留，避免聊天请求失去关联 ID。过滤器顺序固定：</p>
  * <ol>
  *     <li>{@link TraceIdFilter}：最高优先级，先于一切组件建立 requestId/MDC；</li>
  *     <li>{@link CachedBodyAccessLogFilter}：次之，包装请求/响应并记录 HTTP 事件。</li>
@@ -19,7 +19,6 @@ import org.springframework.core.Ordered;
  */
 @Configuration
 @EnableConfigurationProperties(AccessLogProperties.class)
-@ConditionalOnProperty(prefix = "app.access-log", name = "enabled", havingValue = "true", matchIfMissing = true)
 public class AccessLogAutoConfiguration {
 
     /** 统一收口工具 Bean。 */
@@ -42,6 +41,8 @@ public class AccessLogAutoConfiguration {
 
     /** 访问日志过滤器：在 TraceId 之后执行，确保可直接读取 MDC 中的 requestId。 */
     @Bean
+    @ConditionalOnProperty(prefix = "app.access-log", name = "enabled",
+            havingValue = "true", matchIfMissing = true)
     public FilterRegistrationBean<CachedBodyAccessLogFilter> cachedBodyAccessLogFilterRegistration(
             AccessLogProperties properties, LogMaskingUtils logMaskingUtils) {
         FilterRegistrationBean<CachedBodyAccessLogFilter> registration = new FilterRegistrationBean<>();
