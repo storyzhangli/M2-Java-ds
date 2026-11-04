@@ -1,0 +1,36 @@
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/pom.xml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/D22SpringAiApplication.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/config/AiConstants.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/config/AiProperties.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/controller/ChatStreamController.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/knowledge/KnowledgeChatOrchestrator.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/service/AiChatService.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/service/DeepSeekAiChatService.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/service/MockAiChatService.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/resources/application-local.yml.example', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/resources/application.yml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/ApplicationContextLoadTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/DeepSeekKeyProtectionTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/DeepSeekLiveSmokeTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/d16/KnowledgeChatOrchestratorTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/observability/ModelCallObservabilityTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/stream/SpringAiChatClientBehaviorTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/stream/StreamPreStartFailureTest.java', LF will be replaced by CRLF the next time Git touches it
+M	D22/D22_EMN_URLs_Keys_schemas/pom.xml
+M	D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/D22SpringAiApplication.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/config/AiConstants.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/config/AiProperties.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/controller/ChatStreamController.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/knowledge/KnowledgeChatOrchestrator.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/service/AiChatService.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/service/DeepSeekAiChatService.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/service/MockAiChatService.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/main/resources/application-local.yml.example
+M	D22/D22_EMN_URLs_Keys_schemas/src/main/resources/application.yml
+M	D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/ApplicationContextLoadTest.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/DeepSeekKeyProtectionTest.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/DeepSeekLiveSmokeTest.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/d16/KnowledgeChatOrchestratorTest.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/observability/ModelCallObservabilityTest.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/stream/SpringAiChatClientBehaviorTest.java
+M	D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/stream/StreamPreStartFailureTest.java

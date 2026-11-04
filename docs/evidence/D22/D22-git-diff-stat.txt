@@ -1,0 +1,37 @@
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/pom.xml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/D22SpringAiApplication.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/config/AiConstants.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/config/AiProperties.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/controller/ChatStreamController.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/knowledge/KnowledgeChatOrchestrator.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/service/AiChatService.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/service/DeepSeekAiChatService.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/java/com/zl/d22/service/MockAiChatService.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/resources/application-local.yml.example', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/main/resources/application.yml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/ApplicationContextLoadTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/DeepSeekKeyProtectionTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/DeepSeekLiveSmokeTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/d16/KnowledgeChatOrchestratorTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/observability/ModelCallObservabilityTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/stream/SpringAiChatClientBehaviorTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D22/D22_EMN_URLs_Keys_schemas/src/test/java/com/zl/d22/stream/StreamPreStartFailureTest.java', LF will be replaced by CRLF the next time Git touches it
+ D22/D22_EMN_URLs_Keys_schemas/pom.xml              | 11 ++-
+ .../java/com/zl/d22/D22SpringAiApplication.java    |  2 +-
+ .../main/java/com/zl/d22/config/AiConstants.java   | 10 +--
+ .../main/java/com/zl/d22/config/AiProperties.java  | 68 ++++++++++++++++-
+ .../zl/d22/controller/ChatStreamController.java    | 11 +--
+ .../d22/knowledge/KnowledgeChatOrchestrator.java   |  6 +-
+ .../java/com/zl/d22/service/AiChatService.java     |  9 +--
+ .../com/zl/d22/service/DeepSeekAiChatService.java  | 20 ++---
+ .../java/com/zl/d22/service/MockAiChatService.java |  2 +-
+ .../main/resources/application-local.yml.example   | 32 ++++----
+ .../src/main/resources/application.yml             | 30 +++-----
+ .../com/zl/d22/ApplicationContextLoadTest.java     | 34 ++++-----
+ .../java/com/zl/d22/DeepSeekKeyProtectionTest.java | 87 ++++++++--------------
+ .../java/com/zl/d22/DeepSeekLiveSmokeTest.java     | 10 +--
+ .../zl/d22/d16/KnowledgeChatOrchestratorTest.java  | 14 +++-
+ .../observability/ModelCallObservabilityTest.java  | 10 ++-
+ .../d22/stream/SpringAiChatClientBehaviorTest.java | 10 ++-
+ .../zl/d22/stream/StreamPreStartFailureTest.java   | 10 ++-
+ 18 files changed, 200 insertions(+), 176 deletions(-)

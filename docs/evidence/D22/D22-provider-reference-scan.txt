@@ -1,0 +1,15 @@
+src\main\java\com\zl\d22\config\DeepSeekChatModelConfiguration.java:4:import org.springframework.ai.deepseek.DeepSeekChatModel;
+src\main\java\com\zl\d22\config\DeepSeekChatModelConfiguration.java:5:import org.springframework.ai.deepseek.DeepSeekChatOptions;
+src\main\java\com\zl\d22\config\DeepSeekChatModelConfiguration.java:6:import org.springframework.ai.deepseek.api.DeepSeekApi;
+src\main\java\com\zl\d22\config\DeepSeekChatModelConfiguration.java:26: * {@link AiProperties} 构造 DeepSeekChatModel。</p>
+src\main\java\com\zl\d22\config\DeepSeekChatModelConfiguration.java:34:public class DeepSeekChatModelConfiguration {
+src\main\java\com\zl\d22\config\DeepSeekChatModelConfiguration.java:38:    public DeepSeekChatModel deepSeekChatModel(
+src\main\java\com\zl\d22\config\DeepSeekChatModelConfiguration.java:56:        DeepSeekChatOptions defaultOptions = DeepSeekChatOptions.builder()
+src\main\java\com\zl\d22\config\DeepSeekChatModelConfiguration.java:65:        return DeepSeekChatModel.builder()
+src\main\java\com\zl\d22\service\DeepSeekAiChatService.java:18:import org.springframework.ai.deepseek.DeepSeekAssistantMessage;
+src\main\java\com\zl\d22\service\DeepSeekAiChatService.java:19:import org.springframework.ai.deepseek.DeepSeekChatOptions;
+src\main\java\com\zl\d22\service\DeepSeekAiChatService.java:33: * （1.1.8 下唯一实现为 {@code DeepSeekChatModel}），通过受支持的可移植抽象发起同步阻塞调用，
+src\main\java\com\zl\d22\service\DeepSeekAiChatService.java:351:    private DeepSeekChatOptions buildModelOptions(String effectiveModel) {
+src\main\java\com\zl\d22\service\DeepSeekAiChatService.java:352:        return DeepSeekChatOptions.builder().model(effectiveModel).build();
+src\main\java\com\zl\d22\service\ThinkingSettingsResolver.java:26:     * 与 {@code DeepSeekChatOptions} 均无 thinking/reasoningEffort 字段。升级支持该字段的 Spring AI
+src\main\java\com\zl\d22\service\ReasoningEffort.java:11: * {@code DeepSeekApi.ChatCompletionRequest} 与 {@code DeepSeekChatOptions} 均无 thinking/effort 字段，
