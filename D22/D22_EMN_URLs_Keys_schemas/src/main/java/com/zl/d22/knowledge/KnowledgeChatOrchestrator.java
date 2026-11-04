@@ -1,9 +1,9 @@
 package com.zl.d22.knowledge;
 
 import com.zl.d22.dto.CitationDto;
+import com.zl.d22.config.AiProperties;
 import com.zl.d22.service.*;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import reactor.core.publisher.Flux;
@@ -35,10 +35,10 @@ public class KnowledgeChatOrchestrator {
     public KnowledgeChatOrchestrator(
             AiChatService aiChatService,
             KnowledgeRetrievalService retrievalService,
-            @Value("${app.ai.mode:mock}") String aiMode) {
+            AiProperties aiProperties) {
         this.aiChatService = aiChatService;
         this.retrievalService = retrievalService;
-        this.mockMode = !"deepseek".equalsIgnoreCase(aiMode);
+        this.mockMode = "mock".equalsIgnoreCase(aiProperties.getMode());
     }
 
     /** 同步链路结果：结构化答案 + 本轮注册表（含实际引用与拦截计数）。 */

@@ -4,10 +4,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zl.d22.support.AbstractPersistenceCleanupTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import java.util.Map;
 
@@ -19,7 +21,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * 真实模式无效占位 Key 在 Flux 订阅前失败：必须返回 JSON 错误并把 PENDING 用户消息收口为 FAILED。
  */
-@SpringBootTest(properties = "app.ai.mode=deepseek")
+@SpringBootTest(properties = {
+        "app.ai.mode=deepseek",
+        "app.ai.api-key="
+})
 @AutoConfigureMockMvc
 class StreamPreStartFailureTest extends AbstractPersistenceCleanupTest {
 
@@ -27,6 +32,9 @@ class StreamPreStartFailureTest extends AbstractPersistenceCleanupTest {
 
     @Autowired
     private MockMvc mockMvc;
+
+    @MockitoBean
+    private ChatModel chatModel;
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 

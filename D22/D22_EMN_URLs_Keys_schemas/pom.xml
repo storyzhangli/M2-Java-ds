@@ -128,11 +128,10 @@
                         <spring.profiles.active>test</spring.profiles.active>
                         <app.ai.mode>mock</app.ai.mode>
                         <!--
-                            测试永远使用显式无效的占位密钥，覆盖宿主环境中可能已存在的真实
-                            DEEPSEEK_API_KEY。这样单元测试既不依赖真实凭据，也不会把环境值
-                            写入 Surefire 报告；真实调用只能由独立、人工授权的外部流程发起。
+                            测试真实模式装配时使用显式无效值，覆盖宿主环境可能存在的真实键；
+                            非 Auth Mock 模式不需要 Key。真实调用只能由独立授权流程发起。
                         -->
-                        <spring.ai.deepseek.api-key>d01-mock-key-not-for-authentication</spring.ai.deepseek.api-key>
+                        <app.ai.api-key>invalid-test-key-not-for-authentication</app.ai.api-key>
                     </systemPropertyVariables>
                     <!--
                         仅在测试 JVM 中使用受控 JDK 原生库路径。宿主 PATH 属于外部环境，
@@ -142,7 +141,7 @@
                     <argLine>-Djava.library.path=${java.home}/bin</argLine>
                     <environmentVariables>
                         <AI_MODE>mock</AI_MODE>
-                        <DEEPSEEK_API_KEY>d01-mock-key-not-for-authentication</DEEPSEEK_API_KEY>
+                        <AI_API_KEY>invalid-test-key-not-for-authentication</AI_API_KEY>
                     </environmentVariables>
                 </configuration>
             </plugin>

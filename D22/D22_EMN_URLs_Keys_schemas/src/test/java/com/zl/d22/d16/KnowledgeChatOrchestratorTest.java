@@ -74,7 +74,7 @@ class KnowledgeChatOrchestratorTest {
         // 桩模拟模型输出：S9 是注册表中不存在的自造编号，S1 是真实分配编号
         StubAiChatService stub = new StubAiChatService("排查结论见 [S1]，但模型自造了 [S9] 来源。");
         KnowledgeChatOrchestrator orchestrator =
-                new KnowledgeChatOrchestrator(stub, retrievalService, "deepseek");
+                new KnowledgeChatOrchestrator(stub, retrievalService, aiProperties("deepseek"));
 
         KnowledgeChatOrchestrator.SyncOutcome outcome = orchestrator.chat(
                 invocation("数控机床主轴过热报警冷却液液位"), ThinkingSettings.legacyDefault(), true);
@@ -95,7 +95,7 @@ class KnowledgeChatOrchestratorTest {
     void mockModeShouldAppendOnlyServerAssignedMarkers() {
         StubAiChatService stub = new StubAiChatService("离线确定性答案。");
         KnowledgeChatOrchestrator orchestrator =
-                new KnowledgeChatOrchestrator(stub, retrievalService, "mock");
+                new KnowledgeChatOrchestrator(stub, retrievalService, aiProperties("mock"));
 
         KnowledgeChatOrchestrator.SyncOutcome outcome = orchestrator.chat(
                 invocation("伺服电机编码器位置偏差报警"), ThinkingSettings.legacyDefault(), true);
@@ -109,7 +109,7 @@ class KnowledgeChatOrchestratorTest {
     void retrievalDisabledMustProduceNoCitationsAndStillSanitizeMarkers() {
         StubAiChatService stub = new StubAiChatService("普通答案夹带 [S3] 自造标记。");
         KnowledgeChatOrchestrator orchestrator =
-                new KnowledgeChatOrchestrator(stub, retrievalService, "deepseek");
+                new KnowledgeChatOrchestrator(stub, retrievalService, aiProperties("deepseek"));
 
         KnowledgeChatOrchestrator.SyncOutcome outcome = orchestrator.chat(
                 invocation("任意问题"), ThinkingSettings.legacyDefault(), false);
@@ -123,12 +123,18 @@ class KnowledgeChatOrchestratorTest {
     void noHitQueryMustNotFabricateSources() {
         StubAiChatService stub = new StubAiChatService("无资料时的普通回答。");
         KnowledgeChatOrchestrator orchestrator =
-                new KnowledgeChatOrchestrator(stub, retrievalService, "deepseek");
+                new KnowledgeChatOrchestrator(stub, retrievalService, aiProperties("deepseek"));
 
         KnowledgeChatOrchestrator.SyncOutcome outcome = orchestrator.chat(
                 invocation("今天天气如何适合钓鱼吗"), ThinkingSettings.legacyDefault(), true);
 
         assertThat(outcome.citations()).isEmpty();
         assertThat(outcome.result().content()).isEqualTo("无资料时的普通回答。");
+    }
+
+    private com.zl.d22.config.AiProperties aiProperties(String mode) {
+        com.zl.d22.config.AiProperties properties = new com.zl.d22.config.AiProperties();
+        properties.setMode(mode);
+        return properties;
     }
 }

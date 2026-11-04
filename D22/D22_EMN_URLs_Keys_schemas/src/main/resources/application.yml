@@ -8,6 +8,11 @@ server:
 spring:
   application:
     name: D22_SpringAI
+  # D22 使用应用级 app.ai.* 配置并显式构造 DeepSeek Provider Bean；
+  # 关闭供应商自动配置，避免空 Key 在 Mock 模式导致上下文启动失败。
+  autoconfigure:
+    exclude:
+      - org.springframework.ai.model.deepseek.autoconfigure.DeepSeekChatAutoConfiguration
   # MySQL：D15_PLUS 起作为 Prompt 模板的权威持久化存储。
   # 凭据支持环境变量注入（MYSQL_USER/MYSQL_PASSWORD），冒号后仅为本机开发默认值，生产环境必须通过环境变量覆盖。
   datasource:
@@ -25,24 +30,7 @@ spring:
       database: ${REDIS_DATABASE:0}
       timeout: 3s
 
-  # --------------------------------------------------------------------------
-  # Spring AI 1.1.x DeepSeek 配置（属性前缀已经官方 1.1 参考文档核对，非 2.x 命名）
-  # 文档：https://docs.spring.io/spring-ai/reference/1.1/api/chat/deepseek-chat.html
-  # --------------------------------------------------------------------------
   ai:
-    deepseek:
-      # 优先取环境变量 DEEPSEEK_API_KEY；未提供时回退到“显式无效”的本地占位串。
-      # 占位串 d01-mock-key-not-for-authentication 仅用于让自动配置完成 Bean 装配，
-      # 绝不可能通过 DeepSeek 真实鉴权；真实模式下会在调用前被主动拦截。
-      api-key: ${DEEPSEEK_API_KEY:d01-mock-key-not-for-authentication}
-      # DeepSeek 官方基址，可通过 DEEPSEEK_BASE_URL 覆盖（私有网关/代理场景）。
-      base-url: ${DEEPSEEK_BASE_URL:https://api.deepseek.com}
-      chat:
-        options:
-          # 模型名外置，默认 deepseek-flash，可通过 DEEPSEEK_MODEL 一行切换。
-          model: ${DEEPSEEK_MODEL:deepseek-flash}
-          # 采样温度，取值域 [0,2]。
-          temperature: 0.7
     # D22 安全 fallback：应用提供唯一 RetryTemplate Bean；若该 Bean 因装配异常缺失，
     # Spring AI 自动配置也只会执行 1 次，不会回退到默认 10 次。
     retry:
@@ -76,8 +64,12 @@ mybatis-plus:
 # --------------------------------------------------------------------------
 app:
   ai:
-    # 运行模式，由环境变量 AI_MODE 控制：mock（默认，离线确定性返回、零外网请求）| deepseek（真实调用）。
+    # 单一应用配置源。真实 Key 只通过环境变量/安全配置注入，默认空值。
     mode: ${AI_MODE:mock}
+    model: ${AI_MODEL:deepseek-flash}
+    base-url: ${AI_BASE_URL:https://api.deepseek.com}
+    api-key: ${AI_API_KEY:}
+    temperature: ${AI_TEMPERATURE:0.7}
     # 入参消息可调整长度上限，可用环境变量 AI_CHAT_MAX_LENGTH 覆盖。
     max-message-length: ${AI_CHAT_MAX_LENGTH:2000}
     # SSE 首个/相邻 chunk 的空闲超时（毫秒），不是整个流的总时长。
@@ -129,7 +121,7 @@ app:
     # ------------------------------------------------------------------
     thinking:
       # 思考模式实际使用的推理模型，客户端无法通过请求 DTO 指定任意模型名
-      reasoner-model: ${DEEPSEEK_REASONER_MODEL:deepseek-reasoner}
+      reasoner-model: ${AI_REASONER_MODEL:deepseek-reasoner}
     # ------------------------------------------------------------------
     # D16 新增：最小知识检索（classpath 语料 + 确定性关键词评分，非向量库）。
     # ------------------------------------------------------------------

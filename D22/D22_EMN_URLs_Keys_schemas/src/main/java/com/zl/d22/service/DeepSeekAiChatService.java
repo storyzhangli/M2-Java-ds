@@ -2,6 +2,7 @@ package com.zl.d22.service;
 
 import com.zl.d22.common.AiConfigurationException;
 import com.zl.d22.config.AiConstants;
+import com.zl.d22.config.AiProperties;
 import com.zl.d22.dto.ChatReplyResponse;
 import com.zl.d22.logging.TraceIdFilter;
 import com.zl.d22.observability.ModelCallRecorder;
@@ -16,7 +17,6 @@ import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.deepseek.DeepSeekAssistantMessage;
 import org.springframework.ai.deepseek.DeepSeekChatOptions;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -62,20 +62,18 @@ public class DeepSeekAiChatService implements AiChatService {
     /**
      * D16 思考模式实际切换到的推理模型名，服务端配置白名单，客户端无法通过请求 DTO 指定任意模型。
      * 默认 deepseek-reasoner（Spring AI 1.1.8 内置 ChatModel 枚举支持的两个模型之一），
-     * 可由环境变量 DEEPSEEK_REASONER_MODEL 覆盖。
+     * 可由应用级配置 app.ai.thinking.reasoner-model 或 AI_REASONER_MODEL 覆盖。
      */
     private final String reasonerModel;
 
     public DeepSeekAiChatService(
             ChatModel chatModel,
-            @Value("${spring.ai.deepseek.api-key}") String apiKey,
-            @Value("${spring.ai.deepseek.chat.options.model:deepseek-flash}") String model,
-            @Value("${app.ai.thinking.reasoner-model:deepseek-reasoner}") String reasonerModel) {
+            AiProperties aiProperties) {
         this.chatModel = chatModel;
         this.chatClient = ChatClient.builder(chatModel).build();
-        this.apiKey = apiKey;
-        this.model = model;
-        this.reasonerModel = reasonerModel;
+        this.apiKey = aiProperties.getApiKey();
+        this.model = aiProperties.getModel();
+        this.reasonerModel = aiProperties.getThinking().getReasonerModel();
     }
 
     @Override
@@ -388,11 +386,9 @@ public class DeepSeekAiChatService implements AiChatService {
     }
 
     private void validateCredential() {
-        if (!StringUtils.hasText(this.apiKey)
-                || AiConstants.PLACEHOLDER_API_KEY.equals(this.apiKey)
-                || this.apiKey.toLowerCase().contains("mock")) {
+        if (!StringUtils.hasText(this.apiKey)) {
             throw new AiConfigurationException(
-                    "deepseek 真实模式未配置有效密钥：DEEPSEEK_API_KEY 缺失、为空白或仍为占位密钥，已阻止发起外部请求");
+                    "deepseek 真实模式未配置有效密钥：AI_API_KEY 缺失或为空白，已阻止发起外部请求");
         }
     }
 }

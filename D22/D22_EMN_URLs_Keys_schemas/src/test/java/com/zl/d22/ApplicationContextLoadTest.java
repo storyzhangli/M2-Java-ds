@@ -1,6 +1,7 @@
 package com.zl.d22;
 
 import com.zl.d22.config.AiConstants;
+import com.zl.d22.config.AiProperties;
 import com.zl.d22.config.ModelCallProperties;
 import com.zl.d22.model.ClassifiedResponseErrorHandler;
 import com.zl.d22.service.AiChatService;
@@ -8,7 +9,6 @@ import com.zl.d22.service.DeepSeekAiChatService;
 import com.zl.d22.service.MockAiChatService;
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.model.ChatModel;
-import org.springframework.ai.deepseek.DeepSeekChatModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
@@ -31,9 +31,6 @@ class ApplicationContextLoadTest {
     private ApplicationContext applicationContext;
 
     @Autowired
-    private ChatModel chatModel;
-
-    @Autowired
     private AiChatService aiChatService;
 
     @Autowired
@@ -48,16 +45,17 @@ class ApplicationContextLoadTest {
     @Autowired
     private ModelCallProperties modelCallProperties;
 
+    @Autowired
+    private AiProperties aiProperties;
+
     @Test
     void contextShouldLoad() {
         assertThat(applicationContext).isNotNull();
     }
 
     @Test
-    void deepSeekChatModelShouldBeAssembledEvenInMockMode() {
-        // 自动配置期不发起网络请求，占位密钥下 Bean 仍应成功装配
-        assertThat(chatModel).isNotNull();
-        assertThat(chatModel).isInstanceOf(DeepSeekChatModel.class);
+    void mockModeShouldNotCreateVendorChatModelBean() {
+        assertThat(applicationContext.getBeanNamesForType(ChatModel.class)).isEmpty();
     }
 
     @Test
@@ -70,13 +68,13 @@ class ApplicationContextLoadTest {
     @Test
     void externalizedPropertiesShouldBindToExpectedDefaults() {
         assertThat(environment.getProperty("app.ai.mode")).isEqualTo(AiConstants.MODE_MOCK);
-        assertThat(environment.getProperty("spring.ai.deepseek.chat.options.model"))
-                .isEqualTo("deepseek-flash");
-        assertThat(environment.getProperty("spring.ai.deepseek.base-url"))
-                .isEqualTo("https://api.deepseek.com");
-        // Surefire 固定测试属性为显式无效占位串；测试不得读取或输出宿主真实凭据
-        assertThat(environment.getProperty("spring.ai.deepseek.api-key"))
-                .isEqualTo(AiConstants.PLACEHOLDER_API_KEY);
+        assertThat(aiProperties.getModel()).isEqualTo("deepseek-flash");
+        assertThat(aiProperties.getBaseUrl()).isEqualTo("https://api.deepseek.com");
+        assertThat(aiProperties.getThinking().getReasonerModel()).isEqualTo("deepseek-reasoner");
+        // Surefire 固定测试属性为显式无效值；测试不读取或输出宿主真实凭据。
+        assertThat(environment.getProperty("app.ai.api-key"))
+                .isEqualTo("invalid-test-key-not-for-authentication");
+        assertThat(environment.getProperty("spring.ai.deepseek.api-key")).isNull();
         assertThat(environment.getProperty("spring.ai.retry.max-attempts"))
                 .isEqualTo("1");
         assertThat(modelCallProperties.getMaxAttempts()).isEqualTo(2);
@@ -88,10 +86,8 @@ class ApplicationContextLoadTest {
     }
 
     @Test
-    void deepSeekChatModelShouldUseTheSingleD22RetryTemplate() {
-        assertThat(chatModel).isInstanceOf(DeepSeekChatModel.class);
-        DeepSeekChatModel deepSeekChatModel = (DeepSeekChatModel) chatModel;
-        assertThat(deepSeekChatModel.retryTemplate).isSameAs(retryTemplate);
+    void singleRetryTemplateShouldStillBeAvailable() {
+        assertThat(retryTemplate).isNotNull();
         assertThat(applicationContext.getBeanNamesForType(RetryTemplate.class)).hasSize(1);
     }
 }

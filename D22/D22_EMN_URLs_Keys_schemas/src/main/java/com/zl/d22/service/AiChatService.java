@@ -8,12 +8,9 @@ import java.util.List;
 /**
  * AI 聊天服务抽象。
  *
- * <p>同一接口存在两个按 {@code app.ai.mode} 条件装配的实现：</p>
- * <ul>
- *     <li>{@link MockAiChatService}：mock 模式（默认），离线确定性返回，不访问外网；</li>
- *     <li>{@link DeepSeekAiChatService}：deepseek 模式，基于 Spring AI {@code ChatModel}
- *     调用 DeepSeek。</li>
- * </ul>
+ * <p>该接口是应用层 Port：方法只使用项目内部消息、结果、设置与流式分片类型，
+ * 不暴露任何供应商 DTO、Options、API 或响应类型。Mock 与供应商 Adapter 在装配时
+ * 根据 {@code app.ai.mode} 二选一。</p>
  *
  * <p>说明：本应用运行在 Servlet/Tomcat + Spring MVC 技术栈上，{@link Flux} 仅作为 Spring AI
  * 原生的流式数据管道使用，由 Controller 桥接到 MVC 的 {@code SseEmitter}，并不会切换到

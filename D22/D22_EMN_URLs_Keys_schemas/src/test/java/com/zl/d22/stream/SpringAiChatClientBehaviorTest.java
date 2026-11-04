@@ -1,6 +1,7 @@
 package com.zl.d22.stream;
 
 import com.zl.d22.service.DeepSeekAiChatService;
+import com.zl.d22.config.AiProperties;
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.messages.AssistantMessage;
@@ -52,9 +53,12 @@ class SpringAiChatClientBehaviorTest {
         ChatModel chatModel = mock(ChatModel.class);
         when(chatModel.stream(any(Prompt.class))).thenReturn(
                 Flux.just(response("片段A"), response("片段B")));
-        DeepSeekAiChatService service = new DeepSeekAiChatService(
-                chatModel, "non-placeholder-test-credential",
-                "deepseek-flash", "deepseek-reasoner");
+        AiProperties properties = new AiProperties();
+        properties.setMode("deepseek");
+        properties.setApiKey("invalid-test-stream-value");
+        properties.setModel("deepseek-flash");
+        properties.getThinking().setReasonerModel("deepseek-reasoner");
+        DeepSeekAiChatService service = new DeepSeekAiChatService(chatModel, properties);
 
         List<String> chunks = service.streamChat("适配器流式测试")
                 .collectList()

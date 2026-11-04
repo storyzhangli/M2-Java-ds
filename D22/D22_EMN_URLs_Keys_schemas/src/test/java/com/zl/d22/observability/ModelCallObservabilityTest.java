@@ -5,6 +5,7 @@ import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.read.ListAppender;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zl.d22.config.AiProperties;
 import com.zl.d22.logging.TraceIdFilter;
 import com.zl.d22.service.AiChatResult;
 import com.zl.d22.service.ChatInvocation;
@@ -198,9 +199,12 @@ class ModelCallObservabilityTest {
     }
 
     private DeepSeekAiChatService service(ChatModel chatModel) {
-        return new DeepSeekAiChatService(
-                chatModel, "non-placeholder-observability-test-key",
-                "deepseek-flash", "deepseek-reasoner");
+        AiProperties properties = new AiProperties();
+        properties.setMode("deepseek");
+        properties.setApiKey("invalid-test-observability-value");
+        properties.setModel("deepseek-flash");
+        properties.getThinking().setReasonerModel("deepseek-reasoner");
+        return new DeepSeekAiChatService(chatModel, properties);
     }
 
     private ChatResponse response(String text, String id, Usage usage) {

@@ -25,7 +25,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -70,12 +69,6 @@ public class ChatStreamController {
     private final HistoryProperties historyProperties;
     private final ModelCallProperties modelCallProperties;
     private final ModelFailureClassifier failureClassifier;
-
-    @Value("${spring.ai.deepseek.chat.options.model:deepseek-flash}")
-    private String deepseekModel;
-
-    @Value("${app.ai.thinking.reasoner-model:deepseek-reasoner}")
-    private String reasonerModel;
 
     public ChatStreamController(KnowledgeChatOrchestrator orchestrator,
                                 AiProperties aiProperties,
@@ -141,7 +134,9 @@ public class ChatStreamController {
         String mode = aiProperties.getMode();
         final String model = AiConstants.MODE_MOCK.equals(mode)
                 ? "offline-mock"
-                : (settings.enabled() ? reasonerModel : deepseekModel);
+                : (settings.enabled()
+                        ? aiProperties.getThinking().getReasonerModel()
+                        : aiProperties.getModel());
 
         AtomicBoolean finished = new AtomicBoolean(false);
         AtomicInteger deltaSeq = new AtomicInteger();
