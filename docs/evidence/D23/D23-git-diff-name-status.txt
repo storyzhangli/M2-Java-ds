@@ -1,0 +1,10 @@
+warning: in the working copy of 'D23/D23_CRTFC_SSE_MASO/src/main/java/com/zl/d23/controller/ChatController.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D23/D23_CRTFC_SSE_MASO/src/main/java/com/zl/d23/controller/ChatStreamController.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D23/D23_CRTFC_SSE_MASO/src/main/java/com/zl/d23/conversation/RoleConversationService.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D23/D23_CRTFC_SSE_MASO/src/main/java/com/zl/d23/equipment/EquipmentCandidateParser.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D23/D23_CRTFC_SSE_MASO/src/test/java/com/zl/d23/history/ContextWindowTest.java', LF will be replaced by CRLF the next time Git touches it
+M	D23/D23_CRTFC_SSE_MASO/src/main/java/com/zl/d23/controller/ChatController.java
+M	D23/D23_CRTFC_SSE_MASO/src/main/java/com/zl/d23/controller/ChatStreamController.java
+M	D23/D23_CRTFC_SSE_MASO/src/main/java/com/zl/d23/conversation/RoleConversationService.java
+M	D23/D23_CRTFC_SSE_MASO/src/main/java/com/zl/d23/equipment/EquipmentCandidateParser.java
+M	D23/D23_CRTFC_SSE_MASO/src/test/java/com/zl/d23/history/ContextWindowTest.java

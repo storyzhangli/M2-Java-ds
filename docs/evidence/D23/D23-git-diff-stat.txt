@@ -1,0 +1,11 @@
+warning: in the working copy of 'D23/D23_CRTFC_SSE_MASO/src/main/java/com/zl/d23/controller/ChatController.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D23/D23_CRTFC_SSE_MASO/src/main/java/com/zl/d23/controller/ChatStreamController.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D23/D23_CRTFC_SSE_MASO/src/main/java/com/zl/d23/conversation/RoleConversationService.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D23/D23_CRTFC_SSE_MASO/src/main/java/com/zl/d23/equipment/EquipmentCandidateParser.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D23/D23_CRTFC_SSE_MASO/src/test/java/com/zl/d23/history/ContextWindowTest.java', LF will be replaced by CRLF the next time Git touches it
+ .../java/com/zl/d23/controller/ChatController.java   |  6 +++---
+ .../com/zl/d23/controller/ChatStreamController.java  | 12 +++++++++---
+ .../zl/d23/conversation/RoleConversationService.java | 20 +++++++++++++-------
+ .../zl/d23/equipment/EquipmentCandidateParser.java   |  9 ++++++++-
+ .../java/com/zl/d23/history/ContextWindowTest.java   |  8 ++++++++
+ 5 files changed, 41 insertions(+), 14 deletions(-)
