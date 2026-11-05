@@ -87,10 +87,10 @@ public class ChatController {
         // 普通链路：D17 起同样落库并关联上下文窗口，不再使用空历史
         ChatHistoryService.TurnStart turn = historyService.startTurn(owner, request.getSessionId(),
                 "", "", 0, request.getMessage());
-        ChatInvocation invocation = new ChatInvocation(null, message,
-                HistoryMessageConverter.toTurns(
-                        historyService.getContextWindow(turn.session().getSessionId())));
         try {
+            ChatInvocation invocation = new ChatInvocation(null, message,
+                    HistoryMessageConverter.toTurns(
+                            historyService.getContextWindow(turn.session().getSessionId())));
             KnowledgeChatOrchestrator.SyncOutcome outcome =
                     orchestrator.chat(invocation, settings, retrieveEnabled);
             AiChatResult result = outcome.result();

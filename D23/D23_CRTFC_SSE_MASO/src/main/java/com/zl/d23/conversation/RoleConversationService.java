@@ -64,12 +64,18 @@ public class RoleConversationService {
 
         ChatHistoryService.TurnStart turn = historyService.startTurn(owner, request.getSessionId(),
                 scene, template.getTemplateId(), template.getVersion(), request.getMessage());
-
-        List<HistoryMessage> history = historyService.getContextWindow(turn.session().getSessionId());
-        ChatInvocation invocation = new ChatInvocation(
-                systemPrompt, request.getMessage(), HistoryMessageConverter.toTurns(history));
-        log.info("角色对话准备完成，sessionId={}，scene={}，模板版本={}，窗口消息数={}",
-                turn.session().getSessionId(), scene, template.getVersion(), history.size());
-        return new PreparedConversation(turn.session(), invocation, turn);
+        try {
+            List<HistoryMessage> history =
+                    historyService.getContextWindow(turn.session().getSessionId());
+            ChatInvocation invocation = new ChatInvocation(
+                    systemPrompt, request.getMessage(), HistoryMessageConverter.toTurns(history));
+            log.info("角色对话准备完成，sessionId={}，scene={}，模板版本={}，窗口消息数={}",
+                    turn.session().getSessionId(), scene, template.getVersion(), history.size());
+            return new PreparedConversation(turn.session(), invocation, turn);
+        } catch (RuntimeException ex) {
+            historyService.failTurn(turn, ex.getClass().getSimpleName(),
+                    ex.getClass().getSimpleName());
+            throw ex;
+        }
     }
 }

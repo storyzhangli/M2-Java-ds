@@ -118,9 +118,15 @@ public class ChatStreamController {
         } else {
             turn = historyService.startTurn(owner, request.getSessionId(),
                     "", "", 0, request.getMessage());
-            invocation = new ChatInvocation(null, message,
-                    HistoryMessageConverter.toTurns(
-                            historyService.getContextWindow(turn.session().getSessionId())));
+            try {
+                invocation = new ChatInvocation(null, message,
+                        HistoryMessageConverter.toTurns(
+                                historyService.getContextWindow(turn.session().getSessionId())));
+            } catch (RuntimeException ex) {
+                historyService.failTurn(turn, ex.getClass().getSimpleName(),
+                        ex.getClass().getSimpleName());
+                throw ex;
+            }
         }
         final RoleConversationService.PreparedConversation finalRoleContext = roleContext;
         final StringBuffer assistantBuffer = new StringBuffer();

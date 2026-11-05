@@ -2,6 +2,7 @@ package com.zl.d23.equipment;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.zl.d23.equipment.model.CandidateSourceType;
 import com.zl.d23.equipment.model.CandidateStatus;
 import com.zl.d23.equipment.model.EquipmentTicketCandidate;
@@ -41,7 +42,9 @@ public class EquipmentCandidateParser {
             throw new IllegalArgumentException("候选 JSON 不能为空");
         }
         try {
-            JsonNode root = objectMapper.readTree(json);
+            JsonNode root = objectMapper.reader()
+                    .with(DeserializationFeature.FAIL_ON_TRAILING_TOKENS)
+                    .readTree(json);
             if (root == null || !root.isObject()) {
                 throw new IllegalArgumentException("候选 JSON 顶层必须是对象");
             }
@@ -52,6 +55,10 @@ public class EquipmentCandidateParser {
             String uncertainty = requiredText(root, "uncertaintyNote", MAX_SUMMARY_LENGTH);
             List<String> symptoms = stringList(root, "observedSymptoms");
             List<String> missing = stringList(root, "missingInformation");
+            if (status == CandidateStatus.NEEDS_CLARIFICATION && missing.isEmpty()) {
+                throw new IllegalArgumentException(
+                        "candidateStatus=NEEDS_CLARIFICATION 时 missingInformation 不能为空");
+            }
             return new EquipmentTicketCandidate(
                     summary,
                     category,

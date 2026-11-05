@@ -58,6 +58,14 @@ class ContextWindowTest extends AbstractPersistenceCleanupTest {
     }
 
     @Test
+    void pendingOnlyHistoryShouldProduceEmptyWindow() {
+        ChatHistoryService.TurnStart turn = historyService.startTurn(
+                OWNER, null, "", "", 0, "当前尚未完成的问题");
+
+        assertThat(historyService.getContextWindow(turn.session().getSessionId())).isEmpty();
+    }
+
+    @Test
     void ownerResolutionShouldRejectIllegalCharacters() {
         assertThatThrownBy(() -> historyService.resolveOwner("bad owner!"))
                 .isInstanceOf(IllegalArgumentException.class)
