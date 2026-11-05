@@ -117,6 +117,24 @@
     <build>
         <plugins>
             <!--
+                解析依赖 JAR 路径：
+                properties goal 默认绑定 initialize 阶段，为解析到的依赖建立
+                "groupId:artifactId:type" 形式的属性（如 org.mockito:mockito-core:jar）。
+                版本由父 POM（spring-boot-starter-parent）pluginManagement 统一管理，此处不写版本。
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>resolve-dependency-paths</id>
+                        <goals>
+                            <goal>properties</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--
                 测试运行时激活 test profile：
                 读取 application-test.yml，将历史默认归属覆盖为 ut-default，
                 避免未带头的测试请求写入 dev-user 的手工演示数据。
@@ -139,7 +157,10 @@
                         可能意外包含敏感参数；Surefire XML 会记录 java.library.path，
                         因此测试进程不继承不可控的 PATH 派生值。
                     -->
-                    <argLine>-Djava.library.path=${java.home}/bin</argLine>
+                    <argLine>
+                        -javaagent:${org.mockito:mockito-core:jar}
+                        -Djava.library.path="${java.home}/bin"
+                    </argLine>
                     <environmentVariables>
                         <AI_MODE>mock</AI_MODE>
                         <AI_API_KEY>invalid-test-key-not-for-authentication</AI_API_KEY>
